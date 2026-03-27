@@ -1,2 +1,21 @@
 - [🏠 Beranda](README.md)
-- [Modul 01](modul-01.md)
+- Sub-CPMK-1
+    - [Modul 1](modul/modul-01.md)
+- Sub-CPMK-2
+    - [Modul 2](modul/modul-02.md)
+- Sub-CPMK-3
+    - [Modul 3](modul/modul-03.md)
+- Sub-CPMK-4
+    - [Modul 4](modul/modul-04.md)
+- Sub-CPMK-5
+    - [Modul 5](modul/modul-05.md)
+- Sub-CPMK-6
+    - [Modul 6](modul/modul-06.md)
+- Sub-CPMK-7
+    - [Modul 7](modul/modul-07.md)
+- Sub-CPMK-8
+    - [Modul 8](modul/modul-08.md)
+- Sub-CPMK-9
+    - [Modul 9](modul/modul-09.md)
+- Sub-CPMK-10
+    - [Modul 10](modul/modul-10.md)
