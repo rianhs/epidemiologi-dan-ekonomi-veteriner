@@ -1,2 +1,2 @@
-- [🏠 Beranda](REAMDE.md)
+- [🏠 Beranda](README.md)
 - [Modul 01](modul-01.md)
