@@ -99,16 +99,18 @@
     @media (max-width: 768px) { .scroll-hint { display: inline-flex; } }
 
     /* Penting: scroll-margin agar heading tidak tertutup header sticky */
-    h2, h3, h4 { scroll-margin-top: 5rem; }
+    h2, h3, h4, h5, h6 { scroll-margin-top: 5rem; }
 
     article p { margin-bottom: 1rem; }
 
-    article h2, article h3, article h4 { color: #0f172a; }
-    .dark article h2, .dark article h3, .dark article h4 { color: #ffffff; }
+    article h2, article h3, article h4, article h5, article h6 { color: #0f172a; }
+    .dark article h2, .dark article h3, .dark article h4, .dark article h5, .dark article h6 { color: #ffffff; }
 
-    article h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2.25rem; margin-bottom: 0.5rem; line-height: 1.5; }
-    article h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.5rem; line-height: 1.5; }
-    article h4 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; line-height: 1.5; }
+    article h2 { font-size: 1.5rem;  font-weight: 700; margin-top: 2.25rem; margin-bottom: 0.5rem; line-height: 1.5; }
+    article h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem;    margin-bottom: 0.5rem; line-height: 1.5; }
+    article h4 { font-size: 1.15rem; font-weight: 600; margin-top: 1.5rem;  margin-bottom: 0.5rem; line-height: 1.5; }
+    article h5 { font-size: 1.05rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; line-height: 1.5; }
+    article h6 { font-size: 1rem;    font-weight: 500; margin-top: 1rem;    margin-bottom: 0.5rem; line-height: 1.5; }
 
     [data-quiz] button { padding: 0.5rem 1rem !important; font-size: 0.875rem !important; border-radius: 0.5rem !important; }
     [data-feedback] { font-size: 0.875rem; margin-top: 1rem; }
@@ -189,6 +191,12 @@
 
     <aside id="sidebar" class="fixed inset-y-0 left-0 z-30 w-72 bg-[#f2f2f2] dark:bg-[#0a0a0a] border-r border-slate-200 dark:border-slate-800 pt-20 overflow-y-auto transform -translate-x-full lg:translate-x-0 lg:sticky lg:top-0 lg:h-[calc(100vh-64px)] lg:pt-8">
       <nav class="px-4 pb-10">
+        <!-- Tautan kembali ke beranda -->
+        <a href="{{ site.baseurl }}/" class="flex items-center gap-2 px-3 py-2 mb-3 text-sm text-slate-500 dark:text-slate-400 hover:text-brand dark:hover:text-brand transition-colors group">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5"></i>
+          <span>Kembali ke Beranda</span>
+        </a>
+        <div class="border-t border-slate-200 dark:border-slate-800 mb-3"></div>
         <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3 px-3">Daftar Isi</h2>
         <div id="tocList" class="space-y-1 text-sm text-slate-600 dark:text-slate-400"></div>
       </nav>
@@ -289,9 +297,9 @@
             .replace(/\s+/g, '-')
             .replace(/-+/g, '-');
 
-      // Ambil semua heading h2, h3, h4 dari konten — kecuali yang ada di dalam [data-quiz]
+      // Ambil semua heading h2 sampai h6 dari konten — kecuali yang ada di dalam [data-quiz]
       const headings = Array.from(
-        content.querySelectorAll('h2, h3, h4')
+        content.querySelectorAll('h2, h3, h4, h5, h6')
       ).filter(el => !el.closest('[data-quiz]'));
 
       if (headings.length === 0) return;
@@ -327,14 +335,18 @@
         link.textContent = heading.textContent;
         link.setAttribute('data-target', heading.id);
 
-        // Indentasi berdasarkan level heading
+        // Indentasi bertahap berdasarkan level heading
         const tag = heading.tagName.toLowerCase();
         if (tag === 'h2') {
-          link.className = 'block px-4 py-2 hover:text-brand transition-all duration-200 whitespace-normal leading-tight mb-1';
+          link.className = 'block px-4 py-1.5 text-[0.875rem] hover:text-brand transition-all duration-200 whitespace-normal leading-tight mb-0.5';
         } else if (tag === 'h3') {
-          link.className = 'block px-8 py-1.5 text-xs text-slate-500 hover:text-brand transition-all whitespace-normal leading-tight mb-1';
+          link.className = 'block px-6 py-1.5 text-[0.8rem] text-slate-500 hover:text-brand transition-all whitespace-normal leading-tight mb-0.5';
         } else if (tag === 'h4') {
-          link.className = 'block px-12 py-1 text-[0.7rem] text-slate-500 hover:text-brand transition-all whitespace-normal leading-tight mb-1';
+          link.className = 'block px-8 py-1 text-[0.75rem] text-slate-500 hover:text-brand transition-all whitespace-normal leading-tight mb-0.5';
+        } else if (tag === 'h5') {
+          link.className = 'block px-10 py-1 text-[0.72rem] text-slate-400 hover:text-brand transition-all whitespace-normal leading-tight mb-0.5';
+        } else if (tag === 'h6') {
+          link.className = 'block px-12 py-1 text-[0.7rem] text-slate-400 hover:text-brand transition-all whitespace-normal leading-tight mb-0.5';
         }
 
         tocList.appendChild(link);
