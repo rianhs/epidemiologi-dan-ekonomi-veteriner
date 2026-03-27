@@ -1,6 +1,6 @@
 title: "MK Epidemiologi dan Ekonomi Veteriner"
 description: "Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin"
 url: "https://username.github.io"        # ganti dengan username GitHub Rian
-baseurl: "/nama-repo"                    # ganti dengan nama repo yang sebenarnya
+baseurl: "/epidemiologi-dan-ekonomi-veteriner"                    # ganti dengan nama repo yang sebenarnya
 markdown: kramdown
 theme: null
