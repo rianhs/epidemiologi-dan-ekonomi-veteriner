@@ -13,7 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+    document.addEventListener('DOMContentLoaded', () => mermaid.run());
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
