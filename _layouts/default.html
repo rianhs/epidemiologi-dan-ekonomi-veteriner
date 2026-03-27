@@ -13,7 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
+    const mermaidTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'neutral';
+    mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
     document.addEventListener('DOMContentLoaded', () => {
       // Konversi output Kramdown ke format yang dikenali Mermaid
       document.querySelectorAll('code.language-mermaid').forEach(code => {
