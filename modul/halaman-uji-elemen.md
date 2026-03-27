@@ -172,3 +172,100 @@ Berikut contoh daftar bertingkat yang mendukung hingga empat level:
    - Frekuensi
    - Asosiasi
    - Dampak
+
+## L. Mermaid.js
+
+```mermaid
+flowchart TD
+    A([Laporan kasus masuk]) --> B[Verifikasi laporan]
+    B --> C{Memenuhi definisi kasus?}
+    C -- Ya --> D[Bentuk tim investigasi]
+    C -- Tidak --> E[Pantau & dokumentasi]
+    D --> F[Kumpulkan data lapangan]
+    F --> G[Analisis deskriptif]
+    G --> H{Sumber wabah teridentifikasi?}
+    H -- Ya --> I[Tindakan pengendalian]
+    H -- Tidak --> J[Perluas investigasi]
+    J --> F
+    I --> K([Laporan akhir])
+```
+
+```mermaid
+sequenceDiagram
+    participant P as Peternak
+    participant D as Dokter Hewan
+    participant D2 as Dinas Peternakan
+    participant P2 as Pusat (BNSP)
+    P->>D: Laporkan hewan sakit
+    D->>D: Pemeriksaan klinis
+    D->>D2: Laporan dugaan penyakit
+    D2->>D2: Verifikasi lapangan
+    D2->>P2: Notifikasi resmi
+    P2-->>D2: Konfirmasi & arahan
+    D2-->>D: Instruksi tindakan
+    D-->>P: Tatalaksana & karantina
+```
+
+```mermaid
+pie title Distribusi Penyakit pada Populasi Sapi
+    "Penyakit pernapasan" : 35
+    "Penyakit reproduksi" : 25
+    "Penyakit pencernaan" : 20
+    "Penyakit kulit" : 12
+    "Lainnya" : 8
+```
+
+```mermaid
+timeline
+    title Kronologi Kejadian Wabah (Ilustrasi)
+    Minggu 1 : Kasus pertama dilaporkan
+             : Dugaan awal: penyakit endemik
+    Minggu 2 : Kasus meningkat tajam
+             : Tim investigasi dibentuk
+    Minggu 3 : Sumber wabah teridentifikasi
+             : Vaksinasi darurat dimulai
+    Minggu 4 : Kasus baru menurun
+             : Zona karantina ditetapkan
+    Minggu 6 : Wabah dinyatakan berakhir
+```
+
+## M. Tabel kontingensi 2×2
+
+<p class="text-sm text-slate-500 text-center">Tabel 1. Tabel kontingensi 2×2 hubungan antara paparan dan kejadian penyakit.</p>
+<div class="table-wrapper">
+  <div class="table-container">
+    <table class="w-full text-left">
+      <thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+        <tr>
+          <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white" rowspan="2">Paparan</th>
+          <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white text-center" colspan="2">Status Penyakit</th>
+          <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white text-center" rowspan="2">Total</th>
+        </tr>
+        <tr class="border-t border-slate-200 dark:border-slate-800">
+          <th class="py-3 px-6 font-semibold text-slate-900 dark:text-white text-center">Sakit (<em>a+c</em>)</th>
+          <th class="py-3 px-6 font-semibold text-slate-900 dark:text-white text-center">Tidak Sakit (<em>b+d</em>)</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+        <tr>
+          <td class="py-4 px-6 font-medium">Terpapar (<em>a+b</em>)</td>
+          <td class="py-4 px-6 text-center font-mono">a</td>
+          <td class="py-4 px-6 text-center font-mono">b</td>
+          <td class="py-4 px-6 text-center font-mono">a+b</td>
+        </tr>
+        <tr>
+          <td class="py-4 px-6 font-medium">Tidak Terpapar (<em>c+d</em>)</td>
+          <td class="py-4 px-6 text-center font-mono">c</td>
+          <td class="py-4 px-6 text-center font-mono">d</td>
+          <td class="py-4 px-6 text-center font-mono">c+d</td>
+        </tr>
+        <tr class="bg-slate-50 dark:bg-slate-800/30">
+          <td class="py-4 px-6 font-semibold">Total</td>
+          <td class="py-4 px-6 text-center font-mono font-semibold">a+c</td>
+          <td class="py-4 px-6 text-center font-mono font-semibold">b+d</td>
+          <td class="py-4 px-6 text-center font-mono font-semibold">N</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
