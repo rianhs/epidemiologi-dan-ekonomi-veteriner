@@ -115,7 +115,7 @@ $$OR = \frac{a \times d}{b \times c}$$
 
 ## H. Kuis
 
-<div class="p-6 md:p-8 rounded-2xl bg-[#f2f2f2] dark:bg-[#0d0d0d] border border-slate-200 dark:border-white/5 shadow-sm" data-quiz>
+<div class="p-6 md:p-8 rounded-2xl bg-[#f5f0e8] dark:bg-[#0d0d0d] border border-slate-200 dark:border-white/5 shadow-sm" data-quiz>
   <h4 class="text-lg font-semibold mb-2">Pertanyaan Uji</h4>
   <p class="text-slate-600 dark:text-slate-400">Manakah yang merupakan ukuran frekuensi penyakit yang paling tepat untuk penyakit kronis dengan durasi panjang?</p>
   <div class="space-y-3">
