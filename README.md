@@ -8,7 +8,7 @@ Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan su
   * Sub-CPMK-1: Mahasiswa mampu menguraikan konsep dasar epidemiologi veteriner yang mencakup peran, ruang lingkup, pola kejadian penyakit, jenis pendekatan epidemiologi, dan prinsip estimasi demografi populasi hewan.
   * Sub-CPMK-2: Mahasiswa mampu menganalisis dinamika penyebaran penyakit pada populasi hewan berdasarkan konsep segitiga epidemiologi, model kompartemen, kurva epidemi, dan parameter penularan penyakit.
   * Sub-CPMK-3: Mahasiswa mampu menganalisis kejadian penyakit pada populasi hewan berdasarkan parameter morbiditas, mortalitas, serta pola distribusi demografis, spasial, dan temporal.
-  * Sub-CPMK-4: Mahasiswa mampu menilai kualitas metode diagnosis penyakit berdasarkan parameter validitas (sensitivitas dan spesifisitas), nilai prediktif, reliabilitas, dan strategi pengujian ganda.
+  * Sub-CPMK-4: Mahasiswa mampu menilai kualitas metode diagnosis penyakit berdasarkan parameter validitas, nilai prediktif, reliabilitas, dan strategi pengujian ganda.
   * Sub-CPMK-5: Mahasiswa mampu menilai kualitas kajian observasional berdasarkan ketepatan pemilihan desain kajian, penyusunan instrumen pengumpulan data, perhitungan asosiasi risiko, dan analisis hubungan kausalitas.
 * CPMK-2: Mahasiswa mampu merancang program pengendalian dan penanggulangan penyakit hewan yang berbasis bukti dan layak secara ekonomi pada populasi hewan produksi, hewan kesayangan, dan/atau satwa liar.
   * Sub-CPMK-6: Mahasiswa mampu menilai kualitas program surveilans dan peringatan dini penyakit pada populasi hewan berdasarkan tujuan program dan karakteristik epidemiologis penyakit.
