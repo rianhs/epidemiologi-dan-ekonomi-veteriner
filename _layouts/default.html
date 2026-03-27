@@ -160,6 +160,9 @@
        Otomatis diisi oleh JavaScript berdasarkan data di _config.yml
        ========================================================= */
     .nav-modul a { transition: all 0.2s ease; }
+
+    /* Perbaikan: Tailwind mereset SVG sehingga diagram Mermaid tidak terlihat */
+    .mermaid svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   </style>
 </head>
 
