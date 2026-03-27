@@ -1,7 +1,8 @@
-# Epidemiologi dan Ekonomi Veteriner
-Repositori ini merupakan sumber pembelajaran untuk mata kuliah Epidemiologi dan Ekonomi Veteriner di Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin.
+<h1 align="center">Epidemiologi dan Ekonomi Veteriner</h1>
 
-## Capaian Pembelajaran
+> Repositori ini merupakan sumber pembelajaran untuk mata kuliah Epidemiologi dan Ekonomi Veteriner di Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin.
+
+## 🎯 Capaian Pembelajaran
 Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan subcapaian pembelajaran mata kuliah (Sub-CPMK).
 * CPMK-1: Mahasiswa mampu mengevaluasi status kesehatan populasi hewan dengan mengintegrasikan konsep epidemiologi deskriptif dan analitis.
   * Sub-CPMK-1: Mahasiswa mampu menguraikan konsep dasar epidemiologi veteriner yang mencakup peran, ruang lingkup, pola kejadian penyakit, jenis pendekatan epidemiologi, dan prinsip estimasi demografi populasi hewan.
@@ -16,9 +17,8 @@ Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan su
   * Sub-CPMK-9: Mahasiswa mampu menilai dampak ekonomi penyakit dan kelayakan finansial program intervensi kesehatan hewan, baik pada tingkat kawanan hewan maupun tingkat regional atau nasional.
   * Sub-CPMK-10: Mahasiswa mampu menyusun dokumen strategi pengendalian dan penanggulangan penyakit hewan yang komprehensif berdasarkan sintesis data epidemiologis dan pertimbangan ekonomi.
 
----
 
-## Struktur Pembelajaran
+## 📅 Struktur Pembelajaran 
 Materi disusun berdasarkan Sub-CPMK. Setiap Sub-CPMK memiliki satu modul dan dapat dilengkapi dengan beberapa simulasi interaktif, prosedur, tugas, dan dataset untuk praktik.
 
 | Pekan | Sub-CPMK | Topik | Modul | Simulasi | Prosedur |
@@ -31,19 +31,19 @@ Materi disusun berdasarkan Sub-CPMK. Setiap Sub-CPMK memiliki satu modul dan dap
 | 8 | - | Ujian Tengah Semester | - | - | - |
 | 9-10 | Sub-CPMK-6 | Surveilans | [Modul 06](modul/modul-06.md) | - | - |
 | 11 | Sub-CPMK-7 | Investigasi Wabah | [Modul 07](modul/modul-07.md) | - | - |
-| 12 | Sub-CPMK-8 | Analisis Risiko | [Modul 09](modul/modul-08.md) | - | - |
+| 12 | Sub-CPMK-8 | Analisis Risiko | [Modul 08](modul/modul-08.md) | - | - |
 | 13-14 | Sub-CPMK-9 | Ekonomi Veteriner | [Modul 09](modul/modul-09.md) | - | - |
 | 15 | Sub-CPMK-10 | Pengendalian Penyakit | [Modul 10](modul/modul-10.md) | - | - |
 | 16 | - | Ujian Akhir Semester | - | - | - |
 
-## Struktur Repositori
-
+## 📁 Struktur Repositori
 - `modul/` → materi utama per Sub-CPMK  
 - `simulasi/` → simulasi interaktif berbasis kasus (coming soon)
 - `tugas/` → instruksi untuk penugasan (coming soon)
 - `dataset/` → data untuk latihan analisis (coming soon)
 
----
-
-Repositori ini disusun oleh **Rian Hari Suharto**  
-Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin
+## ⚖️ Lisensi
+Materi dalam repositori ini disusun oleh **Rian Hari Suharto** dan dilisensikan di bawah [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ](https://creativecommons.org/licenses/by-nc/4.0/). Anda bebas menggunakan, menyebarkan, dan mengadaptasi materi ini untuk tujuan non-komersial dengan mencantumkan atribusi kepada penulis.
+**Atribusi yang disarankan:**  
+Rian Hari Suharto. *Epidemiologi dan Ekonomi Veteriner*. 
+https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner
