@@ -119,19 +119,19 @@ $$OR = \frac{a \times d}{b \times c}$$
   <h4 class="text-lg font-semibold mb-2">Pertanyaan Uji</h4>
   <p class="text-slate-600 dark:text-slate-400">Manakah yang merupakan ukuran frekuensi penyakit yang paling tepat untuk penyakit kronis dengan durasi panjang?</p>
   <div class="space-y-3">
-    <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+    <label class="flex items-start gap-3 p-4 rounded-xl border border-[#d4c9b5] dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
       <input type="radio" name="q1" value="a" class="mt-1.5 accent-brand">
       <span>Incidence rate</span>
     </label>
-    <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+    <label class="flex items-start gap-3 p-4 rounded-xl border border-[#d4c9b5] dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
       <input type="radio" name="q1" value="b" data-correct class="mt-1.5 accent-brand">
       <span>Prevalensi</span>
     </label>
-    <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+    <label class="flex items-start gap-3 p-4 rounded-xl border border-[#d4c9b5] dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
       <input type="radio" name="q1" value="c" class="mt-1.5 accent-brand">
       <span>Attack rate</span>
     </label>
-    <label class="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
+    <label class="flex items-start gap-3 p-4 rounded-xl border border-[#d4c9b5] dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition cursor-pointer">
       <input type="radio" name="q1" value="d" class="mt-1.5 accent-brand">
       <span>Case fatality rate</span>
     </label>
@@ -235,13 +235,13 @@ timeline
 <div class="table-wrapper">
   <div class="table-container">
     <table class="w-full text-left">
-      <thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-slate-200 dark:border-slate-800">
+      <thead class="bg-slate-50 dark:bg-slate-800/50 border-b border-[#d4c9b5] dark:border-slate-800">
         <tr>
           <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white" rowspan="2">Paparan</th>
           <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white text-center" colspan="2">Status Penyakit</th>
           <th class="py-4 px-6 font-semibold text-slate-900 dark:text-white text-center" rowspan="2">Total</th>
         </tr>
-        <tr class="border-t border-slate-200 dark:border-slate-800">
+        <tr class="border-t border-[#d4c9b5] dark:border-slate-800">
           <th class="py-3 px-6 font-semibold text-slate-900 dark:text-white text-center">Sakit (<em>a+c</em>)</th>
           <th class="py-3 px-6 font-semibold text-slate-900 dark:text-white text-center">Tidak Sakit (<em>b+d</em>)</th>
         </tr>
