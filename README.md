@@ -37,13 +37,14 @@ Materi disusun berdasarkan Sub-CPMK. Setiap Sub-CPMK memiliki satu modul dan dap
 | 16 | - | Ujian Akhir Semester | - | - | - |
 
 ## 📁 Struktur Repositori
+
 - `modul/` → materi utama per Sub-CPMK  
-- `simulasi/` → simulasi interaktif berbasis kasus (coming soon)
+- `simulasi/` → simulasi interaktif (coming soon)
 - `tugas/` → instruksi untuk penugasan (coming soon)
 - `dataset/` → data untuk latihan analisis (coming soon)
 
 ## ⚖️ Lisensi
-Materi dalam repositori ini disusun oleh **Rian Hari Suharto** dan dilisensikan di bawah [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) ](https://creativecommons.org/licenses/by-nc/4.0/). Anda bebas menggunakan, menyebarkan, dan mengadaptasi materi ini untuk tujuan non-komersial dengan mencantumkan atribusi kepada penulis.
-**Atribusi yang disarankan:**  
-Rian Hari Suharto. *Epidemiologi dan Ekonomi Veteriner*. 
+Repositori ini menerapkan lisensi ganda:
+1. **Materi pembelajaran (teks modul, gambar, dan konten akademik lainnya)** dilisensikan di bawah [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). Anda bebas menggunakan, menyebarkan, dan mengadaptasi materi ini untuk tujuan nonkomersial dengan mencantumkan atribusi kepada penulis. Atribusi yang disarankan: Rian Hari Suharto. *Epidemiologi dan Ekonomi Veteriner*. 
 https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner
+2. **Kode sumber (simulasi HTML/CSS/JS)** dilisensikan di bawah [MIT License](LICENSE).
