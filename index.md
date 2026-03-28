@@ -9,7 +9,7 @@ Situs web ini merupakan sumber pembelajaran untuk mata kuliah Epidemiologi dan E
 * Github pages: <https://rianhs.github.io/epidemiologi-dan-ekonomi-veteriner/>
 
 ## 🔀 Panduan
-Situs ini menggunakan pendekatan outcome-based education. Mahasiswa disarankan untuk menggunakan sumber-sumber di situs ini secara berurutan berdasarkan urutan capaian pembelajaran di bawah ini.
+Pembelajaran di situs ini menggunakan pendekatan outcome-based education. Mahasiswa disarankan untuk menggunakan materi di situs ini secara berurutan berdasarkan urutan capaian pembelajaran di bawah ini.
 
 ## 🎯 Capaian Pembelajaran
 Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan subcapaian pembelajaran mata kuliah (Sub-CPMK).
@@ -30,24 +30,26 @@ Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan su
 ## 📅 Struktur Pembelajaran 
 Materi disusun berdasarkan Sub-CPMK. Setiap Sub-CPMK memiliki satu modul dan dapat dilengkapi dengan beberapa simulasi interaktif, prosedur, tugas, dan dataset untuk praktik.
 
+Klik tautan di bawah ini untuk membuka halaman materi pembelajaran.
+
 | Pekan | Sub-CPMK | Topik | Modul | Simulasi | Prosedur |
 | :---: | :--- | :--- | :--- | :--- | :--- |
 | 1 | Sub-CPMK-1 | Pengantar Epidemiologi | [Modul 01](modul/modul-01.md) | - | - |
-| 2 | Sub-CPMK-2 | Dinamika Penyakit | [Modul 02](modul/modul-02.md) | - | - |
-| 3 | Sub-CPMK-3 | Epidemiologi Deskriptif | [Modul 03](modul/modul-03.md) | - | - |
-| 4-5 | Sub-CPMK-4 | Uji Diagnostik | [Modul 04](modul/modul-04.md) | - | - |
+| 2 | Sub-CPMK-2 | Dinamika Penyakit | [Modul 02](modul/modul-02.md) | [Simulasi 02-01](simulasi/simulasi-02-01.html)<br>[Simulasi 02-02](simulasi/simulasi-02-02.html) | - |
+| 3 | Sub-CPMK-3 | Epidemiologi Deskriptif | [Modul 03](modul/modul-03.md) | [Simulasi 03-01](simulasi/simulasi-03-01.html)<br>[Simulasi 03-02](simulasi/simulasi-03-02.html) | - |
+| 4-5 | Sub-CPMK-4 | Uji Diagnostik | [Modul 04](modul/modul-04.md) | [Simulasi 04-01](simulasi/simulasi-04-01.html)<br>[Simulasi 04-02](simulasi/simulasi-04-02.html)<br>[Simulasi 04-03](simulasi/simulasi-04-03.html)<br>[Simulasi 04-04](simulasi/simulasi-04-04.html) | - |
 | 6-7 | Sub-CPMK-5 | Epidemiologi Analitis | [Modul 05](modul/modul-05.md) | - | - |
 | 8 | - | Ujian Tengah Semester | - | - | - |
-| 9-10 | Sub-CPMK-6 | Surveilans | [Modul 06](modul/modul-06.md) | - | - |
-| 11 | Sub-CPMK-7 | Investigasi Wabah | [Modul 07](modul/modul-07.md) | - | - |
-| 12 | Sub-CPMK-8 | Analisis Risiko | [Modul 08](modul/modul-08.md) | - | - |
-| 13-14 | Sub-CPMK-9 | Ekonomi Veteriner | [Modul 09](modul/modul-09.md) | - | - |
-| 15 | Sub-CPMK-10 | Pengendalian Penyakit | [Modul 10](modul/modul-10.md) | - | - |
+| 9-10 | Sub-CPMK-6 | Surveilans | - | - | - |
+| 11 | Sub-CPMK-7 | Investigasi Wabah | - | - | - |
+| 12 | Sub-CPMK-8 | Analisis Risiko | - | - | - |
+| 13-14 | Sub-CPMK-9 | Ekonomi Veteriner | - | - | - |
+| 15 | Sub-CPMK-10 | Pengendalian Penyakit | - | - | - |
 | 16 | - | Ujian Akhir Semester | - | - | - |
 
 
 ## ⚖️ Lisensi
-Repositori ini menerapkan lisensi ganda:
+Repositori dan situs web ini menerapkan lisensi ganda:
 1. **Materi pembelajaran (teks modul, gambar, dan konten akademik lainnya)** dilisensikan di bawah [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). Anda bebas menggunakan, menyebarkan, dan mengadaptasi materi ini untuk tujuan nonkomersial dengan mencantumkan atribusi kepada penulis. Atribusi yang disarankan: Rian Hari Suharto. *Epidemiologi dan Ekonomi Veteriner*. 
 https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner
-2. **Kode sumber (simulasi HTML/CSS/JS)** dilisensikan di bawah [MIT License](LICENSE).
+2. **Kode sumber (simulasi HTML/CSS/JS)** dilisensikan di bawah [MIT License](LICENSE.md).
