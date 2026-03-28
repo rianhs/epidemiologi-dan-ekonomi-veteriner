@@ -264,8 +264,41 @@ Kedua dimensi ini dapat dikombinasikan dalam matriks 2x2 berikut ini.
 
 Untuk memahami bagaimana penyakit menular menyebar dalam suatu populasi, kita dapat menggunakan konsep rantai infeksi. Rantai infeksi adalah model yang menjelaskan bagaimana agen infeksius berpindah dari satu individu atau satu sumber ke individu lainnya. Penyebaran ini terjadi melalui serangkaian komponen yang saling terhubung dan membentuk suatu siklus.
 
+<svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
 
-Gambar 2.4. Model rantai infeksi.
+  <!-- Kotak kiri: Inang rentan -->
+  <rect x="100" y="100" width="180" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.2"/>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="190" y="132" dominant-baseline="central">Inang</text>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="190" y="152" dominant-baseline="central">rentan</text>
+
+  <!-- Kotak kanan: Reservoir/inang terinfeksi -->
+  <rect x="400" y="100" width="180" height="80" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1.2"/>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="490" y="132" dominant-baseline="central">Reservoir atau</text>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="490" y="152" dominant-baseline="central">inang terinfeksi</text>
+
+  <!-- Panah atas: dari inang rentan (kiri) ke reservoir (kanan), putus-putus -->
+  <path d="M 220 100 C 220 30, 460 30, 460 100" fill="none" stroke="#888780" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#arr-gray)"/>
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="340" y="32">Agen infeksius</text>
+
+  <!-- Panah bawah: dari reservoir (kanan) ke inang rentan (kiri) -->
+  <path d="M 460 180 C 460 255, 220 255, 220 180" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#arr-dark)"/>
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="340" y="262">Cara penularan</text>
+
+  <!-- Label portal -->
+  <text font-family="sans-serif" font-size="12" font-weight="500" fill="#185FA5" text-anchor="middle" x="190" y="196">Portal masuk</text>
+  <text font-family="sans-serif" font-size="12" font-weight="500" fill="#993C1D" text-anchor="middle" x="490" y="196">Portal keluar</text>
+
+</svg>
+
+Gambar 2.3. Model rantai infeksi.
 
 Gambar di atas mengilustrasikan komponen utama dalam rantai infeksi:
 
@@ -310,15 +343,14 @@ Setelah kita memahami cara penularan, pertanyaan selanjutnya adalah, “Seberapa
 
 Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh individunya rentan, berapa ekor hewan yang akan tertular dari satu hewan terinfeksi ini? Jika ia mampu menularkan penyakit ke lebih dari satu individu, maka jumlah kasus akan bertambah dari waktu ke waktu. Logika ini yang memunculkan konsep angka reproduksi.
 
-Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.5 sebagai contoh, jika penyakit A memiliki R₀ \= 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ \= 3\. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
+Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.4 sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ \= 3\. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
 <svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
 
   <!-- Penyakit A: R0=2, tiga level 1→2→4 -->
-  <!-- Pusat x=170. Gen0:(170,52) Gen1:(98,142),(242,142) Gen2:(62,231),(134,231),(206,231),(278,231) -->
 
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle" x="170" y="16">Penyakit A</text>
-  <text font-family="sans-serif" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="middle" x="170" y="30">(R&#x2080; = 2)</text>
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="170" y="16">Penyakit A</text>
+  <text font-family="sans-serif" font-size="11" font-weight="400" fill="currentColor" text-anchor="middle" x="170" y="30">(R&#x2080; = 2)</text>
 
   <line x1="170" y1="65"  x2="98"  y2="130" stroke="#D85A30" stroke-width="1.2"/>
   <line x1="170" y1="65"  x2="242" y2="130" stroke="#D85A30" stroke-width="1.2"/>
@@ -343,11 +375,9 @@ Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeks
   <line x1="340" y1="8" x2="340" y2="260" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 3"/>
 
   <!-- Penyakit B: R0=3, tiga level 1→3→9 -->
-  <!-- Pusat x=510. Gen0:(510,52) Gen1:(420,142),(510,142),(600,142) -->
-  <!-- Gen2: dari 420→(390,420,450), dari 510→(480,510,540), dari 600→(570,600,630) -->
 
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle" x="510" y="16">Penyakit B</text>
-  <text font-family="sans-serif" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="middle" x="510" y="30">(R&#x2080; = 3)</text>
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="510" y="16">Penyakit B</text>
+  <text font-family="sans-serif" font-size="11" font-weight="400" fill="currentColor" text-anchor="middle" x="510" y="30">(R&#x2080; = 3)</text>
 
   <line x1="510" y1="65"  x2="420" y2="130" stroke="#185FA5" stroke-width="1.2"/>
   <line x1="510" y1="65"  x2="510" y2="130" stroke="#185FA5" stroke-width="1.2"/>
@@ -483,7 +513,7 @@ Terakhir, perlu dipahami bahwa kekebalan kelompok bukanlah kondisi yang tetap ka
 Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu (baik manusia maupun hewan) seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh atau meninggal dunia.
 
 
-Gambar 2.6. Model riwayat alamiah penyakit.
+Gambar 2.5. Model riwayat alamiah penyakit.
 
 Pada penyakit infeksius, terdapat empat tahapan yang dilalui oleh individu penderitanya.
 
@@ -518,7 +548,7 @@ Ada persamaan antara masa inkubasi dan masa laten. Keduanya dimulai sejak papara
 Dalam banyak kasus, durasi masa inkubasi hampir sama dengan masa laten. Artinya, saat hewan tersebut menunjukkan tanda klinis, ia juga menjadi infeksius. Namun, pada beberapa penyakit, masa laten lebih singkat dari masa inkubasi. Artinya, hewan sudah bersifat infeksius meskipun secara klinis belum menunjukkan tanda-tanda apa pun. 
 
 
-Gambar 2.7. Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.
+Gambar 2.6. Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.
 
 Kita telah mempelajari model riwayat alamiah penyakit (garis waktu pada satu individu) dan model rantai infeksi (hubungan antarindividu). Bagaimana jika keduanya dikombinasikan?
 
@@ -527,7 +557,7 @@ Dalam model rantai infeksi, terdapat hewan penginfeksi (sumber infeksi) dan hewa
 Perbedaan interval waktu yang dialami oleh penginfeksi dan terinfeksi dapat dinyatakan dengan interval generasi (jarak antara paparan pada hewan penginfeksi dan terinfeksi) dan interval serial (jarak antara munculnya tanda klinis pada hewan penginfeksi dan terinfeksi).
 
 
-Gambar 2.8. Model yang mengilustrasikan rantai infeksi antara dua individu.
+Gambar 2.7. Model yang mengilustrasikan rantai infeksi antara dua individu.
 
 ###### 2. Model SIR
 
@@ -556,7 +586,7 @@ Namun, dalam perkembangan selanjutnya, model ini dianggap terlalu sederhana untu
 Dengan adanya kompartemen-kompartemen baru ini, model SIR dapat berkembang menjadi SIRD, SEIRD, SVEIRD, atau bentuk lainnya.
 
 
-Gambar 2.9. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.
+Gambar 2.8. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.
 
 Berikut ini contoh dinamika penyebaran penyakit berdasarkan model SIRD. Perhatikan bahwa setiap hari, jumlah populasi tetap konstan, yaitu 1000.
 
@@ -633,7 +663,7 @@ Tabel 2.5. Simulasi dinamika status penyakit berdasarkan model SIRD.
 Setelah mengetahui jumlah kasus baru per hari, kita dapat membuat kurvanya. 
 
 
-Gambar 2.10. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
+Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
 
 Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaikan, fase puncak, dan fase penurunan.
 
@@ -646,7 +676,7 @@ Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaik
 Pada dasarnya, kurva epidemi adalah representasi visual dari perubahan nilai Rₑ dari waktu ke waktu. Gambar di bawah ini mengilustrasikan struktur umum kurva epidemi.
 
 
-Gambar 2.11. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ \>1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ \<1).
+Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ \>1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ \<1).
 
 Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung pada sumber dan mekanisme penularan penyakit. Secara umum, terdapat tiga pola utama:
 
@@ -659,17 +689,17 @@ Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung
 3. Kurva perambatan (propagated).
    Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
 
-Gambar 2.12. Contoh tiga bentuk kurva epidemi.
+Gambar 2.11. Contoh tiga bentuk kurva epidemi.
 
 Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai jumlah kasus aktif. Kurva ini menggambarkan beban penyakit yang sedang berlangsung pada setiap hari. Puncaknya menunjukkan titik beban maksimum yang dialami oleh sistem.
 
 
-Gambar 2.11. Kurva jumlah kasus aktif.
+Gambar 2.12. Kurva jumlah kasus aktif.
 
 Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunjukkan perubahan komposisi populasi berdasarkan kompartemen dari waktu ke waktu. 
 
 
-Gambar 2.12. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).
+Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).
 
 Kurva epidemi memperlihatkan bahwa penyebaran penyakit dalam populasi mengikuti pola yang dapat dipahami dan dijelaskan secara sistematis. Di balik setiap kenaikan dan penurunan jumlah kasus terdapat perubahan proporsi individu rentan, infeksius, dan kebal, serta perubahan nilai angka reproduksi efektif dari waktu ke waktu.
 
