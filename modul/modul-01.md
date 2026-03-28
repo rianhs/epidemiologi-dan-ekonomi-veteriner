@@ -45,6 +45,35 @@ Sub-CPMK-1 dirancang untuk diselesaikan dalam satu kegiatan belajar (satu pekan)
 
 #### I. Peta konsep
 
+```text
+Epidemiologi veteriner 
+├── Pendekatan analisis 
+│   ├── Perspektif klinisi 
+│   └── Perspektif epidemiolog
+├── Pola kejadian penyakit
+│   ├── Endemi 
+│   ├── Hiperendemi
+│   ├── Sporadis
+│   ├── Wabah
+│   ├── Epidemi
+│   └── Pandemi
+├── Kajian epidemiologi
+│   ├── Epidemiologi deskriptif 
+│   ├── Epidemiologi analitis 
+│   ├── Epidemiologi prediktif
+│   └── Epidemiologi intervensional
+└── Estimasi populasi hewan 
+    └── Metode perhitungan
+        ├── Estimasi data primer
+        │   ├── Observasi langsung 
+        |   |   └── Sensus 
+        │   |   └── Sampel area 
+        │   |   └── Probabilitas deteksi
+        │   ├── Observasi tidak langsung 
+        │   └── Pelaporan manusia 
+        └── Estimasi data sekunder 
+```
+
 Gambar 1.1. Peta konsep dalam modul ini. 
 
 #### II. Uraian materi
