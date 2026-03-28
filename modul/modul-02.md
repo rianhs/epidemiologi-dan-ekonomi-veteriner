@@ -2,7 +2,7 @@
 layout: default
 title: "Modul 2: Dinamika Penyakit dalam Populasi"
 prev_url: "modul-01"
-prev_title" "Modul 1: Pengantar Epidemiologi"
+prev_title: "Modul 1: Pengantar Epidemiologi"
 next_url: "modul-03"
 next_title: "Modul 3: Epidemiologi Deskriptif"
 ---
@@ -118,7 +118,6 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 
 Saat ini, kita telah mengetahui beragam penyebab penyakit. Namun, manusia zaman dahulu tidak memiliki pemahaman sekompleks ini. Sepanjang sejarah, konsep tentang penyebab penyakit terus berkembang dan berubah. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
-
 | Nama teori | Uraian |
 | ---------- | ------ |
 | 👻 Teori supranatural | Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: influenza berasal dari bahasa Latin ‘influentia’ karena diduga disebabkan oleh pengaruh benda-benda tertentu, misalnya bintang di langit. |
@@ -126,6 +125,7 @@ Saat ini, kita telah mengetahui beragam penyebab penyakit. Namun, manusia zaman 
 | 💩 Teori miasma | Penyakit disebabkan oleh miasma (partikel kotor) yang berasal dari benda-benda kotor, seperti bangkai dan materi organik lainnya yang membusuk. Contoh: malaria berasal dari bahasa Italia ‘mala aria’ yang berarti ‘udara buruk’. Konsep ini banyak dipercaya hingga abad ke-19. |
 | 🔬 Teori kuman penyakit | Penyakit disebabkan oleh mikroorganisme patogenik dan parasit. Teori ini dianut secara luas sejak penemuan bakteri patogenik dan virus pada abad ke-19. Tokoh penting yang mengembangkan teori ini antara lain Louis Pasteur dan Robert Koch. |
 | 🔢 Konsep multifaktor | Penyakit disebabkan oleh banyak faktor yang saling berinteraksi. Konsep ini banyak dianut pada masa modern. |
+
 Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan multifaktor.
 
 ###### 5. Teori kuman penyakit
