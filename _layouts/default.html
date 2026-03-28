@@ -173,6 +173,25 @@
        ========================================================= */
     .nav-modul a { transition: all 0.2s ease; }
 
+    /* Tautan dalam konten artikel */
+    #markdown-content a {
+      color: #4f46e5;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+    #markdown-content a:hover {
+      color: #4338ca;
+      text-decoration: underline;
+      text-decoration-color: rgba(79, 70, 229, 0.5);
+    }
+    .dark #markdown-content a {
+      color: #818cf8;
+    }
+    .dark #markdown-content a:hover {
+      color: #a5b4fc;
+      text-decoration-color: rgba(129, 140, 248, 0.5);
+    }
+
     /* Perbaikan: Tailwind mereset SVG sehingga diagram Mermaid tidak terlihat */
     .mermaid svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
   </style>
