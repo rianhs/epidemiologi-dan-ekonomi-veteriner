@@ -42,12 +42,6 @@ Materi disusun berdasarkan Sub-CPMK. Setiap Sub-CPMK memiliki satu modul dan dap
 | 15 | Sub-CPMK-10 | Pengendalian Penyakit | [Modul 10](modul/modul-10.md) | - | - |
 | 16 | - | Ujian Akhir Semester | - | - | - |
 
-## 📁 Struktur Repositori
-
-- `modul/` → materi utama per Sub-CPMK  
-- `simulasi/` → simulasi interaktif (coming soon)
-- `tugas/` → instruksi untuk penugasan (coming soon)
-- `dataset/` → data untuk latihan analisis (coming soon)
 
 ## ⚖️ Lisensi
 Repositori ini menerapkan lisensi ganda:
