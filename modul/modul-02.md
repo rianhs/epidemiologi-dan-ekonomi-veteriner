@@ -1,4 +1,11 @@
-# Modul 2: Dinamika Penyakit dalam Populasi
+---
+layout: default
+title: "Modul 2: Dinamika Penyakit dalam Populasi"
+prev_url: "modul-01"
+prev_title" "Modul 1: Pengantar Epidemiologi"
+next_url: "modul-03"
+next_title: "Modul 3: Epidemiologi Deskriptif"
+---
 
 ## A. Posisi modul dalam struktur capaian pembelajaran
 
@@ -13,31 +20,31 @@ Penguasaan Sub-CPMK-2 akan membekali mahasiswa dengan konsep segitiga epidemiolo
 
 Keberhasilan pembelajaran pada modul (Sub-CPMK) ini diukur melalui empat indikator.
 
-| Kode | Uraian indikator |
-| ----- | ----- |
+| Kode          | Uraian indikator                                                                                                                                               |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Indikator 2.1 | Ketepatan dalam menganalisis kemunculan dan penyebaran penyakit berdasarkan interaksi faktor inang, agen, dan lingkungan dalam kerangka segitiga epidemiologi. |
-| Indikator 2.2 | Ketepatan dalam menghitung dan menginterpretasikan angka reproduksi dan ambang kekebalan kelompok untuk menilai potensi penyebaran penyakit. |
-| Indikator 2.3 | Ketepatan dalam menganalisis perubahan status kesehatan hewan menggunakan model kompartemen penyakit. |
-| Indikator 2.4 | Ketepatan dalam mengonstruksi dan menginterpretasikan kurva epidemi dari data yang tersedia. |
+| Indikator 2.2 | Ketepatan dalam menghitung dan menginterpretasikan angka reproduksi dan ambang kekebalan kelompok untuk menilai potensi penyebaran penyakit.                   |
+| Indikator 2.3 | Ketepatan dalam menganalisis perubahan status kesehatan hewan menggunakan model kompartemen penyakit.                                                          |
+| Indikator 2.4 | Ketepatan dalam mengonstruksi dan menginterpretasikan kurva epidemi dari data yang tersedia.                                                                   |
 
 
 ## C. Bentuk penilaian
 
 Penguasaan Sub-CPMK-2 dinilai dengan dua bentuk.
 
-| No | Bentuk | Metode | Proporsi terhadap nilai akhir |
-| :---: | ----- | ----- | :---: |
-| 1 | Non-tes | Tugas berbasis masalah | 2,5% |
-| 2 | Tes | Ujian tengah semester | 2,5% |
+| No  | Bentuk  | Metode                 | Proporsi terhadap nilai akhir |
+| :-: | ------- | ---------------------- | :---------------------------: |
+|  1  | Non-tes | Tugas berbasis masalah |             2,5%              |
+|  2  | Tes     | Ujian tengah semester  |             2,5%              |
 
 
 ## D. Alokasi waktu dan kegiatan belajar
 
 Sub-CPMK-2 dirancang untuk diselesaikan dalam satu kegiatan belajar (satu pekan), yang terdiri atas 120 menit kegiatan belajar mandiri, 100 menit kegiatan belajar terbimbing (perkuliahan tatap muka), dan 120 menit menyelesaikan kegiatan penugasan terstruktur.
 
-| Pekan | Kode | Topik |
-| :---: | ----- | ----- |
-| 2 | Kegiatan belajar 2.1 | Dinamika penyakit |
+| Pekan | Kode                 | Topik             |
+| :---: | -------------------- | ----------------- |
+|   2   | Kegiatan belajar 2.1 | Dinamika penyakit |
 
 
 ### Kegiatan Belajar 2.1: Dinamika penyakit dalam populasi
@@ -61,13 +68,13 @@ Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak s
 Tabel 2.1. Istilah yang mengekspresikan ketidaksehatan.
 
 | Istilah | Deskripsi singkat | Contoh |
-| ----- | ----- | ----- |
+| ------- | ----------------- | ------ |
 | Gejala klinis | Perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat dikenali atau dirasakan oleh penderitanya. Catatan: Dalam kedokteran hewan, istilah ini tidak relevan karena hewan sebagai pasien tidak dapat menceritakan kondisi yang ia rasakan. | Seekor anjing tidak dapat mengomunikasikan bahwa ia sedang merasa mual. |
-| Tanda klinis | Perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat diamati dan/atau diukur oleh pemeriksa | Demam pada kucing, kerontokan rambut pada kelinci, pincang dan pembengkakan kaki pada ayam. |
+| Tanda klinis  | Perubahan kondisi tubuh yang mencerminkan ketidaksehatan dan dapat diamati dan/atau diukur oleh pemeriksa | Demam pada kucing, kerontokan rambut pada kelinci, pincang dan pembengkakan kaki pada ayam. |
 | Gangguan | Kondisi ketika aspek tertentu pada tubuh tidak berfungsi sebagaimana mestinya | Gangguan fertilitas pada sapi betina yang tidak bunting walaupun telah dikawinkan berulang kali. |
-| Penyakit | Gangguan fungsi dan/atau struktur tubuh yang memiliki dasar etiologis dan patologis tertentu | Infeksi parvovirus pada anjing, penyakit mulut dan kuku pada kambing, penyakit Newcastle pada unggas. |
-| Cedera | Kerusakan pada tubuh yang diakibatkan oleh sumber eksternal | Luka robek pada kulit anjing akibat gigitan sesama anjing atau tertabrak kendaraan. |
-| Sindrom | Serangkaian gejala dan tanda klinis yang muncul bersamaan dan sering kali penyebabnya tidak diketahui dengan jelas | Fading puppy syndrome pada anak anjing yang tiba-tiba melemah dan mati tanpa penyebab pasti yang teridentifikasi. |
+| Penyakit      | Gangguan fungsi dan/atau struktur tubuh yang memiliki dasar etiologis dan patologis tertentu | Infeksi parvovirus pada anjing, penyakit mulut dan kuku pada kambing, penyakit Newcastle pada unggas. |
+| Cedera        | Kerusakan pada tubuh yang diakibatkan oleh sumber eksternal | Luka robek pada kulit anjing akibat gigitan sesama anjing atau tertabrak kendaraan. |
+| Sindrom       | Serangkaian gejala dan tanda klinis yang muncul bersamaan dan sering kali penyebabnya tidak diketahui dengan jelas | Fading puppy syndrome pada anak anjing yang tiba-tiba melemah dan mati tanpa penyebab pasti yang teridentifikasi. |
 
 ###### 2. Penyebab hewan sakit
 
@@ -75,16 +82,16 @@ Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Se
 
 Tabel 2.2. Hal-hal yang menyebabkan hewan menjadi sakit.
 
-| Penyebab | Deskripsi singkat | Contoh |
-| ----- | ----- | ----- |
-| Infeksi dan infestasi | Invasi mikroorganisme patogenik dan/atau parasit | Panleukopenia dan infestasi pinjal pada kucing |
-| Kelainan genetik | Kelainan bawaan pada DNA | Displasia pinggul pada anjing, penyakit ginjal polisistik pada kucing |
-| Trauma fisik | Kerusakan tubuh akibat sumber eksternal | Kaki kuda yang patah, sapi terluka akibat kawat berduri |
-| Proses degeneratif | Kemunduran fungsi jaringan secara progresif dari waktu ke waktu | Osteoartritis pada kucing, mielopati degeneratif pada anjing |
-| Gangguan metabolisme | Proses biokimia yang abnormal dalam tubuh | Ketosis pada sapi perah, diabetes melitus pada anjing, obesitas pada kucing |
-| Keracunan | Masuknya zat beracun ke dalam tubuh	 | Keracunan cokelat pada anjing, keracunan timbal pada sapi |
-| Iatrogenesis | Efek buruk akibat perawatan atau intervensi medis | Infeksi pada bekas lokasi pembedahan, efek samping vaksinasi |
-| Idiopati | Kondisi yang penyebabnya tidak diketahui | Sistitis idiopatik pada kucing, tremor kepala idiopatik pada anjing |
+| Penyebab              | Deskripsi singkat                                               | Contoh                                                                      |
+| --------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Infeksi dan infestasi | Invasi mikroorganisme patogenik dan/atau parasit                | Panleukopenia dan infestasi pinjal pada kucing                              |
+| Kelainan genetik      | Kelainan bawaan pada DNA                                        | Displasia pinggul pada anjing, penyakit ginjal polisistik pada kucing       |
+| Trauma fisik          | Kerusakan tubuh akibat sumber eksternal                         | Kaki kuda yang patah, sapi terluka akibat kawat berduri                     |
+| Proses degeneratif    | Kemunduran fungsi jaringan secara progresif dari waktu ke waktu | Osteoartritis pada kucing, mielopati degeneratif pada anjing                |
+| Gangguan metabolisme  | Proses biokimia yang abnormal dalam tubuh                       | Ketosis pada sapi perah, diabetes melitus pada anjing, obesitas pada kucing |
+| Keracunan             | Masuknya zat beracun ke dalam tubuh                             | Keracunan cokelat pada anjing, keracunan timbal pada sapi                   |
+| Iatrogenesis          | Efek buruk akibat perawatan atau intervensi medis               | Infeksi pada bekas lokasi pembedahan, efek samping vaksinasi                |
+| Idiopati              | Kondisi yang penyebabnya tidak diketahui                        | Sistitis idiopatik pada kucing, tremor kepala idiopatik pada anjing         |
 
 Di antara penyebab-penyebab di atas, mana yang berpotensi untuk berdampak pada banyak hewan dan/atau menyebabkan wabah penyakit, epidemi, dan pandemi? Mengapa?
 
@@ -111,37 +118,25 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 
 Saat ini, kita telah mengetahui beragam penyebab penyakit. Namun, manusia zaman dahulu tidak memiliki pemahaman sekompleks ini. Sepanjang sejarah, konsep tentang penyebab penyakit terus berkembang dan berubah. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
-👻 	Teori supranatural
 
-Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: influenza berasal dari bahasa Latin ‘influentia’ karena diduga disebabkan oleh pengaruh benda-benda tertentu, misalnya bintang di langit.
-
-💦	Teori humoral
-
-Penyakit disebabkan oleh ketidakseimbangan empat humor (cairan) tubuh, yaitu darah, empedu kuning, empedu hitam, dan dahak. Konsep ini banyak dipercaya pada peradaban kuno dan dihubungkan dengan empat unsur alam (api, air, angin, dan tanah) serta empat temperamen manusia (sanguinis, koleris, melankolis, dan plegmatis).
-
-💩 	Teori miasma
-
-Penyakit disebabkan oleh miasma (partikel kotor) yang berasal dari benda-benda kotor, seperti bangkai dan materi organik lainnya yang membusuk. Contoh: malaria berasal dari bahasa Italia ‘mala aria’ yang berarti ‘udara buruk’. Konsep ini banyak dipercaya hingga abad ke-19.
-
-🔬 	Teori kuman penyakit
-
-Penyakit disebabkan oleh mikroorganisme patogenik dan parasit. Teori ini dianut secara luas sejak penemuan bakteri patogenik dan virus pada abad ke-19. Tokoh penting yang mengembangkan teori ini antara lain Louis Pasteur dan Robert Koch.
-
-🔢 	Konsep multifaktor
-
-Penyakit disebabkan oleh banyak faktor yang saling berinteraksi. Konsep ini banyak dianut pada masa modern.
-
+| Nama teori | Uraian |
+| ---------- | ------ |
+| 👻 Teori supranatural | Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: influenza berasal dari bahasa Latin ‘influentia’ karena diduga disebabkan oleh pengaruh benda-benda tertentu, misalnya bintang di langit. |
+| 💦 Teori humoral | Penyakit disebabkan oleh ketidakseimbangan empat humor (cairan) tubuh, yaitu darah, empedu kuning, empedu hitam, dan dahak. Konsep ini banyak dipercaya pada peradaban kuno dan dihubungkan dengan empat unsur alam (api, air, angin, dan tanah) serta empat temperamen manusia (sanguinis, koleris, melankolis, dan plegmatis). |
+| 💩 Teori miasma | Penyakit disebabkan oleh miasma (partikel kotor) yang berasal dari benda-benda kotor, seperti bangkai dan materi organik lainnya yang membusuk. Contoh: malaria berasal dari bahasa Italia ‘mala aria’ yang berarti ‘udara buruk’. Konsep ini banyak dipercaya hingga abad ke-19. |
+| 🔬 Teori kuman penyakit | Penyakit disebabkan oleh mikroorganisme patogenik dan parasit. Teori ini dianut secara luas sejak penemuan bakteri patogenik dan virus pada abad ke-19. Tokoh penting yang mengembangkan teori ini antara lain Louis Pasteur dan Robert Koch. |
+| 🔢 Konsep multifaktor | Penyakit disebabkan oleh banyak faktor yang saling berinteraksi. Konsep ini banyak dianut pada masa modern. |
 Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan multifaktor.
 
 ###### 5. Teori kuman penyakit
 
 Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
 
-🙂 inang \+ 🦠 agen \= 🤒 penyakit
+> 🙂 inang \+ 🦠 agen \= 🤒 penyakit
 
 Menurut teori ini, kuman (sebagai agen) merupakan penyebab utama penyakit. Konsep ini menguat sejak Postulat Koch dibuat pada tahun 1884. Robert Koch, seorang dokter asal Jerman, merumuskan empat kriteria untuk menetapkan hubungan kausal antara penyebab dan penyakit. Melalui postulat ini, Koch mendeskripsikan penyebab tuberkulosis, yaitu Mycobacterium tuberculosis. Ia lantas menerima Penghargaan Nobel dalam Fisiologi/Kedokteran pada tahun 1905 atas penemuannya ini.
 
-![][image1]
+
 
 Gambar 2.2. Diagram yang menjelaskan postulat Koch   
 (sumber gambar: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg)).
@@ -176,19 +171,17 @@ Perbedaan antara konsep multifaktor dan teori kuman penyakit adalah adanya perti
 
 Konsep munculnya penyakit menurut teori kuman penyakit:
 
-🙂 inang \+ 🦠 agen \= 🤒 penyakit
+> 🙂 inang \+ 🦠 agen \= 🤒 penyakit
 
 Konsep-awal munculnya penyakit menurut teori multifaktor:
 
-🙂 inang \+ 🦠 agen \+ 🌄 lingkungan \= 🤒 penyakit
+> 🙂 inang \+ 🦠 agen \+ 🌄 lingkungan \= 🤒 penyakit
 
 Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktor, di antaranya segitiga epidemiologi, pai penyebab, jejaring penyebab, dan lingkaran determinan. Di modul ini, kita hanya membahas satu model, yaitu segitiga epidemiologi.
 
 ###### 7. Segitiga epidemiologi
 
 Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, kemungkinan besar penyakit tidak akan muncul atau menyebar lebih lanjut.
-
-![][image2]
 
 Gambar 2.3. Model segitiga epidemiologi.
 
@@ -201,15 +194,12 @@ Gambar 2.3. Model segitiga epidemiologi.
 Ketiga komponen ini berinteraksi satu sama lain. Interaksi antarkomponen yang tepat mendukung kemunculan dan penyebaran penyakit.
 
 1.	Interaksi inang–agen
-
 Penyakit muncul ketika inang yang rentan terpapar dengan agen yang efektif. Interaksi ini bergantung pada respons imun inang dan kemampuan agen menimbulkan penyakit.
 
 2.	Interaksi inang–lingkungan
-
 Lingkungan dapat memengaruhi kesehatan inang secara umum. Kondisi hidup yang buruk dan stresor dari lingkungan dapat meningkatkan kerentanan terhadap penyakit.
 
 3.	Interaksi agen–lingkungan
-
 Lingkungan dapat memengaruhi kelangsungan hidup dan perpindahan agen. Sebagai contoh, suhu dan kelembapan dapat memengaruhi viabilitas patogen di lingkungan.
 
 Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumlah modifikasi atau intervensi komponen segitiga epidemiologi. Semakin banyak komponen atau interaksi yang kita intervensi, maka semakin kecil pula kemungkinan penyakit tersebut muncul dan menyebar.
@@ -252,18 +242,15 @@ Kedua dimensi ini dapat dikombinasikan dalam matriks 2x2 berikut ini.
 * Kuadran 3: Penyakit noninfeksius dan menular. Tidak ada penyakit yang berada dalam kategori ini. Ketika ada penyakit noninfeksius yang menimpa banyak hewan secara bersamaan, artinya hewan-hewan tersebut terpapar faktor yang sama.
 
 * Kuadran 4: Penyakit infeksius dan menular. Ada agen biologis yang bereplikasi dan ada perpindahan penyakit antarindividu. Ini adalah fokus utama epidemiologi penyakit menular.
-
-Kelompok penyakit infeksius dan menular (kuadran 4\) bisa digolongkan berdasarkan kemampuannya dalam menular dan menyebar dalam populasi dan ruang geografis.
-
-a.	Penyakit yang penularannya terbatas. Contoh: Mayoritas helminthiasis dan infeksi beberapa protozoa seperti giardiasis dan balantidiasis. Perpindahan mereka sangat bergantung pada kondisi lingkungan dan manajemen. Selain itu, sifat penyakitnya cenderung kronis atau sporadis.
-
-b.	Penyakit yang penularannya melintasi batas-batas administratif, biasanya disebut sebagai penyakit hewan lintas batas (transboundary animal diseases, disingkat TADs), adalah penyakit yang dapat menyebar antarwilayah atau antarnegara. Banyak di mereka menimbulkan dampak ekonomi dan sosial yang signifikan. Contohnya adalah flu burung dan demam babi Afrika.
+  
+  Kelompok penyakit infeksius dan menular (kuadran 4\) bisa digolongkan berdasarkan kemampuannya dalam menular dan menyebar dalam populasi dan ruang geografis.
+	* Penyakit yang penularannya terbatas. Contoh: Mayoritas helminthiasis dan infeksi beberapa protozoa seperti giardiasis dan balantidiasis. Perpindahan mereka sangat bergantung pada kondisi lingkungan dan manajemen. Selain itu, sifat penyakitnya cenderung kronis atau sporadis.
+	* Penyakit yang penularannya melintasi batas-batas administratif, biasanya disebut sebagai penyakit hewan lintas batas (transboundary animal diseases, disingkat TADs), adalah penyakit yang dapat menyebar antarwilayah atau antarnegara. Banyak di mereka menimbulkan dampak ekonomi dan sosial yang signifikan. Contohnya adalah flu burung dan demam babi Afrika.
 
 ###### 2. Rantai infeksi
 
 Untuk memahami bagaimana penyakit menular menyebar dalam suatu populasi, kita dapat menggunakan konsep rantai infeksi. Rantai infeksi adalah model yang menjelaskan bagaimana agen infeksius berpindah dari satu individu atau satu sumber ke individu lainnya. Penyebaran ini terjadi melalui serangkaian komponen yang saling terhubung dan membentuk suatu siklus.
 
-![][image3]
 
 Gambar 2.4. Model rantai infeksi.
 
@@ -289,27 +276,18 @@ Cara penularan (disebut juga jalur atau rute penularan) adalah mekanisme perpind
 
 Secara umum, cara penularan dibagi menjadi dua kategori utama:
 
-A.	Penularan vertikal merupakan perpindahan agen infeksius dari induk ke keturunannya, yang dapat terjadi melalui plasenta di dalam kandungan, paparan selama proses kelahiran, atau melalui konsumsi air susu.
+1. Penularan vertikal merupakan perpindahan agen infeksius dari induk ke keturunannya, yang dapat terjadi melalui plasenta di dalam kandungan, paparan selama proses kelahiran, atau melalui konsumsi air susu.
 
-B.	Penularan horizontal merupakan perpindahan agen infeksius dari satu individu ke individu lain yang tidak berada dalam hubungan induk dan anak. Penularan ini dibagi lagi menjadi dua jenis:
-
-1.	Penularan langsung, ketika agen infeksius berpindah secara langsung tanpa perantara. Hal ini dapat terjadi melalui
-
-a.	Kontak fisik, ketika agen infeksius berpindah dari individu terinfeksi ke individu rentan melalui sentuhan pada kulit, membran mukosa, luka terbuka, atau saat keduanya melakukan hubungan seksual.
-
-b.	Percikan pernapasan (droplet), ketika agen infeksius berada di dalam percikan yang dihasilkan oleh individu terinfeksi saat ia batuk atau bersin, dan kemudian partikel tersebut masuk ke dalam tubuh individu rentan karena mereka sedang berada dalam jarak dekat dan berada pada waktu yang sama.
-
-2.	Penularan tidak langsung, ketika agen infeksius berpindah melalui media atau perantara. Penularan ini bisa melibatkan
-
-a.	Fomit, ketika agen infeksius menempel pada benda mati seperti peralatan, pakaian, atau kandang.
-
-b.	Udara (airborne), ketika agen infeksius merupakan partikel kecil yang melayang di udara dan bisa bertahan cukup lama.
-
-c.	Makanan (foodborne), ketika agen infeksius terdapat di dalam makanan yang dikonsumsi individu rentan.
-
-d.	Air (waterborne), ketika agen infeksius terdapat di dalam air.
-
-e.	Vektor (vectorborne), ketika agen infeksius terdapat di dalam tubuh vektor mekanis ataupun vektor biologis, misalnya serangga.
+2. Penularan horizontal merupakan perpindahan agen infeksius dari satu individu ke individu lain yang tidak berada dalam hubungan induk dan anak. Penularan ini dibagi lagi menjadi dua jenis:
+	1. Penularan langsung, ketika agen infeksius berpindah secara langsung tanpa perantara. Hal ini dapat terjadi melalui
+		1. Kontak fisik, ketika agen infeksius berpindah dari individu terinfeksi ke individu rentan melalui sentuhan pada kulit, membran mukosa, luka terbuka, atau saat keduanya melakukan hubungan seksual.
+		2. Percikan pernapasan (droplet), ketika agen infeksius berada di dalam percikan yang dihasilkan oleh individu terinfeksi saat ia batuk atau bersin, dan kemudian partikel tersebut masuk ke dalam tubuh individu rentan karena mereka sedang berada dalam jarak dekat dan berada pada waktu yang sama.
+	2. Penularan tidak langsung, ketika agen infeksius berpindah melalui media atau perantara. Penularan ini bisa melibatkan
+		1. Fomit, ketika agen infeksius menempel pada benda mati seperti peralatan, pakaian, atau kandang.
+		2. Udara (airborne), ketika agen infeksius merupakan partikel kecil yang melayang di udara dan bisa bertahan cukup lama.
+		3. Makanan (foodborne), ketika agen infeksius terdapat di dalam makanan yang dikonsumsi individu rentan.
+		4. Air (waterborne), ketika agen infeksius terdapat di dalam air.
+		5. Vektor (vectorborne), ketika agen infeksius terdapat di dalam tubuh vektor mekanis ataupun vektor biologis, misalnya serangga.
 
 Kita perlu memahami berbagai jalur penularan ini untuk mencegah dan mengendalikan penyakit. Jika kita dapat mengidentifikasi titik-titik kritis dalam rantai penularan, kita dapat melakukan intervensi yang tepat.
 
@@ -321,7 +299,6 @@ Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh in
 
 Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.5 sebagai contoh, jika penyakit A memiliki R₀ \= 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ \= 3\. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
-![][image4]
 
 Gambar 2.5. Ilustrasi dua penyakit. Penyakit A memiliki R₀ \= 2, sedangkan penyakit B memiliki R₀ \= 3\.
 
@@ -354,11 +331,8 @@ Pada contoh di atas:
 Pada dunia nyata, kita amat jarang menemukan populasi yang seluruh anggotanya rentan. Sebagian individu mungkin sudah kebal setelah pulih dari infeksi alami atau karena telah divaksinasi. Oleh karena itu, selain angka reproduksi dasar (R₀) kita juga mengenal angka reproduksi efektif (Rₑ atau Rₜ). Angka ini menggambarkan rata-rata jumlah kasus sekunder pada kondisi populasi saat itu. Nilainya berubah seiring waktu karena mengikuti perubahan proporsi individu rentan. Secara sederhana, Rₑ merupakan hasil perkalian antara R₀ dan proporsi individu yang masih rentan (disimbolkan dengan S), atau Rₑ \= R₀ × S.
 
 Contoh: Ada penyakit dengan R₀ \= 4\.
-
 * Pada populasi yang 80% individunya rentan, Rₑ \= 4 × 80% \= 3
-
 * Pada populasi yang 50% individunya rentan, Rₑ \= 4 × 50% \= 2
-
 * Pada populasi yang 30% individunya rentan, Rₑ \= 4 × 30% \= 1,2
 
 Kalau begitu, parameter mana yang kita gunakan, apakah R₀ atau Rₑ?
@@ -425,7 +399,6 @@ Terakhir, perlu dipahami bahwa kekebalan kelompok bukanlah kondisi yang tetap ka
 
 Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu (baik manusia maupun hewan) seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh atau meninggal dunia.
 
-![][image5]
 
 Gambar 2.6. Model riwayat alamiah penyakit.
 
@@ -461,7 +434,6 @@ Ada persamaan antara masa inkubasi dan masa laten. Keduanya dimulai sejak papara
 
 Dalam banyak kasus, durasi masa inkubasi hampir sama dengan masa laten. Artinya, saat hewan tersebut menunjukkan tanda klinis, ia juga menjadi infeksius. Namun, pada beberapa penyakit, masa laten lebih singkat dari masa inkubasi. Artinya, hewan sudah bersifat infeksius meskipun secara klinis belum menunjukkan tanda-tanda apa pun. 
 
-![][image6]
 
 Gambar 2.7. Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.
 
@@ -471,7 +443,6 @@ Dalam model rantai infeksi, terdapat hewan penginfeksi (sumber infeksi) dan hewa
 
 Perbedaan interval waktu yang dialami oleh penginfeksi dan terinfeksi dapat dinyatakan dengan interval generasi (jarak antara paparan pada hewan penginfeksi dan terinfeksi) dan interval serial (jarak antara munculnya tanda klinis pada hewan penginfeksi dan terinfeksi).
 
-![][image7]
 
 Gambar 2.8. Model yang mengilustrasikan rantai infeksi antara dua individu.
 
@@ -501,7 +472,6 @@ Namun, dalam perkembangan selanjutnya, model ini dianggap terlalu sederhana untu
 
 Dengan adanya kompartemen-kompartemen baru ini, model SIR dapat berkembang menjadi SIRD, SEIRD, SVEIRD, atau bentuk lainnya.
 
-![][image8]
 
 Gambar 2.9. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.
 
@@ -579,7 +549,6 @@ Tabel 2.5. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
 Setelah mengetahui jumlah kasus baru per hari, kita dapat membuat kurvanya. 
 
-![][image9]
 
 Gambar 2.10. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
 
@@ -593,37 +562,29 @@ Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaik
 
 Pada dasarnya, kurva epidemi adalah representasi visual dari perubahan nilai Rₑ dari waktu ke waktu. Gambar di bawah ini mengilustrasikan struktur umum kurva epidemi.
 
-![][image10]
 
 Gambar 2.11. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ \>1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ \<1).
 
 Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung pada sumber dan mekanisme penularan penyakit. Secara umum, terdapat tiga pola utama:
 
 1. Kurva sumber bersama (common source).
-
-Pada pola ini, sejumlah individu terpapar sumber infeksi yang sama dalam waktu yang relatif singkat, misalnya pakan atau air yang terkontaminasi. Kurva biasanya menunjukkan kenaikan tajam dan penurunan yang relatif cepat, karena paparan terjadi dalam satu periode waktu tertentu.
+   Pada pola ini, sejumlah individu terpapar sumber infeksi yang sama dalam waktu yang relatif singkat, misalnya pakan atau air yang terkontaminasi. Kurva biasanya menunjukkan kenaikan tajam dan penurunan yang relatif cepat, karena paparan terjadi dalam satu periode waktu tertentu.
 
 2. Kurva sumber bersama berkelanjutan (continuous common source).
-
-Paparan terhadap sumber infeksi berlangsung dalam waktu lebih lama, misalnya sumber air yang terus-menerus tercemar. Kurva cenderung membentuk plateau atau puncak yang memanjang.
+   Paparan terhadap sumber infeksi berlangsung dalam waktu lebih lama, misalnya sumber air yang terus-menerus tercemar. Kurva cenderung membentuk plateau atau puncak yang memanjang.
 
 3. Kurva perambatan (propagated).
-
-Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
-
-![][image11]
+   Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
 
 Gambar 2.12. Contoh tiga bentuk kurva epidemi.
 
 Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai jumlah kasus aktif. Kurva ini menggambarkan beban penyakit yang sedang berlangsung pada setiap hari. Puncaknya menunjukkan titik beban maksimum yang dialami oleh sistem.
 
-![][image12]
 
 Gambar 2.11. Kurva jumlah kasus aktif.
 
 Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunjukkan perubahan komposisi populasi berdasarkan kompartemen dari waktu ke waktu. 
 
-![][image13]
 
 Gambar 2.12. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).
 
@@ -634,4 +595,3 @@ Melalui modul ini, kita dapat melihat bahwa dinamika penyakit pada populasi buka
 #### III. Ringkasan
 
 Kegiatan belajar ini membahas dinamika penyakit dalam populasi hewan. Penyakit dipahami sebagai peristiwa yang muncul dan berkembang karena adanya interaksi berbagai faktor. Pembahasan dimulai dari konsep sehat dan tidak sehat dalam perspektif epidemiologi, kemudian dilanjutkan dengan penjelasan tentang berbagai penyebab hewan sakit serta potensi masing-masing penyebab dalam menimbulkan masalah pada tingkat populasi. Perkembangan konsep tentang penyebab penyakit menjadi landasan untuk memahami segitiga epidemiologi, yang menjelaskan peran inang, agen, dan lingkungan dalam kemunculan penyakit. Modul ini kemudian membahas kemampuan penyakit untuk menular melalui konsep rantai infeksi, cara penularan, angka reproduksi, dan ambang kekebalan kelompok. Pada bagian akhir, dinamika penyakit dijelaskan melalui riwayat alamiah penyakit pada individu, model kompartemen seperti SIR untuk menggambarkan perubahan status kesehatan populasi, serta kurva epidemi untuk melihat pola kejadian penyakit dari waktu ke waktu. Seluruh konsep ini membantu mahasiswa memahami bagaimana penyakit muncul, menyebar, dan berubah dalam suatu populasi hewan.
-
