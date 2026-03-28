@@ -136,11 +136,6 @@ Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
 
 Menurut teori ini, kuman (sebagai agen) merupakan penyebab utama penyakit. Konsep ini menguat sejak Postulat Koch dibuat pada tahun 1884. Robert Koch, seorang dokter asal Jerman, merumuskan empat kriteria untuk menetapkan hubungan kausal antara penyebab dan penyakit. Melalui postulat ini, Koch mendeskripsikan penyebab tuberkulosis, yaitu Mycobacterium tuberculosis. Ia lantas menerima Penghargaan Nobel dalam Fisiologi/Kedokteran pada tahun 1905 atas penemuannya ini.
 
-
-
-Gambar 2.2. Diagram yang menjelaskan postulat Koch   
-(sumber gambar: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Koch%27s_Postulates.svg)).
-
 Postulat Koch:
 
 1.	Suatu mikroorganisme (kausal) harus ditemukan dalam jumlah banyak pada semua organisme yang sakit tetapi tidak pada organisme yang sehat.
@@ -183,7 +178,25 @@ Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktor, di antar
 
 Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, kemungkinan besar penyakit tidak akan muncul atau menyebar lebih lanjut.
 
-Gambar 2.3. Model segitiga epidemiologi.
+<svg width="100%" viewBox="0 0 680 350" xmlns="http://www.w3.org/2000/svg">
+  <line x1="160" y1="60"  x2="520" y2="60"  stroke="#888780" stroke-width="1.5"/>
+  <line x1="160" y1="60"  x2="340" y2="272" stroke="#888780" stroke-width="1.5"/>
+  <line x1="520" y1="60"  x2="340" y2="272" stroke="#888780" stroke-width="1.5"/>
+
+  <circle cx="160" cy="60" r="52" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#085041" text-anchor="middle" x="160" y="54" dominant-baseline="central">Inang</text>
+  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#0F6E56" text-anchor="middle" x="160" y="72" dominant-baseline="central">(host)</text>
+
+  <circle cx="520" cy="60" r="52" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="520" y="54" dominant-baseline="central">Agen</text>
+  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#993C1D" text-anchor="middle" x="520" y="72" dominant-baseline="central">(agent)</text>
+
+  <circle cx="340" cy="272" r="52" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="340" y="266" dominant-baseline="central">Lingkungan</text>
+  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#185FA5" text-anchor="middle" x="340" y="284" dominant-baseline="central">(environment)</text>
+</svg>
+
+Gambar 2.2. Model segitiga epidemiologi.
 
 1.	Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
 
@@ -299,8 +312,78 @@ Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh in
 
 Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.5 sebagai contoh, jika penyakit A memiliki R₀ \= 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ \= 3\. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
+<svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
 
-Gambar 2.5. Ilustrasi dua penyakit. Penyakit A memiliki R₀ \= 2, sedangkan penyakit B memiliki R₀ \= 3\.
+  <!-- Penyakit A: R0=2, tiga level 1→2→4 -->
+  <!-- Pusat x=170. Gen0:(170,52) Gen1:(98,142),(242,142) Gen2:(62,231),(134,231),(206,231),(278,231) -->
+
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle" x="170" y="16">Penyakit A</text>
+  <text font-family="sans-serif" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="middle" x="170" y="30">(R&#x2080; = 2)</text>
+
+  <line x1="170" y1="65"  x2="98"  y2="130" stroke="#D85A30" stroke-width="1.2"/>
+  <line x1="170" y1="65"  x2="242" y2="130" stroke="#D85A30" stroke-width="1.2"/>
+  <line x1="98"  y1="154" x2="62"  y2="220" stroke="#D85A30" stroke-width="1"/>
+  <line x1="98"  y1="154" x2="134" y2="220" stroke="#D85A30" stroke-width="1"/>
+  <line x1="242" y1="154" x2="206" y2="220" stroke="#D85A30" stroke-width="1"/>
+  <line x1="242" y1="154" x2="278" y2="220" stroke="#D85A30" stroke-width="1"/>
+
+  <circle cx="170" cy="52"  r="14" fill="#FAECE7" stroke="#D85A30" stroke-width="1.2"/>
+  <circle cx="98"  cy="142" r="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.1"/>
+  <circle cx="242" cy="142" r="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.1"/>
+  <circle cx="62"  cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+  <circle cx="134" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+  <circle cx="206" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+  <circle cx="278" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
+
+  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="56"  dominant-baseline="central">1</text>
+  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="142" dominant-baseline="central">2</text>
+  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="231" dominant-baseline="central">4</text>
+
+  <!-- Garis pemisah -->
+  <line x1="340" y1="8" x2="340" y2="260" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Penyakit B: R0=3, tiga level 1→3→9 -->
+  <!-- Pusat x=510. Gen0:(510,52) Gen1:(420,142),(510,142),(600,142) -->
+  <!-- Gen2: dari 420→(390,420,450), dari 510→(480,510,540), dari 600→(570,600,630) -->
+
+  <text font-family="sans-serif" font-size="13" font-weight="500" fill="#2C2C2A" text-anchor="middle" x="510" y="16">Penyakit B</text>
+  <text font-family="sans-serif" font-size="11" font-weight="400" fill="#5F5E5A" text-anchor="middle" x="510" y="30">(R&#x2080; = 3)</text>
+
+  <line x1="510" y1="65"  x2="420" y2="130" stroke="#185FA5" stroke-width="1.2"/>
+  <line x1="510" y1="65"  x2="510" y2="130" stroke="#185FA5" stroke-width="1.2"/>
+  <line x1="510" y1="65"  x2="600" y2="130" stroke="#185FA5" stroke-width="1.2"/>
+
+  <line x1="420" y1="154" x2="390" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="420" y1="154" x2="420" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="420" y1="154" x2="450" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="510" y1="154" x2="480" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="510" y1="154" x2="510" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="510" y1="154" x2="540" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="600" y1="154" x2="570" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="600" y1="154" x2="600" y2="220" stroke="#185FA5" stroke-width="1"/>
+  <line x1="600" y1="154" x2="630" y2="220" stroke="#185FA5" stroke-width="1"/>
+
+  <circle cx="510" cy="52"  r="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.2"/>
+  <circle cx="420" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
+  <circle cx="510" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
+  <circle cx="600" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
+  <circle cx="390" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="420" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="450" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="480" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="510" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="540" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="570" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="600" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+  <circle cx="630" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
+
+  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="56"  dominant-baseline="central">1</text>
+  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="142" dominant-baseline="central">3</text>
+  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="231" dominant-baseline="central">9</text>
+
+</svg>
+
+Gambar 2.4. Ilustrasi dua penyakit. Penyakit A memiliki R₀ \= 2, sedangkan penyakit B memiliki R₀ \= 3\.
 
 Ada dua syarat penting dalam definisi R₀, yaitu
 
