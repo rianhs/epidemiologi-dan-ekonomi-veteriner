@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Modul 1: Pengantar Epidemiologi"
-next_url: "modul-02"
+next_url: "modul/modul-02"
 next_title: "Modul 2: Dinamika Penyakit"
 ---
 
@@ -165,7 +165,7 @@ Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti k
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg" 
        style="width: 300px;" 
        alt="John Snow, pionir epidemiologi">
-  <figcaption>Gambar 1.3. John Snow (1813–1858), dokter yang memelopori penggunaan peta sebagai alat epidemiologi.</figcaption>
+  <figcaption>Gambar 1.3. John Snow (1813–1858), dokter yang memelopori penggunaan peta sebagai alat epidemiologi (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, yaitu partikel kecil yang mengakibatkan bau busuk. Namun, John Snow memiliki dugaan yang berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
@@ -174,17 +174,17 @@ Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat 
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Punch-A_Court_for_King_Cholera.png/960px-Punch-A_Court_for_King_Cholera.png" 
        style="width: 500px;" 
        alt="Situasi wabah kolera di Inggris pada abad ke-19">
-  <figcaption>Gambar 1.4. Situasi wabah kolera di Inggris pada abad ke-19.</figcaption>
+  <figcaption>Gambar 1.4. Situasi wabah kolera di Inggris pada abad ke-19 (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 
 Untuk membuktikan hipotesisnya, Snow memetakan lokasi kasus kolera di London dan menemukan bahwa sebagian besar kasus terpusat di sekitar pompa air di Broad Street. Dengan melakukan wawancara dan analisis lebih lanjut, ia menemukan bahwa orang yang mengonsumsi air dari pompa tersebut lebih rentan terkena kolera dibandingkan mereka yang mendapatkan air dari sumber lain.
 
 <figure>
-  <img src="[https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Punch-A_Court_for_King_Cholera.png/960px-Punch-A_Court_for_King_Cholera.png](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/960px-Snow-cholera-map-1.jpg)" 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/960px-Snow-cholera-map-1.jpg" 
        style="width: 600px;" 
-       alt="Peta wabah kolera di London oleh John Snow">
-  <figcaption>Gambar 1.5. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera.</figcaption>
+       alt="Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera.">
+  <figcaption>Gambar 1.5. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 Sebagai tindakan pengendalian, Snow meyakinkan pemerintah setempat untuk mencabut pegangan pompa air di Broad Street sehingga warga tak bisa menggunakannya. Setelah itu, wabah kolera berhenti menyebar.
@@ -193,9 +193,12 @@ Penemuan ini menjadi bukti awal bahwa penyakit dapat ditularkan melalui sumber a
 
 Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir abad ke-19. Penelitian tentang demam sapi Texas menjadi salah satu pemicunya. Penyakit ini menjadi masalah serius di Amerika Serikat karena menyebabkan angka kematian yang cukup tinggi.
 
-![][image5]
-
-Gambar 6\. Peta Amerika Serikat pada tahun 1902\. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam (sumber gambar: [Texas State Historical Association](https://www.tshaonline.org/images/handbook/entries/CC/cattle_fever_map.jpg)).
+<figure>
+  <img src="https://www.tshaonline.org/images/handbook/entries/CC/cattle_fever_map.jpg" 
+       style="width: 600px;" 
+       alt="Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam.">
+  <figcaption>Gambar 1.5. Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam (Sumber: Texas State Historical Association).</figcaption>
+</figure>
 
 Pada akhir dasawarsa 1880-an, Theobald Smith (seorang dokter) dan Frederick Kilbourne (seorang dokter hewan) menemukan bahwa penyakit ini tidak menyebar langsung dari satu sapi ke sapi lainnya, tetapi memerlukan perantara. Mereka menyimpulkan bahwa caplak *Boophilus annulatus* berperan sebagai vektor yang mentransmisikan agen penyakit dari sapi yang terinfeksi ke sapi yang sehat.
 
@@ -352,57 +355,45 @@ Dalam epidemiologi, kita perlu membedakan populasi target dan populasi terjangka
 
 Setelah memperoleh informasi tentang jumlah dan struktur populasi hewan, apa yang selanjutnya kita lakukan terhadap informasi ini? Paling tidak, ada tiga aspek kehidupan yang mendapatkan manfaat dari data populasi hewan, yaitu kesehatan, ekonomi, dan ekologi.
 
-1. Aspek kesehatan hewan dan manusia
-
-Populasi merupakan angka yang penting dalam epidemiologi. Data mengenai jumlah hewan yang sakit tidak bermakna jika kita tidak tahu populasi hewan yang berisiko. Sebagai contoh, temuan 10 kasus penyakit akan memiliki makna yang berbeda tergantung pada jumlah total hewannya.
-* Jika populasi berjumlah 20 ekor, maka proporsi penyakit mencapai 50%.
-* Jika populasi berjumlah 1.000 ekor, maka proporsi penyakit hanya 1%.
-
-Angka populasi ini berfungsi sebagai pembagi atau penyebut (*denominator*) yang memungkinkan kita mengukur tingkat keparahan atau risiko suatu penyakit.
-
-Data populasi hewan yang menjadi inang atau reservoir bagi patogen dan parasit zoonotik, misalnya anjing dan tikus, dapat kita gunakan untuk memperkirakan risiko penularan penyakit ke manusia. Sebagai contoh, dengan mengetahui data populasi anjing dan pola pemeliharaannya (apakah banyak anjing jalanan atau anjing peliharaan), kita bisa memetakan potensi rabies, menghitung jumlah vaksin yang diperlukan untuk membentuk kekebalan kelompok (70% dari populasi harus kebal), dan merancang alokasi sumber daya untuk menjalankan program vaksinasi. Tanpa mengetahui jumlah anjing, kita tidak akan pernah tahu apakah program vaksinasi yang kita lakukan sudah cukup untuk melindungi masyarakat atau belum.
-
-
-2. Aspek ekonomi dan usaha
-
-Pada hewan produksi seperti sapi, ayam, atau ikan budi daya, data populasi untuk mengukur sistem ekonomi dan ketahanan pangan. Dengan mengetahui jumlah populasi, struktur umur, dan laju pertumbuhan hewan, kita dapat memperkirakan jumlah daging, susu, atau telur yang akan dihasilkan pada masa depan. Informasi ini lantas digunakan untuk menghitung nilai ekonomi, menganalisis keseimbangan antara stok dan kebutuhan masyarakat (misalnya apakah hanya cukup untuk konsumsi domestik atau bisa diekspor), dan merencanakan sumber daya untuk memelihara hewan, seperti pakan, obat-obatan, dan infrastruktur kandang. Di level nasional, data populasi digunakan pemerintah untuk menetapkan kebijakan pangan dan pengembangan industri, misalnya pengolahan pangan asal hewan.
-
-Baik bagi pemerintah maupun sektor swasta, data populasi hewan dimanfaatkan untuk memperkirakan jumlah dokter hewan dan paramedis yang dibutuhkan di suatu wilayah. Selain itu, kita juga bisa memperkirakan kebutuhan klinik hewan, pusat kesehatan hewan, laboratorium, alat-alat diagnostik, vaksin, obat-obatan, dan sarana pendukung lainnya berdasarkan jumlah dan kepadatan populasi hewan. Jika ternyata suatu wilayah masih memerlukan tenaga kesehatan hewan, maka unit lembaga pemerintah atau unit usaha perlu didirikan di wilayah tersebut.
-
-3. Aspek ekologi
-
-Pada satwa liar, data populasi sangat penting untuk menilai status konservasi mereka. Dengan menganalisis struktur dan dinamika demografi populasi suatu spesies, kita bisa memproyeksikan keberlangsungan hidup spesies tersebut pada masa depan, misalnya apakah populasi satwa menurun karena tingginya perburuan atau karena habitatnya menghilang. Informasi ini dijadikan dasar untuk menyusun strategi konservasi.
+1. Aspek kesehatan hewan dan manusia. 
+	Populasi merupakan angka yang penting dalam epidemiologi. Data mengenai jumlah hewan yang sakit tidak bermakna jika kita tidak tahu populasi hewan yang berisiko. Sebagai contoh, temuan 10 kasus penyakit akan memiliki makna yang berbeda tergantung pada jumlah total hewannya. 
+	
+	* Jika populasi berjumlah 20 ekor, maka proporsi penyakit mencapai 50%. 
+	* Jika populasi berjumlah 1.000 ekor, maka proporsi penyakit hanya 1%. 
+	
+	Angka populasi ini berfungsi sebagai pembagi atau penyebut (*denominator*) yang memungkinkan kita mengukur tingkat keparahan atau risiko suatu penyakit. Data populasi hewan yang menjadi inang atau reservoir bagi patogen dan parasit zoonotik, misalnya anjing dan tikus, dapat kita gunakan untuk memperkirakan risiko penularan penyakit ke manusia. Sebagai contoh, dengan mengetahui data populasi anjing dan pola pemeliharaannya (apakah banyak anjing jalanan atau anjing peliharaan), kita bisa memetakan potensi rabies, menghitung jumlah vaksin yang diperlukan untuk membentuk kekebalan kelompok (70% dari populasi harus kebal), dan merancang alokasi sumber daya untuk menjalankan program vaksinasi. Tanpa mengetahui jumlah anjing, kita tidak akan pernah tahu apakah program vaksinasi yang kita lakukan sudah cukup untuk melindungi masyarakat atau belum.
+	
+2. Aspek ekonomi dan usaha. 
+	Pada hewan produksi seperti sapi, ayam, atau ikan budi daya, data populasi untuk mengukur sistem ekonomi dan ketahanan pangan. Dengan mengetahui jumlah populasi, struktur umur, dan laju pertumbuhan hewan, kita dapat memperkirakan jumlah daging, susu, atau telur yang akan dihasilkan pada masa depan. Informasi ini lantas digunakan untuk menghitung nilai ekonomi, menganalisis keseimbangan antara stok dan kebutuhan masyarakat (misalnya apakah hanya cukup untuk konsumsi domestik atau bisa diekspor), dan merencanakan sumber daya untuk memelihara hewan, seperti pakan, obat-obatan, dan infrastruktur kandang. Di level nasional, data populasi digunakan pemerintah untuk menetapkan kebijakan pangan dan pengembangan industri, misalnya pengolahan pangan asal hewan. 
+	
+	Baik bagi pemerintah maupun sektor swasta, data populasi hewan dimanfaatkan untuk memperkirakan jumlah dokter hewan dan paramedis yang dibutuhkan di suatu wilayah. Selain itu, kita juga bisa memperkirakan kebutuhan klinik hewan, pusat kesehatan hewan, laboratorium, alat-alat diagnostik, vaksin, obat-obatan, dan sarana pendukung lainnya berdasarkan jumlah dan kepadatan populasi hewan. Jika ternyata suatu wilayah masih memerlukan tenaga kesehatan hewan, maka unit lembaga pemerintah atau unit usaha perlu didirikan di wilayah tersebut. 
+	
+3. Aspek ekologi. 
+	Pada satwa liar, data populasi sangat penting untuk menilai status konservasi mereka. Dengan menganalisis struktur dan dinamika demografi populasi suatu spesies, kita bisa memproyeksikan keberlangsungan hidup spesies tersebut pada masa depan, misalnya apakah populasi satwa menurun karena tingginya perburuan atau karena habitatnya menghilang. Informasi ini dijadikan dasar untuk menyusun strategi konservasi.
  
 
 ###### 3. Perbedaan antara penghitungan populasi manusia dan hewan
  
 Cara menghitung populasi manusia dan hewan sangat berbeda. Saat kita ingin menghitung populasi hewan, ada banyak keterbatasan yang kemudian menimbulkan ketidakpastian. Tiga aspek utama yang membedakan penghitungan populasi manusia dan hewan adalah administrasi, metode deteksi, dan dinamika populasi.
 
-1. Aspek administrasi
-
-Manusia memiliki identitas formal yang bersifat individual dan wajib dimiliki, misalnya nomor induk kependudukan. Identitas ini dikelola oleh pemerintah secara sistematis dan berkelanjutan, sehingga perkiraan populasi manusia relatif akurat dan mudah diverifikasi.
-
-Pada hewan ternak, identifikasi dapat berupa *ear tag* atau sistem pencatatan pada unit peternakan. Pada hewan kesayangan, identifikasi dapat berupa *microchip*, buku vaksinasi, atau registrasi pada klinik atau organisasi tertentu. Namun, sistem identifikasi ini tidak bersifat universal, tidak terintegrasi, dan sangat bergantung pada inisiatif pemilik. Di sisi lain, satwa liar dan hewan jalanan biasanya tidak memiliki identitas formal sama sekali. Akibatnya, data populasi hewan sulit diperoleh dan dikelola.
-
-
-2. Metode deteksi
-
-Pengumpulan data populasi manusia dapat dilakukan melalui sensus rumah tangga, registrasi penduduk, atau survei yang relatif mudah dijalankan karena manusia dapat melaporkan dirinya sendiri atau memberikan informasi secara langsung.
-
-Pada hewan, prosesnya jauh lebih sulit. Meskipun kita ingin mendata hewan, ternyata faktor manusia malah berperan penting. Saat kita mendata hewan berpemilik, keberhasilannya sangat bergantung pada kesediaan si pemilik. Jika pemilik kooperatif, data bisa langsung kita peroleh. Namun, bisa saja pemilik enggan melaporkan jumlah hewan yang sebenarnya, misalnya karena alasan ekonomi, regulasi, pajak, atau kekhawatiran terhadap pembatasan dan tindakan pengendalian penyakit. Hal ini membuat data menjadi tidak akurat.
-
-Di sisi lain, pendataan hewan tidak berpemilik, seperti hewan jalanan dan satwa liar, tidak secara langsung dipengaruhi oleh faktor manusia. Mereka dapat diamati langsung di lapangan. Namun, hewan-hewan ini sulit dideteksi karena mobilitasnya tinggi, hidup di habitat yang luas atau tersembunyi, dan sering menghindari manusia. Selain itu, bias muncul karena kita sulit membedakan individu yang sama dalam pengamatan berulang.
- 
-
-3. Dinamika populasi
-
-Kita juga perlu memahami bahwa populasi hewan bersifat dinamis. Artinya, jumlah dan strukturnya selalu berubah dari waktu ke waktu. Perubahan ini dipengaruhi oleh tiga faktor, yaitu kelahiran, kematian, dan perpindahan (migrasi).
-
-a. Kelahiran. Populasi dapat melonjak drastis pada spesies yang memiliki tingkat reproduksi tinggi. Pada usaha budi daya (*breeding*), pertumbuhan populasi juga dapat direkayasa dengan memodifikasi cara hewan bereproduksi, baik secara alami maupun melalui teknologi reproduksi seperti inseminasi buatan.
-
-b. Kematian. Populasi dapat merosot tajam akibat wabah penyakit, kebijakan pemusnahan hewan untuk pengendalian penyakit menular, maupun penyembelihan massal, seperti pada hari Iduladha.
-
-c. Perpindahan. Arus ekspor-impor dan lalu lintas ternak antarwilayah dapat mengubah struktur populasi dengan cepat, sedangkan migrasi alamiah merupakan faktor yang perlu dipertimbangkan saat memperkirakan populasi satwa liar.
+1. Aspek administrasi. 
+	Manusia memiliki identitas formal yang bersifat individual dan wajib dimiliki, misalnya nomor induk kependudukan. Identitas ini dikelola oleh pemerintah secara sistematis dan berkelanjutan, sehingga perkiraan populasi manusia relatif akurat dan mudah diverifikasi. 
+	
+	Pada hewan ternak, identifikasi dapat berupa *ear tag* atau sistem pencatatan pada unit peternakan. Pada hewan kesayangan, identifikasi dapat berupa *microchip*, buku vaksinasi, atau registrasi pada klinik atau organisasi tertentu. Namun, sistem identifikasi ini tidak bersifat universal, tidak terintegrasi, dan sangat bergantung pada inisiatif pemilik. Di sisi lain, satwa liar dan hewan jalanan biasanya tidak memiliki identitas formal sama sekali. Akibatnya, data populasi hewan sulit diperoleh dan dikelola.
+	
+2. Metode deteksi. 
+	Pengumpulan data populasi manusia dapat dilakukan melalui sensus rumah tangga, registrasi penduduk, atau survei yang relatif mudah dijalankan karena manusia dapat melaporkan dirinya sendiri atau memberikan informasi secara langsung. 
+	
+	Pada hewan, prosesnya jauh lebih sulit. Meskipun kita ingin mendata hewan, ternyata faktor manusia malah berperan penting. Saat kita mendata hewan berpemilik, keberhasilannya sangat bergantung pada kesediaan si pemilik. Jika pemilik kooperatif, data bisa langsung kita peroleh. Namun, bisa saja pemilik enggan melaporkan jumlah hewan yang sebenarnya, misalnya karena alasan ekonomi, regulasi, pajak, atau kekhawatiran terhadap pembatasan dan tindakan pengendalian penyakit. Hal ini membuat data menjadi tidak akurat. 
+	
+	Di sisi lain, pendataan hewan tidak berpemilik, seperti hewan jalanan dan satwa liar, tidak secara langsung dipengaruhi oleh faktor manusia. Mereka dapat diamati langsung di lapangan. Namun, hewan-hewan ini sulit dideteksi karena mobilitasnya tinggi, hidup di habitat yang luas atau tersembunyi, dan sering menghindari manusia. Selain itu, bias muncul karena kita sulit membedakan individu yang sama dalam pengamatan berulang. 
+	
+3. Dinamika populasi. 
+	Kita juga perlu memahami bahwa populasi hewan bersifat dinamis. Artinya, jumlah dan strukturnya selalu berubah dari waktu ke waktu. Perubahan ini dipengaruhi oleh tiga faktor, yaitu kelahiran, kematian, dan perpindahan (migrasi). 
+	
+	 1. Kelahiran. Populasi dapat melonjak drastis pada spesies yang memiliki tingkat reproduksi tinggi. Pada usaha budi daya (*breeding*), pertumbuhan populasi juga dapat direkayasa dengan memodifikasi cara hewan bereproduksi, baik secara alami maupun melalui teknologi reproduksi seperti inseminasi buatan. 
+	 2. Kematian. Populasi dapat merosot tajam akibat wabah penyakit, kebijakan pemusnahan hewan untuk pengendalian penyakit menular, maupun penyembelihan massal, seperti pada hari Iduladha.
+	 3. Perpindahan. Arus ekspor-impor dan lalu lintas ternak antarwilayah dapat mengubah struktur populasi dengan cepat, sedangkan migrasi alamiah merupakan faktor yang perlu dipertimbangkan saat memperkirakan populasi satwa liar.
 
 ###### 4. Faktor yang perlu dipertimbangkan
 
@@ -430,57 +421,19 @@ Dengan memahami keterbatasan ini, kita bisa menyimpulkan bahwa angka populasi bu
 
 Ada berbagai metode untuk memperkirakan populasi hewan. Secara garis besar, kita dapat membaginya menjadi dua, yaitu estimasi berbasis data primer dan data sekunder.
 
-1. Estimasi berbasis data primer
-
-Data dikoleksi dari lapangan pada waktu dan lokasi tertentu. Peneliti terlibat langsung dalam proses pengamatan, pencatatan, atau pengukuran sehingga ia memiliki kendali penuh atas desain dan kualitas data. Meskipun demikian, pendekatan ini biasanya menyita banyak waktu dan biaya.
-
-a. Observasi langsung terhadap individu hewan.
-
-Metode ini berfokus untuk mendeteksi keberadaan individu hewan secara fisik di lapangan, baik dengan melihat langsung atau menggunakan alat bantu seperti *drone* atau kamera suhu. Akurasinya sangat bergantung pada kemampuan dalam mendeteksi hewan, kondisi lingkungan, serta desain pengamatan.
-
-1. Penghitungan menyeluruh (sensus)
-
-Peneliti menghitung setiap individu dalam suatu populasi tanpa ada yang terlewat. Cara ini paling efektif diterapkan pada populasi tertutup dengan jumlah hewan yang relatif sedikit dan mendiami area yang batas-batasnya jelas.
-
-2. Penghitungan berbasis sampel area
-
-Karena keterbatasan sumber daya untuk menyisir seluruh wilayah, peneliti hanya menghitung hewan pada beberapa titik contoh sebagai perwakilan. Hasil dari sampel tersebut kemudian diproyeksikan untuk menggambarkan populasi di seluruh area studi. Ketepatan estimasi bergantung pada desain *sampling* dan representativitas area yang dipilih.
-
-a. Metode kuadrat/plot
-
-Area studi dibagi menjadi petak-petak kecil (plot) dengan ukuran tertentu. Seluruh hewan di dalam plot terpilih akan dihitung, lalu hasilnya akan digunakan untuk memperkirakan jumlah hewan pada keseluruhan area. Metode ini sering digunakan pada populasi yang relatif menetap dan mudah diamati dalam batas ruang tertentu.
-
-b. Metode transek
-
-Peneliti menyusuri jalur linear yang telah ditentukan dan mencatat setiap hewan yang dijumpai sepanjang perjalanan. Data yang diperoleh digunakan untuk memperkirakan kepadatan atau jumlah populasi. Metode ini memiliki beberapa varian: transek garis, transek jalur, dan pendekatan yang mempertimbangkan jarak deteksi. Teknik-teknik ini sering digunakan untuk memantau satwa liar, anjing jalanan, atau ternak yang dilepaskan di padang penggembalaan luas.
-
-3. Penghitungan berbasis probabilitas deteksi
-
-Peneliti menangkap hewan, menandainya, melepaskannya kembali, dan pada kesempatan yang berbeda, ia berusaha menangkap hewan lagi. Pada tangkapan kedua, peneliti melihat rasio hewan yang telah ditandai dan belum ditandai. Metode ini disebut *capture-mark-recapture*. Peneliti kemudian menggunakan pemodelan matematika untuk memperkirakan jumlah hewan yang tidak terlihat berdasarkan rasio hewan yang berhasil ditemukan kembali. Metode ini dipilih pada populasi tertutup (jumlah hewannya relatif stabil) dan dengan pertimbangan bahwa tidak semua individu dalam populasi dapat terdeteksi pada setiap pengamatan.
-
-b. Observasi tidak langsung terhadap tanda keberadaan hewan
-
-Jika hewannya sulit ditemukan, peneliti dapat beralih untuk menghitung bukti keberadaan mereka. Bukti ini bisa berupa feses, jejak kaki, sarang, suara, hingga materi genetik hewan yang tertinggal di lingkungan (disebut dengan *environmental* DNA atau eDNA).
-
-c. Estimasi berbasis pelaporan manusia
-
-Data primer juga bisa diperoleh dengan mengumpulkan data dari orang-orang yang bersinggungan langsung dengan hewan. Peneliti menggali informasi dari masyarakat melalui kuesioner dan wawancara. Akurasi metode ini sangat bergantung pada kejujuran, ingatan, catatan, dan pemahaman responden.
-
-2. Estimasi berbasis data sekunder
-
-Pendekatan ini memanfaatkan informasi yang sudah dikumpulkan oleh pihak lain. Peneliti tidak perlu pergi ke lapangan. Ia hanya mengolah dan menganalisis data yang tersedia. Penggunaan data sekunder sangat efisien untuk mendapatkan gambaran populasi hewan. Namun, kualitas estimasi si peneliti sangat tergantung pada mutu dan relevansi data yang digunakan.
-
-a. Data administratif
-
-Sumber data berasal dari pencatatan resmi instansi pemerintah (misalnya angka populasi ternak dari Badan Pusat Statistik) atau catatan vaksinasi. Data ini biasanya menjadi landasan dalam penyusunan kebijakan, bukan untuk penelitian populasi.
-
-b. Data penelitian sebelumnya
-
-Peneliti merujuk pada angka estimasi yang sudah dipublikasikan dalam jurnal ilmiah atau dokumen proyek lembaga konservasi. Data ini dapat digunakan sebagai referensi atau pembanding. Namun, perbedaan waktu, metode, dan cakupan wilayah harus diperhatikan agar interpretasi tidak keliru.
-
-c. Estimasi turunan dari data sekunder
-
-Angka populasi hewan diperoleh melalui kalkulasi menggunakan data penunjang lain yang memiliki korelasi kuat. Contohnya adalah memperkirakan jumlah anjing melalui rasio populasi manusia di suatu kota atau menghitung populasi ayam pedaging berdasarkan volume pakan yang terdistribusi di daerah tersebut.
+1. Estimasi berbasis data primer. Data dikoleksi dari lapangan pada waktu dan lokasi tertentu. Peneliti terlibat langsung dalam proses pengamatan, pencatatan, atau pengukuran sehingga ia memiliki kendali penuh atas desain dan kualitas data. Meskipun demikian, pendekatan ini biasanya menyita banyak waktu dan biaya. 
+	1. Observasi langsung terhadap individu hewan. Metode ini berfokus untuk mendeteksi keberadaan individu hewan secara fisik di lapangan, baik dengan melihat langsung atau menggunakan alat bantu seperti *drone* atau kamera suhu. Akurasinya sangat bergantung pada kemampuan dalam mendeteksi hewan, kondisi lingkungan, serta desain pengamatan.
+		1. Penghitungan menyeluruh (sensus). Peneliti menghitung setiap individu dalam suatu populasi tanpa ada yang terlewat. Cara ini paling efektif diterapkan pada populasi tertutup dengan jumlah hewan yang relatif sedikit dan mendiami area yang batas-batasnya jelas.
+		2. Penghitungan berbasis sampel area. Karena keterbatasan sumber daya untuk menyisir seluruh wilayah, peneliti hanya menghitung hewan pada beberapa titik contoh sebagai perwakilan. Hasil dari sampel tersebut kemudian diproyeksikan untuk menggambarkan populasi di seluruh area studi. Ketepatan estimasi bergantung pada desain *sampling* dan representativitas area yang dipilih.
+			1. Metode kuadrat/plot. Area studi dibagi menjadi petak-petak kecil (plot) dengan ukuran tertentu. Seluruh hewan di dalam plot terpilih akan dihitung, lalu hasilnya akan digunakan untuk memperkirakan jumlah hewan pada keseluruhan area. Metode ini sering digunakan pada populasi yang relatif menetap dan mudah diamati dalam batas ruang tertentu.
+			2. Metode transek. Peneliti menyusuri jalur linear yang telah ditentukan dan mencatat setiap hewan yang dijumpai sepanjang perjalanan. Data yang diperoleh digunakan untuk memperkirakan kepadatan atau jumlah populasi. Metode ini memiliki beberapa varian: transek garis, transek jalur, dan pendekatan yang mempertimbangkan jarak deteksi. Teknik-teknik ini sering digunakan untuk memantau satwa liar, anjing jalanan, atau ternak yang dilepaskan di padang penggembalaan luas.
+		3. Penghitungan berbasis probabilitas deteksi. Peneliti menangkap hewan, menandainya, melepaskannya kembali, dan pada kesempatan yang berbeda, ia berusaha menangkap hewan lagi. Pada tangkapan kedua, peneliti melihat rasio hewan yang telah ditandai dan belum ditandai. Metode ini disebut *capture-mark-recapture*. Peneliti kemudian menggunakan pemodelan matematika untuk memperkirakan jumlah hewan yang tidak terlihat berdasarkan rasio hewan yang berhasil ditemukan kembali. Metode ini dipilih pada populasi tertutup (jumlah hewannya relatif stabil) dan dengan pertimbangan bahwa tidak semua individu dalam populasi dapat terdeteksi pada setiap pengamatan. 
+	2. Observasi tidak langsung terhadap tanda keberadaan hewan. Jika hewannya sulit ditemukan, peneliti dapat beralih untuk menghitung bukti keberadaan mereka. Bukti ini bisa berupa feses, jejak kaki, sarang, suara, hingga materi genetik hewan yang tertinggal di lingkungan (disebut dengan *environmental* DNA atau eDNA).
+	3. Estimasi berbasis pelaporan manusia. Data primer juga bisa diperoleh dengan mengumpulkan data dari orang-orang yang bersinggungan langsung dengan hewan. Peneliti menggali informasi dari masyarakat melalui kuesioner dan wawancara. Akurasi metode ini sangat bergantung pada kejujuran, ingatan, catatan, dan pemahaman responden.
+2. Estimasi berbasis data sekunder. Pendekatan ini memanfaatkan informasi yang sudah dikumpulkan oleh pihak lain. Peneliti tidak perlu pergi ke lapangan. Ia hanya mengolah dan menganalisis data yang tersedia. Penggunaan data sekunder sangat efisien untuk mendapatkan gambaran populasi hewan. Namun, kualitas estimasi si peneliti sangat tergantung pada mutu dan relevansi data yang digunakan.
+	1. Data administratif. Sumber data berasal dari pencatatan resmi instansi pemerintah (misalnya angka populasi ternak dari Badan Pusat Statistik) atau catatan vaksinasi. Data ini biasanya menjadi landasan dalam penyusunan kebijakan, bukan untuk penelitian populasi.
+	2. Data penelitian sebelumnya. Peneliti merujuk pada angka estimasi yang sudah dipublikasikan dalam jurnal ilmiah atau dokumen proyek lembaga konservasi. Data ini dapat digunakan sebagai referensi atau pembanding. Namun, perbedaan waktu, metode, dan cakupan wilayah harus diperhatikan agar interpretasi tidak keliru.
+	3. Estimasi turunan dari data sekunder. Angka populasi hewan diperoleh melalui kalkulasi menggunakan data penunjang lain yang memiliki korelasi kuat. Contohnya adalah memperkirakan jumlah anjing melalui rasio populasi manusia di suatu kota atau menghitung populasi ayam pedaging berdasarkan volume pakan yang terdistribusi di daerah tersebut.
 
 Kita dapat menggabungkan beberapa metode di atas untuk memperoleh hasil yang lebih meyakinkan. Strategi ini dikenal sebagai triangulasi data, yaitu upaya memverifikasi angka estimasi dengan membandingkan temuan dari berbagai sumber atau teknik yang berbeda.
 
