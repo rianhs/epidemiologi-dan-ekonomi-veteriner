@@ -99,7 +99,7 @@ Dalam praktiknya, dokter hewan dapat menggunakan berbagai pendekatan untuk memec
 
 Di sisi lain, seorang epidemiolog mencoba memahami faktor-faktor yang memengaruhi penyebaran penyakit dalam suatu kelompok hewan. Sebagai contoh, jika dalam suatu peternakan terjadi peningkatan kasus diare pada sapi, seorang epidemiolog tidak hanya mendiagnosis satu ekor sapi, tetapi juga mencari pola dalam populasi, seperti apakah semua sapi yang sakit berasal dari kandang yang sama, apakah mereka mengonsumsi pakan yang sama, atau apakah ada faktor lingkungan yang berperan. Tujuan utama seorang epidemiolog adalah mencegah dan mengendalikan penyakit dalam populasi sehingga pendekatannya berbasis pembuatan kebijakan atau aturan, yang sering kali bersifat preventif.
 
-Tabel 1. Perbandingan perspektif seorang klinisi dan epidemiolog.
+Tabel 1.1. Perbandingan perspektif seorang klinisi dan epidemiolog.
 
 | Perbandingan           | Klinisi                                                                  | Epidemiolog                                                  |
 | ---------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -136,7 +136,7 @@ Selain epidemi dan endemi, ada beberapa istilah lain yang sering digunakan untuk
 Banyak orang menganggap bahwa wabah adalah sinonim epidemi. Namun, keduanya memiliki perbedaan dalam cakupan luasnya. Wabah biasanya mengacu pada kejadian yang lebih terbatas dalam skala wilayah tertentu, seperti di satu desa, kota, atau lokasi spesifik. Sementara itu, epidemi menggambarkan penyebaran penyakit dalam wilayah yang lebih luas dan sering kali berdampak pada sejumlah besar individu dalam suatu populasi. Contoh perbedaan ini dapat dilihat pada kasus flu babi yang dimulai sebagai wabah di daerah spesifik dan berkembang menjadi epidemi dan akhirnya menjadi pandemi.
 
 
-Tabel 2. Contoh endemi, wabah, epidemi, dan pandemi pada populasi manusia dan hewan.
+Tabel 1.2. Contoh endemi, wabah, epidemi, dan pandemi pada populasi manusia dan hewan.
 
 | Situasi penyakit | Contoh pada populasi manusia | Contoh pada populasi hewan |
 | ----- | ----- | ----- |
@@ -147,7 +147,7 @@ Tabel 2. Contoh endemi, wabah, epidemi, dan pandemi pada populasi manusia dan he
 
 Terkadang, kita sering membaca atau mendengar istilah "kejadian luar biasa" (KLB). Ini adalah istilah yang hanya ada di Indonesia dan hanya digunakan untuk kejadian penyakit pada manusia, bukan pada hewan. Pada populasi manusia, predikat KLB diberikan terlebih dahulu sebelum wabah.
 
-Tabel 3. Perbedaan definisi KLB dan wabah menurut undang-undang.
+Tabel 1.3. Perbedaan definisi KLB dan wabah menurut undang-undang.
 
 | Istilah | Definisi dalam UU Kesehatan | Definisi dalam UU Peternakan dan Kesehatan Hewan |
 | ----- | ----- | ----- |
@@ -163,9 +163,9 @@ Prinsip-prinsip epidemiologi telah diterapkan sejak zaman Yunani Kuno, seperti k
 
 <figure>
   <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/John_Snow.jpg" 
-       style="width: 300px;" 
+       style="width: 200px;" 
        alt="John Snow, pionir epidemiologi">
-  <figcaption>Gambar 1.3. John Snow (1813–1858), dokter yang memelopori penggunaan peta sebagai alat epidemiologi (Sumber: Wikimedia Commons).</figcaption>
+  <figcaption>Gambar 1.2. John Snow (1813–1858), dokter yang memelopori penggunaan peta sebagai alat epidemiologi (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat itu, penyebab penyakit ini belum diketahui secara pasti. Teori dominan yang berkembang adalah teori miasma yang menyatakan bahwa penyakit menular disebarkan melalui udara yang terkontaminasi oleh miasma, yaitu partikel kecil yang mengakibatkan bau busuk. Namun, John Snow memiliki dugaan yang berbeda. Ia mencurigai bahwa penyebaran kolera berkaitan dengan konsumsi air yang terkontaminasi.
@@ -174,7 +174,7 @@ Pada tahun 1854, London mengalami wabah kolera yang sangat mematikan. Pada saat 
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Punch-A_Court_for_King_Cholera.png/960px-Punch-A_Court_for_King_Cholera.png" 
        style="width: 500px;" 
        alt="Situasi wabah kolera di Inggris pada abad ke-19">
-  <figcaption>Gambar 1.4. Situasi wabah kolera di Inggris pada abad ke-19 (Sumber: Wikimedia Commons).</figcaption>
+  <figcaption>Gambar 1.3. Situasi wabah kolera di Inggris pada abad ke-19 (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 
@@ -184,7 +184,7 @@ Untuk membuktikan hipotesisnya, Snow memetakan lokasi kasus kolera di London dan
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/960px-Snow-cholera-map-1.jpg" 
        style="width: 600px;" 
        alt="Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera.">
-  <figcaption>Gambar 1.5. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera (Sumber: Wikimedia Commons).</figcaption>
+  <figcaption>Gambar 1.4. Peta wabah kolera di London oleh John Snow. Kotak hitam menggambarkan kasus kolera (Sumber: Wikimedia Commons).</figcaption>
 </figure>
 
 Sebagai tindakan pengendalian, Snow meyakinkan pemerintah setempat untuk mencabut pegangan pompa air di Broad Street sehingga warga tak bisa menggunakannya. Setelah itu, wabah kolera berhenti menyebar.
@@ -195,7 +195,7 @@ Dalam bidang kedokteran hewan, epidemiologi mengalami kemajuan pesat pada akhir 
 
 <figure>
   <img src="https://www.tshaonline.org/images/handbook/entries/CC/cattle_fever_map.jpg" 
-       style="width: 600px;" 
+       style="width: 500px;" 
        alt="Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam.">
   <figcaption>Gambar 1.5. Peta Amerika Serikat pada tahun 1902. Demam sapi Texas ditemukan di wilayah di sebelah selatan garis hitam (Sumber: Texas State Historical Association).</figcaption>
 </figure>
@@ -247,7 +247,7 @@ Namun, sebelum itu, coba tentukan dulu dua unsur ini: (1) kondisi atau peristiwa
 
 Tabel berikut ini berisi pertanyaan-pertanyaan kunci untuk mendapatkan jawaban atau informasi epidemiologis yang penting.
 
-Tabel 4. Pertanyaan terkait kondisi atau peristiwa kesehatan dalam populasi spesifik.
+Tabel 1.4. Pertanyaan terkait kondisi atau peristiwa kesehatan dalam populasi spesifik.
 
 | Kata tanya | Contoh pertanyaan |
 | ----- | ----- |
@@ -270,7 +270,7 @@ Sekian banyak pertanyaan di atas dapat dibagi menjadi empat kelompok yang mencer
 
 Catatan: Jawaban atas pertanyaan yang menggunakan kata *how* dapat ditempatkan dalam fungsi eksplanasi, prediksi, atau intervensi, bergantung pada konteks dan kontennya.
 
-Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel 5 merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta kajian epidemiologi yang relevan dengan masing-masing fungsi.
+Keempat fungsi epidemiologi tersebut membantu mengarahkan cara berpikir dan menentukan konsep yang tepat dalam epidemiologi. Tabel berikut merangkum topik pertanyaan utama, jenis informasi yang dihasilkan, serta kajian epidemiologi yang relevan dengan masing-masing fungsi.
 
 Tabel 1.5. Jenis-jenis kajian epidemiologi.
 
