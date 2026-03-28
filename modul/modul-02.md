@@ -118,6 +118,8 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 
 Saat ini, kita telah mengetahui beragam penyebab penyakit. Namun, manusia zaman dahulu tidak memiliki pemahaman sekompleks ini. Sepanjang sejarah, konsep tentang penyebab penyakit terus berkembang dan berubah. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
+Tabel 2.4. Perkembangan teori tentang penyebab penyakit.
+
 | Nama teori | Uraian |
 | ---------- | ------ |
 | 👻 Teori supranatural | Penyakit disebabkan oleh roh jahat, kutukan dewa, pengaruh benda-benda langit, dan sebagainya. Konsep ini banyak dipercaya oleh kelompok-kelompok manusia yang hidup dalam budaya primitif. Contoh: influenza berasal dari bahasa Latin ‘influentia’ karena diduga disebabkan oleh pengaruh benda-benda tertentu, misalnya bintang di langit. |
@@ -197,7 +199,7 @@ Ketiga komponen ini berinteraksi satu sama lain. Interaksi antarkomponen yang te
 
 Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumlah modifikasi atau intervensi komponen segitiga epidemiologi. Semakin banyak komponen atau interaksi yang kita intervensi, maka semakin kecil pula kemungkinan penyakit tersebut muncul dan menyebar.
 
-Tabel 2.4. Contoh intervensi menurut komponen segitiga epidemiologi.
+Tabel 2.5. Contoh intervensi menurut komponen segitiga epidemiologi.
 
 | No | Jenis intervensi | Komponen utama yang dimodifikasi | Penjelasan tambahan |
 | :---: | ----- | :---: | ----- |
@@ -290,7 +292,7 @@ Setelah kita memahami cara penularan, pertanyaan selanjutnya adalah, “Seberapa
 
 Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh individunya rentan, berapa ekor hewan yang akan tertular dari satu hewan terinfeksi ini? Jika ia mampu menularkan penyakit ke lebih dari satu individu, maka jumlah kasus akan bertambah dari waktu ke waktu. Logika ini yang memunculkan konsep angka reproduksi.
 
-Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.4 sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ = 3. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
+Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat gambar di bawah sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ = 3. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
 
 
@@ -468,7 +470,7 @@ Gambar 2.8. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: renta
 
 Berikut ini contoh dinamika penyebaran penyakit berdasarkan model SIRD. Perhatikan bahwa setiap hari, jumlah populasi tetap konstan, yaitu 1000.
 
-Tabel 2.4. Simulasi dinamika status penyakit berdasarkan model SIRD.
+Tabel 2.6. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
 | Hari | Rentan  (S) | Terinfeksi  (I) | Sembuh  (R) | Mati  (D) | Jumlah (S+I+R+D) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -517,7 +519,7 @@ Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel di bawah ini, kolo
 
 Catatan: Jumlah kasus baru pada hari ke-n = Jumlah individu rentan pada sehari sebelumnya (n–1) dikurangi jumlah individu rentan pada hari tersebut (n) = Sn–1 – Sn
 
-Tabel 2.5. Simulasi dinamika status penyakit berdasarkan model SIRD.
+Tabel 2.7. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
 | Hari | Rentan  (S) | Terinfeksi  (I) | Sembuh  (R) | Mati  (D) | Kasus baru (Sn–1 – Sn) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
