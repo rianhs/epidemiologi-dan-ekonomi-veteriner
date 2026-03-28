@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Modul 2: Dinamika Penyakit dalam Populasi"
-prev_url: "modul-01"
+prev_url: modul/modul-01
 prev_title: "Modul 1: Pengantar Epidemiologi"
-next_url: "modul-03"
+next_url: modul/modul-03
 next_title: "Modul 3: Epidemiologi Deskriptif"
 ---
 
@@ -132,29 +132,29 @@ Kita akan berfokus pada dua konsep terakhir, yaitu teori kuman penyakit dan mult
 
 Konsep dasar munculnya penyakit menurut teori kuman penyakit adalah:
 
-> 🙂 inang \+ 🦠 agen \= 🤒 penyakit
+> 🙂 inang + 🦠 agen = 🤒 penyakit
 
 Menurut teori ini, kuman (sebagai agen) merupakan penyebab utama penyakit. Konsep ini menguat sejak Postulat Koch dibuat pada tahun 1884. Robert Koch, seorang dokter asal Jerman, merumuskan empat kriteria untuk menetapkan hubungan kausal antara penyebab dan penyakit. Melalui postulat ini, Koch mendeskripsikan penyebab tuberkulosis, yaitu Mycobacterium tuberculosis. Ia lantas menerima Penghargaan Nobel dalam Fisiologi/Kedokteran pada tahun 1905 atas penemuannya ini.
 
 Postulat Koch:
 
-1.	Suatu mikroorganisme (kausal) harus ditemukan dalam jumlah banyak pada semua organisme yang sakit tetapi tidak pada organisme yang sehat.
+1. Suatu mikroorganisme (kausal) harus ditemukan dalam jumlah banyak pada semua organisme yang sakit tetapi tidak pada organisme yang sehat.
 
-2.	Mikroorganisme tersebut harus dapat diisolasi dari organisme yang sakit dan ditumbuhkan dalam kultur murni.
+2. Mikroorganisme tersebut harus dapat diisolasi dari organisme yang sakit dan ditumbuhkan dalam kultur murni.
 
-3.	Mikroorganisme yang dikulturkan harus menyebabkan penyakit yang sama ketika diinokulasikan ke dalam organisme yang sehat.
+3. Mikroorganisme yang dikulturkan harus menyebabkan penyakit yang sama ketika diinokulasikan ke dalam organisme yang sehat.
 
-4.	Mikroorganisme tersebut harus diisolasi kembali dari inang yang terinfeksi secara eksperimental dan terbukti identik dengan agen penyebab aslinya.
+4. Mikroorganisme tersebut harus diisolasi kembali dari inang yang terinfeksi secara eksperimental dan terbukti identik dengan agen penyebab aslinya.
 
 Meskipun postulat Koch dapat digunakan untuk mengidentifikasi mikroorganisme patogenik sebagai penyebab spesifik suatu penyakit, pendekatan ini memiliki beberapa kelemahan, antara lain:
 
-1.	Postulat Koch tidak dapat diterapkan pada penyakit yang tidak menular.
+1. Postulat Koch tidak dapat diterapkan pada penyakit yang tidak menular.
 
-2.	Beberapa mikroorganisme patogenik tidak dapat diisolasi dan ditumbuhkan dalam kultur murni, terutama dengan teknologi yang tersedia saat itu.
+2. Beberapa mikroorganisme patogenik tidak dapat diisolasi dan ditumbuhkan dalam kultur murni, terutama dengan teknologi yang tersedia saat itu.
 
-3.	Beberapa individu bisa saja terinfeksi secara subklinis dan tidak menunjukkan tanda-tanda klinis (asimptomatik).
+3. Beberapa individu bisa saja terinfeksi secara subklinis dan tidak menunjukkan tanda-tanda klinis (asimptomatik).
 
-4.	Beberapa patogen menyebabkan berbagai penyakit, dan di sisi lain, beberapa penyakit dapat disebabkan oleh beberapa spesies patogen.
+4. Beberapa patogen menyebabkan berbagai penyakit, dan di sisi lain, beberapa penyakit dapat disebabkan oleh beberapa spesies patogen.
 
 Karena kelemahan-kelemahan ini, muncul konsep selanjutnya, yaitu konsep bahwa penyakit disebabkan oleh banyak faktor.
 
@@ -166,11 +166,11 @@ Perbedaan antara konsep multifaktor dan teori kuman penyakit adalah adanya perti
 
 Konsep munculnya penyakit menurut teori kuman penyakit:
 
-> 🙂 inang \+ 🦠 agen \= 🤒 penyakit
+> 🙂 inang + 🦠 agen = 🤒 penyakit
 
 Konsep-awal munculnya penyakit menurut teori multifaktor:
 
-> 🙂 inang \+ 🦠 agen \+ 🌄 lingkungan \= 🤒 penyakit
+> 🙂 inang + 🦠 agen + 🌄 lingkungan = 🤒 penyakit
 
 Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktor, di antaranya segitiga epidemiologi, pai penyebab, jejaring penyebab, dan lingkaran determinan. Di modul ini, kita hanya membahas satu model, yaitu segitiga epidemiologi.
 
@@ -178,42 +178,22 @@ Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktor, di antar
 
 Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, kemungkinan besar penyakit tidak akan muncul atau menyebar lebih lanjut.
 
-<svg width="100%" viewBox="0 0 680 350" xmlns="http://www.w3.org/2000/svg">
-  <line x1="160" y1="60"  x2="520" y2="60"  stroke="#888780" stroke-width="1.5"/>
-  <line x1="160" y1="60"  x2="340" y2="272" stroke="#888780" stroke-width="1.5"/>
-  <line x1="520" y1="60"  x2="340" y2="272" stroke="#888780" stroke-width="1.5"/>
-
-  <circle cx="160" cy="60" r="52" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1"/>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#085041" text-anchor="middle" x="160" y="54" dominant-baseline="central">Inang</text>
-  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#0F6E56" text-anchor="middle" x="160" y="72" dominant-baseline="central">(host)</text>
-
-  <circle cx="520" cy="60" r="52" fill="#FAECE7" stroke="#993C1D" stroke-width="1"/>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="520" y="54" dominant-baseline="central">Agen</text>
-  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#993C1D" text-anchor="middle" x="520" y="72" dominant-baseline="central">(agent)</text>
-
-  <circle cx="340" cy="272" r="52" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="340" y="266" dominant-baseline="central">Lingkungan</text>
-  <text font-family="sans-serif" font-size="12" font-weight="400" fill="#185FA5" text-anchor="middle" x="340" y="284" dominant-baseline="central">(environment)</text>
-</svg>
 
 Gambar 2.2. Model segitiga epidemiologi.
 
-1.	Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
+1. Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
 
-2.	Agen adalah penyebab penyakit, yang dapat berupa patogen, bahan kimia, atau benda fisik. Faktor dari agen yang berpengaruh terhadap potensi penyakit antara lain jenis agen, dosis (jumlah), virulensi, dan patogenisitas.
+2. Agen adalah penyebab penyakit, yang dapat berupa patogen, bahan kimia, atau benda fisik. Faktor dari agen yang berpengaruh terhadap potensi penyakit antara lain jenis agen, dosis (jumlah), virulensi, dan patogenisitas.
 
-3.	Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor ini meliputi iklim (suhu, kelembaban, curah hujan), cuaca, tempat tinggal, ketersediaan pakan, dan cara pengelolaan hewan.
+3. Lingkungan mencakup semua faktor eksternal tempat inang hidup dan terpapar agen. Faktor ini meliputi iklim (suhu, kelembaban, curah hujan), cuaca, tempat tinggal, ketersediaan pakan, dan cara pengelolaan hewan.
 
 Ketiga komponen ini berinteraksi satu sama lain. Interaksi antarkomponen yang tepat mendukung kemunculan dan penyebaran penyakit.
 
-1.	Interaksi inang–agen
-Penyakit muncul ketika inang yang rentan terpapar dengan agen yang efektif. Interaksi ini bergantung pada respons imun inang dan kemampuan agen menimbulkan penyakit.
+1. Interaksi inang–agen: Penyakit muncul ketika inang yang rentan terpapar dengan agen yang efektif. Interaksi ini bergantung pada respons imun inang dan kemampuan agen menimbulkan penyakit.
 
-2.	Interaksi inang–lingkungan
-Lingkungan dapat memengaruhi kesehatan inang secara umum. Kondisi hidup yang buruk dan stresor dari lingkungan dapat meningkatkan kerentanan terhadap penyakit.
+2. Interaksi inang–lingkungan: Lingkungan dapat memengaruhi kesehatan inang secara umum. Kondisi hidup yang buruk dan stresor dari lingkungan dapat meningkatkan kerentanan terhadap penyakit.
 
-3.	Interaksi agen–lingkungan
-Lingkungan dapat memengaruhi kelangsungan hidup dan perpindahan agen. Sebagai contoh, suhu dan kelembapan dapat memengaruhi viabilitas patogen di lingkungan.
+3. Interaksi agen–lingkungan: Lingkungan dapat memengaruhi kelangsungan hidup dan perpindahan agen. Sebagai contoh, suhu dan kelembapan dapat memengaruhi viabilitas patogen di lingkungan.
 
 Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumlah modifikasi atau intervensi komponen segitiga epidemiologi. Semakin banyak komponen atau interaksi yang kita intervensi, maka semakin kecil pula kemungkinan penyakit tersebut muncul dan menyebar.
 
@@ -256,7 +236,7 @@ Kedua dimensi ini dapat dikombinasikan dalam matriks 2x2 berikut ini.
 
 * Kuadran 4: Penyakit infeksius dan menular. Ada agen biologis yang bereplikasi dan ada perpindahan penyakit antarindividu. Ini adalah fokus utama epidemiologi penyakit menular.
   
-  Kelompok penyakit infeksius dan menular (kuadran 4\) bisa digolongkan berdasarkan kemampuannya dalam menular dan menyebar dalam populasi dan ruang geografis.
+  Kelompok penyakit infeksius dan menular (kuadran 4) bisa digolongkan berdasarkan kemampuannya dalam menular dan menyebar dalam populasi dan ruang geografis.
 	* Penyakit yang penularannya terbatas. Contoh: Mayoritas helminthiasis dan infeksi beberapa protozoa seperti giardiasis dan balantidiasis. Perpindahan mereka sangat bergantung pada kondisi lingkungan dan manajemen. Selain itu, sifat penyakitnya cenderung kronis atau sporadis.
 	* Penyakit yang penularannya melintasi batas-batas administratif, biasanya disebut sebagai penyakit hewan lintas batas (transboundary animal diseases, disingkat TADs), adalah penyakit yang dapat menyebar antarwilayah atau antarnegara. Banyak di mereka menimbulkan dampak ekonomi dan sosial yang signifikan. Contohnya adalah flu burung dan demam babi Afrika.
 
@@ -264,55 +244,22 @@ Kedua dimensi ini dapat dikombinasikan dalam matriks 2x2 berikut ini.
 
 Untuk memahami bagaimana penyakit menular menyebar dalam suatu populasi, kita dapat menggunakan konsep rantai infeksi. Rantai infeksi adalah model yang menjelaskan bagaimana agen infeksius berpindah dari satu individu atau satu sumber ke individu lainnya. Penyebaran ini terjadi melalui serangkaian komponen yang saling terhubung dan membentuk suatu siklus.
 
-<svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <marker id="arr-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </marker>
-    <marker id="arr-dark" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M2 1L8 5L2 9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </marker>
-  </defs>
-
-  <!-- Kotak kiri: Inang rentan -->
-  <rect x="100" y="100" width="180" height="80" rx="6" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.2"/>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="190" y="132" dominant-baseline="central">Inang</text>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#0C447C" text-anchor="middle" x="190" y="152" dominant-baseline="central">rentan</text>
-
-  <!-- Kotak kanan: Reservoir/inang terinfeksi -->
-  <rect x="400" y="100" width="180" height="80" rx="6" fill="#FAECE7" stroke="#993C1D" stroke-width="1.2"/>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="490" y="132" dominant-baseline="central">Reservoir atau</text>
-  <text font-family="sans-serif" font-size="15" font-weight="500" fill="#712B13" text-anchor="middle" x="490" y="152" dominant-baseline="central">inang terinfeksi</text>
-
-  <!-- Panah atas: dari inang rentan (kiri) ke reservoir (kanan), putus-putus -->
-  <path d="M 220 100 C 220 30, 460 30, 460 100" fill="none" stroke="#888780" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#arr-gray)"/>
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="340" y="32">Agen infeksius</text>
-
-  <!-- Panah bawah: dari reservoir (kanan) ke inang rentan (kiri) -->
-  <path d="M 460 180 C 460 255, 220 255, 220 180" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#arr-dark)"/>
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="340" y="262">Cara penularan</text>
-
-  <!-- Label portal -->
-  <text font-family="sans-serif" font-size="12" font-weight="500" fill="#185FA5" text-anchor="middle" x="190" y="196">Portal masuk</text>
-  <text font-family="sans-serif" font-size="12" font-weight="500" fill="#993C1D" text-anchor="middle" x="490" y="196">Portal keluar</text>
-
-</svg>
 
 Gambar 2.3. Model rantai infeksi.
 
 Gambar di atas mengilustrasikan komponen utama dalam rantai infeksi:
 
-1.	Agen infeksius: mikroorganisme patogenik, seperti virus, bakteri, dan fungi, atau parasit.
+1. Agen infeksius: mikroorganisme patogenik, seperti virus, bakteri, dan fungi, atau parasit.
 
-2.	Reservoir: habitat alami tempat agen hidup dan berkembang biak, yang dapat berupa hewan, manusia, atau objek di lingkungan.
+2. Reservoir: habitat alami tempat agen hidup dan berkembang biak, yang dapat berupa hewan, manusia, atau objek di lingkungan.
 
-3.	Portal keluar: jalur keluarnya agen infeksius dari inang terinfeksi, seperti cairan tubuh, feses, atau percikan napas.
+3. Portal keluar: jalur keluarnya agen infeksius dari inang terinfeksi, seperti cairan tubuh, feses, atau percikan napas.
 
-4.	Cara penularan: cara agen berpindah dari sumber ke individu lain, misalnya melalui kontak langsung, udara (aerosol), makanan, atau vektor seperti nyamuk.
+4. Cara penularan: cara agen berpindah dari sumber ke individu lain, misalnya melalui kontak langsung, udara (aerosol), makanan, atau vektor seperti nyamuk.
 
-5.	Portal masuk: jalur masuknya agen ke inang baru, misalnya saluran pernapasan, saluran pencernaan, atau kulit yang terluka.
+5. Portal masuk: jalur masuknya agen ke inang baru, misalnya saluran pernapasan, saluran pencernaan, atau kulit yang terluka.
 
-6.	Inang rentan: individu yang tidak memiliki kekebalan sehingga ia rentan terinfeksi.
+6. Inang rentan: individu yang tidak memiliki kekebalan sehingga ia rentan terinfeksi.
 
 Model segitiga epidemiologi dan model rantai infeksi saling melengkapi. Jika segitiga epidemiologi menampilkan faktor-faktor yang memengaruhi kemunculan dan penyebaran penyakit, maka rantai infeksi memetakan mekanisme penyebaran dan unsur-unsurnya. “Agen” dan “inang rentan” merupakan dua komponen yang muncul dalam segitiga epidemiologi dan rantai infeksi. Sementara itu, “lingkungan” yang menjadi komponen segitiga epidemiologi mencakup semua hal yang berhubungan dengan tempat agen dan inang bertemu. Di sisi lain, “reservoir” dan “cara penularan” merupakan komponen dalam alur penyebaran penyakit. Di bagian selanjutnya, kita akan membahas lebih detail mengenai cara penularan. Ini adalah komponen utama yang menentukan apakah suatu penyakit memiliki penularan yang terbatas atau lintas batas.
 
@@ -343,83 +290,16 @@ Setelah kita memahami cara penularan, pertanyaan selanjutnya adalah, “Seberapa
 
 Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh individunya rentan, berapa ekor hewan yang akan tertular dari satu hewan terinfeksi ini? Jika ia mampu menularkan penyakit ke lebih dari satu individu, maka jumlah kasus akan bertambah dari waktu ke waktu. Logika ini yang memunculkan konsep angka reproduksi.
 
-Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.4 sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ \= 3\. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
+Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat Gambar 2.4 sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ = 3. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
-<svg width="100%" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Penyakit A: R0=2, tiga level 1→2→4 -->
 
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="170" y="16">Penyakit A</text>
-  <text font-family="sans-serif" font-size="11" font-weight="400" fill="currentColor" text-anchor="middle" x="170" y="30">(R&#x2080; = 2)</text>
-
-  <line x1="170" y1="65"  x2="98"  y2="130" stroke="#D85A30" stroke-width="1.2"/>
-  <line x1="170" y1="65"  x2="242" y2="130" stroke="#D85A30" stroke-width="1.2"/>
-  <line x1="98"  y1="154" x2="62"  y2="220" stroke="#D85A30" stroke-width="1"/>
-  <line x1="98"  y1="154" x2="134" y2="220" stroke="#D85A30" stroke-width="1"/>
-  <line x1="242" y1="154" x2="206" y2="220" stroke="#D85A30" stroke-width="1"/>
-  <line x1="242" y1="154" x2="278" y2="220" stroke="#D85A30" stroke-width="1"/>
-
-  <circle cx="170" cy="52"  r="14" fill="#FAECE7" stroke="#D85A30" stroke-width="1.2"/>
-  <circle cx="98"  cy="142" r="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.1"/>
-  <circle cx="242" cy="142" r="12" fill="#FAECE7" stroke="#D85A30" stroke-width="1.1"/>
-  <circle cx="62"  cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-  <circle cx="134" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-  <circle cx="206" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-  <circle cx="278" cy="231" r="10" fill="#FAECE7" stroke="#D85A30" stroke-width="1"/>
-
-  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="56"  dominant-baseline="central">1</text>
-  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="142" dominant-baseline="central">2</text>
-  <text font-family="sans-serif" font-size="10" fill="#D85A30" x="298" y="231" dominant-baseline="central">4</text>
-
-  <!-- Garis pemisah -->
-  <line x1="340" y1="8" x2="340" y2="260" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 3"/>
-
-  <!-- Penyakit B: R0=3, tiga level 1→3→9 -->
-
-  <text font-family="sans-serif" font-size="13" font-weight="500" fill="currentColor" text-anchor="middle" x="510" y="16">Penyakit B</text>
-  <text font-family="sans-serif" font-size="11" font-weight="400" fill="currentColor" text-anchor="middle" x="510" y="30">(R&#x2080; = 3)</text>
-
-  <line x1="510" y1="65"  x2="420" y2="130" stroke="#185FA5" stroke-width="1.2"/>
-  <line x1="510" y1="65"  x2="510" y2="130" stroke="#185FA5" stroke-width="1.2"/>
-  <line x1="510" y1="65"  x2="600" y2="130" stroke="#185FA5" stroke-width="1.2"/>
-
-  <line x1="420" y1="154" x2="390" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="420" y1="154" x2="420" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="420" y1="154" x2="450" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="510" y1="154" x2="480" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="510" y1="154" x2="510" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="510" y1="154" x2="540" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="600" y1="154" x2="570" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="600" y1="154" x2="600" y2="220" stroke="#185FA5" stroke-width="1"/>
-  <line x1="600" y1="154" x2="630" y2="220" stroke="#185FA5" stroke-width="1"/>
-
-  <circle cx="510" cy="52"  r="14" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.2"/>
-  <circle cx="420" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
-  <circle cx="510" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
-  <circle cx="600" cy="142" r="12" fill="#E6F1FB" stroke="#185FA5" stroke-width="1.1"/>
-  <circle cx="390" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="420" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="450" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="480" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="510" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="540" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="570" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="600" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-  <circle cx="630" cy="231" r="10" fill="#E6F1FB" stroke="#185FA5" stroke-width="1"/>
-
-  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="56"  dominant-baseline="central">1</text>
-  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="142" dominant-baseline="central">3</text>
-  <text font-family="sans-serif" font-size="10" fill="#185FA5" text-anchor="end" x="358" y="231" dominant-baseline="central">9</text>
-
-</svg>
-
-Gambar 2.4. Ilustrasi dua penyakit. Penyakit A memiliki R₀ \= 2, sedangkan penyakit B memiliki R₀ \= 3\.
+Gambar 2.4. Ilustrasi dua penyakit. Penyakit A memiliki R₀ = 2, sedangkan penyakit B memiliki R₀ = 3.
 
 Ada dua syarat penting dalam definisi R₀, yaitu
 
-1.	Semua individu dalam populasi diasumsikan rentan terhadap penyakit.
-
-2.	Tidak ada intervensi yang dilakukan untuk mengendalikan penyebaran penyakit, misalnya isolasi, karantina, atau vaksinasi.
+1. Semua individu dalam populasi diasumsikan rentan terhadap penyakit.
+2. Tidak ada intervensi yang dilakukan untuk mengendalikan penyebaran penyakit, misalnya isolasi, karantina, atau vaksinasi.
 
 Beberapa orang mengira bahwa R₀ adalah angka yang melekat pada patogen. Pemahaman ini keliru. R₀ merupakan hasil interaksi antara agen, inang, dan lingkungan. Miskonsepsi lain adalah pemahaman bahwa R₀ menunjukkan keparahan penyakit pada inang. Padahal, ia menunjukkan potensi untuk potensi suatu penyakit untuk memperluas penularan dalam populasi.
 
@@ -427,26 +307,24 @@ Nilai R₀ juga menunjukkan ambang penyebaran. Jika R₀ lebih besar dari 1, set
 
 Secara biologis, R₀ berasal dari tiga komponen utama:
 
-1.	Jumlah kontak antara individu infeksius dan individu rentan. Artinya, berapa banyak individu rentan yang mengalami kontak dengan satu individu infeksius. Contoh: Hewan A dan B sama-sama infeksius. Hewan A mengalami kontak dengan 10 ekor hewan rentan per hari, sedangkan hewan B mengalami kontak dengan 50 ekor hewan per hari. Angka reproduksinya akan berbeda.
+1. Jumlah kontak antara individu infeksius dan individu rentan. Artinya, berapa banyak individu rentan yang mengalami kontak dengan satu individu infeksius. Contoh: Hewan A dan B sama-sama infeksius. Hewan A mengalami kontak dengan 10 ekor hewan rentan per hari, sedangkan hewan B mengalami kontak dengan 50 ekor hewan per hari. Angka reproduksinya akan berbeda.
 
-2.	Peluang terjadinya penularan (transmisi) pada setiap kontak. Artinya, seberapa besar peluang perpindahan agen penyakit setiap kali individu infeksius mengalami kontak dengan individu rentan. Contoh: Saat hewan A mengalami kontak dengan hewan rentan, peluang perpindahan agen adalah 5%. Namun, saat hewan B mengalami kontak dengan hewan rentan, peluang perpindahan agen adalah 20%. Angka reproduksinya akan berbeda.
+2. Peluang terjadinya penularan (transmisi) pada setiap kontak. Artinya, seberapa besar peluang perpindahan agen penyakit setiap kali individu infeksius mengalami kontak dengan individu rentan. Contoh: Saat hewan A mengalami kontak dengan hewan rentan, peluang perpindahan agen adalah 5%. Namun, saat hewan B mengalami kontak dengan hewan rentan, peluang perpindahan agen adalah 20%. Angka reproduksinya akan berbeda.
 
-3.	Durasi periode infeksius. Artinya, seberapa lama individu terinfeksi dapat menularkan penyakit. Contoh: Hewan A memiliki periode infeksius selama 3 hari, sedangkan hewan B periode infeksiusnya 5 hari. Angka reproduksinya akan berbeda.
+3. Durasi periode infeksius. Artinya, seberapa lama individu terinfeksi dapat menularkan penyakit. Contoh: Hewan A memiliki periode infeksius selama 3 hari, sedangkan hewan B periode infeksiusnya 5 hari. Angka reproduksinya akan berbeda.
 
 Situasi penyakit dengan kontak sering, peluang transmisi tinggi, dan periode infeksius yang panjang cenderung memiliki R₀ yang lebih besar dibanding penyakit yang memerlukan kondisi khusus untuk menular. 
 
 Pada contoh di atas:
+* R₀ untuk hewan A adalah 10 ekor per hari × 5% × 3 hari = 1,5.
+* R₀ untuk hewan B adalah 50 ekor per hari × 20% × 5 hari = 50.
 
-* R₀ untuk hewan A adalah 10 ekor per hari × 5% × 3 hari \= 1,5.
+Pada dunia nyata, kita amat jarang menemukan populasi yang seluruh anggotanya rentan. Sebagian individu mungkin sudah kebal setelah pulih dari infeksi alami atau karena telah divaksinasi. Oleh karena itu, selain angka reproduksi dasar (R₀) kita juga mengenal angka reproduksi efektif (Rₑ atau Rₜ). Angka ini menggambarkan rata-rata jumlah kasus sekunder pada kondisi populasi saat itu. Nilainya berubah seiring waktu karena mengikuti perubahan proporsi individu rentan. Secara sederhana, Rₑ merupakan hasil perkalian antara R₀ dan proporsi individu yang masih rentan (disimbolkan dengan S), atau Rₑ = R₀ × S.
 
-* R₀ untuk hewan B adalah 50 ekor per hari × 20% × 5 hari \= 50\.
-
-Pada dunia nyata, kita amat jarang menemukan populasi yang seluruh anggotanya rentan. Sebagian individu mungkin sudah kebal setelah pulih dari infeksi alami atau karena telah divaksinasi. Oleh karena itu, selain angka reproduksi dasar (R₀) kita juga mengenal angka reproduksi efektif (Rₑ atau Rₜ). Angka ini menggambarkan rata-rata jumlah kasus sekunder pada kondisi populasi saat itu. Nilainya berubah seiring waktu karena mengikuti perubahan proporsi individu rentan. Secara sederhana, Rₑ merupakan hasil perkalian antara R₀ dan proporsi individu yang masih rentan (disimbolkan dengan S), atau Rₑ \= R₀ × S.
-
-Contoh: Ada penyakit dengan R₀ \= 4\.
-* Pada populasi yang 80% individunya rentan, Rₑ \= 4 × 80% \= 3
-* Pada populasi yang 50% individunya rentan, Rₑ \= 4 × 50% \= 2
-* Pada populasi yang 30% individunya rentan, Rₑ \= 4 × 30% \= 1,2
+Contoh: Ada penyakit dengan R₀ = 4.
+* Pada populasi yang 80% individunya rentan, Rₑ = 4 × 80% = 3
+* Pada populasi yang 50% individunya rentan, Rₑ = 4 × 50% = 2
+* Pada populasi yang 30% individunya rentan, Rₑ = 4 × 30% = 1,2
 
 Kalau begitu, parameter mana yang kita gunakan, apakah R₀ atau Rₑ?
 
@@ -466,7 +344,7 @@ Kita telah mengetahui bahwa penularan akan berlanjut jika Rₑ lebih besar dari 
 
 Ingat kembali bahwa Rₑ bergantung pada dua hal, yaitu R₀ dan proporsi individu yang masih rentan. Dengan kata lain:
 
-Rₑ \= R₀ × proporsi individu rentan.
+Rₑ = R₀ × proporsi individu rentan.
 
 Artinya, meskipun suatu penyakit memiliki R₀ yang tinggi, penularannya tetap dapat ditekan jika jumlah individu rentan dalam populasi cukup sedikit. Di sinilah konsep kekebalan kelompok muncul.
 
@@ -476,31 +354,31 @@ Dalam konsep ini, tidak semua individu dalam populasi harus kebal. Justru sebali
 
 Berapakah proporsi individu kebal yang dibutuhkan?
 
-Penularan akan berhenti jika Rₑ \< 1\.   
-Dengan menggunakan persamaan R₀ × S \= Rₑ, maka syaratnya menjadi:
+Penularan akan berhenti jika Rₑ < 1.   
+Dengan menggunakan persamaan R₀ × S = Rₑ, maka syaratnya menjadi:
 
-R₀ × S \< 1
+R₀ × S < 1
 
 atau
 
-S \< 1 / R₀
+S < 1 / R₀
 
-Karena proporsi individu rentan \+ proporsi individu kebal \= 100%,   
+Karena proporsi individu rentan + proporsi individu kebal = 100%,   
 maka proporsi individu kebal adalah 100% − proporsi individu rentan atau 1 − S.
 
 Dari sini diperoleh bahwa ambang kekebalan kelompok adalah:
 
 1 − 1/R₀
 
-Sebagai contoh, jika suatu penyakit memiliki R₀ \= 2, maka ambang kekebalan kelompok adalah:
+Sebagai contoh, jika suatu penyakit memiliki R₀ = 2, maka ambang kekebalan kelompok adalah:
 
-1 − 1/2 \= 0,5 atau 50%.
+1 − 1/2 = 0,5 atau 50%.
 
 Artinya, jika minimal 50% populasi kebal, penularan tidak berlanjut. Masih ada 50% individu yang mungkin rentan, tetapi penyakit tidak akan berkembang luas.
 
-Jika R₀ \= 5, maka ambangnya adalah:
+Jika R₀ = 5, maka ambangnya adalah:
 
-1 − 1/5 \= 0,8 atau 80%.
+1 − 1/5 = 0,8 atau 80%.
 
 Semakin besar R₀, semakin besar proporsi populasi yang harus kebal untuk menghentikan penularan. Inilah sebabnya penyakit dengan daya tular tinggi memerlukan cakupan vaksinasi yang lebih luas.
 
@@ -637,7 +515,7 @@ Inilah beberapa variabel yang umum digunakan pada sumbu Y dalam kurva epidemiolo
 
 Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel di bawah ini, kolom I menunjukkan jumlah kasus aktif, kolom R menunjukkan jumlah kesembuhan kumulatif, dan kolom D menunjukkan jumlah kematian kumulatif. Kita memerlukan satu tambahan kolom, yaitu jumlah kasus baru. Setiap baris pada kolom ini didapatkan dengan cara mengurangi jumlah hewan rentan pada hari sebelumnya dengan jumlah hewan rentan pada hari ini.
 
-Catatan: Jumlah kasus baru pada hari ke-n \= Jumlah individu rentan pada sehari sebelumnya (n–1) dikurangi jumlah individu rentan pada hari tersebut (n) \= Sn–1 – Sn
+Catatan: Jumlah kasus baru pada hari ke-n = Jumlah individu rentan pada sehari sebelumnya (n–1) dikurangi jumlah individu rentan pada hari tersebut (n) = Sn–1 – Sn
 
 Tabel 2.5. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
@@ -667,27 +545,24 @@ Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, se
 
 Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaikan, fase puncak, dan fase penurunan.
 
-1. Pada fase kenaikan, jumlah kasus baru meningkat dari hari ke hari. Hal ini terjadi karena setiap individu infeksius rata-rata menularkan penyakit ke lebih dari satu individu lain. Dengan kata lain, pada fase ini angka reproduksi efektif (Rₑ) lebih besar dari 1\. Jumlah individu rentan masih cukup banyak sehingga penularan berlangsung dengan cepat.
+1. Pada fase kenaikan, jumlah kasus baru meningkat dari hari ke hari. Hal ini terjadi karena setiap individu infeksius rata-rata menularkan penyakit ke lebih dari satu individu lain. Dengan kata lain, pada fase ini angka reproduksi efektif (Rₑ) lebih besar dari 1. Jumlah individu rentan masih cukup banyak sehingga penularan berlangsung dengan cepat.
 
-2. Pada fase puncak, jumlah kasus baru mencapai nilai tertinggi dan kemudian mulai stabil. Pada titik ini, setiap individu infeksius rata-rata hanya menularkan penyakit ke satu individu lain. Artinya, Rₑ mendekati 1\.
+2. Pada fase puncak, jumlah kasus baru mencapai nilai tertinggi dan kemudian mulai stabil. Pada titik ini, setiap individu infeksius rata-rata hanya menularkan penyakit ke satu individu lain. Artinya, Rₑ mendekati 1.
 
 3. Pada fase penurunan, jumlah kasus baru semakin berkurang. Hal ini terjadi karena jumlah individu rentan telah menurun secara signifikan. Setiap individu infeksius rata-rata menularkan penyakit ke kurang dari satu individu lain. Dengan demikian, Rₑ kurang dari 1 dan rantai penularan secara bertahap terputus.
 
 Pada dasarnya, kurva epidemi adalah representasi visual dari perubahan nilai Rₑ dari waktu ke waktu. Gambar di bawah ini mengilustrasikan struktur umum kurva epidemi.
 
 
-Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ \>1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ \<1).
+Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ >1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ <1).
 
 Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung pada sumber dan mekanisme penularan penyakit. Secara umum, terdapat tiga pola utama:
 
-1. Kurva sumber bersama (common source).
-   Pada pola ini, sejumlah individu terpapar sumber infeksi yang sama dalam waktu yang relatif singkat, misalnya pakan atau air yang terkontaminasi. Kurva biasanya menunjukkan kenaikan tajam dan penurunan yang relatif cepat, karena paparan terjadi dalam satu periode waktu tertentu.
+1. Kurva sumber bersama (common source). Pada pola ini, sejumlah individu terpapar sumber infeksi yang sama dalam waktu yang relatif singkat, misalnya pakan atau air yang terkontaminasi. Kurva biasanya menunjukkan kenaikan tajam dan penurunan yang relatif cepat, karena paparan terjadi dalam satu periode waktu tertentu.
 
-2. Kurva sumber bersama berkelanjutan (continuous common source).
-   Paparan terhadap sumber infeksi berlangsung dalam waktu lebih lama, misalnya sumber air yang terus-menerus tercemar. Kurva cenderung membentuk plateau atau puncak yang memanjang.
+2. Kurva sumber bersama berkelanjutan (continuous common source). Paparan terhadap sumber infeksi berlangsung dalam waktu lebih lama, misalnya sumber air yang terus-menerus tercemar. Kurva cenderung membentuk plateau atau puncak yang memanjang.
 
-3. Kurva perambatan (propagated).
-   Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
+3. Kurva perambatan (propagated). Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
 
 Gambar 2.11. Contoh tiga bentuk kurva epidemi.
 
