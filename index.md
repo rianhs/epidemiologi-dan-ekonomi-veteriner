@@ -5,8 +5,11 @@ title: "Epidemiologi dan Ekonomi Veteriner"
 
 ## 💡 Apa isi situs web ini?
 Situs web ini merupakan sumber pembelajaran untuk mata kuliah Epidemiologi dan Ekonomi Veteriner di Program Studi Kedokteran Hewan, Fakultas Kedokteran, Universitas Hasanuddin. 
+* Github repository: <https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner>
+* Github pages: <https://rianhs.github.io/epidemiologi-dan-ekonomi-veteriner/>
 
-Anda bisa melihat repositori github-nya di alamat <https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner>, sedangkan versi situs webnya di alamat <https://rianhs.github.io/epidemiologi-dan-ekonomi-veteriner/>.
+## 🔀 Panduan
+Situs ini menggunakan pendekatan outcome-based education. Mahasiswa disarankan untuk menggunakan sumber-sumber di situs ini secara berurutan berdasarkan urutan capaian pembelajaran di bawah ini.
 
 ## 🎯 Capaian Pembelajaran
 Mata kuliah ini memiliki beberapa capaian pembelajaran mata kuliah (CPMK) dan subcapaian pembelajaran mata kuliah (Sub-CPMK).
