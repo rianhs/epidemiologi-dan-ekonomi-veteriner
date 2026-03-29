@@ -622,6 +622,35 @@ Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaik
 
 Pada dasarnya, kurva epidemi adalah representasi visual dari perubahan nilai Rₑ dari waktu ke waktu. Gambar di bawah ini mengilustrasikan struktur umum kurva epidemi.
 
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.85rem;color:#888;">
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#d94f4f;display:inline-block;"></span>Fase kenaikan (Rₑ &gt; 1)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#e6a817;display:inline-block;"></span>Fase puncak (Rₑ ≈ 1)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#5a9e6f;display:inline-block;"></span>Fase penurunan (Rₑ &lt; 1)</span>
+</div>
+<div style="position:relative;width:100%;height:320px;margin-bottom:0.5rem;">
+  <canvas id="chart210"></canvas>
+</div>
+<script>
+(function(){
+  const vals = [1,3,6,10,15,21,28,35,41,46,49,50,50,49,50,44,38,31,24,18,13,9,6,4,2,1];
+  const colors = vals.map((_,i) => i<=10 ? '#d94f4f' : i<=14 ? '#e6a817' : '#5a9e6f');
+  new Chart(document.getElementById('chart210'), {
+    type: 'bar',
+    data: {
+      labels: vals.map((_,i) => i),
+      datasets: [{ data: vals, backgroundColor: colors, borderWidth: 0, borderRadius: 2, barPercentage: 0.95, categoryPercentage: 1.0 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: { title: { display: true, text: 'Waktu', color: '#888', font: { size: 13 } }, grid: { display: false }, ticks: { display: false } },
+        y: { title: { display: true, text: 'Kasus baru', color: '#888', font: { size: 13 } }, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.15)' }, ticks: { display: false } }
+      }
+    }
+  });
+})();
+</script>
 
 Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ >1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ <1).
 
@@ -637,11 +666,78 @@ Gambar 2.11. Contoh tiga bentuk kurva epidemi.
 
 Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai jumlah kasus aktif. Kurva ini menggambarkan beban penyakit yang sedang berlangsung pada setiap hari. Puncaknya menunjukkan titik beban maksimum yang dialami oleh sistem.
 
+<div style="position:relative;width:100%;height:300px;margin-bottom:0.5rem;">
+  <canvas id="chart212"></canvas>
+</div>
+<script>
+(function(){
+  new Chart(document.getElementById('chart212'), {
+    type: 'line',
+    data: {
+      labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      datasets: [{
+        data: [0,10,18,24,30,35,37,36,33,30,28,28,26,24,20,17],
+        borderColor: '#378add',
+        backgroundColor: 'rgba(55,138,221,0.08)',
+        fill: true, tension: 0.4,
+        pointRadius: 3, pointBackgroundColor: '#378add', borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        title: t => 'Hari ke-' + t[0].label,
+        label: t => 'Kasus aktif: ' + t.raw
+      }}},
+      scales: {
+        x: { title: { display: true, text: 'Hari', color: '#888', font: { size: 13 } }, grid: { display: false }, ticks: { color: '#888', autoSkip: false } },
+        y: { title: { display: true, text: 'Jumlah kasus aktif', color: '#888', font: { size: 13 } }, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.15)' }, ticks: { color: '#888', stepSize: 10 } }
+      }
+    }
+  });
+})();
+</script>
 
 Gambar 2.12. Kurva jumlah kasus aktif.
 
 Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunjukkan perubahan komposisi populasi berdasarkan kompartemen dari waktu ke waktu. 
 
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.85rem;color:#888;">
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#4a8c5c;display:inline-block;"></span>Rentan (S)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#d94f4f;display:inline-block;"></span>Terinfeksi (I)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#378add;display:inline-block;"></span>Sembuh (R)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#555;display:inline-block;"></span>Mati (D)</span>
+</div>
+<div style="position:relative;width:100%;height:300px;margin-bottom:0.5rem;">
+  <canvas id="chart213"></canvas>
+</div>
+<script>
+(function(){
+  new Chart(document.getElementById('chart213'), {
+    type: 'bar',
+    data: {
+      labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      datasets: [
+        { label: 'Rentan (S)',     data: [1000,990,978,965,950,935,920,908,899,892,886,881,876,873,872,872], backgroundColor: '#4a8c5c', borderWidth: 0 },
+        { label: 'Terinfeksi (I)', data: [0,10,18,24,30,35,37,36,33,30,28,28,26,24,20,17],                  backgroundColor: '#d94f4f', borderWidth: 0 },
+        { label: 'Sembuh (R)',     data: [0,0,2,7,14,24,33,39,45,53,60,65,72,77,82,85],                     backgroundColor: '#378add', borderWidth: 0 },
+        { label: 'Mati (D)',       data: [0,0,2,4,6,6,10,17,23,25,26,26,26,26,26,26],                       backgroundColor: '#555',    borderWidth: 0 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        title: t => 'Hari ke-' + t[0].label,
+        label: t => t.dataset.label + ': ' + t.raw
+      }}},
+      scales: {
+        x: { stacked: true, title: { display: true, text: 'Hari', color: '#888', font: { size: 13 } }, grid: { display: false }, ticks: { color: '#888', autoSkip: false } },
+        y: { stacked: true, title: { display: true, text: 'Jumlah individu', color: '#888', font: { size: 13 } }, beginAtZero: true, max: 1000, grid: { color: 'rgba(128,128,128,0.15)' }, ticks: { color: '#888', stepSize: 200 } }
+      }
+    }
+  });
+})();
+</script>
 
 Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).
 
