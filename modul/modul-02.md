@@ -83,7 +83,7 @@ Dinamika penyakit dalam populasi
             └── Kurva perambatan 
 ```
 
-Gambar 2.1. Peta konsep dalam modul ini. 
+<p class="chart-caption">Gambar 2.1. Peta konsep dalam modul ini.</p>p 
 
 #### II. Uraian materi
 
@@ -638,8 +638,6 @@ Setelah mengetahui jumlah kasus baru per hari, kita dapat membuat kurvanya.
 </script>
 <p class="chart-caption">Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.</p>
 
-Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
-
 Jika kita perhatikan kurva tersebut, terdapat tiga fase utama, yaitu fase kenaikan, fase puncak, dan fase penurunan.
 
 1. Pada fase kenaikan, jumlah kasus baru meningkat dari hari ke hari. Hal ini terjadi karena setiap individu infeksius rata-rata menularkan penyakit ke lebih dari satu individu lain. Dengan kata lain, pada fase ini angka reproduksi efektif (Rₑ) lebih besar dari 1. Jumlah individu rentan masih cukup banyak sehingga penularan berlangsung dengan cepat.
@@ -679,8 +677,7 @@ Pada dasarnya, kurva epidemi adalah representasi visual dari perubahan nilai R�
   });
 })();
 </script>
-
-Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ >1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ <1).
+<p class="chart-caption">Gambar 2.10. Struktur umum kurva epidemi. Bagian merah menunjukkan peningkatan jumlah kasus baru (Rₑ >1); bagian kuning menunjukkan kasus baru yang relatif stabil (Rₑ ≈ 1); bagian hijau menunjukkan penurunan jumlah kasus baru (Rₑ <1).</p>
 
 Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung pada sumber dan mekanisme penularan penyakit. Secara umum, terdapat tiga pola utama:
 
@@ -690,7 +687,12 @@ Meskipun demikian, bentuk kurva epidemi tidak selalu sama. Pola kurva bergantung
 
 3. Kurva perambatan (propagated). Pola ini terjadi ketika penyakit menyebar dari satu individu ke individu lain. Kurva biasanya menunjukkan kenaikan yang bertahap, mencapai puncak, kemudian menurun. Dalam beberapa kasus, kurva terlihat memiliki beberapa gelombang naik-turun dan bisa jadi memiliki beberapa puncak. Hal ini mencerminkan siklus penularan antarindividu.
 
-Gambar 2.11. Contoh tiga bentuk kurva epidemi.
+<figure>
+  <img src="img/gambar-02.11.png" 
+       style="width: 500px;" 
+       alt="Contoh tiga bentuk kurva epidemi">
+  <figcaption>Gambar 2.11. Contoh tiga bentuk kurva epidemi.</figcaption>
+</figure>
 
 Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai jumlah kasus aktif. Kurva ini menggambarkan beban penyakit yang sedang berlangsung pada setiap hari. Puncaknya menunjukkan titik beban maksimum yang dialami oleh sistem.
 
@@ -725,8 +727,7 @@ Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai ju
   });
 })();
 </script>
-
-Gambar 2.12. Kurva jumlah kasus aktif.
+<p class="chart-caption">Gambar 2.12. Kurva jumlah kasus aktif.</p>p
 
 Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunjukkan perubahan komposisi populasi berdasarkan kompartemen dari waktu ke waktu. 
 
@@ -766,8 +767,7 @@ Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunj
   });
 })();
 </script>
-
-Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).
+<p class="chart-caption">Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).</p>p
 
 Kurva epidemi memperlihatkan bahwa penyebaran penyakit dalam populasi mengikuti pola yang dapat dipahami dan dijelaskan secara sistematis. Di balik setiap kenaikan dan penurunan jumlah kasus terdapat perubahan proporsi individu rentan, infeksius, dan kebal, serta perubahan nilai angka reproduksi efektif dari waktu ke waktu.
 
