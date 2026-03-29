@@ -601,14 +601,42 @@ Tabel 2.7. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
 Setelah mengetahui jumlah kasus baru per hari, kita dapat membuat kurvanya. 
 
-<div class="chart-wrapper" style="max-width: 650px;">
-  <canvas class="js-chart"
-    data-type="bar"
-    data-label="Kasus baru"
-    data-labels='["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]'
-    data-values='[0,10,12,13,15,15,15,12,9,7,6,5,5,3,1,0]'>
-  </canvas>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px;font-size:0.85rem;color:#888;">
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:rgba(79,70,229,0.25);display:inline-block;"></span>Kasus baru (batang)</span>
+  <span style="display:flex;align-items:center;gap:4px;"><span style="width:18px;height:2px;background:#4f46e5;display:inline-block;"></span>Tren (garis)</span>
 </div>
+<div style="position:relative;width:100%;height:320px;margin-bottom:0.5rem;">
+  <canvas id="chart29"></canvas>
+</div>
+<script>
+(function(){
+  new Chart(document.getElementById('chart29'), {
+    type: 'bar',
+    data: {
+      labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      datasets: [
+        { type: 'bar',  label: 'Kasus baru', data: [0,10,12,13,15,15,15,12,9,7,6,5,5,3,1,0],
+          backgroundColor: 'rgba(79, 70, 229, 0.25)', borderWidth: 0, borderRadius: 2, order: 2 },
+        { type: 'line', label: 'Tren',       data: [0,10,12,13,15,15,15,12,9,7,6,5,5,3,1,0],
+          borderColor: '#4f46e5', backgroundColor: 'transparent', tension: 0.4,
+          pointRadius: 3, pointBackgroundColor: '#4f46e5', borderWidth: 2, order: 1 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        title: t => 'Hari ke-' + t[0].label,
+        label: t => t.dataset.label + ': ' + t.raw
+      }}},
+      scales: {
+        x: { title: { display: true, text: 'Hari', color: '#888', font: { size: 13 } }, grid: { display: false }, ticks: { color: '#888', autoSkip: false } },
+        y: { title: { display: true, text: 'Jumlah kasus baru', color: '#888', font: { size: 13 } }, beginAtZero: true, grid: { color: 'rgba(128,128,128,0.15)' }, ticks: { color: '#888', stepSize: 5 } }
+      }
+    }
+  });
+})();
+</script>
+<p class="chart-caption">Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.</p>
 
 Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
 
