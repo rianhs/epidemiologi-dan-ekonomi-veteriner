@@ -51,6 +51,38 @@ Sub-CPMK-2 dirancang untuk diselesaikan dalam satu kegiatan belajar (satu pekan)
 
 #### I. Peta konsep
 
+```text
+Dinamika penyakit dalam populasi
+├── Paradigma mengenai penyakit
+│   ├── Konsep sehat dan tidak sehat 
+│   └── Teori kemunculan penyakit
+│       └── Segitiga epidemiologi 
+│           ├── Inang 
+│           ├── Agen 
+│           └── Lingkungan
+├── Mekanisme perpindahan penyakit
+│   ├── Rantai infeksi
+│   │   ├── Reservoir, inang, dan portal 
+│   │   └── Cara penularan 
+│   └── Pengukuran kapasitas penularan 
+│       ├── Angka reproduksi 
+│       │   ├── Angka reproduksi dasar (R0)
+│       │   └── Angka reproduksi efektif (Re)
+│       └── Kekebalan kelompok 
+└── Perubahan status penyakit
+    ├── Level individu
+    │   ├── Riwayat alamiah penyakit 
+    │   └── Level pencegahan 
+    └── Level populasi
+        ├── Model kompartemen (SIRD)
+        │   ├── Rentan (S)
+        │   ├── Terinfeksi (I)
+        │   └── Sembuh & mati (R & D) 
+        └── Kurva epidemi 
+            ├── Kurva sumber bersama
+            └── Kurva perambatan 
+```
+
 Gambar 2.1. Peta konsep dalam modul ini. 
 
 #### II. Uraian materi
