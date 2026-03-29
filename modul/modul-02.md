@@ -4,7 +4,7 @@ title: "Modul 2: Dinamika Penyakit dalam Populasi"
 prev_url: modul/modul-01
 prev_title: "Modul 1: Pengantar Epidemiologi"
 next_url: modul/modul-03
-next_title: "Modul 3: Epidemiologi Deskriptif"
+next_title: "Modul 3: Frekuensi dan Distribusi Kejadian Penyakit"
 ---
 
 ## A. Posisi modul dalam struktur capaian pembelajaran
