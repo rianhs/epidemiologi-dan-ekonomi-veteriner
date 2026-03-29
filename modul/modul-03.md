@@ -189,7 +189,7 @@ Untuk memudahkan, mari kita gunakan analogi bak mandi:
 * Insidensi adalah aliran air yang baru masuk ke bak mandi. Ia menggambarkan munculnya kasus-kasus baru.
 * Prevalensi adalah seluruh air yang ada di dalam bak mandi pada saat itu. Ia menggambarkan beban penyakit secara keseluruhan.
 
-###### 1a. Prevalensi
+###### 1.a. Prevalensi
 
 Prevalensi adalah proporsi kasus dalam suatu populasi pada titik waktu tertentu (pada prevalensi titik) atau selama periode waktu tertentu (pada prevalensi periode). Prevalensi membantu kita menjawab pertanyaan: "Seberapa besar beban penyakit ini di populasi kita sekarang?"
 
@@ -201,19 +201,19 @@ Rumus umumnya adalah:
 
 Berdasarkan jangka waktunya, kita membagi prevalensi menjadi tiga tipe:
 
-1. Prevalensi titik (point prevalence)
+**1.a.1. Prevalensi titik (point prevalence)**
 
 Ini adalah potret sesaat mengenai situasi penyakit. Bayangkan kita datang ke sebuah peternakan, lalu memeriksa semua kambing untuk melihat siapa yang terkena scabies.
 
 Contoh: Dari 1.000 ekor kambing yang kita periksa pada tanggal 17 Agustus, ada 50 kambing yang sedang menderita scabies. Oleh karena itu, prevalensi titiknya adalah 50/1.000 = 5%.
 
-2. Prevalensi periode (period prevalence)
+**1.a.2. Prevalensi periode (period prevalence)**
 
 Parameter ini menunjukkan seberapa banyak hewan yang sakit selama rentang waktu tertentu (misalnya selama satu tahun). Angka ini mencakup kasus lama yang sudah ada sejak awal periode ditambah kasus baru yang muncul selama periode tersebut.
 
 Contoh: Masih di peternakan kambing dengan 1.000 populasi. Dalam 12 bulan terakhir, ada 150 ekor kambing yang pernah menderita scabies. Oleh karena itu, prevalensi periodenya adalah 150/1.000 = 15%.
 
-2a. Prevalensi seumur hidup (lifetime prevalence)
+**1.a.2.a. Prevalensi seumur hidup (lifetime prevalence)**
 
 Ukuran ini merupakan subtipe dari prevalensi periode. Namun, rentang waktunya adalah seluruh masa hidup hewan tersebut. Ia menunjukkan apakah hewan tersebut pernah menderita penyakit itu setidaknya sekali seumur hidupnya.
 
@@ -234,13 +234,13 @@ Perlu kita pahami bahwa prevalensi sangat dipengaruhi oleh durasi penyakit. Peny
 
 Setelah kita memahami beban penyakit melalui prevalensi, sekarang kita akan mempelajari seberapa cepat kasus baru muncul melalui ukuran insidensi.
 
-###### 1b. Insidensi
+###### 1.b. Insidensi
 
 Jika prevalensi berbicara tentang "beban" penyakit yang sudah ada, maka insidensi berbicara tentang "perubahan". Insidensi mengukur munculnya kasus-kasus baru pada suatu populasi, yang dapat dihitung sebagai proporsi atau risiko (pada insidensi kumulatif) atau kecepatan (pada laju insidensi). Ukuran ini sangat penting karena membantu kita memahami seberapa cepat penyakit menyebar dan seberapa besar risiko seekor hewan untuk tertular.
 
 Dalam insidensi, kita hanya menghitung hewan yang awalnya tidak sakit (nonkasus) tetapi kemudian menjadi sakit (menjadi kasus) selama periode pengamatan. Ada dua cara utama untuk mengukur insidensi, yaitu insidensi kumulatif dan laju insidensi.
  
-1. Insidensi kumulatif (cumulative incidence)
+**1.b.1. Insidensi kumulatif (cumulative incidence)**
 
 Insidensi kumulatif mengukur probabilitas atau risiko seekor hewan untuk jatuh sakit dalam jangka waktu tertentu. Ukuran ini sering kita sebut sebagai proporsi insidensi.
  
@@ -265,7 +265,7 @@ Catatan: kita tidak dapat membagi insidensi kumulatif dengan tahun karena kasus 
 
 Selain dengan persentase, insidensi kumulatif juga diekspresikan dengan satuan hewan, terutama jika pertambahan kasus barunya sangat rendah. Sebagai contoh, insidensi kumulatif mastitis pada skenario 1 adalah 5% selama 1 tahun atau 5 kasus baru di antara 100 hewan berisiko. Pada penyakit lain, misalnya tetanus pada kuda, insidensi kumulatifnya adalah 0,003% selama satu tahun. Angka ini bisa diekspresikan dengan 3 kasus baru di antara 100.000 hewan berisiko selama satu tahun.
 
-1a. Tingkat serangan (attack rate)
+**1.b.1.a. Tingkat serangan (attack rate)**
 
 Ini adalah bentuk khusus dari insidensi kumulatif yang sering kita gunakan pada situasi wabah yang berlangsung singkat, misalnya keracunan pakan atau wabah influenza. Istilah "serangan" digunakan untuk menggambarkan betapa cepat dan masifnya penyakit menyerang kelompok nonkasus yang terpapar. Sementara itu, istilah “rate” sebenarnya keliru karena ukuran ini bukanlah laju, tetapi proporsi.
 
@@ -283,7 +283,7 @@ Kesimpulan:
 * Tingkat serangan primer adalah 15% (dampak dari sumber paparan awal). 
 * Tingkat serangan sekunder adalah 20% (penularan dari hewan ke hewan).
 
-2. Laju insidensi (incidence rate)
+**1.b.2. Laju insidensi (incidence rate)**
 
 Dalam pengamatan jangka panjang, jumlah populasi biasanya tidak stabil. Ada hewan yang dijual, ada hewan yang mati karena sebab lain, atau ada hewan yang baru masuk di tengah masa pengamatan. Jika kita menggunakan rumus insidensi kumulatif, hasilnya menjadi kurang akurat karena tidak semua hewan diamati dalam durasi yang sama.
 
@@ -382,7 +382,7 @@ Pemilihan antara insidensi kumulatif atau laju insidensi sangat bergantung pada 
 
 Setelah kita memahami prevalensi dan insidensi, kita akan melihat bagaimana kedua angka ini sebenarnya saling berhubungan satu sama lain.
 
-###### 1c. Hubungan antara prevalensi dan insidensi
+###### 1.c. Hubungan antara prevalensi dan insidensi
 
 Kita sudah membahas prevalensi sebagai gambaran beban penyakit dan insidensi sebagai kecepatan munculnya kasus baru. Sekarang, bagaimana keduanya saling memengaruhi?
 
@@ -499,7 +499,7 @@ Sebagai contoh, perhatikan dua penyakit ini:
 
 Pemahaman mengenai hubungan ini sangat penting bagi kita saat merancang program pengendalian. Jika kita ingin menurunkan prevalensi penyakit kronis, fokus kita adalah mempercepat kesembuhan (pengobatan). Namun, jika kita ingin menurunkan prevalensi penyakit akut yang menular, fokus utama kita adalah mencegah munculnya kasus baru (vaksinasi dan biosekuriti).
 
-Prevalensi periode vs insidensi kumulatif
+**Prevalensi periode vs insidensi kumulatif**
 
 Hal lain yang sering membuat orang bingung adalah perbedaan antara prevalensi periode dan insidensi kumulatif. Keduanya sama-sama menggambarkan kasus pada periode waktu tertentu. Lihat tabel di bawah ini untuk melihat perbedaan antara keduanya.
 
@@ -520,13 +520,13 @@ Selain mengukur seberapa banyak hewan yang sakit (morbiditas), kita juga perlu m
 
 Mortalitas memberikan gambaran mengenai dampak paling fatal dari suatu penyakit. Dengan mengukur kematian, kita bisa memahami dua hal penting: seberapa besar risiko kematian bagi hewan di suatu wilayah dan seberapa ganas suatu penyakit menyerang populasi kita. Dalam epidemiologi veteriner, ukuran kematian yang paling sering digunakan adalah angka kematian dan tingkat kematian kasus.
 
-###### 2a. Angka kematian
+###### 2.a. Angka kematian
 
 Pada dasarnya, angka kematian merupakan variasi dari insidensi kumulatif yang sudah kita pelajari sebelumnya. Bedanya, "kasus" yang kita hitung di sini bukan lagi hewan yang sakit, melainkan hewan yang mati.
 
 Angka kematian mengukur frekuensi kematian dalam suatu populasi selama periode waktu tertentu (biasanya satu tahun). Berdasarkan kedalaman datanya, angka kematian dibagi menjadi dua tipe, yaitu angka kematian kasar dan angka kematian spesifik.
 
-1. Angka kematian kasar (crude mortality rate)
+**2.a.1. Angka kematian kasar (crude mortality rate)**
 
 Angka ini disebut "kasar" karena kita menghitung semua kematian yang terjadi akibat semua penyebab, tanpa membedakan umur, jenis kelamin, atau jenis penyakitnya. Ia memberikan gambaran umum mengenai risiko kematian di suatu populasi. Rumusnya:
 
@@ -537,7 +537,7 @@ Contoh:
 
 Di sebuah kabupaten terdapat 25.000 ekor domba. Selama tahun 2025, tercatat ada 300 ekor domba yang mati (baik karena sakit, kecelakaan, maupun dimakan predator). Pada skenario ini, angka kematiannya adalah 300 / 25.000 = 0,012 atau 1,2% per tahun.
 
-2. Angka kematian spesifik (specific mortality rate)
+**2.a.2. Angka kematian spesifik (specific mortality rate)**
 
 Angka ini jauh lebih detail karena kita membatasi hitungan kita pada penyebab tertentu atau kelompok hewan tertentu. Ini sangat berguna jika kita ingin melihat masalah yang lebih fokus.
 
@@ -559,7 +559,7 @@ Untuk memudahkan kita membedakan keduanya, mari kita lihat tabel berikut:
 
 Setelah kita tahu risiko kematian di seluruh populasi, sekarang kita akan melihat ukuran yang lebih spesifik untuk mengukur "keganasan" suatu penyakit, yaitu tingkat kematian kasus.
 
-###### 2b. Tingkat kematian kasus
+###### 2.b. Tingkat kematian kasus
 
 Jika angka kematian mengukur risiko kematian pada seluruh populasi, maka tingkat kematian kasus atau case fatality rate (CFR) mengukur sesuatu yang berbeda. Ia digunakan untuk mengukur seberapa ganas atau seberapa fatal suatu penyakit bagi individu yang sudah tertular.
 
