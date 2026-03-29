@@ -51,6 +51,31 @@ Sub-CPMK-3 dirancang untuk diselesaikan dalam satu kegiatan belajar (satu pekan)
 
 #### I. Peta konsep
 
+```text
+Frekuensi dan distribusi kejadian penyakit
+├── Standar dan alat hitung dasar 
+│   ├── Definisi kasus 
+│   └── Alat ukur dasar: rasio, proporsi, dan laju
+├── Ukuran kesakitan (morbiditas)
+│   ├── Prevalensi
+│   │   ├── Prevalensi titik 
+│   │   └── Prevalensi periode
+│   │       └── Prevalensi seumur hidup
+│   ├── Insidensi
+│   │   ├── Insidensi kumulatif 
+│   │   │   └── Tingkat serangan 
+│   │   └── Laju insidensi 
+│   └── Hubungan prevalensi dan insidensi
+├── Ukuran kematian (mortalitas)
+│   ├── Angka kematian kasar 
+│   ├── Angka kematian spesifik 
+│   └── Tingkat kematian kasus
+└── Epidemiologi deskriptif
+    ├── Distribusi demografis (who)
+    ├── Distribusi spasial (where)
+    └── Distribusi temporal (when)
+```
+
 Gambar 3.1. Peta konsep dalam modul ini.
 
 #### II. Uraian materi
