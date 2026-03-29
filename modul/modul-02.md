@@ -212,8 +212,12 @@ Ada beberapa model yang digunakan untuk menjelaskan konsep multifaktor, di antar
 
 Segitiga epidemiologi adalah model dalam epidemiologi yang menjelaskan bahwa suatu penyakit (terutama penyakit menular) dapat muncul akibat adanya interaksi yang sesuai antara tiga komponen, yaitu inang, agen, dan lingkungan. Jika ada komponen yang tidak mendukung, kemungkinan besar penyakit tidak akan muncul atau menyebar lebih lanjut.
 
-
-Gambar 2.2. Model segitiga epidemiologi.
+<figure>
+  <img src="img/gambar-02.02.png" 
+       style="width: 500px;" 
+       alt="Model segitiga epidemiologi">
+  <figcaption>Gambar 2.2. Model segitiga epidemiologi.</figcaption>
+</figure>
 
 1. Inang (atau penjamu) adalah organisme yang menampung agen dan menderita penyakit. Sejumlah faktor yang dimiliki inang memengaruhi kerentanannya terhadap penyakit, antara lain spesies, ras, jenis kelamin, usia, ukuran tubuh, dan status kekebalan.
 
@@ -278,8 +282,12 @@ Kedua dimensi ini dapat dikombinasikan dalam matriks 2x2 berikut ini.
 
 Untuk memahami bagaimana penyakit menular menyebar dalam suatu populasi, kita dapat menggunakan konsep rantai infeksi. Rantai infeksi adalah model yang menjelaskan bagaimana agen infeksius berpindah dari satu individu atau satu sumber ke individu lainnya. Penyebaran ini terjadi melalui serangkaian komponen yang saling terhubung dan membentuk suatu siklus.
 
-
-Gambar 2.3. Model rantai infeksi.
+<figure>
+  <img src="img/gambar-02.03.png" 
+       style="width: 500px;" 
+       alt="Model rantai infeksi.">
+  <figcaption>Gambar 2.3. Model rantai infeksi.</figcaption>
+</figure>
 
 Gambar di atas mengilustrasikan komponen utama dalam rantai infeksi:
 
@@ -326,9 +334,12 @@ Jika ada satu hewan terinfeksi yang dimasukkan ke dalam populasi yang seluruh in
 
 Angka reproduksi dasar (disimbolkan sebagai R₀) adalah rata-rata jumlah infeksi sekunder yang diakibatkan oleh satu individu terinfeksi pada populasi yang seluruhnya rentan. Lihat gambar di bawah sebagai contoh, jika penyakit A memiliki R₀ = 2, maka satu individu yang terinfeksi penyakit A dapat menularkan penyakit tersebut kepada dua individu rentan lainnya. Begitu pula dengan penyakit B yang memiliki R₀ = 3. Satu individu yang terinfeksi penyakit B dapat menularkan penyakit ini kepada tiga individu yang rentan terhadap penyakit ini.
 
-
-
-Gambar 2.4. Ilustrasi dua penyakit. Penyakit A memiliki R₀ = 2, sedangkan penyakit B memiliki R₀ = 3.
+<figure>
+  <img src="img/gambar-02.04.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi dua penyakit. Penyakit A memiliki R₀ = 2, sedangkan penyakit B memiliki R₀ = 3.">
+  <figcaption>Gambar 2.4. Ilustrasi dua penyakit. Penyakit A memiliki R₀ = 2, sedangkan penyakit B memiliki R₀ = 3.</figcaption>
+</figure>
 
 Ada dua syarat penting dalam definisi R₀, yaitu
 
@@ -424,8 +435,12 @@ Terakhir, perlu dipahami bahwa kekebalan kelompok bukanlah kondisi yang tetap ka
 
 Riwayat alamiah penyakit adalah gambaran perjalanan suatu penyakit pada individu (baik manusia maupun hewan) seiring waktu tanpa adanya intervensi medis apa pun. Pada umumnya, penggambaran ini dimulai dari individu rentan yang belum berpenyakit hingga penyakit tersebut berakhir, baik karena individu itu sembuh atau meninggal dunia.
 
-
-Gambar 2.5. Model riwayat alamiah penyakit.
+<figure>
+  <img src="img/gambar-02.05.png" 
+       style="width: 500px;" 
+       alt="Model riwayat alamiah penyakit">
+  <figcaption>Gambar 2.5. Model riwayat alamiah penyakit.</figcaption>
+</figure>
 
 Pada penyakit infeksius, terdapat empat tahapan yang dilalui oleh individu penderitanya.
 
@@ -459,8 +474,12 @@ Ada persamaan antara masa inkubasi dan masa laten. Keduanya dimulai sejak papara
 
 Dalam banyak kasus, durasi masa inkubasi hampir sama dengan masa laten. Artinya, saat hewan tersebut menunjukkan tanda klinis, ia juga menjadi infeksius. Namun, pada beberapa penyakit, masa laten lebih singkat dari masa inkubasi. Artinya, hewan sudah bersifat infeksius meskipun secara klinis belum menunjukkan tanda-tanda apa pun. 
 
-
-Gambar 2.6. Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.
+<figure>
+  <img src="img/gambar-02.06.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.">
+  <figcaption>Gambar 2.6. Ilustrasi perbedaan durasi masa laten dan masa inkubasi. Pada penyakit A, masa laten lebih panjang dari masa inkubasi. Pada penyakit B, masa laten lebih singkat dari masa inkubasi sehingga terdapat transmisi penyakit pra-simtomatik.</figcaption>
+</figure>
 
 Kita telah mempelajari model riwayat alamiah penyakit (garis waktu pada satu individu) dan model rantai infeksi (hubungan antarindividu). Bagaimana jika keduanya dikombinasikan?
 
@@ -468,8 +487,12 @@ Dalam model rantai infeksi, terdapat hewan penginfeksi (sumber infeksi) dan hewa
 
 Perbedaan interval waktu yang dialami oleh penginfeksi dan terinfeksi dapat dinyatakan dengan interval generasi (jarak antara paparan pada hewan penginfeksi dan terinfeksi) dan interval serial (jarak antara munculnya tanda klinis pada hewan penginfeksi dan terinfeksi).
 
-
-Gambar 2.7. Model yang mengilustrasikan rantai infeksi antara dua individu.
+<figure>
+  <img src="img/gambar-02.07.png" 
+       style="width: 500px;" 
+       alt="Model yang mengilustrasikan rantai infeksi antara dua individu.">
+  <figcaption>Gambar 2.7. Model yang mengilustrasikan rantai infeksi antara dua individu.</figcaption>
+</figure>
 
 ###### 2. Model SIR
 
@@ -497,8 +520,12 @@ Namun, dalam perkembangan selanjutnya, model ini dianggap terlalu sederhana untu
 
 Dengan adanya kompartemen-kompartemen baru ini, model SIR dapat berkembang menjadi SIRD, SEIRD, SVEIRD, atau bentuk lainnya.
 
-
-Gambar 2.8. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.
+<figure>
+  <img src="img/gambar-02.08.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.">
+  <figcaption>Gambar 2.8. Ilustrasi aliran individu dalam model SIRD. Kompartemen hijau: rentan; kompartemen merah: terinfeksi; kompartemen biru: sembuh; kompartemen hitam: mati.</figcaption>
+</figure>
 
 Berikut ini contoh dinamika penyebaran penyakit berdasarkan model SIRD. Perhatikan bahwa setiap hari, jumlah populasi tetap konstan, yaitu 1000.
 
