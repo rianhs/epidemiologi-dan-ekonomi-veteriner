@@ -173,6 +173,9 @@
        ========================================================= */
     .nav-modul a { transition: all 0.2s ease; }
 
+    article pre { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    article pre code { font-size: calc(var(--base-font-size) - 0.1rem); }
+
     .chart-caption {
       font-size: calc(var(--base-font-size) - 0.1rem);
       color: #64748b;
@@ -271,7 +274,9 @@
           {% if page.description %}
           <p class="text-lg text-slate-600 dark:text-slate-400 mb-3">{{ page.description }}</p>
           {% endif %}
+          {% unless page.url == '/' or page.url == '/index.html' %}
           <p id="word-count-info" class="text-sm text-slate-500 mt-2"></p>
+          {% endunless %}
         </header>
 
         <!-- =====================================================
