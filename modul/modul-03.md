@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Modul 3: Epidemiologi Deskriptif"
+title: "Modul 3: Frekuensi dan Distribusi Kejadian Penyakit"
 prev_url: modul/modul-02
 prev_title: "Modul 2: Dinamika Penyakit dalam Populasi"
 next_url: modul/modul-04
@@ -76,7 +76,7 @@ Frekuensi dan distribusi kejadian penyakit
     └── Distribusi temporal (when)
 ```
 
-Gambar 3.1. Peta konsep dalam modul ini.
+<p class="chart-caption">Gambar 3.1. Peta konsep dalam modul ini.</p>
 
 #### II. Uraian materi
 
@@ -94,7 +94,7 @@ a. Memberikan konteks melalui populasi berisiko.
 
 Dalam epidemiologi, angka kasus (pembilang) tidak akan berarti apa-apa jika kita tidak mengetahui jumlah total populasi yang berisiko tertular (penyebut). Mari kita lihat perbandingannya pada tabel berikut. 
 
-Tabel 3.1. Perbandingan makna angka kasus berdasarkan populasi berisiko.
+<p class="chart-caption">Tabel 3.1. Perbandingan makna angka kasus berdasarkan populasi berisiko.</p>
 
 | Skenario | Jumlah kasus (sapi sakit) | Total populasi | Makna epidemiologis |
 | :---: | :---: | :---: | ----- |
@@ -127,7 +127,7 @@ Sebagai contoh, jika kita ingin mendata kejadian penyakit mulut dan kuku (PMK) d
 
 Ada tiga tingkatan definisi kasus. Pembagian ini sangat bergantung pada seberapa kuat bukti yang kita miliki.
 
-Tabel 3.2. Tingkatan definisi kasus dalam epidemiologi.
+<p class="chart-caption">Tabel 3.2. Tingkatan definisi kasus dalam epidemiologi.</p>
 
 | Tingkatan | Istilah | Kriteria utama | Contoh definisi kasus untuk PMK |
 | ----- | ----- | ----- | ----- |
@@ -166,7 +166,7 @@ Ada tiga alat ukur dasar yang sering kita gunakan untuk membandingkan angka-angk
 
 Perhatikan tabel perbandingan berikut ini untuk membedakan ketiga istilah tersebut.
 
-Tabel 3.3. Perbandingan antara rasio, proporsi, dan laju.
+<p class="chart-caption">Tabel 3.3. Perbandingan antara rasio, proporsi, dan laju.</p>
 
 | Aspek | Rasio | Proporsi | Laju |
 | ----- | ----- | ----- | ----- |
@@ -189,7 +189,7 @@ Untuk memudahkan, mari kita gunakan analogi bak mandi:
 * Insidensi adalah aliran air yang baru masuk ke bak mandi. Ia menggambarkan munculnya kasus-kasus baru.
 * Prevalensi adalah seluruh air yang ada di dalam bak mandi pada saat itu. Ia menggambarkan beban penyakit secara keseluruhan.
 
-###### a. Prevalensi
+###### 1a. Prevalensi
 
 Prevalensi adalah proporsi kasus dalam suatu populasi pada titik waktu tertentu (pada prevalensi titik) atau selama periode waktu tertentu (pada prevalensi periode). Prevalensi membantu kita menjawab pertanyaan: "Seberapa besar beban penyakit ini di populasi kita sekarang?"
 
@@ -221,7 +221,7 @@ Contoh: Kita ingin tahu apakah seekor kambing pernah menderita scabies selama ia
 
 Untuk membandingkan ketiganya, mari kita perhatikan tabel berikut.
 
-Tabel 3.4. Perbandingan tipe-tipe prevalensi.
+<p class="chart-caption">Tabel 3.4. Perbandingan tipe-tipe prevalensi.</p>
 
 | Unsur | Prevalensi titik | Prevalensi periode | Prevalensi seumur hidup |
 | ----- | ----- | ----- | ----- |
@@ -234,7 +234,7 @@ Perlu kita pahami bahwa prevalensi sangat dipengaruhi oleh durasi penyakit. Peny
 
 Setelah kita memahami beban penyakit melalui prevalensi, sekarang kita akan mempelajari seberapa cepat kasus baru muncul melalui ukuran insidensi.
 
-###### b. Insidensi
+###### 1b. Insidensi
 
 Jika prevalensi berbicara tentang "beban" penyakit yang sudah ada, maka insidensi berbicara tentang "perubahan". Insidensi mengukur munculnya kasus-kasus baru pada suatu populasi, yang dapat dihitung sebagai proporsi atau risiko (pada insidensi kumulatif) atau kecepatan (pada laju insidensi). Ukuran ini sangat penting karena membantu kita memahami seberapa cepat penyakit menyebar dan seberapa besar risiko seekor hewan untuk tertular.
 
@@ -309,7 +309,7 @@ Jika menggunakan insidensi kumulatif, maka hasilnya
 
 Namun, jika kita menggunakan laju insidensi, waktu gabungan dari semua individu saat masih berisiko harus diperhitungkan. Gabungan angka ini dijadikan penyebut. Tabel dan gambar di bawah ini menjelaskan kontribusi setiap anjing terhadap angka penyebut.
 
-Tabel 3.5. Rincian kontribusi waktu berisiko (hewan-tahun) pada empat individu anjing selama satu tahun pengamatan.
+<p class="chart-caption">Tabel 3.5. Rincian kontribusi waktu berisiko (hewan-tahun) pada empat individu anjing selama satu tahun pengamatan.</p>
 
 | Kode anjing | Titik awal sebagai individu berisiko | Titik akhir sebagai individu berisiko | Durasi sebagai individu berisiko | Jumlah hewan × jumlah tahun |
 | :---: | :---: | :---: | :---: | ----- |
@@ -328,15 +328,18 @@ laju insidensi = 2 kasus baru / 2,5 hewan-tahun
  = 0,8 kasus baru per hewan per tahun 
  = 8 kasus baru per 10 hewan per tahun
 
- ![][image1]
-
-Gambar 3.2. Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada empat individu anjing terkait infeksi parvovirus.
+<figure>
+  <img src="img/gambar-03.02.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada empat individu anjing terkait infeksi parvovirus.">
+  <figcaption>Gambar 3.2. Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada empat individu anjing terkait infeksi parvovirus.</figcaption>
+</figure>
 
 Contoh 2:
 
 Sebanyak 1.000 sapi sehat diamati selama satu tahun. Selama periode penelitian, ada 50 sapi yang menjadi sakit karena terinfeksi virus BVD. Detailnya dijelaskan dalam tabel ini.
 
-Tabel 3.6. Rincian kontribusi waktu berisiko (hewan-tahun) pada populasi 1.000 ekor sapi selama satu tahun pengamatan.
+<p class="chart-caption">Tabel 3.6. Rincian kontribusi waktu berisiko (hewan-tahun) pada populasi 1.000 ekor sapi selama satu tahun pengamatan.</p>
 
 | Jumlah kelompok sapi | Titik awal sebagai individu berisiko | Titik akhir sebagai individu berisiko | Durasi sebagai individu berisiko | Jumlah hewan × jumlah tahun |
 | :---: | :---: | :---: | :---: | ----- |
@@ -346,10 +349,12 @@ Tabel 3.6. Rincian kontribusi waktu berisiko (hewan-tahun) pada populasi 1.000 e
 | 950 hewan | 1 Januari | 31 Desember | 1 tahun | 950 hewan-tahun |
 | Waktu gabungan dari semua individu saat masih berisiko | | | | 975 hewan-tahun |
 
-![][image2]
-
- 
-Gambar 3.3. Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada populasi 1.000 ekor sapi terkait infeksi virus BVD.
+<figure>
+  <img src="img/gambar-03.03.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada populasi 1.000 ekor sapi terkait infeksi virus BVD.">
+  <figcaption>Gambar 3.3. Ilustrasi garis waktu dan perhitungan total waktu berisiko (hewan-tahun) pada populasi 1.000 ekor sapi terkait infeksi virus BVD.</figcaption>
+</figure>
 
 Laju insidensi = Jumlah kasus baru / Jumlah hewan-waktu berisiko 
  = 50 / 975 
@@ -361,7 +366,7 @@ Dengan menggunakan ITC, kita bisa menghitung kecepatan munculnya penyakit dengan
 
 Rangkuman perbedaan antara insidensi kumulatif dan laju insidensi dapat dilihat pada tabel di bawah ini:
 
-Tabel 3.7. Perbandingan insidensi kumulatif dan laju insidensi.
+<p class="chart-caption">Tabel 3.7. Perbandingan insidensi kumulatif dan laju insidensi.</p>
 
 | Unsur | Insidensi kumulatif | Laju insidensi |
 | ----- | ----- | ----- |
@@ -377,15 +382,18 @@ Pemilihan antara insidensi kumulatif atau laju insidensi sangat bergantung pada 
 
 Setelah kita memahami prevalensi dan insidensi, kita akan melihat bagaimana kedua angka ini sebenarnya saling berhubungan satu sama lain.
 
-###### c. Hubungan antara prevalensi dan insidensi
+###### 1c. Hubungan antara prevalensi dan insidensi
 
 Kita sudah membahas prevalensi sebagai gambaran beban penyakit dan insidensi sebagai kecepatan munculnya kasus baru. Sekarang, bagaimana keduanya saling memengaruhi?
 
 Mari kita kembali ke analogi bak mandi yang kita gunakan sebelumnya. Proporsi air di dalam bak dibandingkan keseluruhan air (prevalensi) sangat bergantung pada dua hal, yaitu seberapa deras air yang mengalir masuk dari keran (insidensi) dan seberapa lama air itu tertahan di dalam bak sebelum keluar melalui lubang pembuangan (durasi penyakit).
 
-![][image3]
-
-Gambar 3.4. Ilustrasi toren dan bak mandi untuk menggambarkan hubungan antara insidensi dan prevalensi.
+<figure>
+  <img src="img/gambar-03.04.png" 
+       style="width: 500px;" 
+       alt="Ilustrasi toren dan bak mandi untuk menggambarkan hubungan antara insidensi dan prevalensi.">
+  <figcaption>Gambar 3.4. Ilustrasi toren dan bak mandi untuk menggambarkan hubungan antara insidensi dan prevalensi.</figcaption>
+</figure>
 
 Dengan analogi toren dan bak mandi, dinamika air di sistem ini bisa kita jabarkan ke dalam sebuah rumus.
 
@@ -474,7 +482,7 @@ Meskipun demikian, hubungan perkiraan prevalensi tersebut hanya berlaku pada kon
 
 Untuk melihat bagaimana berbagai faktor memengaruhi angka prevalensi, mari kita perhatikan tabel berikut:
 
-Tabel 3.8. Faktor-faktor yang memengaruhi angka prevalensi.
+<p class="chart-caption">Tabel 3.8. Faktor-faktor yang memengaruhi angka prevalensi.</p>
 
 | Faktor yang meningkatkan prevalensi | Faktor yang menurunkan prevalensi |
 | ----- | ----- |
@@ -495,14 +503,14 @@ Prevalensi periode vs insidensi kumulatif
 
 Hal lain yang sering membuat orang bingung adalah perbedaan antara prevalensi periode dan insidensi kumulatif. Keduanya sama-sama menggambarkan kasus pada periode waktu tertentu. Lihat tabel di bawah ini untuk melihat perbedaan antara keduanya.
 
- Tabel 3.9. Perbedaan antara prevalensi periode dan insidensi kumulatif beserta contoh skenarionya.
+ <p class="chart-caption">Tabel 3.9. Perbedaan antara prevalensi periode dan insidensi kumulatif beserta contoh skenarionya.</p>
 
 | Unsur dan skenario | Prevalensi periode | Insidensi kumulatif |
 | ----- | ----- | ----- |
 | Pembilang | Jumlah kasus dalam periode tertentu | Jumlah kasus baru dalam periode tertentu |
 | Penyebut | Jumlah populasi | Jumlah populasi rentan pada awal periode studi |
-| Skenario 1 ![][image4] Hari pertama bulan ini kasus = 0 ekor populasi = 30 ekor ![][image5] Hari terakhir bulan ini kasus = 15 ekor populasi = 30 ekor | Prevalensi periode = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan | Insidensi kumulatif = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan |
-| Skenario 2 ![][image6] Hari pertama bulan ini kasus = 3 ekor populasi = 30 ekor ![][image5] Hari terakhir bulan ini kasus = 15 ekor populasi = 30 ekor | Prevalensi periode = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan | Insidensi kumulatif = 12 / 27 = 0,44 atau 44% dalam kurun waktu satu bulan |
+| Skenario 1: Hari pertama bulan ini kasus = 0 ekor populasi = 30 ekor. Hari terakhir bulan ini kasus = 15 ekor populasi = 30 ekor | Prevalensi periode = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan | Insidensi kumulatif = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan |
+| Skenario 2: Hari pertama bulan ini kasus = 3 ekor populasi = 30 ekor. Hari terakhir bulan ini kasus = 15 ekor populasi = 30 ekor | Prevalensi periode = 15 / 30 = 0,5 atau 50% dalam kurun waktu satu bulan | Insidensi kumulatif = 12 / 27 = 0,44 atau 44% dalam kurun waktu satu bulan |
 
 Setelah kita tuntas membahas ukuran kesakitan (morbiditas), bagian selanjutnya akan membahas ukuran yang tidak kalah penting, yaitu ukuran kematian (mortalitas).
 
@@ -512,7 +520,7 @@ Selain mengukur seberapa banyak hewan yang sakit (morbiditas), kita juga perlu m
 
 Mortalitas memberikan gambaran mengenai dampak paling fatal dari suatu penyakit. Dengan mengukur kematian, kita bisa memahami dua hal penting: seberapa besar risiko kematian bagi hewan di suatu wilayah dan seberapa ganas suatu penyakit menyerang populasi kita. Dalam epidemiologi veteriner, ukuran kematian yang paling sering digunakan adalah angka kematian dan tingkat kematian kasus.
 
-###### a. Angka kematian (mortality rate)
+###### 2a. Angka kematian
 
 Pada dasarnya, angka kematian merupakan variasi dari insidensi kumulatif yang sudah kita pelajari sebelumnya. Bedanya, "kasus" yang kita hitung di sini bukan lagi hewan yang sakit, melainkan hewan yang mati.
 
@@ -538,7 +546,7 @@ Angka ini jauh lebih detail karena kita membatasi hitungan kita pada penyebab te
 
 Untuk memudahkan kita membedakan keduanya, mari kita lihat tabel berikut:
 
-Tabel 3.10. Perbandingan angka kematian kasar dan spesifik.
+<p class="chart-caption">Tabel 3.10. Perbandingan angka kematian kasar dan spesifik.</p>
 
 | Unsur | Angka kematian kasar | Angka kematian spesifik (penyebab) | Angka kematian spesifik (kelompok) |
 | ----- | ----- | ----- | ----- |
@@ -551,7 +559,7 @@ Tabel 3.10. Perbandingan angka kematian kasar dan spesifik.
 
 Setelah kita tahu risiko kematian di seluruh populasi, sekarang kita akan melihat ukuran yang lebih spesifik untuk mengukur "keganasan" suatu penyakit, yaitu tingkat kematian kasus.
 
-###### b. Tingkat kematian kasus
+###### 2b. Tingkat kematian kasus
 
 Jika angka kematian mengukur risiko kematian pada seluruh populasi, maka tingkat kematian kasus atau case fatality rate (CFR) mengukur sesuatu yang berbeda. Ia digunakan untuk mengukur seberapa ganas atau seberapa fatal suatu penyakit bagi individu yang sudah tertular.
 
@@ -574,7 +582,7 @@ Makna: Tingkat keganasan wabah distemper tersebut adalah 50%. Artinya, separuh d
 
 Sangat sering terjadi misinterpretasi antara angka kematian spesifik akibat suatu penyebab dan CFR. Untuk memperjelas perbedaan antara keduanya, mari kita perhatikan tabel perbandingan berikut ini.
 
-Tabel 3.11. Perbandingan angka kematian spesifik (penyebab) dan tingkat kematian kasus.
+<p class="chart-caption">Tabel 3.11. Perbandingan angka kematian spesifik (penyebab) dan tingkat kematian kasus.</p>
 
 | Aspek | Angka kematian spesifik (penyebab) | Tingkat kematian kasus |
 | ----- | ----- | ----- |
@@ -612,7 +620,7 @@ Dengan menjawab ketiga pertanyaan ini, kita bisa mendapatkan gambaran mengenai s
 
 Untuk memudahkan kita memahami cakupan epidemiologi deskriptif, lihat tabel berikut:
 
-Tabel 3.12. Tiga pilar utama epidemiologi deskriptif.
+<p class="chart-caption">Tabel 3.12. Tiga pilar utama epidemiologi deskriptif.</p>
 
 | Pilar deskriptif | Fokus pengamatan | Contoh informasi yang dihasilkan |
 | ----- | ----- | ----- |
@@ -659,7 +667,7 @@ Distribusi spasial membantu kita memetakan pola kejadian penyakit berdasarkan le
 
 Untuk memvisualisasikan distribusi ini, kita menggunakan peta epidemiologis. Peta ini adalah alat bantu utama untuk melihat bagaimana kasus tersebar di suatu wilayah. Secara garis besar ada dua jenis peta yang sering digunakan dalam epidemiologi, yaitu peta titik dan peta wilayah. Keduanya dijelaskan pada tabel berikut ini.
 
-Tabel 3.13. Jenis-jenis peta dalam epidemiologi deskriptif.
+<p class="chart-caption">Tabel 3.13. Jenis-jenis peta dalam epidemiologi deskriptif.</p>
 
 | Jenis peta | Cara penyajian | Kegunaan utama |
 | ----- | ----- | ----- |
@@ -668,9 +676,12 @@ Tabel 3.13. Jenis-jenis peta dalam epidemiologi deskriptif.
 
 Catatan: Pada peta titik, bisa jadi satu titik pada peta tidak mewakili satu individu hewan yang sakit, melainkan mewakili satu unit epidemiologi, seperti satu peternakan yang terinfeksi. Unit epidemiologi adalah kelompok hewan dengan batas lokasi dan risiko paparan penyakit yang sama.
 
-![][image7]
-
-Gambar 3.5. Perbandingan penyajian distribusi spasial. Kiri: peta titik yang menandai lokasi spesifik setiap kasus dengan titik. Kanan: peta wilayah yang menggunakan gradasi warna untuk membandingkan tingkat keparahan kasus antarwilayah administratif.
+<figure>
+  <img src="img/gambar-03.05.png" 
+       style="width: 500px;" 
+       alt="Perbandingan penyajian distribusi spasial. Kiri: peta titik yang menandai lokasi spesifik setiap kasus dengan titik. Kanan: peta wilayah yang menggunakan gradasi warna untuk membandingkan tingkat keparahan kasus antarwilayah administratif.">
+  <figcaption>Gambar 3.5. Perbandingan penyajian distribusi spasial. Kiri: peta titik yang menandai lokasi spesifik setiap kasus dengan titik. Kanan: peta wilayah yang menggunakan gradasi warna untuk membandingkan tingkat keparahan kasus antarwilayah administratif.</figcaption>
+</figure>
 
 Mari kita ambil contoh kejadian PMK. Melalui peta titik, kita dapat melihat secara detail apakah kasus PMK mengelompok (clustering) di lokasi-lokasi spesifik. Sementara itu, peta wilayah membantu kita membandingkan tingkat keparahan wabah tersebut antarwilayah administratif melalui perbedaan warna. Informasi spasial dari kedua peta ini sangat berharga untuk menentukan strategi operasional di lapangan. Alih-alih melakukan penutupan wilayah atau vaksinasi massal secara membabi buta di seluruh provinsi, kita dapat memfokuskan sumber daya dan penanganan, seperti vaksinasi dan pembatasan perpindahan hewan, hanya pada daerah yang secara visual teridentifikasi sebagai titik panas (hotspot).
 
@@ -697,7 +708,7 @@ Secara umum, ada tiga pola waktu yang sering kita amati dalam epidemiologi veter
 
 Untuk merangkum perbedaan pola-pola waktu ini, mari kita perhatikan tabel berikut:
 
-Tabel 3.14. Jenis-jenis distribusi temporal.
+<p class="chart-caption">Tabel 3.14. Jenis-jenis distribusi temporal.</p>
 
 | Pola waktu | Skala waktu | Kegunaan utama |
 | ----- | ----- | ----- |
@@ -705,13 +716,16 @@ Tabel 3.14. Jenis-jenis distribusi temporal.
 | Pola musiman | Bulanan (berulang setiap tahun) | Menyiapkan langkah pencegahan sebelum musim berisiko tiba |
 | Kurva epidemi | Harian atau mingguan | Memantau perkembangan wabah dan mencari sumber penularan |
 
-Untuk memvisualisasikan perbedaan dari ketiga pola waktu pada tabel di atas, perhatikan Gambar 3.6. Pada grafik tren jangka panjang (kiri), kita bisa melihat arah pergerakan kasus dari tahun ke tahun. Sementara itu, grafik pola musiman (tengah) memperlihatkan dengan jelas adanya gelombang peningkatan dan penurunan kasus yang berulang pada bulan-bulan yang sama selama dua tahun berturut-turut. Di sisi lain, kurva epidemi (kanan) memberikan gambaran spesifik berupa diagram batang (histogram) mengenai lonjakan cepat kasus baru dalam hitungan hari selama masa pengamatan wabah berlangsung.
+Untuk memvisualisasikan perbedaan dari ketiga pola waktu pada tabel di atas, perhatikan gambar di bawah ini. Pada grafik tren jangka panjang (kiri), kita bisa melihat arah pergerakan kasus dari tahun ke tahun. Sementara itu, grafik pola musiman (tengah) memperlihatkan dengan jelas adanya gelombang peningkatan dan penurunan kasus yang berulang pada bulan-bulan yang sama selama dua tahun berturut-turut. Di sisi lain, kurva epidemi (kanan) memberikan gambaran spesifik berupa diagram batang (histogram) mengenai lonjakan cepat kasus baru dalam hitungan hari selama masa pengamatan wabah berlangsung.
 
-![][image8]
+<figure>
+  <img src="img/gambar-03.06.png" 
+       style="width: 500px;" 
+       alt="Perbandingan jenis-jenis grafik distribusi temporal. Kiri: Tren jangka panjang berskala tahunan yang menunjukkan penurunan kasus. Tengah: Pola musiman berskala bulanan yang menunjukkan fluktuasi kasus yang berulang pada periode waktu dua tahun. Kanan: Kurva epidemi berupa diagram batang berskala harian yang menunjukkan lonjakan tajam kasus baru saat wabah.">
+  <figcaption>Gambar 3.6. Perbandingan jenis-jenis grafik distribusi temporal. Kiri: Tren jangka panjang berskala tahunan yang menunjukkan penurunan kasus. Tengah: Pola musiman berskala bulanan yang menunjukkan fluktuasi kasus yang berulang pada periode waktu dua tahun. Kanan: Kurva epidemi berupa diagram batang berskala harian yang menunjukkan lonjakan tajam kasus baru saat wabah.</figcaption>
+</figure>
 
-Gambar 3.6. Perbandingan jenis-jenis grafik distribusi temporal. Kiri: Tren jangka panjang berskala tahunan yang menunjukkan penurunan kasus. Tengah: Pola musiman berskala bulanan yang menunjukkan fluktuasi kasus yang berulang pada periode waktu dua tahun. Kanan: Kurva epidemi berupa diagram batang berskala harian yang menunjukkan lonjakan tajam kasus baru saat wabah.
-
- Perlu kita pahami bahwa ketiga pilar epidemiologi deskriptif (siapa, di mana, kapan) saling berkaitan erat. Sebagai contoh, kita mungkin menemukan bahwa "kasus diare (who) meningkat di wilayah pesisir (where) setiap bulan Januari (when)".
+Perlu kita pahami bahwa ketiga pilar epidemiologi deskriptif (siapa, di mana, kapan) saling berkaitan erat. Sebagai contoh, kita mungkin menemukan bahwa "kasus diare (who) meningkat di wilayah pesisir (where) setiap bulan Januari (when)".
 
 Dengan menggabungkan angka frekuensi penyakit (morbiditas dan mortalitas) dengan analisis distribusi ini, kita tidak lagi hanya melihat angka yang mati, tetapi kita mulai memahami pola hidup penyakit tersebut di tengah populasi. Pemahaman inilah yang menjadi dasar bagi kita untuk mengambil keputusan medis maupun kebijakan kesehatan hewan yang tepat di lapangan.
 
