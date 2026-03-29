@@ -601,6 +601,14 @@ Tabel 2.7. Simulasi dinamika status penyakit berdasarkan model SIRD.
 
 Setelah mengetahui jumlah kasus baru per hari, kita dapat membuat kurvanya. 
 
+<div class="chart-wrapper" style="max-width: 650px;">
+  <canvas class="js-chart"
+    data-type="bar"
+    data-label="Kasus baru"
+    data-labels='["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]'
+    data-values='[0,10,12,13,15,15,15,12,9,7,6,5,5,3,1,0]'>
+  </canvas>
+</div>
 
 Gambar 2.9. Kurva epidemi dari tabel simulasi SIRD. Sumbu x menunjukkan hari, sedangkan sumbu y menunjukkan jumlah kasus baru.
 
