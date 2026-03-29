@@ -707,10 +707,10 @@ Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai ju
       labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
       datasets: [{
         data: [0,10,18,24,30,35,37,36,33,30,28,28,26,24,20,17],
-        borderColor: '#378add',
-        backgroundColor: 'rgba(55,138,221,0.08)',
+        borderColor: '#4f46e5',
+        backgroundColor: 'rgba(79,70,229,0.08)',
         fill: true, tension: 0.4,
-        pointRadius: 3, pointBackgroundColor: '#378add', borderWidth: 2
+        pointRadius: 3, pointBackgroundColor: '#4f46e5', borderWidth: 2
       }]
     },
     options: {
