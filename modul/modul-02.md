@@ -83,7 +83,7 @@ Dinamika penyakit dalam populasi
             └── Kurva perambatan 
 ```
 
-<p class="chart-caption">Gambar 2.1. Peta konsep dalam modul ini.</p>p 
+<p class="chart-caption">Gambar 2.1. Peta konsep dalam modul ini.</p>
 
 #### II. Uraian materi
 
@@ -97,7 +97,7 @@ Definisi ini dirumuskan untuk manusia. Bagi hewan, biasanya ada ekspektasi tamba
 
 Di sisi lain, ada beberapa istilah yang menggambarkan kondisi tubuh yang tidak sehat, misalnya gejala klinis (clinical symptoms), tanda klinis (clinical signs), gangguan (disorder), penyakit (disease), cedera (injury), dan sindrom (syndrome). Tidak ada definisi resmi, misalnya dari WHO, untuk menjelaskan istilah-istilah ini. Namun, mereka dapat dijelaskan dengan ringkas dalam tabel berikut.
 
-Tabel 2.1. Istilah yang mengekspresikan ketidaksehatan.
+<p class="chart-caption">Tabel 2.1. Istilah yang mengekspresikan ketidaksehatan.</p>
 
 | Istilah | Deskripsi singkat | Contoh |
 | ------- | ----------------- | ------ |
@@ -112,7 +112,7 @@ Tabel 2.1. Istilah yang mengekspresikan ketidaksehatan.
 
 Ada banyak hal yang menyebabkan hewan yang awalnya sehat menjadi tidak sehat. Secara umum, mereka dapat diklasifikasikan menjadi delapan kelompok sebagaimana tabel di bawah ini.
 
-Tabel 2.2. Hal-hal yang menyebabkan hewan menjadi sakit.
+<p class="chart-caption">Tabel 2.2. Hal-hal yang menyebabkan hewan menjadi sakit.</p>
 
 | Penyebab              | Deskripsi singkat                                               | Contoh                                                                      |
 | --------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -131,7 +131,7 @@ Di antara penyebab-penyebab di atas, mana yang berpotensi untuk berdampak pada b
 
 Tidak semua penyebab ketidaksehatan memiliki potensi yang sama untuk menimbulkan masalah epidemiologis. Tabel berikut ini merangkum potensi mereka untuk menimbulkan kejadian yang berdampak pada banyak individu dalam populasi hewan.
 
-Tabel 2.3. Potensi tiap penyebab penyakit untuk menjadi masalah epidemiologis dan/atau berdampak pada banyak hewan.
+<p class="chart-caption">Tabel 2.3. Potensi tiap penyebab penyakit untuk menjadi masalah epidemiologis dan/atau berdampak pada banyak hewan.</p>
 
 | Penyebab | Potensi | Keterangan |
 | ----- | ----- | ----- |
@@ -150,7 +150,7 @@ Di antara semua penyebab, infeksi dan infestasi menjadi perhatian utama dalam ep
 
 Saat ini, kita telah mengetahui beragam penyebab penyakit. Namun, manusia zaman dahulu tidak memiliki pemahaman sekompleks ini. Sepanjang sejarah, konsep tentang penyebab penyakit terus berkembang dan berubah. Berikut ini adalah beberapa konsep atau teori yang banyak dianut.
 
-Tabel 2.4. Perkembangan teori tentang penyebab penyakit.
+<p class="chart-caption">Tabel 2.4. Perkembangan teori tentang penyebab penyakit.</p>
 
 | Nama teori | Uraian |
 | ---------- | ------ |
@@ -235,7 +235,7 @@ Ketiga komponen ini berinteraksi satu sama lain. Interaksi antarkomponen yang te
 
 Oleh karena itu, untuk mencegah atau mengendalikan suatu penyakit, perlu sejumlah modifikasi atau intervensi komponen segitiga epidemiologi. Semakin banyak komponen atau interaksi yang kita intervensi, maka semakin kecil pula kemungkinan penyakit tersebut muncul dan menyebar.
 
-Tabel 2.5. Contoh intervensi menurut komponen segitiga epidemiologi.
+<p class="chart-caption">Tabel 2.5. Contoh intervensi menurut komponen segitiga epidemiologi.</p>
 
 | No | Jenis intervensi | Komponen utama yang dimodifikasi | Penjelasan tambahan |
 | :---: | ----- | :---: | ----- |
@@ -529,7 +529,7 @@ Dengan adanya kompartemen-kompartemen baru ini, model SIR dapat berkembang menja
 
 Berikut ini contoh dinamika penyebaran penyakit berdasarkan model SIRD. Perhatikan bahwa setiap hari, jumlah populasi tetap konstan, yaitu 1000.
 
-Tabel 2.6. Simulasi dinamika status penyakit berdasarkan model SIRD.
+<p class="chart-caption">Tabel 2.6. Simulasi dinamika status penyakit berdasarkan model SIRD.</p>
 
 | Hari | Rentan  (S) | Terinfeksi  (I) | Sembuh  (R) | Mati  (D) | Jumlah (S+I+R+D) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -578,7 +578,7 @@ Mari kita buat kurva epidemiologi dari tabel SIRD. Pada tabel di bawah ini, kolo
 
 Catatan: Jumlah kasus baru pada hari ke-n = Jumlah individu rentan pada sehari sebelumnya (n–1) dikurangi jumlah individu rentan pada hari tersebut (n) = Sn–1 – Sn
 
-Tabel 2.7. Simulasi dinamika status penyakit berdasarkan model SIRD.
+<p class="chart-caption">Tabel 2.7. Simulasi dinamika status penyakit berdasarkan model SIRD.</p>
 
 | Hari | Rentan  (S) | Terinfeksi  (I) | Sembuh  (R) | Mati  (D) | Kasus baru (Sn–1 – Sn) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -727,7 +727,7 @@ Jenis kurva yang lebih jarang digunakan adalah dengan membuat sumbu y sebagai ju
   });
 })();
 </script>
-<p class="chart-caption">Gambar 2.12. Kurva jumlah kasus aktif.</p>p
+<p class="chart-caption">Gambar 2.12. Kurva jumlah kasus aktif.</p>
 
 Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunjukkan perubahan komposisi populasi berdasarkan kompartemen dari waktu ke waktu. 
 
@@ -767,7 +767,7 @@ Grafik lain yang terkadang digunakan adalah diagram batang kumulatif yang menunj
   });
 })();
 </script>
-<p class="chart-caption">Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).</p>p
+<p class="chart-caption">Gambar 2.13. Diagram batang status kesehatan secara kumulatif. Hijau: jumlah individu rentan (S); merah: jumlah individu terinfeksi (I), biru: jumlah individu sembuh (R); hitam: jumlah individu mati (D).</p>
 
 Kurva epidemi memperlihatkan bahwa penyebaran penyakit dalam populasi mengikuti pola yang dapat dipahami dan dijelaskan secara sistematis. Di balik setiap kenaikan dan penurunan jumlah kasus terdapat perubahan proporsi individu rentan, infeksius, dan kebal, serta perubahan nilai angka reproduksi efektif dari waktu ke waktu.
 
