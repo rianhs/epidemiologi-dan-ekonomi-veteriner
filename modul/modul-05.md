@@ -1,6 +1,663 @@
-# Modul 05 — Epidemiologi Analitis
+---
+layout: default
+title: "Modul 5: Epidemiologi Analitis"
+prev_url: modul/modul-04
+prev_title: "Modul 4: Uji Diagnostik"
+next_url: modul/modul-06
+next_title: "Modul 6: Surveilans"
+---
 
-> Modul ini sedang dalam penyusunan.
+## A. Posisi modul dalam struktur capaian pembelajaran
 
-## Sub-CPMK-5
-Mahasiswa mampu menilai kualitas kajian observasional berdasarkan ketepatan pemilihan desain kajian, penyusunan instrumen pengumpulan data, perhitungan asosiasi risiko, dan analisis hubungan kausalitas.
+Modul ini merupakan bahan ajar untuk Sub-CPMK-5, yaitu “*Mahasiswa mampu menilai kualitas kajian observasional berdasarkan ketepatan pemilihan desain kajian, penyusunan instrumen pengumpulan data, perhitungan asosiasi risiko, dan analisis hubungan kausalitas.*” 
+
+Penguasaan Sub-CPMK-5 akan membekali mahasiswa dengan kemampuan untuk menginterpretasikan dan merancang kajian epidemiologi analitis. Setelah menyelesaikan modul ini, mahasiswa akan siap untuk mempelajari surveilans penyakit pada Modul 6.
+
+
+## B. Indikator keberhasilan
+
+Keberhasilan pembelajaran pada modul (Sub-CPMK) ini diukur melalui empat indikator.
+
+| Kode | Uraian indikator |
+| ----- | ----- |
+| Indikator 5.1 | Ketepatan justifikasi desain kajian observasional berdasarkan pertanyaan penelitian dan ketersediaan sumber daya. |
+| Indikator 5.2 | Ketepatan justifikasi metode penarikan sampel dan perhitungan jumlah sampel minimum dengan pertimbangan representativitas dan kekuatan statistika. |
+| Indikator 5.3 | Ketepatan penilaian validitas instrumen pengumpulan data untuk meminimalkan bias. |
+| Indikator 5.4 | Ketepatan pembacaan dan interpretasi hasil uji statistika (nilai p, asosiasi, besar efek, dan selang kepercayaan) sesuai dengan desain kajian. |
+| Indikator 5.5 | Kedalaman analisis dan penilaian hubungan sebab-akibat melalui integrasi hasil kajian observasional dan kriteria kausalitas. |
+
+
+## C. Bentuk penilaian
+
+Penguasaan Sub-CPMK-5 dinilai dengan dua bentuk.
+
+| No | Bentuk | Metode | Proporsi terhadap nilai akhir |
+| :---: | ----- | ----- | :---: |
+| 1 | Non-tes | Tugas berbasis masalah | 10% |
+| 2 | Tes | Ujian tengah semester | 5% |
+
+## D. Peta konsep
+
+```teks
+Epidemiologi analitis 
+├── Dasar kajian epidemiologi
+│   ├── Epidemiologi deskriptif
+│   ├── Determinan dan faktor
+│   └── Hierarki bukti ilmiah
+├── Perancangan kajian observasional 
+│   ├── Perumusan pertanyaan
+│   ├── Pemilihan desain 
+│   ├── Metode penarikan sampel 
+│   └── Penentuan jumlah sampel 
+├── Pengumpulan data dan pencegahan bias
+│   ├── Instrumen pengukuran 
+│   ├── Validasi instrumen
+│   ├── Kesalahan sistematis 
+│   └── Pengendalian perancu
+├── Analisis statistika
+│   ├── Analisis bivariat
+│   │   ├── Tabel 2x2
+│   │   ├── Uji Chi-square 
+│   │   └── Ukuran asosiasi kasar: OR, RR, dan AR
+│   └── Analisis Multivariat 
+│       ├── Variabel perancu
+│       ├── Uji regresi logistik/Poisson
+│       └── Ukuran asosiasi yang disesuaikan: adjusted OR/RR
+└── Kausalitas dan determinan 
+    ├── Model multifaktor
+    ├── Jenis faktor kontributor
+    └── Penyimpulan kausalitas
+```
+
+Gambar 5.1. Peta konsep dalam modul ini.
+
+
+## E. Gambaran umum
+
+Proses penguasaan epidemiologi analitis dimulai dengan memahami pergeseran dari sekadar mendeskripsikan penyakit (siapa, di mana, kapan) menjadi pencarian alasan mengapa penyakit tersebut muncul dengan cara melaksanakan kajian observasional. Peneliti kemudian memilih jenis desain kajian, menentukan metode penarikan sampel, dan memastikan kualitas instrumen pengumpulan data untuk menghindari bias. Setelah data diperoleh, analisis statistika dilakukan secara berjenjang, mulai dari analisis bivariat yang sederhana hingga analisis regresi multivariat. Hal ini dilakukan untuk meminimalkan efek variabel perancu yang dapat membuat kita keliru dalam menyimpulkan hasil kajian. Pada tahap akhir, angka-angka statistika ini tidak ditelan mentah-mentah, melainkan diuji lagi dengan model multifaktor dan kriteria kausalitas untuk memastikan bahwa paparan yang diteliti benar-benar merupakan "penyebab" dari penyakit dan bukan sekadar kebetulan matematis.
+
+
+## F. Alokasi waktu dan kegiatan belajar
+
+Sub-CPMK-5 dirancang untuk diselesaikan dalam dua kegiatan belajar (dua pekan), yang masing-masing terdiri atas 120 menit kegiatan belajar mandiri, 100 menit kegiatan belajar terbimbing (perkuliahan tatap muka), dan 120 menit menyelesaikan kegiatan penugasan terstruktur.
+
+| Pekan | Kode | Topik |
+| :---: | ----- | ----- |
+| 6 | Kegiatan belajar 5.1 | Interpretasi hasil kajian epidemiologi analitis |
+| 7 | Kegiatan belajar 5.2 | Perancangan kajian epidemiologi analitis |
+
+
+### Kegiatan Belajar 5.1: Interpretasi hasil kajian epidemiologi analitis
+
+#### I. Pengantar
+
+Setelah kita menuntaskan pembahasan mengenai frekuensi dan distribusi penyakit di Modul 3 dan cara memastikan diagnosisnya di Modul 4, sekarang kita sampai pada pertanyaan yang lebih mendalam.
+
+Bayangkan kita sedang menangani wabah diare pada pedet di sebuah peternakan. Melalui pendekatan deskriptif, kita sudah tahu bahwa ada 20 ekor pedet yang sakit (siapa), kejadiannya di kandang A (di mana), dan puncaknya terjadi di awal musim hujan (kapan). Data ini sangat berguna, tetapi apakah cukup bagi kita untuk menghentikan wabah tersebut secara permanen?
+
+Tentu saja tidak. Pemilik ternak pasti akan bertanya, "Dok, kenapa pedet saya bisa sakit? Apakah karena pakannya yang berjamur, atau karena kebersihan kandangnya yang buruk?"
+
+Untuk menjawab pertanyaan "mengapa" dan "bagaimana" suatu penyakit bisa terjadi, kita perlu melangkah lebih jauh dari sekadar memetakan situasi. Di sinilah kita mulai menggunakan epidemiologi analitis.
+
+
+#### II. Uraian materi
+
+##### A. Dasar kajian epidemiologi analitis
+
+###### 1. Perbedaan epidemiologi deskriptif dan analitis
+
+Apa sebenarnya hal-hal yang membedakan kedua pendekatan ini? Mari ambil investigasi kasus kriminal sebagai analogi. Epidemiologi deskriptif merupakan tugas polisi untuk mendata siapa korbannya, di mana lokasi kejadiannya, dan jam berapa kejahatan itu terjadi. 
+
+Dalam pendekatan deskriptif, kita hanya berfokus pada kelompok hewan yang sakit. Kita tidak memerlukan kelompok pembanding. Tujuannya adalah memetakan distribusi penyakit di dalam populasi. Hasil akhirnya adalah sebuah hipotesis atau dugaan sementara. Misalnya, "Kita menduga diare ini berkaitan dengan sumber air yang tercemar."
+
+Lalu, apa langkah selanjutnya?
+
+Epidemiologi analitis diibaraktan sebagai detektif yang mencari tahu siapa pelakunya dan apa motifnya dengan cara membandingkan berbagai bukti. 
+
+Dalam pendekatan analitis, kita menguji hipotesis yang sudah dibuat pada tahap deskriptif. Sekarang, kita tidak hanya melihat hewan yang sakit, tetapi juga mendata hewan yang tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara statistika apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
+
+Dengan melakukan analisis ini, seorang detektif diharapkan untuk bisa menangkap pelaku agar kasus benar-benar tuntas.
+
+Untuk menyederhanakan dan merangkum konsep ini, mari kita perhatikan perbandingannya pada tabel berikut.
+
+Tabel 5.1. Perbandingan epidemiologi deskriptif dan epidemiologi analitis.
+
+| Aspek | Epidemiologi deskriptif | Epidemiologi analitis |
+| --- | --- | --- | 
+| Fokus pertanyaan | Who, where, when (siapa, di mana, kapan) | Why, how (mengapa, bagaimana) |
+| Tujuan utama | Memetakan distribusi dan frekuensi penyakit dalam populasi | Mencari determinan atau faktor yang berhubungan dengan penyakit |
+| Analogi investigasi | Mengumpulkan fakta dasar di tempat kejadian perkara | Menemukan bukti motif dan cara kerja pelaku |
+| Informasi yang dihasilkan| Sebaran dan jumlah hewan yang terdampak | Ada/tidaknya hubungan (asosiasi atau kasual) antara faktor dan penyakit |
+
+Setelah kita memahami bahwa epidemiologi analitis bertujuan untuk menguji hubungan antara suatu faktor dengan penyakit, muncul pertanyaan baru: Faktor seperti apa yang sebenarnya kita cari? Apakah semua hal yang berkaitan dengan penyakit bisa kita sebut sebagai penyebab? Kita akan membahas hal ini lebih mendalam pada bagian selanjutnya.
+
+
+###### 2. Determinan dan faktor
+
+Dalam epidemiologi dan ilmu kesehatan masyarakat, ada istilah "determinan kesehatan". Secara sederhana, determinan kesehatan adalah segala hal yang berperan dalam mengubah status kesehatan suatu populasi. Dalam percakapan sehari-hari, kita sering menyebut determinan ini dengan istilah "faktor". 
+
+Namun, secara ilmiah, kita tidak bisa sembarangan menyebut suatu faktor sebagai "penyebab". Ada tingkatan kualitas bukti yang harus kita penuhi sebelum kita berani menyimpulkan hubungan antara sebuah faktor dengan penyakit. 
+
+Ada faktor yang sekadar “terlihat berhubungan” dengan penyakit, ada yang benar-benar meningkatkan risiko penyakit, dan ada yang sudah bisa dianggap sebagai penyebab penyakit. 
+
+Mari kita bedah tiga tingkatan faktor tersebut.
+
+* Faktor yang berasosiasi (associated factors): Ini adalah tingkatan yang paling dasar. Kita menyebut sebuah faktor "berasosiasi" dengan penyakit jika hasil uji statistika menunjukkan adanya hubungan yang nyata. Namun, hubungan ini belum tentu berarti sebab-akibat. Bisa jadi itu hanya kebetulan atau ada faktor lain yang tersembunyi. 
+	Contoh: Kita menemukan bahwa kejadian diare lebih sering muncul pada pedet yang lahir pada malam hari. Secara data, ada hubungan. Namun. apakah waktu kelahiran (malam hari) merupakan penyebabnya? Belum tentu. Mungkin ada faktor lain, seperti pengawasan peternak yang kurang pada jam-jam tersebut. Di sini, kelahiran pada malam hari hanya "berasosiasi" dengan diare.
+* Faktor risiko (risk factors) dan faktor protektif (protective factors): Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit (seperti vaksinasi). Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
+	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya. Pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
+* Faktor penyebab (causal factors): Inilah tingkatan tertinggi yang menjadi tujuan akhir kita. Sebuah faktor baru bisa disebut sebagai penyebab jika ia memenuhi kriteria kausalitas yang ketat (seperti kriteria Bradford-Hill yang akan kita bahas nanti). Kita harus bisa membuktikan bahwa jika faktor ini dihilangkan, maka kejadian penyakit akan menurun secara drastis atau hilang sama sekali. 
+	Contoh: Adanya infeksi mikroorganisme seperti bakteri Escherichia coli enterotoksigenik atau Rotavirus yang dibuktikan dengan pemeriksaan laboratorium. Mereka inilah pelaku utama yang secara biologis merusak sel-sel dinding usus pedet dan secara langsung memicu terjadinya diare.
+
+Untuk memudahkan kita membedakan ketiganya, mari kita perhatikan tabel berikut:
+
+Tabel 5.2. Perbedaan tingkatan faktor berdasarkan kualitas bukti.
+
+|Tingkatan|Istilah|Makna utama|Contoh dalam kesehatan hewan|
+|---|---|---|---|
+|Tingkat 1|Faktor yang berasosiasi|Hubungan sebatas hasil uji statistika pada suatu kajian|Pedet yang lahir pada malam hari lebih sering menderita diare |
+|Tingkat 2|Faktor risiko/protektif|Hubungan yang selalu konsisten (meningkatkan atau menurunkan risiko) dan memiliki kepastian temporal (ada urutan waktu yang jelas) | Pedet yang terlambat mengonsumsi kolostrum lebih berisiko menderita diare |
+|Tingkat 3|Faktor penyebab|Hubungan yang sudah memenuhi kriteria kausalitas sebagai penyebab penyakit| Pedet yang terinfeksi E. coli enterotoksigenik atau Rotavirus mengalami diare |
+
+Dari contoh di atas, kita bisa melihat bahwa sebagai calon dokter hewan, tugas kita adalah memilah bukti-bukti tersebut.
+
+Jika kita hanya menemukan faktor yang berasosiasi, kita harus berhati-hati dalam mengambil kesimpulan. Namun, jika kita sudah menemukan faktor risiko, kita bisa mulai memberikan saran, misalnya perubahan cara pemeliharaan hewan. Terakhir, dengan mengetahui faktor penyebab, kita bisa menentukan intervensi yang tepat sasaran.
+
+Lalu, bagaimana cara kita mendapatkan bukti-bukti ini? Apakah kita cukup hanya dengan mengamati satu atau dua ekor hewan saja?
+
+Tentu tidak. Kita membutuhkan desain penelitian yang terstruktur agar data yang kita kumpulkan benar-benar valid. Pada bagian selanjutnya, kita akan mempelajari berbagai jenis kajian epidemiologi yang bisa kita gunakan untuk menguji faktor-faktor tersebut.
+
+
+###### 3.  Jenis-jenis kajian epidemiologi
+
+Dalam epidemiologi, kita tidak bisa asal mengumpulkan data. Kita perlu memilih "cara" atau desain kajian yang sesuai dengan tujuan kita. Secara garis besar, seluruh kajian epidemiologi dapat kita bedakan berdasarkan dua pertanyaan kunci. Pertama, apakah kita memiliki kelompok pembanding? Jika tidak ada, maka kita melakukan kajian deskriptif; jika ada, maka kita melakukan kajian analitis). Kedua, apakah kita memberikan perlakuan secara sengaja? (Jika tidak, maka kajian itu disebut observasional; jika ya, maka kajian itu disebut eksperimental).
+
+Selain dua pertanyaan kunci di atas, kita juga bisa mengelompokkan suatu kajian berdasarkan waktu atua durasi pengambilan data. Jika kita memotret data pada satu titik waktu saja, kita melakukan kajian potong lintang. Namun, jika kita mengabil data secara berkelanjutan seiring berjalannya waktu, kita melakukan  kajian longitudinal.
+
+Berdasarkan pembagian tersebut, kita dapat menyusun hierarki desain kajian epidemiologi sebagai berikut.
+
+1. Kajian deskriptif -> kajian tanpa kelompok pembanding dan tidak bertujuan menguji hipotesis
+	1. Berbasis kasus -> berfokus pada individu sakit tanpa mempertimbangkan populasi. Contoh: 
+		* Laporan kasus (case report)
+		* Rangkaian kasus (case series)
+	2. Berbasis populasi -> ada data populasi sebagai dasar perhitungan frekuensi penyakit. Contoh: 
+		* Kajian potong lintang deskriptif (untuk menghitung prevalensi) 
+		* Kajian longitudinal deskriptif (untuk menghitung insidensi).
+2. Kajian analitis -> kajian dengan kelompok pembanding dan bertujuan menguji hipotesis mengenai hubungan antara paparan (faktor) dan luaran (status kesehatan)
+	1. Kajian observasional -> peneliti hanya mengamati apa yang terjadi secara alami tanpa memberikan intervensi atau perlakuan apa pun
+		1. Berbasis individu -> unit observasi adalah individu. Contoh: 
+			* Kajian potong lintang (cross-sectional study; kadang juga diterjemahkan menjadi kajian lintas seksional)
+			* Kajian kasus–kontrol (case–control study)
+			* Kajian kohort (cohort study)
+		2. Berbasis kelompok (agregat) -> unit observasi adalah kelompok atau wilayah. Contoh: 
+			* Kajian ekologis (ecological study)
+	2. Kajian eksperimental (intervensional) -> peneliti merancang dan mengendalikan perlakuan terhadap semua kelompok. Contoh: 
+		* Uji lapangan (field trial)
+		* Uji acak terkendali (randomized controlled trial)
+
+Dari pengelompokan ini, kita bisa melihat bahwa satu desain bisa memiliki karakteristik yang berbeda tergantung tujuan penggunaannya. Misalnya, kajian potong lintang bisa bersifat deskriptif ketika hanya menghitung prevalensi, tetapi menjadi analitis ketika digunakan untuk membandingkan kelompok.
+
+Bagaimana cara kita membedakan semua istilah ini dengan cepat? Mari kita perhatikan tabel rangkuman berikut.
+
+Tabel 5.3. Deskripsi dan contoh penerapan berbagai jenis kajian epidemiologi.
+
+| Jenis kajian                     | Deskripsi                                                                                                                          | Contoh                                                                                                                     |
+| -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Laporan kasus                    | Deskripsi mendetail dari satu individu hewan yang sakit                                                                            | Melaporkan kasus keracunan tumbuhan langka pada seekor sapi                                                                |
+| Rangkaian kasus                  | Kumpulan beberapa laporan kasus dengan temuan serupa                                                                               | Melaporkan kasus sepuluh ekor sapi di satu desa menunjukkan luka lepuh yang sama secara bersamaan                          |
+| Kajian potong lintang deskriptif | Pengukuran proporsi kasus yang ada pada satu populasi pada satu titik waktu (prevalensi)                                           | Melakukan survei untuk mengetahui berapa persen sapi yang menderita cacingan pada bulan Agustus                            |
+| Kajian longitudinal deskriptif   | Pengukuran munculnya kasus baru pada satu populasi dalam kurun waktu tertentu (insidensi)                                          | Memantau perkembangan tren brucellosis pada sapi di suatu wilayah selama 5 tahun                                           |
+| Kajian potong lintang analitis   | Perbandingan individu dalam empat kelompok sekaligus (terpapar, tidak terpapar, sakit, tidak sakit) pada satu waktu                | Mencari asosiasi antara jenis lantai kandang dengan kejadian laminitis pada satu kunjungan lapangan                        |
+| Kajian kasus–kontrol             | Perbandingan individu dalam kelompok hewan sakit (kasus) dan tidak sakit (kontrol), lalu melacak riwayat paparannya pada masa lalu | Membandingkan sapi yang terkena antraks dan yang tidak, lalu mengecek apakah mereka pernah digembalakan di lahan yang sama |
+| Kajian kohort                    | Perbandingan individu dalam kelompok hewan yang terpapar dan tidak terpapar, lalu melihat siapa saja yang menjadi sakit            | Memantau kelompok pedet yang diberi kolostrum dan tanpa kolostrum, lalu melihat siapa yang diare dalam sebulan ke depan    |
+| Kajian ekologis                  | Perbandingan data agregat antara satu kelompok dan kelompok lain                                                                   | Menghubungkan rata-rata curah hujan bulanan dengan tingginya penyakit kuku busuk pada sapi di lima kabupaten berbeda       |
+| Uji lapangan                     | Eksperimen berupa intervensi kepada hewan di lingkungan alamiahnya                                                                 | Menguji efektivitas vaksin baru pada sapi-sapi di peternakan rakyat                                                        |
+| Uji acak terkendali              | Eksperimen berupa intervensi dengan kontrol yang ketat dan pembagian kelompok secara acak                                          | Menguji efektivitas obat cacing jenis baru dibandingkan obat standar pada anjing-anjing secara acak di rumah sakit hewan.  |
+
+Setelah kita memahami "peta besar" dari berbagai jenis kajian ini, sekarang kita akan memfokuskan perhatian pada tiga jenis kajian yang paling sering digunakan dalam epidemiologi veteriner di lapangan, yaitu kajian analitis observasional tingkat individu, yang terdiri atas kajian potong lintang, kasus–kontrol, dan kohort.
+
+Mengapa tiga desain ini perlu dipahami dengan baik?
+
+Karena dalam praktiknya, kita hampir selalu berhadapan dengan keterbatasan. Waktu terbatas, biaya terbatas, data tidak selalu lengkap, dan penyakit yang kita teliti juga memiliki karakter yang berbeda-beda. Oleh karena itu, pemilihan desain kajian bukan soal mana yang paling canggih, tetapi mana yang paling sesuai dengan pertanyaan penelitian.
+
+Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah penelusuran waktu dan titik awal kajian. Mari kita bedah satu per satu.
+
+a. Kajian potong lintang (lintas seksional)
+
+Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat itu juga sama kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
+
+Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita  terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
+
+Keterbatasan: Karena data paparan dan luaran diambil secara bersamaan, kita sering kali kesulitan menentukan mana yang terjadi lebih dulu. Misalnya, apakah lantai kandang yang duluan kotor baru kemudian sapi mengalami diare, atau peternak membiarkan lantai kotor setelah sapi menjadi diare? Kita tidak bisa memastikannya dengan desain ini.
+
+b. Kajian kasus–kontrol
+
+Jika kajian potong lintang adalah sebuah foto, maka kajian kasus-kontrol adalah sebuah adegan kilas balik (flashback). Pada kajian ini, kita memulai investigasi dari luaran (akibat), lalu menelusuri riwayat masa lalu untuk mencari paparan (calon penyebab). Dengan kata lain, kita mengumpulkan sekelompok hewan yang sudah sakit (disebut "kasus") dan sekelompok hewan tidak sakit yang tinggal di lingkungan serupa (disebut "kontrol"). Setelah itu, kita mencari tahu apakah kedua kelompok memiliki riwayat paparan yang berbeda.
+
+Kapan kajian ini digunakan? Desain ini sangat cocok saat kita meneliti penyakit langka atau penyakit yang butuh waktu lama untuk muncul (masa inkubasinya panjang). Kita tidak perlu menunggu hewan menjadi sakit. Kita cukup mencari hewan yang sudah sakit.
+
+Keterbatasan: Kita sangat bergantung pada catatan masa lalu. Padahal, sering kali  data tersebut tidak lengkap dan tidak akurat. Jika data tidak tercatat, kita hanya mengandalkan ingatan orang-orang yang terlibat dengan kelompok hewan yang kita teliti. Ingatan seseorang sangat rentan terhadap bias.
+
+C. Kajian kohort
+
+Kajian kohort adalah sebuah film dokumenter. Kita mengikuti perjalanan hidup sekelompok hewan dari waktu ke waktu. Kajian dimulai dari hewan-hewan tak berpenyakit, yang dibagi menjadi kelompok terpapar dan kelompok tidak terpapar. Kita ikuti mereka selama beberapa pekan, bulan, atau tahun untuk melihat siapa saja yang akhirnya jatuh sakit.
+
+Kapan kajian ini digunakan? Desain ini digunakan saat kita ingin memastikan secara mutlak bahwa paparan benar-benar terjadi sebelum penyakit. Di antara semua kajian observasional, kajian kohort memberikan bukti sebab-akibat yang paling kuat. Desain ini juga sangat tepat untuk menilai paparan yang langka.
+
+Keterbatasan: Kajian ini memakan waktu yang lebih lama dan biaya yang lebih mahal. Selain itu, ada risiko hewan mati, dijual, atau hilang sebelum masa pemantauan selesai. Jika penyakitnya sangat jarang, jumlah sampel yang dibutuhkan bisa menjadi sangat besar.
+
+Untuk menyederhanakan perbedaan ketiganya, mari kita perhatikan rangkuman pada tabel berikut.
+
+Tabel 5.4. Perbandingan kajian potong lintang, kasus–kontrol, dan kohort.
+
+| Aspek                  | Potong lintang                                | Kasus–kontrol                                                  | Kohort                                                             |
+| ---------------------- | --------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Arah penelusuran waktu | Tidak ada (hanya satu titik waktu)            | Mundur ke belakang (retrospektif)                              | Maju ke depan (prospektif)                                         |
+| Titik awal kajian      | Paparan dan penyakit diukur bersamaan         | Hewan sudah berstatus sakit (kasus) atau tidak sakit (kontrol) | Semua hewan tidak sakit, yang dibedakan berdasarkan status paparan |
+| Cocok untuk            | Mengukur prevalensi dan menilai hubungan awal | Penyakit langka dan penyakit dengan masa inkubasi panjang      | Mengukur insidensi, risiko, dan urutan waktu (temporalitas)        |
+| Biaya dan waktu        | Rendah dan cepat                              | Sedang                                                         | Tinggi dan lama                                                    |
+| Kekuatan bukti         | Paling lemah                                  | Sedang                                                         | Paling kuat                                                        |
+
+Sampai di sini, kita mulai bisa melihat bahwa ketiga desain ini bukan saling menggantikan. Masing-masing menjawab kebutuhan yang berbeda.
+
+Lalu, kapan kita memilih salah satunya?
+
+Mari kita gunakan pertanyaan-pertanyaan berikut.
+
+1. Apakah penyakit yang ingin diteliti tergolong langka atau membutuhkan waktu lama untuk muncul? 
+	* Ya ➔ Pertimbangkan kajian kasus–kontrol. 
+	* Tidak ➔ Lanjut ke pertanyaan 2.
+2. Apakah kita memiliki waktu, dana, dan sumber daya untuk memantau hewan secara terus-menerus ke masa depan? 
+	* Ya ➔ Gunakan kajian kohort.
+	* Tidak ➔ Lanjut ke pertanyaan 3.
+3. Apakah kita hanya membutuhkan gambaran cepat mengenai situasi saat ini dan hubungan awal antarfaktor?
+	* Ya ➔ Gunakan kajian potong lintang.
+
+
+###### 4. Hierarki bukti ilmiah
+
+Setelah kita memahami berbagai jenis kajian epidemiologi, sekarang muncul satu pertanyaan penting. Jika kita membaca dua hasil penelitian yang memberikan kesimpulan berbeda tentang penyebab suatu penyakit, rujukan mana yang harus kita pegang? Apakah semua kajian menghasilkan bobot bukti yang setara?
+
+Jawabannya tentu tidak. Mari kita bayangkan sebuah proses pengadilan. Bukti berupa desas-desus dari warga sekitar tentu memiliki kekuatan hukum yang jauh lebih lemah jika disandingkan dengan barang bukti berupa rekaman CCTV di lokasi kejadian. Dalam dunia sains dan kedokteran, kita juga memiliki tingkatan pembuktian serupa yang dikenal sebagai hierarki bukti ilmiah.
+
+Hierarki ini mengurutkan desain penelitian berdasarkan kemampuannya dalam membuktikan hubungan sebab-akibat (kausalitas). Semakin tinggi posisi sebuah desain kajian pada hierarki ini, semakin kebal kajian tersebut terhadap bias (kesalahan pengukuran atau penarikan kesimpulan). Akibatnya, bukti yang dihasilkan semakin kuat dan layak dijadikan pijakan untuk merumuskan kebijakan untuk kesehatan populasi.
+
+Mari kita urutkan kekuatan bukti tersebut dari tingkat yang paling dasar hingga tingkat puncak pada tabel berikut.
+
+Tabel 5.5. Hierarki bukti jenis-jenis kajian dan riset epidemiologis.
+
+| Tingkat bukti    | Desain kajian                         | Penjelasan tingkat kekuatan dan kerentanan terhadap bias                                                                                                                                                                  |
+| ---------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Puncak tertinggi | Meta-analisis dan tinjauan sistematis | Bukti terkuat. Kajian ini tidak mengumpulkan data baru, melainkan menggabungkan dan menganalisis ulang sekian banyak kajian terbaik (biasanya riset eksperimental) untuk menghasilkan kesimpulan akhir yang komprehensif. |
+| Sangat Kuat      | Uji acak terkendali dan uji lapangan  | Bukti primer (lapangan) terkuat. Peneliti mengontrol penuh pemberian perlakuan dan membagi hewan secara acak, risiko bias sangat minimal.                                                                                 |
+| Kuat             | Kajian kohort                         | Bukti observasional terkuat. Arah penelusuran yang maju ke depan memastikan kita memiliki kepastian waktu (paparan benar-benar mendahului penyakit).                                                                      |
+| Menengah         | Kajian kasus–kontrol                  | Posisinya lebih rendah dari kajian kohort karena kajian ini menelusuri masa lalu. Kita sangat bergantung pada catatan sejarah masa lalu yang bisa saja tidak akurat.                                                      |
+| Lemah            | Kajian potong lintang                 | Hanya memotret data pada satu titik waktu. Kita sulit menentukan mana yang terjadi lebih dulu antara paparan dan penyakit, sehingga hubungan sebab-akibat tidak bisa disimpulkan.                                         |
+| Sangat lemah     | Laporan kasus dan rangkaian kasus     | Kajian deskriptif murni tanpa kelompok pembanding. Fungsinya hanya sebagai peringatan awal untuk merumuskan dugaan sementara.                                                                                             |
+| Paling dasar     | Opini pakar dan Penalaran mekanistis  | Hanya bersumber dari pengalaman subjektif seorang ahli atau murni penalaran teori di atas kertas, tanpa ada kajian lapangan yang terstruktur.                                                                             |
+
+Lalu, mengapa kita tidak selalu melakukan penelitian yang ada di bagian atas  piramida?
+
+Mungkin kita berpikir, "Kalau begitu, kita lakukan saja meta-analisis atau RCT setiap saat." Kenyataannya tidak semudah itu. Semakin tinggi posisi kajian dalam piramida, semakin besar biaya yang dibutuhkan, semakin lama waktunya, dan terkadang ada kendala etika. Misalnya, kita tidak mungkin sengaja memaparkan virus berbahaya ke hewan sehat hanya untuk eksperimen.
+
+Selain itu, setiap desain memiliki peran yang berbeda. Laporan kasus bisa menjadi sinyal awal adanya masalah. Kajian potong lintang membantu kita memahami besarnya masalah. Kajian kasus-kontrol dan kohort membantu kita menguji hubungan. Uji eksperimental memberikan konfirmasi yang lebih kuat.
+
+Dengan kata lain, hierarki ini bukan untuk “menghakimi” desain tertentu, tetapi untuk membantu kita menilai seberapa kuat kesimpulan yang dapat kita tarik dari suatu kajian.
+
+Setelah kita memahami "peta" dan "kualitas" dari berbagai desain kajian ini, selanjutnya kita akan belajar cara mengolah angka-angkanya.
+
+##### B. Analisis bivariat
+
+Sekarang kita sudah tahu cara memilih desain kajian saat turun ke lapangan. Lalu, apa langkah selanjutnya setelah buku catatan kita penuh dengan data? Kita harus mengolah data tersebut untuk mencari jawaban.
+
+Tahap paling dasar dalam pengujian hipotesis adalah melakukan analisis bivariat. Secara sederhana, analisis bivariat adalah proses membandingkan dua variabel. Dalam epidemiologi analitis, dua variabel utama yang selalu kita sandingkan adalah paparan (faktor yang diduga sebagai penyebab) dan luaran (status kesehatan, yang biasanya berupa status penyakit).
+
+Untuk melakukan ini, kita membutuhkan sebuah alat bantu yang sangat legendaris dalam epidemiologi, yaitu tabel kontingensi 2×2.
+
+###### 1. Tabel 2×2 untuk kajian observasional
+
+Pada modul sebelumnya, kita telah menggunakan tabel 2×2. Namun, penggunaannya berbeda. 
+
+* Tabel 2×2 pada modul 4: 
+	* Tabel untuk menghitung validitas (sensitivitas dan spesifisitas) dan nilai prediktif sebuah uji diagnostik.
+	* Tabel untuk menghitung reliabilitas (tingkat kesesuaian) antara dua penguji atau dua alat uji yang berbeda.
+* Tabel 2×2 pada modul 5 (materi saat ini):
+	* Tabel untuk mendeteksi hubungan antara faktor dan penyakit dan mengukur seberapa besar efek paparan tersebut.
+
+Mahasiswa terkadang keliru dalam menentukan variabel mana yang harus diletakkan di baris (horizontal) dan kolom (vertikal) untuk setiap jenis tabel 2×2 ini. Agar kita tidak keliru saat menyusun data, mari kita bedakan ketiga fungsi tabel kontingesi tersebut pada ringkasan berikut.
+
+Tabel 5.6. Perbedaaan berbagai penggunaan tabel 2×2 dalam epidemiologi.
+
+| Aspek                   | Tabel validitas uji diagnostik                                      | Tabel reliabilitas uji diagnostik      | Tabel asosiasi kajian observasional                            |
+| ----------------------- | ------------------------------------------------------------------- | -------------------------------------- | -------------------------------------------------------------- |
+| Tujuan utama            | Menilai ketepatan uji (sensitivitas, spesifisitas, nilai prediktif) | Menilai kesesuaian antarpemeriksaan    | Menilai hubungan antara paparan (faktor) dan luaran (penyakit) |
+| Pertanyaan yang dijawab | Apakah uji ini valid?                                               | Apakah hasilnya konsisten?             | Apakah paparan faktor berhubungan dengan kejadian penyakit?    |
+| Kolom                   | Status penyakit (D+ / D−)                                           | Hasil uji 1 (T1+ / T1−)                | Status penyakit (D+ / D−)                                      |
+| Baris                   | Hasil uji (T+ / T−)                                                 | Hasil uji 2 (T2+ / T2−)                | Status paparan (F+ / F−)                                       |
+| Makna sel a             | Positif sejati                                                      | Kesepakatan positif                    | Terpapar dan sakit                                             |
+| Ukuran yang dihitung    | Se, Sp, NPP, NPN                                                    | Persentase kesesuaian, statistik Kappa | Chi-square, OR, RR                                             |
+
+Setelah kita melihat perbandingannya, sekarang kita tahu bahwa di Modul 5 ini, fokus kita adalah menempatkan faktor pada baris dan penyakit pada kolom. Mari kita lihat struktur standarnya pada tabel berikut.
+
+Tabel 5.7. Struktur standar tabel kontingensi 2×2 untuk kajian observasional.
+
+|                            | Sakit (D+) | Tidak sakit (D−) | Total |
+| -------------------------- | ---------- | ---------------- | ----- |
+| Terpapar faktor (F+)       | a          | b                | a + b |
+| Tidak terpapar faktor (F−) | c          | d                | c + d |
+| Total                      | a + c      | b + d            | n     |
+Mari kita pahami makna dari setiap sel di dalam tabel tersebut:
+* Sel a: Jumlah hewan yang terpapar faktor dan sakit.
+* Sel b: Jumlah hewan yang terpapar risiko dan tidak sakit.
+* Sel c: Jumlah hewan yang tidak terpapar faktor dan sakit.
+* Sel d: Jumlah hewan yang tidak terpapar faktor dan tidak sakit.
+
+Mengapa posisi ini harus kita patuhi? Karena rumus-rumus yang akan kita gunakan sangat bergantung pada letak angka di dalam sel-sel tersebut. Jika kita salah menempatkan variabel, maka interpretasi kita juga akan ikut meleset.
+
+Mari kita gunakan contoh skenario lebih mudah dibayangkan:
+
+Kita melakukan kajian potong lintang pada 100 ekor pedet. Sebanyak 50 pedet dipelihara di kandang yang kotor (F+), dan 50 pedet lainnya di kandang yang bersih (F−). Pada waktu yang sama, kita juga mendata status diare pedet-pedet tersebut. Ternyata, ada 35 pedet yang diare (D+) dan 65 pedet sisanya tidak diare (D−). Kita memasukkan data mentah ke tabel 2×2.
+
+Tabel 5.8. Contoh pengisian tabel 2×2 untuk kajian observasional mengenai faktor kebersihan kandang dan diare pada pedet.
+
+|       | D+  | D−  | Total |
+| ----- | --- | --- | ----- |
+| F+    | 30  | 20  | 50    |
+| F−    | 5   | 45  | 50    |
+| Total | 35  | 65  | 100   |
+
+Setelah kita berhasil menyusun tabel 2×2 dengan benar, langkah berikutnya adalah menghitung kekuatan hubungan antara paparan dan penyakit. Kita akan mulai dengan ukuran asosiasi yang paling umum digunakan.
+
+
+###### 2. Kekuatan asosiasi
+
+Setelah kita menyusun data ke dalam tabel 2×2, sekarang kita akan mengubah angka-angka tersebut menjadi informasi yang lebih bermakna. Kita ingin tahu seberapa kuat hubungan antara sebuah faktor dengan kejadian penyakit.
+
+Namun, sebelum kita menghitungnya, ada dua konsep dasar yang harus kita pahami perbedaannya: risiko (risk) dan peluang relatif (odds).
+
+* Risiko: Proporsi (jenis perbandingan) antara jumlah hewan yang sakit dengan total populasi.
+* Peluang relatif: Rasio (jenis perbandingan) antara jumlah hewan yang sakit dengan jumlah hewan yang tidak sakit.
+
+Mari kita gunakan perhitungan sederhana. Bayangkan di sebuah kandang terdapat 10 ekor sapi. Dari jumlah tersebut, 2 ekor terinfeksi virus, dan 8 ekor tetap sehat.
+* Berapa risiko sapi menjadi sakit? Jawabannya adalah 2 dibagi 10 (atau 20% atau 0,2).
+* Berapa odds sapi menjadi sakit? Jawabannya adalah 2 berbanding 8 (atau 1:4 atau 0,25).
+
+Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan asosiasi menggunakan data dari sel a, b, c, dan d pada tabel 2×2 kita sebelumnya. Ada dua metrik utama yang kita gunakan, dan pemilihannya sangat bergantung pada desain kajian kita.
+
+* Risiko relatif (RR) untuk kajian kohort
+	
+	Pada kajian kohort, kita menelusuri hewan dari kondisi tidak sakit menuju masa depan untuk melihat siapa yang akhirnya jatuh sakit. Karena kita tahu total populasi awalnya, kita bisa menghitung risiko secara langsung. Risiko relatif (RR) membandingkan risiko sakit pada kelompok yang terpapar faktor dengan risiko sakit pada kelompok yang tidak terpapar.
+	
+	Rumus perhitungannya adalah:
+	
+	RR = risiko sakit pada kelompok terpapar / risiko sakit pada kelompok tidak terpapar = [a / (a + b)] / [c / (c +d)]
+	
+	Cara interpretasi: Apabila kita mendapatkan nilai RR = 3, artinya hewan yang terpapar memiliki risiko 3 kali lipat lebih besar untuk sakit dibandingkan hewan yang tidak terpapar.
+	
+* Rasio peluang relatif (OR) untuk kajian kasus–kontrol dan potong lintang
+	
+	Pada kajian kasus-kontrol, kita memulai investigasi dari hewan yang sudah sakit, sehingga hal ini bukan lagi menjadi risiko. Sebagai gantinya, kita menghitung OR dengan membandingkan odds sakit pada kelompok terpapar dengan odds sakit pada kelompok tidak terpapar.
+	
+	Untuk kajian potong lintang, nilai OR juga sering digunakan dalam analisis statistika, meskipun hal yang diukur adalah prevalensi.
+	
+	Rumus perhitungannya adalah:
+	
+	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar = [a / b] / [c / d] = a×d / b×c
+	
+	Cara interpretasi (untuk kajian kasus-kontrol): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang sakit memiliki peluang relatif (odds) 4 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
+	
+	Cara interpretasi (untuk kajian potong lintang): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 4 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
+
+Baik RR maupun OR memiliki interpretasi yang serupa.
+* Nilai = 1: Faktor tidak berhubungan dengan penyakit 
+* Nilai > 1: Faktor meningkatkan kejadian penyakit (cenderung menjadi faktor risiko)
+- Nilai < 1: Faktor menurunkan kejadian penyakit (cenderung menjadi faktor protektif)
+
+Saat menyusun tabel 2×2, sebagian orang merasa ragu dalam menentukan kelompok mana yang harus diletakkan di baris atas (terpapar) dan mana yang diletakkan di baris bawah (tidak terpapar). 
+
+Bagaimana jika kita keliru menentukan mana kelompok ‘terpapar’ dan mana ‘tidak terpapar’?
+
+Sebenarnya, hal tersebut tidak menjadi masalah. Kita bebas menentukan kelompok mana yang menjadi patokan atau rujukan (baseline). Menukar posisi baris hanya akan membuat nilai RR dan OR menjadi kebalikannya.
+
+Contoh:
+* Jika RR = 3, maka setelah baris F+ dan F− dibalik, RR = 1/3 ≈ 0,33
+* Jika OR = 4, maka setelah baris F+ dan F− dibalik, OR = 1/4 = 0,25
+
+Apakah ini salah? Tidak.
+
+Namun, interpretasinya juga harus dibalik.
+
+* RR = 3 → paparan meningkatkan risiko penyakit
+* RR = 0,33 → paparan menurunkan risiko penyakit
+
+Artinya, hal yang berubah bukan hubungan datanya, tetapi sudut pandang kita dalam membandingkan kelompok. Intinya, angka RR atau OR selalu menceritakan: "Berapa kali lipat kelompok di baris pertama dibandingkan dengan kelompok di baris kedua (referensi)?"
+
+Pertimbangan lain yang sering membuat kita bingung adalah, bagaimana jika paparan punya lebih dari dua kategori?
+
+Contoh:
+* tingkat kepadatan kandang: rendah, sedang, tinggi
+* dosis pakan: rendah, cukup, berlebih
+
+Artinya, bentuk tabelnya bukan lagi 2×2 (2 kolom × 2 baris), tetapi menjadi tabel 2×3 (2 kolom × 3 baris) atau bahkan 2×4.
+
+Bagaimana cara menganalisisnya?
+
+Pendekatan yang paling umum adalah memilih satu kelompok sebagai referensi (baseline), lalu membandingkan kelompok lain terhadap kelompok tersebut.
+
+Jika kita memiliki tiga tingkat kepadatan kandang:
+* tinggi
+* sedang
+* rendah (sebagai referensi)
+
+Maka kita akan menghitung RR/OR untuk
+* kepadatan tinggi vs kepadatan rendah
+* kepadatan sedang vs kepadatan rendah
+
+Dengan cara ini, kita tetap bisa menggunakan prinsip tabel 2×2 untuk setiap perbandingan.
+
+Misalkan kita sudah selesai menghitung dan mendapatkan nilai RR = 3. Apakah analisis kita selesai sampai di sini? Belum.
+
+Setiap nilai RR atau OR yang kita hitung dari tabel 2×2 hanya berlaku untuk  sampel yang kita teliti. Padahal, tujuan kita adalah memperkirakan kondisi pada populasi. Nilai RR atau OR pada populasi bisa saja berbeda.
+
+Nilai RR atau OR dari tabel biasanya tidak berdiri sendiri. Kita mendampinginya dengan rentang yang disebut selang kepercayaan, yang biasanya menggunakan angka 95% (sering ditulis dengan 95% confidence interval atau 95% CI).
+
+Sebagai contoh: RR = 3,0 (95% CI: 1,5 – 6,0)
+
+Artinya, kita memperkirakan bahwa nilai RR pada populasi berada di antara 1,5 hingga 6,0. 
+
+Angka batas atas dan batas bawah tersebut berasal dari perhitungan statistika yang kompleks. Pada umumnya, kita menggunakan perangkat lunak untuk mendapatkan angkanya secara otomatis. Pada prinsipnya, semakin banyak individu yang kita teliti, rentang CI akan semakin sempit (presisi). Sebaliknya, jika sampel kita sedikit, rentang CI akan sangat lebar, yang menunjukkan bahwa hasil penelitian kita kurang meyakinkan untuk digeneralisasikan ke populasi.
+
+Hal yang lebih penting untuk dipahami adalah aturan praktis untuk memaknai rentang ini.
+
+Jika selang kepercayaan
+* tidak melewati angka 1 → hubungan memiliki makna secara statistik
+* melewati angka 1 → hubungan tidak bermakna secara statistik
+
+Mari kita lihat panduan interpretasinya pada tabel berikut.
+
+Tabel 5.9. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
+
+| Posisi rentang 95% CI                   | Posisi terhadap angka 1 | Makna epidemiologis                                                                                                                        | Contoh penulisan jasil       |
+| --------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| Seluruh batas bawah dan atas berada > 1 | Tidak melewati angka 1  | Faktor memiliki makna statistika untuk meningkatkan kejadian penyakit                                                                      | OR = 3,5 (95% CI: 1,8 – 5,2) |
+| Seluruh batas bawah dan atas berada < 1 | Tidak melewati angka 1  | Faktor memiliki makna statistika untuk menurunkan kejadian penyakit                                                                        | RR = 0,4 (95% CI: 0,1 – 0,7) |
+| Batas bawah < 1 dan batas atas > 1      | Melewati angka 1        | Faktor tidak bermakna secara statistika dengan kejadian penyakit. Nilai aslinya di populasi bisa saja tepat di angka 1 (tidak berhubungan) | OR = 2,1 (95% CI: 0,8 – 4,5) |
+
+Selain itu, lebar selang (interval) juga memberikan informasi penting. Interval yang sempit menunjukkan estimasi lebih presisi, sedangkan interval yang lebar menunjukkan ketidakpastian yang lebih besar.
+
+Sampai di sini, kita sudah memiliki dua alat penting:
+* ukuran asosiasi (RR dan OR)
+* ukuran ketidakpastian (CI)
+
+Langkah berikutnya adalah menilai apakah hubungan yang kita temukan benar-benar signifikan atau hanya terjadi secara kebetulan.
+
+
+ 
+###### 3. Uji Chi-square
+
+Setelah kita menghitung kekuatan asosiasi (RR atau OR) dan melihat rentang ketidakpastiannya melalui selang kepercayaan (CI), muncul satu pertanyaan terakhir: Apakah hubungan yang kita temukan benar-benar ada atau hanya terjadi secara kebetulan dari sampel yang kita ambil?
+
+Di sinilah kita menggunakan uji statistika.
+
+Untuk data kategorik dalam tabel 2×2, uji yang paling sering digunakan adalah uji independensi Chi-square (χ²). Uji ini digunakan untuk menilai apakah terdapat asosiasi antara paparan dan penyakit, atau apakah perbedaan yang kita lihat bisa saja terjadi secara kebetulan.
+
+a. Konsep dasar uji Chi-square
+
+Uji Chi-square membandingkan dua hal:
+* Nilai pengamatan (observed): Angka yang kita dapatkan dari kajian, yaitu isi sel a, b, c, d.
+* Nilai harapan (expected): Angka yang seharusnya muncul jika seandainya tidak ada hubungan sama sekali antara faktor dan penyakit.
+
+Jika tidak ada asosiasi antara paparan dan penyakit, maka distribusi kasus pada setiap sel tabel akan mengikuti pola tertentu. Uji Chi-square mengukur seberapa jauh perbedaan antara nilai yang diamati dan nilai yang diharapkan.
+
+Logikanya sederhana: semakin besar perbedaan antara nilai observed dan expected, maka semakin besar kemungkinan bahwa asosiasi tersebut nyata, bukan kebetulan.
+
+b. Langkah-langkah uji Chi-square
+
+Mari kita gunakan kembali data diare pedet dari tabel 2×2 sebelumnya sebagai contoh soal.
+
+Tabel 5.10. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan diare pada pedet.
+
+|       | D+  | D−  | Total |
+| ----- | --- | --- | ----- |
+| F+    | 30  | 20  | 50    |
+| F−    | 5   | 45  | 50    |
+| Total | 35  | 65  | 100   |
+
+Langkah 1: Tentukan hipotesis
+* Hipotesis nol (H0): Tidak ada hubungan antara kebersihan kandang dan kejadian diare (perbedaan hanya karena kebetulan).
+* Hipotesis alternatif (Ha): Ada hubungan antara kebersihan kandang dan kejadian diare.
+
+Langkah 2: Hitung nilai harapan (expected value atau E)
+
+Rumus untuk setiap sel adalah: (total baris × total kolom) / total keseluruhan (N)
+
+* E untuk sel a = (kandang kotor & diare) = (50 × 35) / 100 = 17,5
+* E untuk sel b = (kandang kotor & tidak diare) = (50 × 65) / 100 = 32,5
+* E untuk sel c = (kandang bersih & diare) = (50 × 35) / 100 = 17,5
+* E untuk sel d = (kandang bersih & tidak diare) = (50 × 65) / 100 = 32,5
+
+Langkah 3: Hitung nilai Chi-square (χ2)
+
+Rumus umumnya adalah:
+
+χ2 = ∑ [(O − E)^2] / E
+ 
+Mari kita hitung untuk setiap sel:
+* Sel a: (30−17,5)^2 / 17,5 = 8,93
+* Sel b: (20−32,5)^2 / 32,5 = 4,81
+* Sel c: (5−17,5)^2 / 17,5 = 8,93
+* Sel d: (45−32,5)^2 / 32,5 = 4,81
+* Total χ2 = 8,93 + 4,81 + 8,93 + 4,81 = 27,48
+
+Langkah 4: Tentukan derajat kebebasan (degrees of freedom atau df)
+
+df = (baris − 1) × (kolom − 1)
+
+Untuk tabel 2×2: df = (2 − 1) × (2 − 1) = 1
+
+Langkah 5: Interpretasi nilai p
+
+Nilai χ2 dengan df tertentu kemudian kita cocokkan dengan tabel distribusi Chi-square untuk mendapatkan nilai p. Namun, pada era sekarang, kita biasanya langsung melihat nilai p secara otomatis dari perangkat lunak.
+
+Untuk mengambil keputusan, kita membandingkan nilai p dengan batas toleransi kesalahan yang kita tetapkan, biasanya 5% atau 0,05 (dikenal sebagai nilai alfa).
+
+Aturannya adalah:
+* Jika nilai p < 0,05: Kita menolak H0. Kemungkinan terjadinya kebetulan sangat kecil (di bawah 5%). Kesimpulan: Hubungan antara faktor dan penyakit bermakna secara statistika (signifikan).
+* Jika nilai p ≥ 0,05: Kita gagal menolak H0. Kemungkinan terjadinya kebetulan cukup besar (di atas 5%). Kesimpulan: Hubungan antara faktor dan penyakit tidak bermakna secara statistika. Data belum cukup kuat untuk membuktikan adanya hubungan.
+
+Sebagai contoh, nilai χ2 = 27,48 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu jauh di bawah 0,05. Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memang berasosiasi dengan diare pada pedet.
+
+Khusus untuk tabel 2×2, ada rumus alternatif yang jauh lebih cepat untuk mendapatkan nilai Chi-square:
+
+χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+
+Mari kita masukkan angka dari skenario diare pedet ke dalam rumus tersebut.
+
+χ2 = [100 × (30×45 − 20×5)^2] / [50×50×35×65] = 156.250.000 / 5.687.500 = 27.48
+
+Catatan penting untuk diingat:
+* nilai p tidak menunjukkan besar efek (itu tugas RR/OR),
+* nilai p hanya menunjukkan ada atau tidaknya bukti signifikansi secara statistika.
+
+Apakah kita selalu menggunakan uji Chi-square di atas untuk setiap kajian? Terkadang kita berhadapan dengan penyakit langka atau jumlah sampel yang diperoleh terlalu sedikit. Jika jumlah sampel terlalu kecil atau frekuensi harapan pada beberapa sel terlalu rendah, pendekatan Chi-square menjadi kurang akurat
+
+Oleh sebab itu, kita memiliki tiga jenis uji yang saling melengkapi. Pemilihannya sangat bergantung pada jumlah sampel dan nilai harapan. Mari kita lihat panduannya pada tabel berikut.
+
+Tabel 5.11. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
+
+| Jenis uji                       | Kapan digunakan?                                                                                                        | Penjelasan                                                                                                                                                                                                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Chi-square Pearson (standar)    | Gunakan jika total sampel cukup besar dan semua sel memiliki "nilai harapan" minimum 5                                  | Uji yang paling umum digunakan untuk menilai ada tidaknya asosiasi pada tabel 2×2.                                                                                                                                                                                               |
+| Chi-square dengan koreksi Yates | Alternatif untuk tabel 2×2 jika jumlah sampel tidak terlalu besar dan peneliti ingin pendekatan yang lebih konservatif  | Uji ini menyertakan koreksi (dikurangi 0,5n) untuk mengurangi kecenderungan Chi-square biasa yang memberikan hasil terlalu signifikan pada sampel kecil. Dalam rumusnya terdapat tanda garis vertikal (\|) yang berarti nilai mutlak (hasil pengurangan selalu dianggap positif) |
+| Uji eksak Fisher                | Gunakan jika total sampel sangat kecil, atau ada sel yang memiliki "nilai harapan" di bawah 5, atau ada sel bernilai 0. | Uji ini langsung memberikan nilai p menggunakan prinsip faktorial (!). Pada praktiknya, uji ini akan selalu dihitung dengan perangkat lunak.                                                                                                                                     |
+
+Rumus:
+* Uji Chi-square Pearson: χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+* Uji Chi-square dengan koreksi Yates: χ2 = [n × (|a×d − b×c| − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+* Uji eksak Fisher: nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!]
+
+Namun, ada satu hal yang perlu kita sadari. Mengetahui bahwa sebuah faktor "berhubungan" dengan penyakit saja belum cukup bagi kita. Kita juga perlu tahu seberapa besar dampak faktor tersebut bagi populasi secara keseluruhan.
+
+Jika kita berhasil menghilangkan faktor risiko tersebut, berapa banyak kasus yang bisa kita cegah? Kita akan menjawabnya pada bagian selanjutnya.
+
+###### 3. Ukuran dampak
+
+Kita sudah bisa membuktikan bahwa sebuah paparan merupakan faktor penyakit menggunakan RR atau OR. Kita juga sudah memastikan bahwa hubungan tersebut bukan karena kebetulan acak melalui uji Chi-square. 
+
+Namun, kita sering membutuhkan jawaban yang berbeda. Bukan hanya “apakah berhubungan”, tetapi seberapa besar dampak faktor tersebut terhadap kejadian penyakit di populasi?
+
+Dengan kata lain, jika kita bisa menghilangkan faktor tersebut, seberapa banyak penyakit yang bisa kita cegah?
+
+Untuk menjawab pertanyaan ini, kita menggunakan ukuran dampak.
+
+a. Perbedaan risiko (risk difference)
+
+Ukuran paling sederhana adalah perbedaan risiko, atau sering juga disebut risk difference (RD).
+
+Perbedaan risiko menghitung selisih risiko antara kelompok terpapar dan kelompok tidak terpapar.
+
+Rumusnya:
+
+RD = risiko pada kelompok terpapar − risiko pada kelompok tidak terpapar
+RD = [a / (a + b)] − [c / (c + d)]
+
+Mari kita gunakan contoh yang sama.
+
+Risiko diare:
+
+Kelompok tanpa kolostrum = 18/30 = 0,6
+Kelompok dengan kolostrum = 14/70 = 0,2
+
+RD = 0,6 − 0,2 = 0,4
+
+Interpretasi:
+
+Ada tambahan risiko sebesar 0,4 (atau 40%) pada kelompok yang tidak mendapat kolostrum. Artinya, dari setiap 100 pedet yang tidak mendapat kolostrum, terdapat 40 kasus diare tambahan yang dapat dikaitkan dengan paparan tersebut.
+
+Ukuran ini sangat konkret. Ia langsung memberi gambaran “berapa banyak kasus tambahan” yang terjadi akibat suatu faktor.
+
+b. Risiko yang dapat diatribusikan (attributable risk)
+
+Istilah attributable risk sering digunakan dalam dua makna:
+
+sebagai sinonim dari perbedaan risiko,
+atau sebagai proporsi dampak dalam kelompok terpapar.
+
+Dalam modul ini, kita akan menggunakan istilah yang lebih jelas:
+
+Perbedaan risiko (RD) → selisih absolut
+Fraksi yang dapat diatribusikan pada kelompok terpapar (Attributable Fraction, AF)
+
+Fraksi yang dapat diatribusikan pada kelompok terpapar menghitung proporsi kasus pada kelompok terpapar yang benar-benar disebabkan oleh paparan tersebut.
+
+Rumusnya:
+
+AF = (RR − 1) / RR
+
+Dengan RR = 3:
+
+AF = (3 − 1) / 3 = 2/3 ≈ 0,67
+
+Interpretasi:
+
+Sekitar 67% kasus diare pada pedet yang tidak mendapat kolostrum dapat dikaitkan dengan kekurangan kolostrum. Sisanya mungkin disebabkan oleh faktor lain.
