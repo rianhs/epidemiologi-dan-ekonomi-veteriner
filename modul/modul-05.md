@@ -106,13 +106,13 @@ Untuk menjawab pertanyaan "mengapa" dan "bagaimana" suatu penyakit bisa terjadi,
 
 ###### 1. Perbedaan epidemiologi deskriptif dan analitis
 
-Apa sebenarnya hal-hal yang membedakan kedua pendekatan ini? Mari ambil investigasi kasus kriminal sebagai analogi. Epidemiologi deskriptif merupakan tugas polisi untuk mendata siapa korbannya, di mana lokasi kejadiannya, dan jam berapa kejahatan itu terjadi. 
+Apa sebenarnya hal-hal yang membedakan pendekatan deskriptif dan analitis? Mari ambil investigasi kasus kriminal sebagai analogi. Epidemiologi deskriptif merupakan tugas polisi untuk mendata siapa korbannya, di mana lokasi kejadiannya, dan jam berapa kejahatan itu terjadi. 
 
 Dalam pendekatan deskriptif, kita hanya berfokus pada kelompok hewan yang sakit. Kita tidak memerlukan kelompok pembanding. Tujuannya adalah memetakan distribusi penyakit di dalam populasi. Hasil akhirnya adalah sebuah hipotesis atau dugaan sementara. Misalnya, "Kita menduga diare ini berkaitan dengan sumber air yang tercemar."
 
 Lalu, apa langkah selanjutnya?
 
-Epidemiologi analitis diibaraktan sebagai detektif yang mencari tahu siapa pelakunya dan apa motifnya dengan cara membandingkan berbagai bukti. 
+Epidemiologi analitis diibaratkan sebagai detektif yang mencari tahu siapa pelakunya dan apa motifnya dengan cara membandingkan berbagai bukti. 
 
 Dalam pendekatan analitis, kita menguji hipotesis yang sudah dibuat pada tahap deskriptif. Sekarang, kita tidak hanya melihat hewan yang sakit, tetapi juga mendata hewan yang tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara statistika apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
 
@@ -142,11 +142,22 @@ Ada faktor yang sekadar “terlihat berhubungan” dengan penyakit, ada yang ben
 
 Mari kita bedah tiga tingkatan faktor tersebut.
 
-* Faktor yang berasosiasi (associated factors): Ini adalah tingkatan yang paling dasar. Kita menyebut sebuah faktor "berasosiasi" dengan penyakit jika hasil uji statistika menunjukkan adanya hubungan yang nyata. Namun, hubungan ini belum tentu berarti sebab-akibat. Bisa jadi itu hanya kebetulan atau ada faktor lain yang tersembunyi. 
+* Faktor yang berasosiasi (associated factors).
+	
+	Ini adalah tingkatan yang paling dasar. Kita menyebut sebuah faktor "berasosiasi" dengan penyakit jika hasil uji statistika menunjukkan adanya hubungan yang nyata. Namun, hubungan ini belum tentu berarti sebab-akibat. Bisa jadi itu hanya kebetulan atau ada faktor lain yang tersembunyi.
+	 
 	Contoh: Kita menemukan bahwa kejadian diare lebih sering muncul pada pedet yang lahir pada malam hari. Secara data, ada hubungan. Namun. apakah waktu kelahiran (malam hari) merupakan penyebabnya? Belum tentu. Mungkin ada faktor lain, seperti pengawasan peternak yang kurang pada jam-jam tersebut. Di sini, kelahiran pada malam hari hanya "berasosiasi" dengan diare.
-* Faktor risiko (risk factors) dan faktor protektif (protective factors): Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit (seperti vaksinasi). Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
+	
+* Faktor risiko (risk factors) dan faktor protektif (protective factors).
+	
+	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit (seperti vaksinasi). Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
+	
 	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya. Pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
-* Faktor penyebab (causal factors): Inilah tingkatan tertinggi yang menjadi tujuan akhir kita. Sebuah faktor baru bisa disebut sebagai penyebab jika ia memenuhi kriteria kausalitas yang ketat (seperti kriteria Bradford-Hill yang akan kita bahas nanti). Kita harus bisa membuktikan bahwa jika faktor ini dihilangkan, maka kejadian penyakit akan menurun secara drastis atau hilang sama sekali. 
+	
+* Faktor penyebab (causal factors).
+	
+	Inilah tingkatan tertinggi yang menjadi tujuan akhir kita. Sebuah faktor baru bisa disebut sebagai penyebab jika ia memenuhi kriteria kausalitas yang ketat (seperti kriteria Bradford-Hill yang akan kita bahas nanti). Kita harus bisa membuktikan bahwa jika faktor ini dihilangkan, maka kejadian penyakit akan menurun secara drastis atau hilang sama sekali. 
+	
 	Contoh: Adanya infeksi mikroorganisme seperti bakteri Escherichia coli enterotoksigenik atau Rotavirus yang dibuktikan dengan pemeriksaan laboratorium. Mereka inilah pelaku utama yang secara biologis merusak sel-sel dinding usus pedet dan secara langsung memicu terjadinya diare.
 
 Untuk memudahkan kita membedakan ketiganya, mari kita perhatikan tabel berikut:
@@ -222,29 +233,29 @@ Karena dalam praktiknya, kita hampir selalu berhadapan dengan keterbatasan. Wakt
 
 Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah penelusuran waktu dan titik awal kajian. Mari kita bedah satu per satu.
 
-a. Kajian potong lintang (lintas seksional)
-
-Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat itu juga sama kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
-
-Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita  terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
-
-Keterbatasan: Karena data paparan dan luaran diambil secara bersamaan, kita sering kali kesulitan menentukan mana yang terjadi lebih dulu. Misalnya, apakah lantai kandang yang duluan kotor baru kemudian sapi mengalami diare, atau peternak membiarkan lantai kotor setelah sapi menjadi diare? Kita tidak bisa memastikannya dengan desain ini.
-
-b. Kajian kasus–kontrol
-
-Jika kajian potong lintang adalah sebuah foto, maka kajian kasus-kontrol adalah sebuah adegan kilas balik (flashback). Pada kajian ini, kita memulai investigasi dari luaran (akibat), lalu menelusuri riwayat masa lalu untuk mencari paparan (calon penyebab). Dengan kata lain, kita mengumpulkan sekelompok hewan yang sudah sakit (disebut "kasus") dan sekelompok hewan tidak sakit yang tinggal di lingkungan serupa (disebut "kontrol"). Setelah itu, kita mencari tahu apakah kedua kelompok memiliki riwayat paparan yang berbeda.
-
-Kapan kajian ini digunakan? Desain ini sangat cocok saat kita meneliti penyakit langka atau penyakit yang butuh waktu lama untuk muncul (masa inkubasinya panjang). Kita tidak perlu menunggu hewan menjadi sakit. Kita cukup mencari hewan yang sudah sakit.
-
-Keterbatasan: Kita sangat bergantung pada catatan masa lalu. Padahal, sering kali  data tersebut tidak lengkap dan tidak akurat. Jika data tidak tercatat, kita hanya mengandalkan ingatan orang-orang yang terlibat dengan kelompok hewan yang kita teliti. Ingatan seseorang sangat rentan terhadap bias.
-
-C. Kajian kohort
-
-Kajian kohort adalah sebuah film dokumenter. Kita mengikuti perjalanan hidup sekelompok hewan dari waktu ke waktu. Kajian dimulai dari hewan-hewan tak berpenyakit, yang dibagi menjadi kelompok terpapar dan kelompok tidak terpapar. Kita ikuti mereka selama beberapa pekan, bulan, atau tahun untuk melihat siapa saja yang akhirnya jatuh sakit.
-
-Kapan kajian ini digunakan? Desain ini digunakan saat kita ingin memastikan secara mutlak bahwa paparan benar-benar terjadi sebelum penyakit. Di antara semua kajian observasional, kajian kohort memberikan bukti sebab-akibat yang paling kuat. Desain ini juga sangat tepat untuk menilai paparan yang langka.
-
-Keterbatasan: Kajian ini memakan waktu yang lebih lama dan biaya yang lebih mahal. Selain itu, ada risiko hewan mati, dijual, atau hilang sebelum masa pemantauan selesai. Jika penyakitnya sangat jarang, jumlah sampel yang dibutuhkan bisa menjadi sangat besar.
+* Kajian potong lintang (lintas seksional)
+	
+	Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat itu juga sama kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
+	
+	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita  terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
+	
+	Keterbatasan: Karena data paparan dan luaran diambil secara bersamaan, kita sering kali kesulitan menentukan mana yang terjadi lebih dulu. Misalnya, apakah lantai kandang yang duluan kotor baru kemudian sapi mengalami diare, atau peternak membiarkan lantai kotor setelah sapi menjadi diare? Kita tidak bisa memastikannya dengan desain ini.
+	
+* Kajian kasus–kontrol
+	
+	Jika kajian potong lintang adalah sebuah foto, maka kajian kasus-kontrol adalah sebuah adegan kilas balik (flashback). Pada kajian ini, kita memulai investigasi dari luaran (akibat), lalu menelusuri riwayat masa lalu untuk mencari paparan (calon penyebab). Dengan kata lain, kita mengumpulkan sekelompok hewan yang sudah sakit (disebut "kasus") dan sekelompok hewan tidak sakit yang tinggal di lingkungan serupa (disebut "kontrol"). Setelah itu, kita mencari tahu apakah kedua kelompok memiliki riwayat paparan yang berbeda.
+	
+	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita meneliti penyakit langka atau penyakit yang butuh waktu lama untuk muncul (masa inkubasinya panjang). Kita tidak perlu menunggu hewan menjadi sakit. Kita cukup mencari hewan yang sudah sakit.
+	
+	Keterbatasan: Kita sangat bergantung pada catatan masa lalu. Padahal, sering kali  data tersebut tidak lengkap dan tidak akurat. Jika data tidak tercatat, kita hanya mengandalkan ingatan orang-orang yang terlibat dengan kelompok hewan yang kita teliti. Ingatan seseorang sangat rentan terhadap bias.
+	
+* Kajian kohort
+	
+	Kajian kohort adalah sebuah film dokumenter. Kita mengikuti perjalanan hidup sekelompok hewan dari waktu ke waktu. Kajian dimulai dari hewan-hewan tak berpenyakit, yang dibagi menjadi kelompok terpapar dan kelompok tidak terpapar. Kita ikuti mereka selama beberapa pekan, bulan, atau tahun untuk melihat siapa saja yang akhirnya jatuh sakit.
+	
+	Kapan kajian ini digunakan? Desain ini digunakan saat kita ingin memastikan secara mutlak bahwa paparan benar-benar terjadi sebelum penyakit. Di antara semua kajian observasional, kajian kohort memberikan bukti sebab-akibat yang paling kuat. Desain ini juga sangat tepat untuk menilai paparan yang langka.
+	
+	Keterbatasan: Kajian ini memakan waktu yang lebih lama dan biaya yang lebih mahal. Selain itu, ada risiko hewan mati, dijual, atau hilang sebelum masa pemantauan selesai. Jika penyakitnya sangat jarang, jumlah sampel yang dibutuhkan bisa menjadi sangat besar.
 
 Untuk menyederhanakan perbedaan ketiganya, mari kita perhatikan rangkuman pada tabel berikut.
 
@@ -346,6 +357,7 @@ Tabel 5.7. Struktur standar tabel kontingensi 2×2 untuk kajian observasional.
 | Terpapar faktor (F+)       | a          | b                | a + b |
 | Tidak terpapar faktor (F−) | c          | d                | c + d |
 | Total                      | a + c      | b + d            | n     |
+
 Mari kita pahami makna dari setiap sel di dalam tabel tersebut:
 * Sel a: Jumlah hewan yang terpapar faktor dan sakit.
 * Sel b: Jumlah hewan yang terpapar risiko dan tidak sakit.
@@ -382,19 +394,23 @@ Mari kita gunakan perhitungan sederhana. Bayangkan di sebuah kandang terdapat 10
 * Berapa risiko sapi menjadi sakit? Jawabannya adalah 2 dibagi 10 (atau 20% atau 0,2).
 * Berapa odds sapi menjadi sakit? Jawabannya adalah 2 berbanding 8 (atau 1:4 atau 0,25).
 
-Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan asosiasi menggunakan data dari sel a, b, c, dan d pada tabel 2×2 kita sebelumnya. Ada dua metrik utama yang kita gunakan, dan pemilihannya sangat bergantung pada desain kajian kita.
+Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan asosiasi menggunakan data dari sel a, b, c, dan d pada tabel 2×2 kita sebelumnya. Ada dua metrik utama yang kita gunakan, yaitu RR dan OR. Pemilihannya sangat bergantung pada desain kajian kita.
 
-* Risiko relatif (RR) untuk kajian kohort
+* Rasio risiko atau risiko relatif (RR)
 	
-	Pada kajian kohort, kita menelusuri hewan dari kondisi tidak sakit menuju masa depan untuk melihat siapa yang akhirnya jatuh sakit. Karena kita tahu total populasi awalnya, kita bisa menghitung risiko secara langsung. Risiko relatif (RR) membandingkan risiko sakit pada kelompok yang terpapar faktor dengan risiko sakit pada kelompok yang tidak terpapar.
+	Ukuran pertama adalah perbandingan risiko antarkelompok. Istilah ini diberi nama rasio risiko (risk ratio) atau risiko relatif (relative risk) yang disingkat RR. Ia digunakan pada kajian kohort. 
+	
+	Pada kajian ini, kita menelusuri hewan dari kondisi tidak sakit menuju masa depan untuk melihat siapa yang akhirnya jatuh sakit. Karena kita tahu total populasi awalnya, kita bisa menghitung risiko secara langsung. Risiko relatif (RR) membandingkan risiko sakit pada kelompok yang terpapar faktor dengan risiko sakit pada kelompok yang tidak terpapar.
 	
 	Rumus perhitungannya adalah:
 	
-	RR = risiko sakit pada kelompok terpapar / risiko sakit pada kelompok tidak terpapar = [a / (a + b)] / [c / (c +d)]
+	RR = risiko sakit pada kelompok terpapar / risiko sakit pada kelompok tidak terpapar <br>= [a / (a + b)] / [c / (c +d)]
 	
-	Cara interpretasi: Apabila kita mendapatkan nilai RR = 3, artinya hewan yang terpapar memiliki risiko 3 kali lipat lebih besar untuk sakit dibandingkan hewan yang tidak terpapar.
+	Cara interpretasi: Apabila kita mendapatkan nilai RR = 6, artinya hewan yang terpapar faktor memiliki risiko 6 kali lipat lebih besar untuk sakit dibandingkan hewan yang tidak terpapar faktor.
 	
-* Rasio peluang relatif (OR) untuk kajian kasus–kontrol dan potong lintang
+* Rasio peluang relatif (OR) 
+	
+	Ukuran kedua adalah perbandingan peluang relatif antarkelompok. Istilah ini diberi nama rasio peluang relatif (odds ratio) yang disingkat OR. Ia digunakan pada kajian kasus–kontrol dan kajian potong lintang.
 	
 	Pada kajian kasus-kontrol, kita memulai investigasi dari hewan yang sudah sakit, sehingga hal ini bukan lagi menjadi risiko. Sebagai gantinya, kita menghitung OR dengan membandingkan odds sakit pada kelompok terpapar dengan odds sakit pada kelompok tidak terpapar.
 	
@@ -402,11 +418,24 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	Rumus perhitungannya adalah:
 	
-	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar = [a / b] / [c / d] = a×d / b×c
+	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar <br>= [a / b] / [c / d] = a×d / b×c
 	
-	Cara interpretasi (untuk kajian kasus-kontrol): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang sakit memiliki peluang relatif (odds) 4 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
+	Cara interpretasi (untuk kajian kasus-kontrol): Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang sakit memiliki peluang relatif (odds) 13,5 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
 	
 	Cara interpretasi (untuk kajian potong lintang): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 4 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
+
+
+Tabel 5.9. Ekspansi tabel 2×2 dengan menambahkan kolom untuk risiko dan peluang relatif bagi setiap status paparan.
+
+|       | D+  | D−  | Total | Risiko      | Odds        |
+| ----- | --- | --- | ----- | ----------- | ----------- |
+| F+    | 30  | 20  | 50    | 30/50 = 0,6 | 30/20 = 1,5 |
+| F−    | 5   | 45  | 50    | 5/50 = 0,1  | 5/45 = 0,11 |
+| Total | 35  | 65  | 100   |             |             |
+
+Pada skenario ini, kita dapat menghitung RR dan OR
+* RR = risiko pada F+ / risiko pada F− = 0,6/0,1 = 6
+* OR = odds pada F+ / odds pada F− = 1,5/0,11 = 13,5
 
 Baik RR maupun OR memiliki interpretasi yang serupa.
 * Nilai = 1: Faktor tidak berhubungan dengan penyakit 
@@ -420,40 +449,44 @@ Bagaimana jika kita keliru menentukan mana kelompok ‘terpapar’ dan mana ‘t
 Sebenarnya, hal tersebut tidak menjadi masalah. Kita bebas menentukan kelompok mana yang menjadi patokan atau rujukan (baseline). Menukar posisi baris hanya akan membuat nilai RR dan OR menjadi kebalikannya.
 
 Contoh:
-* Jika RR = 3, maka setelah baris F+ dan F− dibalik, RR = 1/3 ≈ 0,33
-* Jika OR = 4, maka setelah baris F+ dan F− dibalik, OR = 1/4 = 0,25
+* Jika RR = 6, maka setelah baris F+ dan F− dibalik, RR = 1/6 ≈ 0,167
+* Jika OR = 13,5, maka setelah baris F+ dan F− dibalik, OR = 1/13,5 = 0,074
 
 Apakah ini salah? Tidak.
 
 Namun, interpretasinya juga harus dibalik.
 
-* RR = 3 → paparan meningkatkan risiko penyakit
-* RR = 0,33 → paparan menurunkan risiko penyakit
+* Jika RR = 6, maka paparan faktor meningkatkan risiko penyakit
+* Jika RR = 0,167, maka paparan faktor menurunkan risiko penyakit
 
 Artinya, hal yang berubah bukan hubungan datanya, tetapi sudut pandang kita dalam membandingkan kelompok. Intinya, angka RR atau OR selalu menceritakan: "Berapa kali lipat kelompok di baris pertama dibandingkan dengan kelompok di baris kedua (referensi)?"
 
 Pertimbangan lain yang sering membuat kita bingung adalah, bagaimana jika paparan punya lebih dari dua kategori?
 
-Contoh:
-* tingkat kepadatan kandang: rendah, sedang, tinggi
-* dosis pakan: rendah, cukup, berlebih
+Contoh: Dalam kajian, kita meneliti tingkat kepadatan kandang sebagai faktor. Ada tiga kategori di sini, yaitu kepadatan rendah, sedang, tinggi. 
 
-Artinya, bentuk tabelnya bukan lagi 2×2 (2 kolom × 2 baris), tetapi menjadi tabel 2×3 (2 kolom × 3 baris) atau bahkan 2×4.
+Artinya, bentuk tabelnya bukan lagi 2×2 (2 kolom × 2 baris), tetapi menjadi tabel 2×3 (2 kolom × 3 baris) atau bahkan 2×4. Lihat contohnya pada tabel berikut.
+
+Tabel 5.10. Contoh pengisian tabel 2×3 untuk kajian observasional mengenai tingkat kepadatan kandang dan diare pada pedet.
+
+|                  | D+  | D−  | Total |
+| ---------------- | --- | --- | ----- |
+| Kepadatan tinggi | 17  | 13  | 30    |
+| Kepadatan sedang | 10  | 27  | 37    |
+| Kepadatan rendah | 8   | 25  | 33    |
+| Total            | 35  | 65  | 100   |
 
 Bagaimana cara menganalisisnya?
 
 Pendekatan yang paling umum adalah memilih satu kelompok sebagai referensi (baseline), lalu membandingkan kelompok lain terhadap kelompok tersebut.
 
-Jika kita memiliki tiga tingkat kepadatan kandang:
-* tinggi
-* sedang
-* rendah (sebagai referensi)
+Jika kita memiliki tiga tingkat kepadatan kandang, kita bisa menggunakan kepadatan rendah sebagai referensi.
 
 Maka kita akan menghitung RR/OR untuk
 * kepadatan tinggi vs kepadatan rendah
 * kepadatan sedang vs kepadatan rendah
 
-Dengan cara ini, kita tetap bisa menggunakan prinsip tabel 2×2 untuk setiap perbandingan.
+Dengan cara ini, kita tetap bisa menggunakan prinsip tabel 2×2 untuk setiap perbandingan. Meskipun demikian, kita sebaiknya tidak menggunakan terlalu banyak kategori paparan. Upayakan untuk membuat dua kategori saja.
 
 Misalkan kita sudah selesai menghitung dan mendapatkan nilai RR = 3. Apakah analisis kita selesai sampai di sini? Belum.
 
@@ -475,7 +508,7 @@ Jika selang kepercayaan
 
 Mari kita lihat panduan interpretasinya pada tabel berikut.
 
-Tabel 5.9. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
+Tabel 5.11. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
 
 | Posisi rentang 95% CI                   | Posisi terhadap angka 1 | Makna epidemiologis                                                                                                                        | Contoh penulisan jasil       |
 | --------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
@@ -490,7 +523,6 @@ Sampai di sini, kita sudah memiliki dua alat penting:
 * ukuran ketidakpastian (CI)
 
 Langkah berikutnya adalah menilai apakah hubungan yang kita temukan benar-benar signifikan atau hanya terjadi secara kebetulan.
-
 
  
 ###### 3. Uji Chi-square
@@ -515,7 +547,7 @@ b. Langkah-langkah uji Chi-square
 
 Mari kita gunakan kembali data diare pedet dari tabel 2×2 sebelumnya sebagai contoh soal.
 
-Tabel 5.10. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan diare pada pedet.
+Tabel 5.12. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan diare pada pedet.
 
 |       | D+  | D−  | Total |
 | ----- | --- | --- | ----- |
@@ -583,18 +615,18 @@ Apakah kita selalu menggunakan uji Chi-square di atas untuk setiap kajian? Terka
 
 Oleh sebab itu, kita memiliki tiga jenis uji yang saling melengkapi. Pemilihannya sangat bergantung pada jumlah sampel dan nilai harapan. Mari kita lihat panduannya pada tabel berikut.
 
-Tabel 5.11. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
+Tabel 5.13. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
 
-| Jenis uji                       | Kapan digunakan?                                                                                                        | Penjelasan                                                                                                                                                                                                                                                                       |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Chi-square Pearson (standar)    | Gunakan jika total sampel cukup besar dan semua sel memiliki "nilai harapan" minimum 5                                  | Uji yang paling umum digunakan untuk menilai ada tidaknya asosiasi pada tabel 2×2.                                                                                                                                                                                               |
-| Chi-square dengan koreksi Yates | Alternatif untuk tabel 2×2 jika jumlah sampel tidak terlalu besar dan peneliti ingin pendekatan yang lebih konservatif  | Uji ini menyertakan koreksi (dikurangi 0,5n) untuk mengurangi kecenderungan Chi-square biasa yang memberikan hasil terlalu signifikan pada sampel kecil. Dalam rumusnya terdapat tanda garis vertikal (\|) yang berarti nilai mutlak (hasil pengurangan selalu dianggap positif) |
-| Uji eksak Fisher                | Gunakan jika total sampel sangat kecil, atau ada sel yang memiliki "nilai harapan" di bawah 5, atau ada sel bernilai 0. | Uji ini langsung memberikan nilai p menggunakan prinsip faktorial (!). Pada praktiknya, uji ini akan selalu dihitung dengan perangkat lunak.                                                                                                                                     |
+| Jenis uji                       | Rumus                                                                    | Kapan digunakan?                                                                                                        | Penjelasan                                                                                                                                                                                                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Chi-square Pearson (standar)    | χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]                     | Gunakan jika total sampel cukup besar dan semua sel memiliki "nilai harapan" minimum 5                                  | Uji yang paling umum digunakan untuk menilai ada tidaknya asosiasi pada tabel 2×2.                                                                                                                                                                                               |
+| Chi-square dengan koreksi Yates | χ2 = [n × ((a×d − b×c) − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]            | Alternatif untuk tabel 2×2 jika jumlah sampel tidak terlalu besar dan peneliti ingin pendekatan yang lebih konservatif  | Uji ini menyertakan koreksi (dikurangi 0,5n) untuk mengurangi kecenderungan Chi-square biasa yang memberikan hasil terlalu signifikan pada sampel kecil. Dalam rumusnya terdapat tanda garis vertikal (\|) yang berarti nilai mutlak (hasil pengurangan selalu dianggap positif) |
+| Uji eksak Fisher                | nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!] | Gunakan jika total sampel sangat kecil, atau ada sel yang memiliki "nilai harapan" di bawah 5, atau ada sel bernilai 0. | Uji ini langsung memberikan nilai p menggunakan prinsip faktorial (!). Pada praktiknya, uji ini akan selalu dihitung dengan perangkat lunak.                                                                                                                                     |
 
 Rumus:
-* Uji Chi-square Pearson: χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
-* Uji Chi-square dengan koreksi Yates: χ2 = [n × (|a×d − b×c| − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
-* Uji eksak Fisher: nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!]
+* Uji Chi-square Pearson: <br>χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+* Uji Chi-square dengan koreksi Yates: <br>χ2 = [n × (|a×d − b×c| − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+* Uji eksak Fisher: <br>nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!]
 
 Namun, ada satu hal yang perlu kita sadari. Mengetahui bahwa sebuah faktor "berhubungan" dengan penyakit saja belum cukup bagi kita. Kita juga perlu tahu seberapa besar dampak faktor tersebut bagi populasi secara keseluruhan.
 
@@ -610,11 +642,9 @@ Dengan kata lain, jika kita bisa menghilangkan faktor tersebut, seberapa banyak 
 
 Untuk menjawab pertanyaan ini, kita menggunakan ukuran dampak.
 
-a. Perbedaan risiko (risk difference)
+a. Perbedaan risiko
 
-Ukuran paling sederhana adalah perbedaan risiko, atau sering juga disebut risk difference (RD).
-
-Perbedaan risiko menghitung selisih risiko antara kelompok terpapar dan kelompok tidak terpapar.
+Ukuran paling sederhana adalah perbedaan risiko (risk difference; disingkat RD). Ia menghitung selisih risiko antara kelompok terpapar dan kelompok tidak terpapar.
 
 Rumusnya:
 
@@ -624,9 +654,8 @@ RD = [a / (a + b)] − [c / (c + d)]
 Mari kita gunakan contoh yang sama.
 
 Risiko diare:
-
-Kelompok tanpa kolostrum = 18/30 = 0,6
-Kelompok dengan kolostrum = 14/70 = 0,2
+* Kelompok tanpa kolostrum = 18/30 = 0,6
+* Kelompok dengan kolostrum = 14/70 = 0,2
 
 RD = 0,6 − 0,2 = 0,4
 
@@ -634,14 +663,13 @@ Interpretasi:
 
 Ada tambahan risiko sebesar 0,4 (atau 40%) pada kelompok yang tidak mendapat kolostrum. Artinya, dari setiap 100 pedet yang tidak mendapat kolostrum, terdapat 40 kasus diare tambahan yang dapat dikaitkan dengan paparan tersebut.
 
-Ukuran ini sangat konkret. Ia langsung memberi gambaran “berapa banyak kasus tambahan” yang terjadi akibat suatu faktor.
+Ukuran ini sangat konkret. Ia langsung memberi gambaran “seberapa banyak kasus tambahan” yang terjadi akibat paparan suatu faktor.
 
 b. Risiko yang dapat diatribusikan (attributable risk)
 
 Istilah attributable risk sering digunakan dalam dua makna:
-
-sebagai sinonim dari perbedaan risiko,
-atau sebagai proporsi dampak dalam kelompok terpapar.
+* sebagai sinonim dari perbedaan risiko, atau 
+* sebagai proporsi dampak dalam kelompok terpapar.
 
 Dalam modul ini, kita akan menggunakan istilah yang lebih jelas:
 
