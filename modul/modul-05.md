@@ -150,7 +150,7 @@ Mari kita bedah tiga tingkatan faktor tersebut.
 	
 * Faktor risiko (risk factors) dan faktor protektif (protective factors).
 	
-	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit (seperti vaksinasi). Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
+	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit. Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
 	
 	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya. Pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
 	
@@ -164,11 +164,11 @@ Untuk memudahkan kita membedakan ketiganya, mari kita perhatikan tabel berikut:
 
 Tabel 5.2. Perbedaan tingkatan faktor berdasarkan kualitas bukti.
 
-|Tingkatan|Istilah|Makna utama|Contoh dalam kesehatan hewan|
-|---|---|---|---|
-|Tingkat 1|Faktor yang berasosiasi|Hubungan sebatas hasil uji statistika pada suatu kajian|Pedet yang lahir pada malam hari lebih sering menderita diare |
-|Tingkat 2|Faktor risiko/protektif|Hubungan yang selalu konsisten (meningkatkan atau menurunkan risiko) dan memiliki kepastian temporal (ada urutan waktu yang jelas) | Pedet yang terlambat mengonsumsi kolostrum lebih berisiko menderita diare |
-|Tingkat 3|Faktor penyebab|Hubungan yang sudah memenuhi kriteria kausalitas sebagai penyebab penyakit| Pedet yang terinfeksi E. coli enterotoksigenik atau Rotavirus mengalami diare |
+| Tingkatan | Istilah                            | Makna utama                                                                                                                        | Contoh dalam kesehatan hewan                                                  |
+| --------- | ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Tingkat 1 | Faktor yang berasosiasi            | Hubungan sebatas hasil uji statistika pada suatu kajian                                                                            | Pedet yang lahir pada malam hari lebih sering menderita diare                 |
+| Tingkat 2 | Faktor risiko dan faktor protektif | Hubungan yang selalu konsisten (meningkatkan atau menurunkan risiko) dan memiliki kepastian temporal (ada urutan waktu yang jelas) | Pedet yang terlambat mengonsumsi kolostrum lebih berisiko menderita diare     |
+| Tingkat 3 | Faktor penyebab                    | Hubungan yang sudah memenuhi kriteria kausalitas sebagai penyebab penyakit                                                         | Pedet yang terinfeksi E. coli enterotoksigenik atau Rotavirus mengalami diare |
 
 Dari contoh di atas, kita bisa melihat bahwa sebagai calon dokter hewan, tugas kita adalah memilah bukti-bukti tersebut.
 
@@ -305,7 +305,7 @@ Tabel 5.5. Hierarki bukti jenis-jenis kajian dan riset epidemiologis.
 | Menengah         | Kajian kasus–kontrol                  | Posisinya lebih rendah dari kajian kohort karena kajian ini menelusuri masa lalu. Kita sangat bergantung pada catatan sejarah masa lalu yang bisa saja tidak akurat.                                                      |
 | Lemah            | Kajian potong lintang                 | Hanya memotret data pada satu titik waktu. Kita sulit menentukan mana yang terjadi lebih dulu antara paparan dan penyakit, sehingga hubungan sebab-akibat tidak bisa disimpulkan.                                         |
 | Sangat lemah     | Laporan kasus dan rangkaian kasus     | Kajian deskriptif murni tanpa kelompok pembanding. Fungsinya hanya sebagai peringatan awal untuk merumuskan dugaan sementara.                                                                                             |
-| Paling dasar     | Opini pakar dan Penalaran mekanistis  | Hanya bersumber dari pengalaman subjektif seorang ahli atau murni penalaran teori di atas kertas, tanpa ada kajian lapangan yang terstruktur.                                                                             |
+| Paling dasar     | Opini pakar dan penalaran             | Hanya bersumber dari pengalaman subjektif seorang ahli atau murni penalaran teori di atas kertas, tanpa ada kajian lapangan yang terstruktur.                                                                             |
 
 Lalu, mengapa kita tidak selalu melakukan penelitian yang ada di bagian atas  piramida?
 
@@ -360,7 +360,7 @@ Tabel 5.7. Struktur standar tabel kontingensi 2×2 untuk kajian observasional.
 
 Mari kita pahami makna dari setiap sel di dalam tabel tersebut:
 * Sel a: Jumlah hewan yang terpapar faktor dan sakit.
-* Sel b: Jumlah hewan yang terpapar risiko dan tidak sakit.
+* Sel b: Jumlah hewan yang terpapar faktor dan tidak sakit.
 * Sel c: Jumlah hewan yang tidak terpapar faktor dan sakit.
 * Sel d: Jumlah hewan yang tidak terpapar faktor dan tidak sakit.
 
@@ -368,7 +368,7 @@ Mengapa posisi ini harus kita patuhi? Karena rumus-rumus yang akan kita gunakan 
 
 Mari kita gunakan contoh skenario lebih mudah dibayangkan:
 
-Kita melakukan kajian potong lintang pada 100 ekor pedet. Sebanyak 50 pedet dipelihara di kandang yang kotor (F+), dan 50 pedet lainnya di kandang yang bersih (F−). Pada waktu yang sama, kita juga mendata status diare pedet-pedet tersebut. Ternyata, ada 35 pedet yang diare (D+) dan 65 pedet sisanya tidak diare (D−). Kita memasukkan data mentah ke tabel 2×2.
+Kita melakukan kajian potong lintang pada 100 ekor pedet. Sebanyak 50 pedet dipelihara di kandang yang kotor (F+), dan 50 pedet lainnya di kandang yang bersih (F−). Pada waktu yang sama, kita juga mendata status diare pada pedet-pedet tersebut. Ternyata, ada 35 pedet yang diare (D+) dan 65 pedet sisanya tidak diare (D−). Kita memasukkan data mentah ke tabel 2×2.
 
 Tabel 5.8. Contoh pengisian tabel 2×2 untuk kajian observasional mengenai faktor kebersihan kandang dan diare pada pedet.
 
@@ -378,14 +378,11 @@ Tabel 5.8. Contoh pengisian tabel 2×2 untuk kajian observasional mengenai fakto
 | F−    | 5   | 45  | 50    |
 | Total | 35  | 65  | 100   |
 
-Setelah kita berhasil menyusun tabel 2×2 dengan benar, langkah berikutnya adalah menghitung kekuatan hubungan antara paparan dan penyakit. Kita akan mulai dengan ukuran asosiasi yang paling umum digunakan.
-
+Setelah kita berhasil menyusun tabel 2×2 dengan benar, langkah berikutnya adalah menghitung kekuatan asosiasi antara paparan faktor dan penyakit. 
 
 ###### 2. Kekuatan asosiasi
 
-Setelah kita menyusun data ke dalam tabel 2×2, sekarang kita akan mengubah angka-angka tersebut menjadi informasi yang lebih bermakna. Kita ingin tahu seberapa kuat hubungan antara sebuah faktor dengan kejadian penyakit.
-
-Namun, sebelum kita menghitungnya, ada dua konsep dasar yang harus kita pahami perbedaannya: risiko (risk) dan peluang relatif (odds).
+Tujuan utama kajian observasional (baik potong lintang, kasus–kontrol, maupun kohort) adalah untuk mengukur seberapa kuat asosiasi antara faktor dan penyakit. Namun, sebelum kita menghitungnya, ada dua konsep dasar yang harus kita pahami, yaitu risiko (risk) dan peluang relatif (odds).
 
 * Risiko: Proporsi (jenis perbandingan) antara jumlah hewan yang sakit dengan total populasi.
 * Peluang relatif: Rasio (jenis perbandingan) antara jumlah hewan yang sakit dengan jumlah hewan yang tidak sakit.
@@ -398,7 +395,7 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 
 * Rasio risiko atau risiko relatif (RR)
 	
-	Ukuran pertama adalah perbandingan risiko antarkelompok. Istilah ini diberi nama rasio risiko (risk ratio) atau risiko relatif (relative risk) yang disingkat RR. Ia digunakan pada kajian kohort. 
+	Ukuran pertama adalah perbandingan risiko antarkelompok. Istilah ini diberi nama rasio risiko (risk ratio) atau risiko relatif (relative risk) yang disingkat RR. Ia digunakan pada kajian kohort.
 	
 	Pada kajian ini, kita menelusuri hewan dari kondisi tidak sakit menuju masa depan untuk melihat siapa yang akhirnya jatuh sakit. Karena kita tahu total populasi awalnya, kita bisa menghitung risiko secara langsung. Risiko relatif (RR) membandingkan risiko sakit pada kelompok yang terpapar faktor dengan risiko sakit pada kelompok yang tidak terpapar.
 	
@@ -450,7 +447,7 @@ Sebenarnya, hal tersebut tidak menjadi masalah. Kita bebas menentukan kelompok m
 
 Contoh:
 * Jika RR = 6, maka setelah baris F+ dan F− dibalik, RR = 1/6 ≈ 0,167
-* Jika OR = 13,5, maka setelah baris F+ dan F− dibalik, OR = 1/13,5 = 0,074
+* Jika OR = 13,5, maka setelah baris F+ dan F− dibalik, OR = 1/13,5 ≈ 0,074
 
 Apakah ini salah? Tidak.
 
@@ -625,7 +622,7 @@ Tabel 5.13. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
 
 Rumus:
 * Uji Chi-square Pearson: <br>χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
-* Uji Chi-square dengan koreksi Yates: <br>χ2 = [n × (|a×d − b×c| − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
+* Uji Chi-square dengan koreksi Yates: <br>χ2 = [n × ((a×d − b×c) − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
 * Uji eksak Fisher: <br>nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!]
 
 Namun, ada satu hal yang perlu kita sadari. Mengetahui bahwa sebuah faktor "berhubungan" dengan penyakit saja belum cukup bagi kita. Kita juga perlu tahu seberapa besar dampak faktor tersebut bagi populasi secara keseluruhan.
@@ -634,58 +631,55 @@ Jika kita berhasil menghilangkan faktor risiko tersebut, berapa banyak kasus yan
 
 ###### 3. Ukuran dampak
 
-Kita sudah bisa membuktikan bahwa sebuah paparan merupakan faktor penyakit menggunakan RR atau OR. Kita juga sudah memastikan bahwa hubungan tersebut bukan karena kebetulan acak melalui uji Chi-square. 
+Setelah kita tahu bahwa sebuah faktor berhubungan nyata dengan penyakit (melalui nilai p) dan seberapa kuat hubungannya (melalui RR atau OR), apa langkah selanjutnya?
 
-Namun, kita sering membutuhkan jawaban yang berbeda. Bukan hanya “apakah berhubungan”, tetapi seberapa besar dampak faktor tersebut terhadap kejadian penyakit di populasi?
+Sebagai pihak yang membuat keputusan, kita sering kali dihadapkan pada keterbatasan sumber daya. Kita tidak bisa menangani semua faktor risiko sekaligus. Kita perlu bertanya: "Faktor mana yang jika kita hilangkan, akan memberikan dampak penurunan penyakit yang paling besar pada populasi?"
 
-Dengan kata lain, jika kita bisa menghilangkan faktor tersebut, seberapa banyak penyakit yang bisa kita cegah?
+Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 
-Untuk menjawab pertanyaan ini, kita menggunakan ukuran dampak.
+* Perbedaan risiko
+	
+	Ukuran pertama adalah perbedaan risiko (risk difference; disingkat RD) yang kadang disebut sebagai risiko yang dapat diatribusikan (attributable risk; disingkat AR). Ia menghitung selisih risiko antara kelompok terpapar dan kelompok tidak terpapar.
+	
+	Rumus: 
+	
+	RD = risiko pada kelompok terpapar − risiko pada kelompok tidak terpapar = [a / (a + b)] − [c / (c + d)]
+	
+	Mari kita gunakan contoh yang sama.
+	* Risiko diare pada kelompok kandang kotor = 30/50 = 0,6
+	* Risiko diare pada kelompok kandang bersih = 5/50 = 0,1
+	* Perbedaan risiko (RD) = 0,6 − 0,1 = 0,5
+	
+	Interpretasi: Ada tambahan risiko sebesar 0,5 (atau 50%) pada kelompok pedet yang berada di kandang kotor. Artinya, jika kita menghilangkan faktor (membersihkan seluruh kandang), ada penurunan kasus diare sebesar 50%.
+	
+	Ukuran ini sangat konkret. Ia langsung memberi gambaran “seberapa banyak kasus tambahan” yang terjadi akibat paparan suatu faktor.
+	
+* Fraksi yang dapat diatribusikan
+	
+	Ukuran kedua adalah proporsi atau fraksi yang dapat diatribusikan pada kelompok terpapar (attributable fraction; disingkat AF). Ia menghitung proporsi kasus pada kelompok terpapar yang benar-benar disebabkan oleh paparan tersebut.
+	
+	Rumus:
+	
+	AF = (RR − 1) / RR
+	
+	Dengan risiko relatif (RR) = 6:
+	
+	AF = (6 − 1) / 6 = 5/6 ≈ 0,83
+	
+	Interpretasi: Sekitar 83% kasus diare pada pedet yang tinggal di kandang kotor dapat dikaitkan dengan kondisi kandang. Sisanya mungkin dipengaruhi oleh faktor lain.
 
-a. Perbedaan risiko
+Mengapa ukuran dampak penting bagi kita?
 
-Ukuran paling sederhana adalah perbedaan risiko (risk difference; disingkat RD). Ia menghitung selisih risiko antara kelompok terpapar dan kelompok tidak terpapar.
+RR dan OR memberi tahu kita seberapa kuat hubungan. Namun, mereka tidak selalu memberi gambaran seberapa besar masalah di lapangan.
 
-Rumusnya:
+Contoh:
+* Faktor A memiliki RR = 5, tetapi hanya terjadi pada 2% populasi
+* Faktor B memiliki RR = 2, tetapi terjadi pada 60% populasi
 
-RD = risiko pada kelompok terpapar − risiko pada kelompok tidak terpapar
-RD = [a / (a + b)] − [c / (c + d)]
+Faktor mana yang lebih penting dikendalikan?
 
-Mari kita gunakan contoh yang sama.
+Dalam banyak kasus, faktor B justru memberi dampak lebih besar terhadap total kasus penyakit, karena paparan tersebut lebih luas.
 
-Risiko diare:
-* Kelompok tanpa kolostrum = 18/30 = 0,6
-* Kelompok dengan kolostrum = 14/70 = 0,2
+Di sinilah ukuran seperti RD, AF, dan PAF menjadi sangat penting. Mereka membantu kita menentukan prioritas intervensi, merancang program pencegahan yang efisien, dan mengalokasikan sumber daya secara tepat.
 
-RD = 0,6 − 0,2 = 0,4
-
-Interpretasi:
-
-Ada tambahan risiko sebesar 0,4 (atau 40%) pada kelompok yang tidak mendapat kolostrum. Artinya, dari setiap 100 pedet yang tidak mendapat kolostrum, terdapat 40 kasus diare tambahan yang dapat dikaitkan dengan paparan tersebut.
-
-Ukuran ini sangat konkret. Ia langsung memberi gambaran “seberapa banyak kasus tambahan” yang terjadi akibat paparan suatu faktor.
-
-b. Risiko yang dapat diatribusikan (attributable risk)
-
-Istilah attributable risk sering digunakan dalam dua makna:
-* sebagai sinonim dari perbedaan risiko, atau 
-* sebagai proporsi dampak dalam kelompok terpapar.
-
-Dalam modul ini, kita akan menggunakan istilah yang lebih jelas:
-
-Perbedaan risiko (RD) → selisih absolut
-Fraksi yang dapat diatribusikan pada kelompok terpapar (Attributable Fraction, AF)
-
-Fraksi yang dapat diatribusikan pada kelompok terpapar menghitung proporsi kasus pada kelompok terpapar yang benar-benar disebabkan oleh paparan tersebut.
-
-Rumusnya:
-
-AF = (RR − 1) / RR
-
-Dengan RR = 3:
-
-AF = (3 − 1) / 3 = 2/3 ≈ 0,67
-
-Interpretasi:
-
-Sekitar 67% kasus diare pada pedet yang tidak mendapat kolostrum dapat dikaitkan dengan kekurangan kolostrum. Sisanya mungkin disebabkan oleh faktor lain.
+Dengan memahami ukuran dampak, kita tidak hanya tahu faktor mana yang berbahaya, tetapi juga faktor mana yang paling “layak” untuk dikendalikan dalam populasi.
