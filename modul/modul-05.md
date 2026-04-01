@@ -643,7 +643,7 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 	
 	Rumus: 
 	
-	RD = risiko pada kelompok terpapar − risiko pada kelompok tidak terpapar = [a / (a + b)] − [c / (c + d)]
+	RD = risiko penyakit pada kelompok terpapar − risiko penyakit pada kelompok tidak terpapar
 	
 	Mari kita gunakan contoh yang sama.
 	* Risiko diare pada kelompok kandang kotor = 30/50 = 0,6
@@ -656,19 +656,23 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 	
 * Fraksi yang dapat diatribusikan
 	
-	Ukuran kedua adalah proporsi atau fraksi yang dapat diatribusikan pada kelompok terpapar (attributable fraction; disingkat AF). Ia menghitung proporsi kasus pada kelompok terpapar yang benar-benar disebabkan oleh paparan tersebut.
+	Ukuran kedua adalah proporsi atau fraksi yang dapat diatribusikan (attributable fraction; disingkat AF). Ia menghitung proporsi kasus pada kelompok terpapar yang diatribusikan (dikaitkan) oleh paparan tersebut. 
 	
 	Rumus:
 	
-	AF = (RR − 1) / RR
+	AF = (perbedaan risiko / risiko pada kelompok terpapar) × 100%
+
+	atau
+
+	AF = ((RR − 1) / RR) × 100%
 	
-	Dengan risiko relatif (RR) = 6:
+	Contoh: Dengan risiko relatif (RR) = 6
 	
-	AF = (6 − 1) / 6 = 5/6 ≈ 0,83
+	AF = (6 − 1) / 6 = 5/6 ≈ 0,83 = 83%
 	
 	Interpretasi: Sekitar 83% kasus diare pada pedet yang tinggal di kandang kotor dapat dikaitkan dengan kondisi kandang. Sisanya mungkin dipengaruhi oleh faktor lain.
 
-Mengapa ukuran dampak penting bagi kita?
+Mengapa kedua ukuran ini penting bagi kita?
 
 RR dan OR memberi tahu kita seberapa kuat hubungan. Namun, mereka tidak selalu memberi gambaran seberapa besar masalah di lapangan.
 
@@ -680,6 +684,67 @@ Faktor mana yang lebih penting dikendalikan?
 
 Dalam banyak kasus, faktor B justru memberi dampak lebih besar terhadap total kasus penyakit, karena paparan tersebut lebih luas.
 
-Di sinilah ukuran seperti RD, AF, dan PAF menjadi sangat penting. Mereka membantu kita menentukan prioritas intervensi, merancang program pencegahan yang efisien, dan mengalokasikan sumber daya secara tepat.
+Di sinilah ukuran seperti perbedaan risiko menjadi sangat penting. Mereka membantu kita menentukan prioritas intervensi, merancang program pencegahan yang efisien, dan mengalokasikan sumber daya secara tepat.
 
 Dengan memahami ukuran dampak, kita tidak hanya tahu faktor mana yang berbahaya, tetapi juga faktor mana yang paling “layak” untuk dikendalikan dalam populasi.
+
+Buat konten untuk bagian selanjutnya:
+
+##### C. Analisis multivariat
+
+Sejauh ini, kita telah menghitung hubungan antara satu paparan dan satu kejadian penyakit. Perhitungan yang hanya melibatkan dua variabel seperti ini kita sebut sebagai analisis bivariat. Namun, dalam praktiknya, seekor hewan tidak pernah terpapar hanya oleh satu hal. Pedet yang kita teliti mungkin tinggal di kandang yang kotor, tetapi ia juga memiliki umur tertentu, mendapatkan jenis pakan tertentu, dan berasal dari rumpun (breed) tertentu.
+
+Jika kita hanya melihat hubungan antara "kebersihan kandang" dan "diare" tanpa mempedulikan faktor lainnya, kita berisiko mengambil kesimpulan yang salah. Di sinilah kita membutuhkan analisis multivariat, yaitu analisis yang mampu melihat hubungan banyak variabel sekaligus secara bersamaan.
+
+###### 1. Variabel perancu
+
+Pernahkah kita melihat dua hal yang seolah-olah berhubungan sangat kuat, padahal sebenarnya ada "pihak ketiga" yang mengaturnya dari belakang? Dalam epidemiologi, pihak ketiga ini kita sebut sebagai variabel perancu (confounding).
+
+Variabel perancu adalah faktor ketiga yang berhubungan dengan paparan dan luaran. Kehadirannya bisa "menipu" kita dengan cara membuat hubungan terlihat lebih kuat, lebih lemah, atau bahkan menciptakan hubungan palsu yang sebenarnya tidak ada.
+
+Bagaimana variabel perancu "menipu" kita?
+
+Mari kita kembali ke skenario kebersihan kandang dan diare pedet. Ketika kita melakukan penelitian dan menemukan bahwa pedet di kandang kotor memiliki risiko diare 6 kali lipat lebih tinggi (RR = 6). Kita mungkin langsung menyimpulkan bahwa situasi kandang yang kotor adalah penyebab utamanya. Namun, setelah kita telusuri lebih dalam, ternyata ada variabel lain, yaitu kepadatan kandang.
+
+Mari kita lihat logikanya:
+* Kandang yang sangat padat (terlalu banyak hewan dalam satu ruangan) akan lebih cepat menjadi kotor karena feses dan urine terakumulasi dengan cepat. Artinya, kepadatan berhubungan dengan kebersihan.
+* Kandang yang sangat padat juga menyebabkan stres pada pedet dan mempermudah penularan patogen antarhewan. Artinya, kepadatan memengaruhi kejadian diare, terlepas dari apakah kandangnya kotor atau tidak.
+
+Dalam kasus ini, kepadatan kandang adalah variabel perancu. Jika kita tidak memperhitungkan kepadatan, kita mungkin akan menyimpulkan bahwa "kotoran" adalah satu-satunya penyebab diare, padahal sebagian kasus diare tersebut mungkin dipengaruhi oleh kepadatan. Akibatnya, hubungan antara kebersihan dan diare menjadi "terdistorsi" atau kacau.
+
+Kita bisa mengenali variabel perancu dengan ciri berikut:
+1. Ia berhubungan dengan paparan 
+2. Ia berhubungan dengan luaran 
+3. Ia bukan merupakan perantara dalam jalur sebab-akibat antara paparan dan penyakit
+
+Mari kita ambil contoh lainnya.
+
+Suatu kajian mengidentifikasi adanya asosiasi antara jenis pakan (basah dan kering) dan gangguan kardiovaskular pada anjing. Anjing yang diberi pakan basah lebih banyak ditemukan pada anjing dengan gangguan kardiovaskular. Namun, kita harus teliti dan mempertimbangkan faktor lain, misalnya umur. Ternyata, anjing berusia lanjut lebih sering diberi pakan basah. Selain itu, anjing berusia lanjut juga lebih sering mengalami gangguan kardiovaskular. Oleh karena itu, "umur" merupakan variabel perancu bagi variabel "jenis pakan" dan variabel "gangguan kardiovaskular".
+
+Mari kita lihat persamaan antara skenario pedet dan skenario anjing senior.
+
+Tabel 5.14. ....
+
+| Aspek | Skenario 1  | Skenario 2 |
+| --- | --- | --- |
+| Variabel luaran | Diare | Gangguan kardiovaskular |
+| Variabel paparan | Kebersihan kandang | Jenis pakan |
+| Variabel perancu | Kepadatan kandang | Umur anjing |
+| Apakah perancu berhubungan dengan paparan? | Ya, kandang yang padat juga cenderung kotor | Ya, anjing senior cenderung mengonsumsi pakan basah |
+| Apakah perancu berhubungan dengan luaran? | Ya, kandang yang padat cenderung meningkatkan kejadian diare | Ya, anjing senior cenderung memiliki gangguan kardiovaskular |
+| Apakah perancu berada dalam jalur sebab-akibat | Tidak, kebersihan kandang (paparan) tidak menyebabkan kandang menjadi padat (perancu)  | Tidak, pemberian pakan basah (paparan) tidak menyebabkan anjing menjadi tua (perancu) |
+
+Selain perancu, ada satu konsep lain yang perlu diperhatikan, yaitu pemodifikasi efek (effect modifier).
+
+Jika perancu adalah "pengganggu" yang harus kita kendalikan agar hubungan antarvariabel menjadi lebih akurat, maka pemodifikasi efek adalah "pemberi variasi" yang memang mengubah kekuatan hubungan antara paparan dan penyakit.
+
+Sebagai contoh, kita menemukan bahwa kandang kotor sangat meningkatkan risiko diare bagi pedet rumpun impor, tetapi dampaknya biasa saja bagi pedet rumpun lokal. Di sini, rumpun (breed) bukan lagi pengganggu, melainkan pemodifikasi efek. Ia memberi tahu kita bahwa dampak kebersihan kandang berbeda-beda pada setiap rumpun hewan.
+
+Mengapa kita perlu memahami variabel perancu dan pemodifikasi efek?
+
+Jika kita hanya mengandalkan analisis bivariat, kita mungkin akan memberikan saran yang kurang tepat. Kita bisa saja menyarankan peternak untuk mati-matian membersihkan lantai, padahal masalah utamanya adalah jumlah hewan di dalam kandang yang terlalu padat.
+
+Lalu, bagaimana cara kita "membersihkan" hubungan paparan dan penyakit dari gangguan variabel perancu ini? Bagaimana cara kita menghitung banyak variabel sekaligus dalam satu waktu?
+
+Kita akan menjawabnya pada bagian selanjutnya mengenai uji regresi logistik.
+
