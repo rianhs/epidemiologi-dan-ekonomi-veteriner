@@ -142,21 +142,21 @@ Mari kita bedah tiga tingkatan faktor tersebut.
 	
 	Ini adalah tingkatan yang paling dasar. Kita menyebut sebuah faktor "berasosiasi" dengan penyakit jika hasil uji statistika menunjukkan adanya hubungan yang nyata. Namun, hubungan ini belum tentu berarti sebab-akibat. Bisa jadi itu hanya kebetulan atau ada faktor lain yang tersembunyi.
 	 
-	Contoh: Kita menemukan bahwa kejadian diare lebih sering muncul pada pedet yang lahir pada malam hari. Secara data, ada hubungan. Namun. apakah waktu kelahiran (malam hari) merupakan penyebabnya? Belum tentu. Mungkin ada faktor lain, seperti pengawasan peternak yang kurang pada jam-jam tersebut. Di sini, kelahiran pada malam hari hanya "berasosiasi" dengan diare.
+	Contoh: Kita menemukan bahwa kejadian diare lebih sering muncul pada pedet yang lahir pada malam hari. Secara data, ada hubungan. Namun. apakah waktu kelahiran (malam hari) merupakan penyebabnya? Belum tentu. Mungkin ada faktor lain, seperti pengawasan peternak yang kurang pada jam-jam tersebut. Di sini, kelahiran pada malam hari hanya berasosiasi dengan diare.
 	
 * Faktor risiko (risk factors) dan faktor protektif (protective factors).
 	
 	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit. Syarat bagi suatu faktor agar disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, temuan yang konsisten di berbagai kajian akan memperkuat keyakinan terhadap faktor risiko. 
 	
-	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya. Pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
+	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya: pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
 	
 * Faktor penyebab (causal factors).
 	
-	Inilah tingkatan tertinggi yang menjadi tujuan akhir kita. Sebuah faktor baru bisa disebut sebagai penyebab jika ia memenuhi kriteria kausalitas yang ketat (seperti kriteria Bradford-Hill yang akan kita bahas nanti). Kita harus bisa membuktikan bahwa jika faktor ini dihilangkan, maka kejadian penyakit akan menurun secara drastis atau hilang sama sekali. 
+	Inilah tingkatan tertinggi yang menjadi tujuan akhir kita. Sebuah faktor baru bisa disebut sebagai penyebab jika ia memenuhi kriteria kausalitas yang ketat (seperti kriteria Bradford-Hill yang akan kita bahas pada Kegiatan Belajar 5.2). Kita harus bisa membuktikan bahwa jika faktor ini dihilangkan, maka kejadian penyakit akan menurun secara drastis atau hilang sama sekali. 
 	
 	Contoh: Adanya infeksi mikroorganisme seperti bakteri Escherichia coli enterotoksigenik atau Rotavirus yang dibuktikan dengan pemeriksaan laboratorium. Mereka inilah pelaku utama yang secara biologis merusak sel-sel dinding usus pedet dan secara langsung memicu terjadinya diare.
 
-Untuk memudahkan kita membedakan ketiganya, mari kita perhatikan tabel berikut:
+Untuk memudahkan kita membedakan ketiganya, perhatikan tabel berikut:
 
 Tabel 5.2. Perbedaan tingkatan faktor berdasarkan kualitas bukti.
 
@@ -177,9 +177,16 @@ Tentu tidak. Kita membutuhkan desain penelitian yang terstruktur agar data yang 
 
 ###### 3.  Jenis-jenis kajian epidemiologi
 
-Dalam epidemiologi, kita tidak bisa asal mengumpulkan data. Kita perlu memilih "cara" atau desain kajian yang sesuai dengan tujuan kita. Secara garis besar, seluruh kajian epidemiologi dapat kita bedakan berdasarkan dua pertanyaan kunci. Pertama, apakah kita memiliki kelompok pembanding? Jika tidak ada, maka kita melakukan kajian deskriptif; jika ada, maka kita melakukan kajian analitis). Kedua, apakah kita memberikan perlakuan secara sengaja? (Jika tidak, maka kajian itu disebut observasional; jika ya, maka kajian itu disebut eksperimental).
+Dalam epidemiologi, kita tidak bisa asal mengumpulkan data. Kita perlu memilih "cara" atau desain kajian yang sesuai dengan tujuan kita. Secara garis besar, seluruh kajian epidemiologi dapat kita bedakan berdasarkan dua pertanyaan kunci. 
 
-Selain dua pertanyaan kunci di atas, kita juga bisa mengelompokkan suatu kajian berdasarkan waktu atua durasi pengambilan data. Jika kita memotret data pada satu titik waktu saja, kita melakukan kajian potong lintang. Namun, jika kita mengabil data secara berkelanjutan seiring berjalannya waktu, kita melakukan  kajian longitudinal.
+1. Apakah kita memiliki kelompok pembanding?
+	* Jika tidak ada, maka kita melakukan kajian deskriptif.
+	* Jika ada, maka kita melakukan kajian analitis.
+2. Apakah kita merancang dan memberikan perlakuan secara sengaja?
+	* Jika tidak, maka kajian itu disebut observasional
+	* Jika ya, maka kajian itu disebut eksperimental.
+
+Selain dua pertanyaan kunci di atas, kita juga bisa mengelompokkan suatu kajian berdasarkan waktu atau durasi pengambilan data. Jika kita memotret data pada satu titik waktu saja, kita melakukan kajian potong lintang. Namun, jika kita mengambil data secara berkelanjutan seiring berjalannya waktu, kita melakukan kajian longitudinal.
 
 Berdasarkan pembagian tersebut, kita dapat menyusun hierarki desain kajian epidemiologi sebagai berikut.
 
@@ -189,7 +196,7 @@ Berdasarkan pembagian tersebut, kita dapat menyusun hierarki desain kajian epide
 		* Rangkaian kasus (case series)
 	2. Berbasis populasi → ada data populasi sebagai dasar perhitungan frekuensi penyakit. Contoh: 
 		* Kajian potong lintang deskriptif (untuk menghitung prevalensi) 
-		* Kajian longitudinal deskriptif (untuk menghitung insidensi).
+		* Kajian longitudinal deskriptif (untuk menghitung insidensi)
 2. Kajian analitis → kajian dengan kelompok pembanding dan bertujuan menguji hipotesis mengenai hubungan antara paparan (faktor) dan luaran (status kesehatan)
 	1. Kajian observasional → peneliti hanya mengamati apa yang terjadi secara alami tanpa memberikan intervensi atau perlakuan apa pun
 		1. Berbasis individu → unit observasi adalah individu. Contoh: 
@@ -210,16 +217,16 @@ Tabel 5.3. Deskripsi dan contoh penerapan berbagai jenis kajian epidemiologi.
 
 | Jenis kajian                     | Deskripsi                                                                                                                          | Contoh                                                                                                                     |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Laporan kasus                    | Deskripsi mendetail dari satu individu hewan yang sakit                                                                            | Melaporkan kasus keracunan tumbuhan langka pada seekor sapi                                                                |
+| Laporan kasus                    | Deskripsi mendetail dari satu individu hewan yang sakit                                                                            | Melaporkan kasus keracunan tumbuhan pada seekor sapi yang mengonsumsi tumbuhan tertentu                                                                |
 | Rangkaian kasus                  | Kumpulan beberapa laporan kasus dengan temuan serupa                                                                               | Melaporkan kasus sepuluh ekor sapi di satu desa menunjukkan luka lepuh yang sama secara bersamaan                          |
 | Kajian potong lintang deskriptif | Pengukuran proporsi kasus yang ada pada satu populasi pada satu titik waktu (prevalensi)                                           | Melakukan survei untuk mengetahui berapa persen sapi yang menderita cacingan pada bulan Agustus                            |
 | Kajian longitudinal deskriptif   | Pengukuran munculnya kasus baru pada satu populasi dalam kurun waktu tertentu (insidensi)                                          | Memantau perkembangan tren brucellosis pada sapi di suatu wilayah selama 5 tahun                                           |
 | Kajian potong lintang analitis   | Perbandingan individu dalam empat kelompok sekaligus (terpapar, tidak terpapar, sakit, tidak sakit) pada satu waktu                | Mencari asosiasi antara jenis lantai kandang dengan kejadian laminitis pada satu kunjungan lapangan                        |
 | Kajian kasus–kontrol             | Perbandingan individu dalam kelompok hewan sakit (kasus) dan tidak sakit (kontrol), lalu melacak riwayat paparannya pada masa lalu | Membandingkan sapi yang terkena antraks dan yang tidak, lalu mengecek apakah mereka pernah digembalakan di lahan yang sama |
-| Kajian kohort                    | Perbandingan individu dalam kelompok hewan yang terpapar dan tidak terpapar, lalu melihat siapa saja yang menjadi sakit            | Memantau kelompok pedet yang diberi kolostrum dan tanpa kolostrum, lalu melihat siapa yang diare dalam sebulan ke depan    |
+| Kajian kohort                    | Perbandingan individu dalam kelompok hewan yang terpapar dan tidak terpapar, lalu melihat siapa saja yang menjadi sakit            | Memantau kelompok kucing yang hidup indoor dan outdoor, lalu melihat siapa yang cacingan dalam enam bulan ke depan    |
 | Kajian ekologis                  | Perbandingan data agregat antara satu kelompok dan kelompok lain                                                                   | Menghubungkan rata-rata curah hujan bulanan dengan tingginya penyakit kuku busuk pada sapi di lima kabupaten berbeda       |
-| Uji lapangan                     | Eksperimen berupa intervensi kepada hewan di lingkungan alamiahnya                                                                 | Menguji efektivitas vaksin baru pada sapi-sapi di peternakan rakyat                                                        |
-| Uji acak terkendali              | Eksperimen berupa intervensi dengan kontrol yang ketat dan pembagian kelompok secara acak                                          | Menguji efektivitas obat cacing jenis baru dibandingkan obat standar pada anjing-anjing secara acak di rumah sakit hewan.  |
+| Uji lapangan                     | Eksperimen berupa intervensi kepada hewan di lingkungan alamiahnya                                                                 | Menguji efektivitas vaksin baru pada sapi-sapi di beberapa peternakan rakyat                                                        |
+| Uji acak terkendali              | Eksperimen berupa intervensi dengan kontrol yang ketat dan pembagian kelompok secara acak                                          | Menguji efektivitas obat cacing jenis baru dibandingkan obat standar pada anjing-anjing secara acak di rumah sakit hewan  |
 
 Setelah kita memahami "peta besar" dari berbagai jenis kajian ini, sekarang kita akan memfokuskan perhatian pada tiga jenis kajian yang paling sering digunakan dalam epidemiologi veteriner di lapangan, yaitu kajian analitis observasional tingkat individu, yang terdiri atas kajian potong lintang, kasus–kontrol, dan kohort.
 
@@ -233,7 +240,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 	
 	Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat yang sama, kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
 	
-	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita  terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
+	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
 	
 	Keterbatasan: Karena data paparan dan luaran diambil secara bersamaan, kita sering kali kesulitan menentukan mana yang terjadi lebih dulu. Misalnya, apakah lantai kandang yang duluan kotor baru kemudian sapi mengalami diare, atau peternak membiarkan lantai kotor setelah sapi menjadi diare? Kita tidak bisa memastikannya dengan desain ini.
 	
@@ -243,7 +250,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 	
 	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita meneliti penyakit langka atau penyakit yang butuh waktu lama untuk muncul (masa inkubasinya panjang). Kita tidak perlu menunggu hewan menjadi sakit. Kita cukup mencari hewan yang sudah sakit.
 	
-	Keterbatasan: Kita sangat bergantung pada catatan masa lalu. Padahal, sering kali  data tersebut tidak lengkap dan tidak akurat. Jika data tidak tercatat, kita hanya mengandalkan ingatan orang-orang yang terlibat dengan kelompok hewan yang kita teliti. Ingatan seseorang sangat rentan terhadap bias.
+	Keterbatasan: Kita sangat bergantung pada catatan masa lalu. Padahal, sering kali data tersebut tidak lengkap atau tidak akurat. Jika data tidak tercatat, kita hanya mengandalkan ingatan orang-orang yang terlibat dengan kelompok hewan yang kita teliti. Ingatan seseorang sangat rentan terhadap bias.
 	
 * Kajian kohort
 	
@@ -253,7 +260,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 	
 	Keterbatasan: Kajian ini memakan waktu yang lebih lama dan biaya yang lebih mahal. Selain itu, ada risiko hewan mati, dijual, atau hilang sebelum masa pemantauan selesai. Jika penyakitnya sangat jarang, jumlah sampel yang dibutuhkan bisa menjadi sangat besar.
 
-Untuk menyederhanakan perbedaan ketiganya, mari kita perhatikan rangkuman pada tabel berikut.
+Untuk menyederhanakan perbedaan di antara ketiganya, mari kita perhatikan rangkuman pada tabel berikut.
 
 Tabel 5.4. Perbandingan kajian potong lintang, kasus–kontrol, dan kohort.
 
