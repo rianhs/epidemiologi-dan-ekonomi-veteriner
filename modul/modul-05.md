@@ -114,7 +114,7 @@ Lalu, apa langkah selanjutnya?
 
 Epidemiologi analitis diibaratkan sebagai detektif yang mencari tahu siapa pelakunya dan apa motifnya dengan cara membandingkan berbagai bukti. 
 
-Dalam pendekatan analitis, kita menguji hipotesis yang sudah dibuat pada tahap deskriptif. Sekarang, kita tidak hanya melihat hewan yang sakit, tetapi juga mendata hewan yang tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara statistika apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
+Dalam pendekatan analitis, kita mendata hewan yang sakit dan tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara statistika apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
 
 Dengan melakukan analisis ini, seorang detektif diharapkan untuk bisa menangkap pelaku agar kasus benar-benar tuntas.
 
@@ -127,7 +127,7 @@ Tabel 5.1. Perbandingan epidemiologi deskriptif dan epidemiologi analitis.
 | Fokus pertanyaan | Who, where, when (siapa, di mana, kapan) | Why, how (mengapa, bagaimana) |
 | Tujuan utama | Memetakan distribusi dan frekuensi penyakit dalam populasi | Mencari determinan atau faktor yang berhubungan dengan penyakit |
 | Analogi investigasi | Mengumpulkan fakta dasar di tempat kejadian perkara | Menemukan bukti motif dan cara kerja pelaku |
-| Informasi yang dihasilkan| Sebaran dan jumlah hewan yang terdampak | Ada/tidaknya hubungan (asosiasi atau kasual) antara faktor dan penyakit |
+| Informasi yang dihasilkan| Sebaran dan jumlah hewan yang terdampak | Ada/tidaknya hubungan (asosiasi atau kausal) antara faktor dan penyakit |
 
 Setelah kita memahami bahwa epidemiologi analitis bertujuan untuk menguji hubungan antara suatu faktor dengan penyakit, muncul pertanyaan baru: Faktor seperti apa yang sebenarnya kita cari? Apakah semua hal yang berkaitan dengan penyakit bisa kita sebut sebagai penyebab? Kita akan membahas hal ini lebih mendalam pada bagian selanjutnya.
 
@@ -150,7 +150,7 @@ Mari kita bedah tiga tingkatan faktor tersebut.
 	
 * Faktor risiko (risk factors) dan faktor protektif (protective factors).
 	
-	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit. Syarat utama suatu faktor disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, hubungannya harus konsisten ditemukan di berbagai tempat. 
+	Tingkatan ini lebih kuat daripada sekadar asosiasi. Sebuah faktor dianggap sebagai faktor risiko jika kehadirannya meningkatkan peluang hewan untuk sakit. Sebaliknya, ia disebut faktor protektif jika kehadirannya justru melindungi hewan dari penyakit. Syarat bagi suatu faktor agar disebut sebagai risiko adalah kepastian temporal (hubungan waktu), artinya faktor tersebut harus ada atau harus terjadi sebelum penyakit muncul. Selain itu, temuan yang konsisten di berbagai kajian akan memperkuat keyakinan terhadap faktor risiko. 
 	
 	Contoh: Setelah mengendalikan faktor lain, bukti di lapangan selalu konsisten menunjukkan bahwa pedet yang telat mendapat kolostrum (lebih dari 12 jam setelah lahir) memiliki peluang jauh lebih besar untuk mengalami diare beberapa hari kemudian. Ada kepastian urutan waktu di sini, yaitu paparan faktor (keterlambatan pemberian kolostrum) mendahului penyakit (diare). Faktor protektifnya adalah kondisi sebaliknya. Pemberian kolostrum yang cukup pada 6 jam pertama setelah kelahiran secara konsisten menurunkan peluang pedet mengalami diare.
 	
@@ -235,7 +235,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 
 * Kajian potong lintang (lintas seksional)
 	
-	Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat itu juga sama kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
+	Bayangkan kita mengambil foto menggunakan kamera. Foto tersebut merekam kejadian tepat pada detik tombol ditekan. Begitulah cara kerja kajian potong lintang. Kita mendatangi sebuah populasi hewan, lalu pada saat yang sama, kita mendata hewan mana yang sakit dan tidak sakit (luaran) dan apa saja variasi faktor yang diduga memengaruhinya (paparan). Titik awalnya adalah masa kini dan kita tidak menelusuri data pada masa lalu maupun masa depan.
 	
 	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita membutuhkan jawaban yang cepat dan sumber daya kita  terbatas. Kita menggunakannya untuk memotret situasi saat ini, misalnya mencari hubungan antara kondisi lantai kandang dengan kejadian mastitis pada hari kunjungan tersebut.
 	
@@ -253,7 +253,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 	
 	Kajian kohort adalah sebuah film dokumenter. Kita mengikuti perjalanan hidup sekelompok hewan dari waktu ke waktu. Kajian dimulai dari hewan-hewan tak berpenyakit, yang dibagi menjadi kelompok terpapar dan kelompok tidak terpapar. Kita ikuti mereka selama beberapa pekan, bulan, atau tahun untuk melihat siapa saja yang akhirnya jatuh sakit.
 	
-	Kapan kajian ini digunakan? Desain ini digunakan saat kita ingin memastikan secara mutlak bahwa paparan benar-benar terjadi sebelum penyakit. Di antara semua kajian observasional, kajian kohort memberikan bukti sebab-akibat yang paling kuat. Desain ini juga sangat tepat untuk menilai paparan yang langka.
+	Kapan kajian ini digunakan? Desain ini digunakan saat kita ingin memastikan secara mutlak bahwa paparan benar-benar terjadi sebelum penyakit. Di antara semua kajian observasional, kajian kohort memberikan bukti yang paling kuat dalam mendukung hubungan sebab-akibat. Desain ini juga sangat tepat untuk menilai paparan yang langka.
 	
 	Keterbatasan: Kajian ini memakan waktu yang lebih lama dan biaya yang lebih mahal. Selain itu, ada risiko hewan mati, dijual, atau hilang sebelum masa pemantauan selesai. Jika penyakitnya sangat jarang, jumlah sampel yang dibutuhkan bisa menjadi sangat besar.
 
@@ -417,9 +417,7 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar <br>= [a / b] / [c / d] = a×d / b×c
 	
-	Cara interpretasi (untuk kajian kasus–kontrol): Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang sakit memiliki peluang relatif (odds) 13,5 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
-	
-	Cara interpretasi (untuk kajian potong lintang): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 4 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
+	Cara interpretasi (untuk kajian potong lintang): Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 13,5 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
 
 
 Tabel 5.9. Ekspansi tabel 2×2 dengan menambahkan kolom untuk risiko dan peluang relatif bagi setiap status paparan.
@@ -456,7 +454,7 @@ Namun, interpretasinya juga harus dibalik.
 * Jika RR = 6, maka paparan faktor meningkatkan risiko penyakit
 * Jika RR = 0,167, maka paparan faktor menurunkan risiko penyakit
 
-Artinya, hal yang berubah bukan hubungan datanya, tetapi sudut pandang kita dalam membandingkan kelompok. Intinya, angka RR atau OR selalu menceritakan: "Berapa kali lipat kelompok di baris pertama dibandingkan dengan kelompok di baris kedua (referensi)?"
+Artinya, hal yang berubah bukan hubungan datanya, tetapi sudut pandang kita dalam membandingkan kelompok. Intinya, angka RR atau OR selalu menceritakan: "Berapa kali lipat kelompok di baris pertama dibandingkan dengan kelompok di baris kedua (referensi)?" Namun, biasanya kita memilih kelompok yang paling 'alami', paling sehat, atau kelompok yang tidak mendapatkan perlakuan apa pun sebagai patokan.
 
 Pertimbangan lain yang sering membuat kita bingung adalah, bagaimana jika paparan punya lebih dari dua kategori?
 
@@ -507,7 +505,7 @@ Mari kita lihat panduan interpretasinya pada tabel berikut.
 
 Tabel 5.11. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
 
-| Posisi rentang 95% CI                   | Posisi terhadap angka 1 | Makna epidemiologis                                                                                                                        | Contoh penulisan jasil       |
+| Posisi rentang 95% CI                   | Posisi terhadap angka 1 | Makna epidemiologis                                                                                                                        | Contoh penulisan hasil       |
 | --------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
 | Seluruh batas bawah dan atas berada > 1 | Tidak melewati angka 1  | Faktor memiliki makna statistika untuk meningkatkan kejadian penyakit                                                                      | OR = 3,5 (95% CI: 1,8 – 5,2) |
 | Seluruh batas bawah dan atas berada < 1 | Tidak melewati angka 1  | Faktor memiliki makna statistika untuk menurunkan kejadian penyakit                                                                        | RR = 0,4 (95% CI: 0,1 – 0,7) |
@@ -594,7 +592,7 @@ Aturannya adalah:
 * Jika nilai p < 0,05: Kita menolak H0. Kemungkinan terjadinya kebetulan sangat kecil (di bawah 5%). Kesimpulan: Hubungan antara faktor dan penyakit bermakna secara statistika (signifikan).
 * Jika nilai p ≥ 0,05: Kita gagal menolak H0. Kemungkinan terjadinya kebetulan cukup besar (di atas 5%). Kesimpulan: Hubungan antara faktor dan penyakit tidak bermakna secara statistika. Data belum cukup kuat untuk membuktikan adanya hubungan.
 
-Sebagai contoh, nilai χ2 = 27,48 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu jauh di bawah 0,05. Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memang berasosiasi dengan diare pada pedet.
+Sebagai contoh, nilai χ2 = 27,48 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu jauh di bawah 0,05. Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memiliki asosiasi yang bermakna dengan diare pada pedet.
 
 Khusus untuk tabel 2×2, ada rumus alternatif yang jauh lebih cepat untuk mendapatkan nilai Chi-square:
 
@@ -617,13 +615,8 @@ Tabel 5.13. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
 | Jenis uji                       | Rumus                                                                    | Kapan digunakan?                                                                                                        | Penjelasan                                                                                                                                                                                                                                                                       |
 | ------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Chi-square Pearson (standar)    | χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]                     | Gunakan jika total sampel cukup besar dan semua sel memiliki "nilai harapan" minimum 5                                  | Uji yang paling umum digunakan untuk menilai ada tidaknya asosiasi pada tabel 2×2.                                                                                                                                                                                               |
-| Chi-square dengan koreksi Yates | χ2 = [n × ((a×d − b×c) − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]            | Alternatif untuk tabel 2×2 jika jumlah sampel tidak terlalu besar dan peneliti ingin pendekatan yang lebih konservatif  | Uji ini menyertakan koreksi (dikurangi 0,5n) untuk mengurangi kecenderungan Chi-square biasa yang memberikan hasil terlalu signifikan pada sampel kecil. Dalam rumusnya terdapat tanda garis vertikal (\|) yang berarti nilai mutlak (hasil pengurangan selalu dianggap positif) |
+| Chi-square dengan koreksi Yates | χ2 = [n × (&#124;a×d − b×c&#124; − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]            | Alternatif untuk tabel 2×2 jika jumlah sampel tidak terlalu besar dan peneliti ingin pendekatan yang lebih konservatif  | Uji ini menyertakan koreksi (dikurangi 0,5n) untuk mengurangi kecenderungan Chi-square biasa yang memberikan hasil terlalu signifikan pada sampel kecil. Dalam rumusnya terdapat tanda garis vertikal (\|) yang berarti nilai mutlak (hasil pengurangan selalu dianggap positif) |
 | Uji eksak Fisher                | nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!] | Gunakan jika total sampel sangat kecil, atau ada sel yang memiliki "nilai harapan" di bawah 5, atau ada sel bernilai 0. | Uji ini langsung memberikan nilai p menggunakan prinsip faktorial (!). Pada praktiknya, uji ini akan selalu dihitung dengan perangkat lunak.                                                                                                                                     |
-
-Rumus:
-* Uji Chi-square Pearson: <br>χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
-* Uji Chi-square dengan koreksi Yates: <br>χ2 = [n × ((a×d − b×c) − 0.5n)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
-* Uji eksak Fisher: <br>nilai p = [(a+b)! × (c+d)! × (a+c)! × (b+d)!] / [a! × b! × c! × d! × n!]
 
 Namun, ada satu hal yang perlu kita sadari. Mengetahui bahwa sebuah faktor "berhubungan" dengan penyakit saja belum cukup bagi kita. Kita juga perlu tahu seberapa besar dampak faktor tersebut bagi populasi secara keseluruhan.
 
@@ -650,7 +643,7 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 	* Risiko diare pada kelompok kandang bersih = 5/50 = 0,1
 	* Perbedaan risiko (RD) = 0,6 − 0,1 = 0,5
 	
-	Interpretasi: Ada tambahan risiko sebesar 0,5 (atau 50%) pada kelompok pedet yang berada di kandang kotor. Artinya, jika kita menghilangkan faktor (membersihkan seluruh kandang), ada penurunan kasus diare sebesar 50%.
+	Interpretasi: Ada tambahan risiko sebesar 0,5 (atau 50%) pada kelompok pedet yang berada di kandang kotor. Artinya, jika hubungan tersebut bersifat kausal, maka penghilangan faktor (membersihkan seluruh kandang) dapat menurunkan kasus diare hingga 50%.
 	
 	Ukuran ini sangat konkret. Ia langsung memberi gambaran “seberapa banyak kasus tambahan” yang terjadi akibat paparan suatu faktor.
 	
@@ -686,7 +679,7 @@ Dalam banyak kasus, faktor B justru memberi dampak lebih besar terhadap total ka
 
 Di sinilah ukuran seperti perbedaan risiko menjadi sangat penting. Mereka membantu kita menentukan prioritas intervensi, merancang program pencegahan yang efisien, dan mengalokasikan sumber daya secara tepat.
 
-Dengan memahami ukuran dampak, kita tidak hanya tahu faktor mana yang berbahaya, tetapi juga faktor mana yang paling “layak” untuk dikendalikan dalam populasi.
+Dengan memahami ukuran dampak, kita dapat mengenali faktor-faktor yang berbahaya, sekaligus menentukan faktor mana yang paling “layak” untuk dikendalikan dalam populasi.
 
 Buat konten untuk bagian selanjutnya:
 
@@ -700,7 +693,7 @@ Jika kita hanya melihat hubungan antara "kebersihan kandang" dan "diare" tanpa m
 
 Pernahkah kita melihat dua hal yang seolah-olah berhubungan sangat kuat, padahal sebenarnya ada "pihak ketiga" yang mengaturnya dari belakang? Dalam epidemiologi, pihak ketiga ini kita sebut sebagai variabel perancu (confounding).
 
-Variabel perancu adalah faktor ketiga yang berhubungan dengan paparan dan luaran. Kehadirannya bisa "menipu" kita dengan cara membuat hubungan terlihat lebih kuat, lebih lemah, atau bahkan menciptakan hubungan palsu yang sebenarnya tidak ada.
+Variabel perancu adalah faktor ketiga yang berhubungan baik dengan variabel paparan maupun dengan variabel luaran. Kehadirannya bisa "menipu" kita dengan cara membuat hubungan terlihat lebih kuat, lebih lemah, atau bahkan menciptakan hubungan palsu yang sebenarnya tidak ada.
 
 Bagaimana variabel perancu "menipu" kita?
 
@@ -723,7 +716,7 @@ Suatu kajian mengidentifikasi adanya asosiasi antara jenis pakan (basah dan keri
 
 Mari kita lihat persamaan antara skenario pedet dan skenario anjing senior.
 
-Tabel 5.14. ....
+Tabel 5.14. Contoh identifikasi variabel perancu pada dua skenario epidemiologis.
 
 | Aspek | Skenario 1  | Skenario 2 |
 | --- | --- | --- |
@@ -746,7 +739,7 @@ Jika kita hanya mengandalkan analisis bivariat, kita mungkin akan memberikan sar
 
 Lalu, bagaimana cara kita "membersihkan" hubungan paparan dan penyakit dari gangguan variabel perancu ini? Bagaimana cara kita menghitung banyak variabel sekaligus dalam satu waktu?
 
-Kita akan menjawabnya pada bagian selanjutnya mengenai uji regresi logistik.
+Kita akan menjawabnya pada bagian selanjutnya mengenai regresi logistik.
 
 ###### 2. Uji regresi logistik
 
@@ -754,7 +747,7 @@ Secara sederhana, regresi logistik merupakan uji statistika yang memungkinkan ki
 
 Jika analisis bivariat (tabel 2×2) hanya bisa melihat hubungan antara satu faktor dan satu penyakit, maka regresi logistik memungkinkan kita untuk memasukkan banyak faktor sekaligus untuk satu luaran penyakit.
 
-Regresi logistik digunakan untuk skenario yang memiliki variabel dependen yang berbentuk dikotomi. Dalam epidemiologi veteriner, contoh variabelnya adalah status kesehatan yang memiliki dua kemungkinan (dikotomi), misalnya "sakit atau sehat", "hidup atau mati", dan "bunting atau tidak bunting". Uji regresi logistik digunakan untuk menganalisis data yang memiliki luaran dikotomi seperti ini.
+Regresi logistik digunakan untuk skenario yang memiliki variabel dependen (luaran) yang berbentuk dikotomi. Dalam epidemiologi veteriner, contoh variabelnya adalah status kesehatan yang memiliki dua kemungkinan (dikotomi), misalnya "sakit atau sehat", "hidup atau mati", dan "bunting atau tidak bunting". Uji regresi logistik digunakan untuk menganalisis data yang memiliki luaran dikotomi seperti ini.
 
 Untuk memahami cara kerja uji ini tanpa harus dipusingkan oleh rumus matematika, bayangkan sebuah meja mixer audio di studio rekaman. Di meja tersebut terdapat banyak tombol geser untuk mengatur suara vokal, gitar, bass, dan drum secara bersamaan. Jika kita ingin menilai seberapa jernih suara gitar, kita tidak perlu mematikan alat musik lainnya. Kita cukup "mengunci" volume vokal dan drum di tingkat tertentu, lalu berfokus mendengarkan suara gitarnya.
 
@@ -767,17 +760,17 @@ Mari kita terapkan konsep ini pada data pedet kita.
 
 Apa makna dari penurunan angka yang sangat drastis ini?
 
-Penurunan dari 6,0 menjadi 1,5 membuktikan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai
+Penurunan dari 6,0 menjadi 1,5 menunjukkan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai
 
 Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
 
 * Pada kajian potong lintang dan kasus–kontrol, regresi logistik merupakan uji standar karena hasil akhirnya berupa OR yang disesuaikan (adjusted OR).
-* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para ahli biasanya lebih menyarankan regresi Poisson agar hasil akhirnya berupa RR yang disesuaikan (adjusted RR).
+* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para peneliti memilih metode lain seperti regresi Poisson untuk memperoleh RR yang disesuaikan (adjusted RR).
 
 Setelah kita melakukan analisis multivariat, kita akan mendapatkan angka OR/RR yang baru. Kita dapat mengatakan bahwa nilai OR/RR yang diperoleh dari analisis bivariat (tabel 2×2) merupakan nilai kasar (crude), sedangkan nilai OR/RR yang diperoleh dari analisis multivariat (seperti regresi logistik) merupakan nilai yang disesuaikan (adjusted).
 
 * Nilai OR/RR kasar menunjukkan hubungan awal yang masih tercampur faktor lain.
-* Nilai OR/RR yang disesuaikan menunjukkan hubungan murni setelah faktor perancu dikendalikan.
+* Nilai OR/RR yang disesuaikan menunjukkan hubungan setelah faktor perancu dikendalikan.
 
 Bagaimana cara kita mengambil keputusan?
 
