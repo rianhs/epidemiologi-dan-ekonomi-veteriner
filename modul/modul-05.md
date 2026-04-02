@@ -748,33 +748,39 @@ Lalu, bagaimana cara kita "membersihkan" hubungan paparan dan penyakit dari gang
 
 Kita akan menjawabnya pada bagian selanjutnya mengenai uji regresi logistik.
 
-Ini draf saya. Apakah sudah cocok? Apakah saya perlu menambahkan penjelasan tentang regresi logistik dapat diterapkan ke kajian apa saja (apakah potong lintang, kasus kontrol, kohort bisa semua)?
-
 ###### 2. Uji regresi logistik
 
-Secara sederhana, regresi logistik adalah uji statistika yang memungkinkan kita memasukkan banyak variabel paparan sekaligus ke dalam satu kali perhitungan matematis.
+Secara sederhana, regresi logistik merupakan uji statistika yang memungkinkan kita memasukkan banyak variabel paparan sekaligus dalam satu perhitungan matematis.
 
 Jika analisis bivariat (tabel 2×2) hanya bisa melihat hubungan antara satu faktor dan satu penyakit, maka regresi logistik memungkinkan kita untuk memasukkan banyak faktor sekaligus untuk satu luaran penyakit.
 
-Mengapa ada istilah "logistik"? Dalam dunia kedokteran hewan, luaran penyakit sering kali hanya memiliki dua kemungkinan (dikotomi), misalnya "sakit atau sehat", "hidup atau mati", dan "bunting atau tidak bunting". Uji regresi logistik digunakan untuk menganalisis data yang memiliki luaran dikotomi seperti ini.
+Regresi logistik digunakan untuk skenario yang memiliki variabel dependen yang berbentuk dikotomi. Dalam epidemiologi veteriner, contoh variabelnya adalah status kesehatan yang memiliki dua kemungkinan (dikotomi), misalnya "sakit atau sehat", "hidup atau mati", dan "bunting atau tidak bunting". Uji regresi logistik digunakan untuk menganalisis data yang memiliki luaran dikotomi seperti ini.
 
-Untuk memahami cara kerjanya tanpa harus dipusingkan oleh rumus matematika, mari kita bayangkan sebuah meja mixer audio di studio rekaman. Di meja tersebut terdapat banyak tombol geser untuk mengatur suara vokal, gitar, bass, dan drum secara bersamaan. Jika kita ingin menilai seberapa jernih suara gitar, kita tidak perlu mematikan alat musik lainnya. Kita cukup "mengunci" volume vokal dan drum di tingkat tertentu, lalu berfokus mendengarkan suara gitarnya.
+Untuk memahami cara kerja uji ini tanpa harus dipusingkan oleh rumus matematika, bayangkan sebuah meja mixer audio di studio rekaman. Di meja tersebut terdapat banyak tombol geser untuk mengatur suara vokal, gitar, bass, dan drum secara bersamaan. Jika kita ingin menilai seberapa jernih suara gitar, kita tidak perlu mematikan alat musik lainnya. Kita cukup "mengunci" volume vokal dan drum di tingkat tertentu, lalu berfokus mendengarkan suara gitarnya.
 
-Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer akan "mengunci" atau mengendalikan variabel perancu secara statistika, sehingga kita bisa mengamati efek murni dari paparan utama kita.
-
-Hasil akhir dari perhitungan saringan canggih ini adalah sebuah nilai yang kita sebut sebagai OR yang disesuaikan (adjusted OR).
+Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer akan "mengunci" atau mengendalikan variabel-variabel perancu menggunakan statistika sehingga kita bisa mengamati efek murni dari paparan utama kita. Hasil akhir dari perhitungan regresi logistik adalah sebuah nilai yang kita sebut OR yang disesuaikan (adjusted OR).
 
 Mari kita terapkan konsep ini pada data pedet kita.
-
-* Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor kepadatan kandang.
-* Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai" dan "kepadatan kandang" secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
-* Komputer kemudian mengunci efek kepadatan kandang dan mengeluarkan hasil baru: OR yang disesuaikan untuk kebersihan lantai = 1,5.
+* Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor-faktor lain.
+* Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai", "kepadatan kandang", "umur pedet", "jenis pakan", dan faktor lain yang kita teliti secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
+* Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru: OR yang disesuaikan untuk kebersihan lantai = 1,5.
 
 Apa makna dari penurunan angka yang sangat drastis ini?
 
-Penurunan dari 6,0 menjadi 1,5 membuktikan bahwa kepadatan kandang memang benar-benar bertindak sebagai variabel perancu. Setelah efek "pedet berdesakan" disingkirkan melaului statistika, ternyata kebersihan lantai yang buruk hanya meningkatkan peluang relatif kejadian diare sebesar 1,5 kali lipat. Hal ini menunjukkan bahwa sebagian besar hubungan yang terlihat sebelumnya dipengaruhi oleh kepadatan kandang, bukan semata-mata oleh kebersihan lantai.
+Penurunan dari 6,0 menjadi 1,5 membuktikan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai
 
 Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
 
-* Pada kajian potong lintang dan kasus–kontrol, regresi logistik adalah standar utama karena hasil akhirnya berupa OR yang disesuaikan (adjusted OR).
-* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para ahli biasanya lebih menyarankan regresi Poisson agar hasil akhirnya tetap berupa RR yang disesuaikan (adjusted RR).
+* Pada kajian potong lintang dan kasus–kontrol, regresi logistik merupakan uji standar karena hasil akhirnya berupa OR yang disesuaikan (adjusted OR).
+* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para ahli biasanya lebih menyarankan regresi Poisson agar hasil akhirnya berupa RR yang disesuaikan (adjusted RR).
+
+Setelah kita melakukan analisis multivariat, kita akan mendapatkan angka OR/RR yang baru. Kita dapat mengatakan bahwa nilai OR/RR yang diperoleh dari analisis bivariat (tabel 2×2) merupakan nilai kasar (crude), sedangkan nilai OR/RR yang diperoleh dari analisis multivariat (seperti regresi logistik) merupakan nilai yang disesuaikan (adjusted).
+
+* Nilai OR/RR kasar menunjukkan hubungan awal yang masih tercampur faktor lain.
+* Nilai OR/RR yang disesuaikan menunjukkan hubungan murni setelah faktor perancu dikendalikan.
+
+Bagaimana cara kita mengambil keputusan?
+
+Jika setelah disesuaikan nilai OR/RR tetap signifikan (selang kepercayaan tidak melewati angka 1), maka kita bisa sangat yakin bahwa faktor tersebut memang memiliki peran penting dalam kejadian penyakit. Namun, jika nilainya turun drastis dan menjadi tidak signifikan, maka faktor tersebut kemungkinan besar hanyalah "pengikut" dari variabel perancu lainnya.
+
+Pemahaman tentang nilai yang disesuaikan ini sangat penting saat kita membaca artikel ilmiah. Kita tidak boleh langsung percaya pada angka yang besar sebelum memastikan apakah peneliti tersebut sudah melakukan penyesuaian (adjustment) terhadap variabel-variabel perancu yang mungkin ada.
