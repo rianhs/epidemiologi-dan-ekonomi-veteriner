@@ -89,7 +89,7 @@ Sub-CPMK-5 dirancang untuk diselesaikan dalam dua kegiatan belajar (dua pekan), 
 
 Setelah kita menuntaskan pembahasan mengenai frekuensi dan distribusi penyakit di Modul 3 dan cara memastikan diagnosisnya di Modul 4, sekarang kita sampai pada pertanyaan yang lebih mendalam.
 
-Bayangkan kita sedang menangani wabah diare pada pedet di sebuah peternakan. Melalui pendekatan deskriptif, kita sudah tahu bahwa ada 20 ekor pedet yang sakit (siapa), kejadiannya di kandang A (di mana), dan puncaknya terjadi di awal musim hujan (kapan). Data ini sangat berguna, tetapi apakah cukup bagi kita untuk menghentikan wabah tersebut secara permanen?
+Bayangkan kita sedang menangani wabah diare pada pedet di sebuah peternakan. Melalui pendekatan deskriptif, kita sudah tahu bahwa ada 20 ekor pedet yang sakit (siapa), kejadiannya di kandang A (di mana), dan puncaknya terjadi pada awal musim hujan (kapan). Data ini sangat berguna, tetapi apakah cukup bagi kita untuk menghentikan wabah tersebut secara permanen?
 
 Tentu saja tidak. Pemilik ternak pasti akan bertanya, "Dok, kenapa pedet saya bisa sakit? Apakah karena pakannya yang berjamur, atau karena kebersihan kandangnya yang buruk?"
 
@@ -102,17 +102,17 @@ Untuk menjawab pertanyaan "mengapa" dan "bagaimana" suatu penyakit bisa terjadi,
 
 ###### 1. Perbedaan epidemiologi deskriptif dan analitis
 
-Apa sebenarnya hal-hal yang membedakan pendekatan deskriptif dan analitis? Mari ambil investigasi kasus kriminal sebagai analogi. Epidemiologi deskriptif merupakan tugas polisi untuk mendata siapa korbannya, di mana lokasi kejadiannya, dan jam berapa kejahatan itu terjadi. 
+Apa sebenarnya hal-hal yang membedakan pendekatan deskriptif dan analitis? Mari ambil investigasi kasus kriminal sebagai analogi. Epidemiologi deskriptif ibarat tugas polisi untuk mendata siapa korbannya, di mana lokasi kejadiannya, dan jam berapa kejahatan itu terjadi. 
 
-Dalam pendekatan deskriptif, kita hanya berfokus pada kelompok hewan yang sakit. Kita tidak memerlukan kelompok pembanding. Tujuannya adalah memetakan distribusi penyakit di dalam populasi. Hasil akhirnya adalah sebuah hipotesis atau dugaan sementara. Misalnya, "Kita menduga diare ini berkaitan dengan sumber air yang tercemar."
+Dalam pendekatan deskriptif, kita hanya berfokus pada kelompok hewan yang sakit. Kita tidak menggunakan kelompok pembanding. Tujuannya adalah memetakan distribusi penyakit di dalam populasi. Hasil akhirnya adalah sebuah hipotesis atau dugaan sementara. Misalnya, "Kita menduga diare ini berkaitan dengan sumber air yang tercemar."
 
 Lalu, apa langkah selanjutnya?
 
 Epidemiologi analitis diibaratkan sebagai detektif yang mencari tahu siapa pelakunya dan apa motifnya dengan cara membandingkan berbagai bukti. 
 
-Dalam pendekatan analitis, kita mendata hewan yang sakit dan tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara statistika apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
+Dalam pendekatan analitis, kita mendata hewan yang sakit dan tidak sakit. Selain itu, kita juga membandingkan kelompok hewan yang terpapar faktor tertentu (misalnya air tercemar) dan kelompok yang tidak terpapar faktor. Dengan membandingkan kelompok-kelompok ini, kita bisa membuktikan secara matematis apakah faktor tersebut benar-benar berhubungan dengan kejadian penyakit atau hanya kebetulan belaka. 
 
-Dengan melakukan analisis ini, seorang detektif diharapkan untuk bisa menangkap pelaku agar kasus benar-benar tuntas.
+Dengan melakukan analisis ini, seorang detektif diharapkan dapat menangkap pelaku agar kasus benar-benar tuntas.
 
 Untuk menyederhanakan dan merangkum konsep ini, mari kita perhatikan perbandingannya pada tabel berikut.
 
@@ -776,3 +776,8 @@ Pemahaman tentang nilai yang disesuaikan ini sangat penting saat kita membaca ar
 
 #### III. Ringkasan
 Melalui kegiatan belajar ini, kita telah membekali diri dengan kemampuan untuk membaca dan memahami laporan hasil kajian epidemiologi analitis secara mendalam. Kita belajar bahwa langkah pertama saat membedah sebuah artikel ilmiah adalah mengenali desain kajian yang digunakan, apakah ia menggunakan kajian potong lintang, kasus–kontrol, atau kohort. Kita dapat menafsirkan ukuran asosiasi seperti RR dan OR untuk mengukur seberapa kuat pengaruh suatu faktor terhadap status kesehatan hewan. Kita juga belajar untuk bersikap hati-hati terhadap hasil awal dengan cara memeriksa nilai p dan selang kepercayaan, serta memastikan apakah peneliti sudah menyajikan nilai yang telah disesuaikan untuk menyingkirkan gangguan dari variabel perancu. Terakhir, pemahaman mengenai ukuran dampak membantu kita menilai seberapa besar manfaat dari temuan penelitian tersebut jika kita gunakan sebagai dasar untuk mengambil keputusan medis atau merancang suatu kebijakan.
+
+
+### Kegiatan Belajar 5.2: Perancangan kajian epidemiologi analitis
+
+> Bagian ini sedang dalam proses penyusunan 
