@@ -16,7 +16,7 @@ Penguasaan Sub-CPMK-5 akan membekali mahasiswa dengan kemampuan untuk menginterp
 
 ## B. Indikator keberhasilan
 
-Keberhasilan pembelajaran pada modul (Sub-CPMK) ini diukur melalui empat indikator.
+Keberhasilan pembelajaran pada modul (Sub-CPMK) ini diukur melalui lima indikator.
 
 | Kode | Uraian indikator |
 | ----- | ----- |
@@ -41,31 +41,27 @@ Penguasaan Sub-CPMK-5 dinilai dengan dua bentuk.
 ```teks
 Epidemiologi analitis 
 ├── Dasar kajian epidemiologi
-│   ├── Epidemiologi deskriptif
 │   ├── Determinan dan faktor
 │   └── Hierarki bukti ilmiah
 ├── Perancangan kajian observasional 
-│   ├── Perumusan pertanyaan
-│   ├── Pemilihan desain 
-│   ├── Metode penarikan sampel 
-│   └── Penentuan jumlah sampel 
-├── Pengumpulan data dan pencegahan bias
-│   ├── Instrumen pengukuran 
-│   ├── Validasi instrumen
-│   ├── Kesalahan sistematis 
-│   └── Pengendalian perancu
+│   ├── Perumusan pertanyaan penelitian
+│   ├── Pemilihan desain kajian
+│   ├── Penentuan metode penarikan sampel 
+│   ├── Penentuan jumlah sampel 
+│   ├── Penentuan instrumen pengukuran 
+│   ├── Pencegahan bias dan pengendalian perancu
+│   └── Pelaksanaan kajian pendahuluan
 ├── Analisis statistika
 │   ├── Analisis bivariat
 │   │   ├── Tabel 2x2
-│   │   ├── Uji Chi-square 
-│   │   └── Ukuran asosiasi kasar: OR, RR, dan AR
-│   └── Analisis Multivariat 
-│       ├── Variabel perancu
+│   │   ├── Uji Chi-square
+│   │   ├── Ukuran asosiasi kasar: OR/RR
+│   │   └── Ukuran dampak: RD dan AF
+│   └── Analisis multivariat 
 │       ├── Uji regresi logistik/Poisson
 │       └── Ukuran asosiasi yang disesuaikan: adjusted OR/RR
-└── Kausalitas dan determinan 
+└── Kausalitas
     ├── Model multifaktor
-    ├── Jenis faktor kontributor
     └── Penyimpulan kausalitas
 ```
 
@@ -74,7 +70,7 @@ Gambar 5.1. Peta konsep dalam modul ini.
 
 ## E. Gambaran umum
 
-Proses penguasaan epidemiologi analitis dimulai dengan memahami pergeseran dari sekadar mendeskripsikan penyakit (siapa, di mana, kapan) menjadi pencarian alasan mengapa penyakit tersebut muncul dengan cara melaksanakan kajian observasional. Peneliti kemudian memilih jenis desain kajian, menentukan metode penarikan sampel, dan memastikan kualitas instrumen pengumpulan data untuk menghindari bias. Setelah data diperoleh, analisis statistika dilakukan secara berjenjang, mulai dari analisis bivariat yang sederhana hingga analisis regresi multivariat. Hal ini dilakukan untuk meminimalkan efek variabel perancu yang dapat membuat kita keliru dalam menyimpulkan hasil kajian. Pada tahap akhir, angka-angka statistika ini tidak ditelan mentah-mentah, melainkan diuji lagi dengan model multifaktor dan kriteria kausalitas untuk memastikan bahwa paparan yang diteliti benar-benar merupakan "penyebab" dari penyakit dan bukan sekadar kebetulan matematis.
+Proses penguasaan epidemiologi analitis dimulai dengan memahami pergeseran dari mendeskripsikan penyakit (siapa, di mana, kapan) menjadi pencarian alasan mengapa penyakit tersebut muncul dengan cara melaksanakan kajian observasional. Peneliti kemudian memilih jenis desain kajian, menentukan metode penarikan sampel, dan memastikan instrumen pengumpulan data benar-benar berkualitas untuk menghindari bias. Setelah data diperoleh, analisis statistika dilakukan secara berjenjang, mulai dari analisis bivariat yang sederhana hingga analisis multivariat yang kompleks. Hal ini dilakukan untuk meminimalkan efek variabel perancu yang dapat membuat kita keliru dalam menyimpulkan hasil kajian. Pada tahap akhir, informasi dari hasil uji statistika ini tidak ditelan mentah-mentah. Mereka diperiksa dengan model multifaktor dan kriteria kausalitas untuk memastikan bahwa paparan yang diteliti benar-benar merupakan "penyebab" dari penyakit dan bukan sekadar peristiwa acak yang kebetulan dikonfirmasi oleh perhitungan matematika.
 
 
 ## F. Alokasi waktu dan kegiatan belajar
@@ -187,22 +183,22 @@ Selain dua pertanyaan kunci di atas, kita juga bisa mengelompokkan suatu kajian 
 
 Berdasarkan pembagian tersebut, kita dapat menyusun hierarki desain kajian epidemiologi sebagai berikut.
 
-1. Kajian deskriptif -> kajian tanpa kelompok pembanding dan tidak bertujuan menguji hipotesis
-	1. Berbasis kasus -> berfokus pada individu sakit tanpa mempertimbangkan populasi. Contoh: 
+1. Kajian deskriptif → kajian tanpa kelompok pembanding dan tidak bertujuan menguji hipotesis
+	1. Berbasis kasus → berfokus pada individu sakit tanpa mempertimbangkan populasi. Contoh: 
 		* Laporan kasus (case report)
 		* Rangkaian kasus (case series)
-	2. Berbasis populasi -> ada data populasi sebagai dasar perhitungan frekuensi penyakit. Contoh: 
+	2. Berbasis populasi → ada data populasi sebagai dasar perhitungan frekuensi penyakit. Contoh: 
 		* Kajian potong lintang deskriptif (untuk menghitung prevalensi) 
 		* Kajian longitudinal deskriptif (untuk menghitung insidensi).
-2. Kajian analitis -> kajian dengan kelompok pembanding dan bertujuan menguji hipotesis mengenai hubungan antara paparan (faktor) dan luaran (status kesehatan)
-	1. Kajian observasional -> peneliti hanya mengamati apa yang terjadi secara alami tanpa memberikan intervensi atau perlakuan apa pun
-		1. Berbasis individu -> unit observasi adalah individu. Contoh: 
+2. Kajian analitis → kajian dengan kelompok pembanding dan bertujuan menguji hipotesis mengenai hubungan antara paparan (faktor) dan luaran (status kesehatan)
+	1. Kajian observasional → peneliti hanya mengamati apa yang terjadi secara alami tanpa memberikan intervensi atau perlakuan apa pun
+		1. Berbasis individu → unit observasi adalah individu. Contoh: 
 			* Kajian potong lintang (cross-sectional study; kadang juga diterjemahkan menjadi kajian lintas seksional)
 			* Kajian kasus–kontrol (case–control study)
 			* Kajian kohort (cohort study)
-		2. Berbasis kelompok (agregat) -> unit observasi adalah kelompok atau wilayah. Contoh: 
+		2. Berbasis kelompok (agregat) → unit observasi adalah kelompok atau wilayah. Contoh: 
 			* Kajian ekologis (ecological study)
-	2. Kajian eksperimental (intervensional) -> peneliti merancang dan mengendalikan perlakuan terhadap semua kelompok. Contoh: 
+	2. Kajian eksperimental (intervensional) → peneliti merancang dan mengendalikan perlakuan terhadap semua kelompok. Contoh: 
 		* Uji lapangan (field trial)
 		* Uji acak terkendali (randomized controlled trial)
 
@@ -276,13 +272,13 @@ Lalu, kapan kita memilih salah satunya?
 Mari kita gunakan pertanyaan-pertanyaan berikut.
 
 1. Apakah penyakit yang ingin diteliti tergolong langka atau membutuhkan waktu lama untuk muncul? 
-	* Ya ➔ Pertimbangkan kajian kasus–kontrol. 
-	* Tidak ➔ Lanjut ke pertanyaan 2.
+	* Ya → Pertimbangkan kajian kasus–kontrol. 
+	* Tidak → Lanjut ke pertanyaan 2.
 2. Apakah kita memiliki waktu, dana, dan sumber daya untuk memantau hewan secara terus-menerus ke masa depan? 
-	* Ya ➔ Gunakan kajian kohort.
-	* Tidak ➔ Lanjut ke pertanyaan 3.
+	* Ya → Gunakan kajian kohort.
+	* Tidak → Lanjut ke pertanyaan 3.
 3. Apakah kita hanya membutuhkan gambaran cepat mengenai situasi saat ini dan hubungan awal antarfaktor?
-	* Ya ➔ Gunakan kajian potong lintang.
+	* Ya → Gunakan kajian potong lintang.
 
 
 ###### 4. Hierarki bukti ilmiah
@@ -777,3 +773,6 @@ Bagaimana cara kita mengambil keputusan?
 Jika setelah disesuaikan nilai OR/RR tetap signifikan (selang kepercayaan tidak melewati angka 1), maka kita bisa sangat yakin bahwa faktor tersebut memang memiliki peran penting dalam kejadian penyakit. Namun, jika nilainya turun drastis dan menjadi tidak signifikan, maka faktor tersebut kemungkinan besar hanyalah "pengikut" dari variabel perancu lainnya.
 
 Pemahaman tentang nilai yang disesuaikan ini sangat penting saat kita membaca artikel ilmiah. Kita tidak boleh langsung percaya pada angka yang besar sebelum memastikan apakah peneliti tersebut sudah melakukan penyesuaian (adjustment) terhadap variabel-variabel perancu yang mungkin ada.
+
+#### III. Ringkasan
+Melalui kegiatan belajar ini, kita telah membekali diri dengan kemampuan untuk membaca dan memahami laporan hasil kajian epidemiologi analitis secara mendalam. Kita belajar bahwa langkah pertama saat membedah sebuah artikel ilmiah adalah mengenali desain kajian yang digunakan, apakah ia menggunakan kajian potong lintang, kasus–kontrol, atau kohort. Kita dapat menafsirkan ukuran asosiasi seperti RR dan OR untuk mengukur seberapa kuat pengaruh suatu faktor terhadap status kesehatan hewan. Kita juga belajar untuk bersikap hati-hati terhadap hasil awal dengan cara memeriksa nilai p dan selang kepercayaan, serta memastikan apakah peneliti sudah menyajikan nilai yang telah disesuaikan untuk menyingkirkan gangguan dari variabel perancu. Terakhir, pemahaman mengenai ukuran dampak membantu kita menilai seberapa besar manfaat dari temuan penelitian tersebut jika kita gunakan sebagai dasar untuk mengambil keputusan medis atau merancang suatu kebijakan.
