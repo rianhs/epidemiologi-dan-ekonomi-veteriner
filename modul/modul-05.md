@@ -243,7 +243,7 @@ Apa hal dasar yang membedakan ketiga kajian ini? Kunci utamanya ada pada arah pe
 	
 * Kajian kasus–kontrol
 	
-	Jika kajian potong lintang adalah sebuah foto, maka kajian kasus-kontrol adalah sebuah adegan kilas balik (flashback). Pada kajian ini, kita memulai investigasi dari luaran (akibat), lalu menelusuri riwayat masa lalu untuk mencari paparan (calon penyebab). Dengan kata lain, kita mengumpulkan sekelompok hewan yang sudah sakit (disebut "kasus") dan sekelompok hewan tidak sakit yang tinggal di lingkungan serupa (disebut "kontrol"). Setelah itu, kita mencari tahu apakah kedua kelompok memiliki riwayat paparan yang berbeda.
+	Jika kajian potong lintang adalah sebuah foto, maka kajian kasus–kontrol adalah sebuah adegan kilas balik (flashback). Pada kajian ini, kita memulai investigasi dari luaran (akibat), lalu menelusuri riwayat masa lalu untuk mencari paparan (calon penyebab). Dengan kata lain, kita mengumpulkan sekelompok hewan yang sudah sakit (disebut "kasus") dan sekelompok hewan tidak sakit yang tinggal di lingkungan serupa (disebut "kontrol"). Setelah itu, kita mencari tahu apakah kedua kelompok memiliki riwayat paparan yang berbeda.
 	
 	Kapan kajian ini digunakan? Desain ini sangat cocok saat kita meneliti penyakit langka atau penyakit yang butuh waktu lama untuk muncul (masa inkubasinya panjang). Kita tidak perlu menunggu hewan menjadi sakit. Kita cukup mencari hewan yang sudah sakit.
 	
@@ -311,7 +311,7 @@ Lalu, mengapa kita tidak selalu melakukan penelitian yang ada di bagian atas  pi
 
 Mungkin kita berpikir, "Kalau begitu, kita lakukan saja meta-analisis atau RCT setiap saat." Kenyataannya tidak semudah itu. Semakin tinggi posisi kajian dalam piramida, semakin besar biaya yang dibutuhkan, semakin lama waktunya, dan terkadang ada kendala etika. Misalnya, kita tidak mungkin sengaja memaparkan virus berbahaya ke hewan sehat hanya untuk eksperimen.
 
-Selain itu, setiap desain memiliki peran yang berbeda. Laporan kasus bisa menjadi sinyal awal adanya masalah. Kajian potong lintang membantu kita memahami besarnya masalah. Kajian kasus-kontrol dan kohort membantu kita menguji hubungan. Uji eksperimental memberikan konfirmasi yang lebih kuat.
+Selain itu, setiap desain memiliki peran yang berbeda. Laporan kasus bisa menjadi sinyal awal adanya masalah. Kajian potong lintang membantu kita memahami besarnya masalah. Kajian kasus–kontrol dan kohort membantu kita menguji hubungan. Uji eksperimental memberikan konfirmasi yang lebih kuat.
 
 Dengan kata lain, hierarki ini bukan untuk “menghakimi” desain tertentu, tetapi untuk membantu kita menilai seberapa kuat kesimpulan yang dapat kita tarik dari suatu kajian.
 
@@ -409,7 +409,7 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	Ukuran kedua adalah perbandingan peluang relatif antarkelompok. Istilah ini diberi nama rasio peluang relatif (odds ratio) yang disingkat OR. Ia digunakan pada kajian kasus–kontrol dan kajian potong lintang.
 	
-	Pada kajian kasus-kontrol, kita memulai investigasi dari hewan yang sudah sakit, sehingga hal ini bukan lagi menjadi risiko. Sebagai gantinya, kita menghitung OR dengan membandingkan odds sakit pada kelompok terpapar dengan odds sakit pada kelompok tidak terpapar.
+	Pada kajian kasus–kontrol, kita memulai investigasi dari hewan yang sudah sakit, sehingga hal ini bukan lagi menjadi risiko. Sebagai gantinya, kita menghitung OR dengan membandingkan odds sakit pada kelompok terpapar dengan odds sakit pada kelompok tidak terpapar.
 	
 	Untuk kajian potong lintang, nilai OR juga sering digunakan dalam analisis statistika, meskipun hal yang diukur adalah prevalensi.
 	
@@ -417,7 +417,7 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar <br>= [a / b] / [c / d] = a×d / b×c
 	
-	Cara interpretasi (untuk kajian kasus-kontrol): Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang sakit memiliki peluang relatif (odds) 13,5 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
+	Cara interpretasi (untuk kajian kasus–kontrol): Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang sakit memiliki peluang relatif (odds) 13,5 kali lipat untuk memiliki riwayat terpapar faktor dibandingkan dengan hewan yang tidak sakit.
 	
 	Cara interpretasi (untuk kajian potong lintang): Apabila kita mendapatkan nilai OR = 4, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 4 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
 
@@ -748,3 +748,33 @@ Lalu, bagaimana cara kita "membersihkan" hubungan paparan dan penyakit dari gang
 
 Kita akan menjawabnya pada bagian selanjutnya mengenai uji regresi logistik.
 
+Ini draf saya. Apakah sudah cocok? Apakah saya perlu menambahkan penjelasan tentang regresi logistik dapat diterapkan ke kajian apa saja (apakah potong lintang, kasus kontrol, kohort bisa semua)?
+
+###### 2. Uji regresi logistik
+
+Secara sederhana, regresi logistik adalah uji statistika yang memungkinkan kita memasukkan banyak variabel paparan sekaligus ke dalam satu kali perhitungan matematis.
+
+Jika analisis bivariat (tabel 2×2) hanya bisa melihat hubungan antara satu faktor dan satu penyakit, maka regresi logistik memungkinkan kita untuk memasukkan banyak faktor sekaligus untuk satu luaran penyakit.
+
+Mengapa ada istilah "logistik"? Dalam dunia kedokteran hewan, luaran penyakit sering kali hanya memiliki dua kemungkinan (dikotomi), misalnya "sakit atau sehat", "hidup atau mati", dan "bunting atau tidak bunting". Uji regresi logistik digunakan untuk menganalisis data yang memiliki luaran dikotomi seperti ini.
+
+Untuk memahami cara kerjanya tanpa harus dipusingkan oleh rumus matematika, mari kita bayangkan sebuah meja mixer audio di studio rekaman. Di meja tersebut terdapat banyak tombol geser untuk mengatur suara vokal, gitar, bass, dan drum secara bersamaan. Jika kita ingin menilai seberapa jernih suara gitar, kita tidak perlu mematikan alat musik lainnya. Kita cukup "mengunci" volume vokal dan drum di tingkat tertentu, lalu berfokus mendengarkan suara gitarnya.
+
+Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer akan "mengunci" atau mengendalikan variabel perancu secara statistika, sehingga kita bisa mengamati efek murni dari paparan utama kita.
+
+Hasil akhir dari perhitungan saringan canggih ini adalah sebuah nilai yang kita sebut sebagai OR yang disesuaikan (adjusted OR).
+
+Mari kita terapkan konsep ini pada data pedet kita.
+
+* Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor kepadatan kandang.
+* Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai" dan "kepadatan kandang" secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
+* Komputer kemudian mengunci efek kepadatan kandang dan mengeluarkan hasil baru: OR yang disesuaikan untuk kebersihan lantai = 1,5.
+
+Apa makna dari penurunan angka yang sangat drastis ini?
+
+Penurunan dari 6,0 menjadi 1,5 membuktikan bahwa kepadatan kandang memang benar-benar bertindak sebagai variabel perancu. Setelah efek "pedet berdesakan" disingkirkan melaului statistika, ternyata kebersihan lantai yang buruk hanya meningkatkan peluang relatif kejadian diare sebesar 1,5 kali lipat. Hal ini menunjukkan bahwa sebagian besar hubungan yang terlihat sebelumnya dipengaruhi oleh kepadatan kandang, bukan semata-mata oleh kebersihan lantai.
+
+Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
+
+* Pada kajian potong lintang dan kasus–kontrol, regresi logistik adalah standar utama karena hasil akhirnya berupa OR yang disesuaikan (adjusted OR).
+* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para ahli biasanya lebih menyarankan regresi Poisson agar hasil akhirnya tetap berupa RR yang disesuaikan (adjusted RR).
