@@ -52,6 +52,7 @@
     }
 
     :root { --base-font-size: 1.1rem; }
+    @media (max-width: 768px) { :root { --base-font-size: 1.0rem; } }
 
     body::-webkit-scrollbar { width: 10px; }
     body::-webkit-scrollbar-track { background: rgba(148, 163, 184, 0.12); }
@@ -325,12 +326,22 @@
     const html = document.documentElement;
     const body = document.body;
 
-    html.classList.add('dark');
-    localStorage.theme = 'dark';
-    body.classList.remove('font-serif-mode');
-    localStorage.fontMode = 'sans';
+    // Baca preferensi tersimpan, atau gunakan default jika belum ada
+    const savedTheme    = localStorage.getItem('theme')    || 'dark';
+    const savedFontMode = localStorage.getItem('fontMode') || 'sans';
+    const defaultFontSize = window.innerWidth <= 768 ? 1.0 : 1.1;
+    const savedFontSize   = parseFloat(localStorage.getItem('fontSize')) || defaultFontSize;
 
-    let currentFontSize = 1.1;
+    // Terapkan tema
+    if (savedTheme === 'dark') { html.classList.add('dark'); }
+    else                       { html.classList.remove('dark'); }
+
+    // Terapkan mode huruf
+    if (savedFontMode === 'serif') { body.classList.add('font-serif-mode'); }
+    else                           { body.classList.remove('font-serif-mode'); }
+
+    // Terapkan ukuran huruf
+    let currentFontSize = savedFontSize;
     const updateFontSize = (size) => {
       html.style.setProperty('--base-font-size', `${size}rem`);
       localStorage.setItem('fontSize', size);
@@ -492,7 +503,7 @@
     // 5. WORD COUNT
     // =========================================================
     function updateWordCount() {
-      const content = document.querySelector('.prose-content');
+      const content = document.getElementById('markdown-content');
       const output  = document.getElementById('word-count-info');
       if (!content || !output) return;
 
@@ -565,11 +576,13 @@
     });
 
     document.getElementById('increaseFont').addEventListener('click', () => {
-      if (currentFontSize < 1.4) { currentFontSize += 0.05; updateFontSize(currentFontSize); }
+      const maxSize = window.innerWidth <= 768 ? 1.2 : 1.4;
+      if (currentFontSize < maxSize) { currentFontSize = Math.round((currentFontSize + 0.05) * 100) / 100; updateFontSize(currentFontSize); }
     });
 
     document.getElementById('decreaseFont').addEventListener('click', () => {
-      if (currentFontSize > 0.9) { currentFontSize -= 0.05; updateFontSize(currentFontSize); }
+      const minSize = window.innerWidth <= 768 ? 0.75 : 0.9;
+      if (currentFontSize > minSize) { currentFontSize = Math.round((currentFontSize - 0.05) * 100) / 100; updateFontSize(currentFontSize); }
     });
 
     const sidebar       = document.getElementById('sidebar');
