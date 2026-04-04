@@ -82,7 +82,7 @@ Sub-CPMK-5 dirancang untuk diselesaikan dalam dua kegiatan belajar (dua pekan), 
 | 6 | Kegiatan belajar 5.1 | Interpretasi hasil kajian epidemiologi analitis |
 | 7 | Kegiatan belajar 5.2 | Perancangan kajian epidemiologi analitis |
 
-Pada pekan ke-6, mahasiswa akan dipandu untuk bisa membaca, memahami, dan menginterpretasikan suatu teks yang berisi hasil kajian epidemiologi analitis. Teks ini dapat berupa artikel ilmiah atau laporan kegiatan. Membaca teks ilmiah merupakan aktivitas yang sering dilakukan oleh mahasiswa dan dokter hewan. Harapannya, setelah pekan ke-6, mahasiswa tidak lagi merasa asing dan merasa kesulitan saat menjumpai artikel atau laporan epidemiologi analitis.
+Pada pekan ke-6, mahasiswa akan dipandu untuk bisa memahami dan menginterpretasikan suatu teks yang berisi hasil kajian epidemiologi analitis. Teks ini dapat berupa artikel ilmiah atau laporan kegiatan. Membaca teks ilmiah merupakan aktivitas yang sering dilakukan oleh mahasiswa dan dokter hewan. Harapannya, setelah pekan ke-6, mahasiswa tidak lagi merasa asing dan merasa kesulitan saat menjumpai artikel atau laporan epidemiologi analitis.
 
 Pada pekan ke-7, mahasiswa akan dipandu untuk bisa merancang dan melaksanakan kajian epidemiologi analitis. Ini merupakan aktivitas yang lebih jarang dilakukan. Biasanya, mahasiswa dan dokter hewan hanya melakukan kajian analitis saat melakukan penelitian (misalnya untuk menyusun skripsi) atau saat menindaklanjuti hasil kajian epidemiologi deskriptif. 
 
@@ -495,11 +495,13 @@ Pendekatan yang paling umum adalah memilih satu kelompok sebagai referensi (base
 
 Jika kita memiliki tiga tingkat kepadatan kandang, kita bisa menggunakan kepadatan rendah sebagai referensi.
 
-Maka kita akan menghitung RR/OR untuk
+Maka kita akan menghitung RR atau OR untuk
 * kepadatan tinggi vs kepadatan rendah
-	= (17/13) / (8/25) = 4,09
+	* RR = (17/30) / (8/33) = 2,34
+	* OR = (17/13) / (8/25) = 1,11
 * kepadatan sedang vs kepadatan rendah
-	= (10/27) / (8/25) = 1,16
+	* RR = (10/37) / (8/33) = 1,16
+	* OR = (10/27) / (8/25) = 1,16
 
 Dengan cara ini, kita tetap bisa menggunakan prinsip tabel 2×2 untuk setiap perbandingan. Meskipun demikian, kita sebaiknya tidak menggunakan terlalu banyak kategori paparan. Upayakan untuk membuat dua kategori saja (alasannya dijelaskan lebih rinci pada Kegiatan Belajar 5.2 pekan depan).
 
@@ -548,7 +550,7 @@ Di sinilah kita menggunakan uji statistika.
 
 Untuk data kategorik dalam tabel 2×2, uji yang paling sering digunakan adalah uji independensi Chi-square (χ²). Uji ini digunakan untuk menilai apakah terdapat asosiasi antara paparan dan penyakit, atau apakah perbedaan yang kita lihat bisa saja terjadi secara kebetulan.
 
-a. Konsep dasar uji Chi-square
+**a. Konsep dasar uji Chi-square**
 
 Uji Chi-square membandingkan dua hal:
 * Nilai pengamatan (observed): Angka yang kita dapatkan dari kajian, yaitu isi sel a, b, c, d.
@@ -558,7 +560,7 @@ Jika tidak ada asosiasi antara paparan dan penyakit, maka distribusi kasus pada 
 
 Logikanya sederhana: semakin besar perbedaan antara nilai observed dan expected, maka semakin besar kemungkinan bahwa asosiasi tersebut nyata, bukan kebetulan.
 
-b. Langkah-langkah uji Chi-square
+**b. Langkah-langkah uji Chi-square**
 
 Mari kita gunakan kembali data diare pedet dari tabel 2×2 sebelumnya sebagai contoh soal.
 
@@ -614,7 +616,7 @@ Aturannya adalah:
 
 Sebagai contoh, nilai χ2 = 27,48 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu jauh di bawah 0,05. Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memiliki asosiasi yang bermakna dengan diare pada pedet.
 
-Khusus untuk tabel 2×2, ada rumus alternatif yang jauh lebih cepat untuk mendapatkan nilai Chi-square:
+Selain menghitung nilai Chi-Square dengan angka-angka observed dan expected, khusus untuk tabel 2×2, ada rumus alternatif untuk mendapatkan nilai Chi-square:
 
 χ2 = [n × (a×d − b×c)^2] / [(a+b)×(c+d)×(a+c)×(b+d)]
 
@@ -622,8 +624,8 @@ Mari kita masukkan angka dari skenario diare pedet ke dalam rumus tersebut.
 
 χ2 = [100 × (30×45 − 20×5)^2] / [50×50×35×65] = 156.250.000 / 5.687.500 = 27.48
 
-Catatan penting untuk diingat:
-* nilai p tidak menunjukkan besar efek (itu tugas RR/OR),
+Catatan penting:
+* nilai p tidak menunjukkan besar efek (itu tugasnya RR dan OR),
 * nilai p hanya menunjukkan ada atau tidaknya bukti signifikansi secara statistika.
 
 Apakah kita selalu menggunakan uji Chi-square di atas untuk setiap kajian? Terkadang kita berhadapan dengan penyakit langka atau jumlah sampel yang diperoleh terlalu sedikit. Jika jumlah sampel terlalu kecil atau frekuensi harapan pada beberapa sel terlalu rendah, pendekatan Chi-square menjadi kurang akurat
@@ -659,8 +661,8 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 	RD = risiko penyakit pada kelompok terpapar − risiko penyakit pada kelompok tidak terpapar
 	
 	Mari kita gunakan contoh yang sama.
-	* Risiko diare pada kelompok kandang kotor = 30/50 = 0,6
-	* Risiko diare pada kelompok kandang bersih = 5/50 = 0,1
+	* Risiko diare pada kelompok kandang kotor = 0,6
+	* Risiko diare pada kelompok kandang bersih = 0,1
 	* Perbedaan risiko (RD) = 0,6 − 0,1 = 0,5
 	
 	Interpretasi: Ada tambahan risiko sebesar 0,5 (atau 50%) pada kelompok pedet yang berada di kandang kotor. Artinya, jika hubungan tersebut bersifat kausal, maka penghilangan faktor (membersihkan seluruh kandang) dapat menurunkan kasus diare hingga 50%.
@@ -707,7 +709,7 @@ Buat konten untuk bagian selanjutnya:
 
 Sejauh ini, kita telah menghitung hubungan antara satu paparan dan satu kejadian penyakit. Perhitungan yang hanya melibatkan dua variabel seperti ini kita sebut sebagai analisis bivariat. Namun, dalam praktiknya, seekor hewan tidak pernah terpapar hanya oleh satu hal. Pedet yang kita teliti mungkin tinggal di kandang yang kotor, tetapi ia juga memiliki umur tertentu, mendapatkan jenis pakan tertentu, dan berasal dari rumpun (breed) tertentu.
 
-Jika kita hanya melihat hubungan antara "kebersihan kandang" dan "diare" tanpa mempedulikan faktor lainnya, kita berisiko mengambil kesimpulan yang salah. Di sinilah kita membutuhkan analisis multivariat, yaitu analisis yang mampu melihat hubungan banyak variabel sekaligus secara bersamaan.
+Jika kita hanya melihat hubungan antara faktor "kebersihan kandang" dan status "diare" tanpa mempedulikan faktor lainnya, kita berisiko mengambil kesimpulan yang salah. Di sinilah kita membutuhkan analisis multivariat, yaitu analisis yang mampu melihat hubungan banyak variabel sekaligus secara bersamaan.
 
 ###### 1. Variabel perancu
 
@@ -776,7 +778,7 @@ Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer 
 Mari kita terapkan konsep ini pada data pedet kita.
 * Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor-faktor lain.
 * Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai", "kepadatan kandang", "umur pedet", "jenis pakan", dan faktor lain yang kita teliti secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
-* Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru: OR yang disesuaikan untuk kebersihan lantai = 1,5.
+* Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru, yaitu OR yang disesuaikan untuk kebersihan lantai = 1,5.
 
 Apa makna dari penurunan angka yang sangat drastis ini?
 
@@ -785,7 +787,7 @@ Penurunan dari 6,0 menjadi 1,5 menunjukkan bahwa kepadatan kandang (dan mungkin 
 Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
 
 * Pada kajian potong lintang dan kasus–kontrol, regresi logistik merupakan uji standar karena hasil akhirnya berupa OR yang disesuaikan (adjusted OR).
-* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, para peneliti memilih metode lain seperti regresi Poisson untuk memperoleh RR yang disesuaikan (adjusted RR).
+* Pada kajian kohort, meskipun bisa menggunakan regresi logistik, beberapa peneliti memilih metode lain seperti regresi Poisson untuk memperoleh RR yang disesuaikan (adjusted RR).
 
 Setelah kita melakukan analisis multivariat, kita akan mendapatkan angka OR/RR yang baru. Kita dapat mengatakan bahwa nilai OR/RR yang diperoleh dari analisis bivariat (tabel 2×2) merupakan nilai kasar (crude), sedangkan nilai OR/RR yang diperoleh dari analisis multivariat (seperti regresi logistik) merupakan nilai yang disesuaikan (adjusted).
 
