@@ -480,7 +480,7 @@ Contoh: Dalam kajian, kita meneliti tingkat kepadatan kandang sebagai faktor. Ad
 
 Artinya, bentuk tabelnya bukan lagi 2×2 (2 kolom × 2 baris), tetapi menjadi tabel 2×3 (2 kolom × 3 baris) atau bahkan 2×4. Lihat contohnya pada tabel berikut.
 
-Tabel 5.10. Contoh pengisian tabel 2×3 untuk kajian observasional mengenai tingkat kepadatan kandang dan diare pada pedet.
+Tabel 5.11. Contoh pengisian tabel 2×3 untuk kajian observasional mengenai tingkat kepadatan kandang dan diare pada pedet.
 
 |                  | D+  | D−  | Total |
 | ---------------- | --- | --- | ----- |
@@ -498,9 +498,9 @@ Jika kita memiliki tiga tingkat kepadatan kandang, kita bisa menggunakan kepadat
 Maka kita akan menghitung RR atau OR untuk
 * kepadatan tinggi vs kepadatan rendah
 	* RR = (17/30) / (8/33) = 2,34
-	* OR = (17/13) / (8/25) = 1,11
+	* OR = (17/13) / (8/25) = 4,09
 * kepadatan sedang vs kepadatan rendah
-	* RR = (10/37) / (8/33) = 1,16
+	* RR = (10/37) / (8/33) = 1,11
 	* OR = (10/27) / (8/25) = 1,16
 
 Dengan cara ini, kita tetap bisa menggunakan prinsip tabel 2×2 untuk setiap perbandingan. Meskipun demikian, kita sebaiknya tidak menggunakan terlalu banyak kategori paparan. Upayakan untuk membuat dua kategori saja (alasannya dijelaskan lebih rinci pada Kegiatan Belajar 5.2 pekan depan).
@@ -525,7 +525,7 @@ Jika selang kepercayaan
 
 Mari kita lihat panduan interpretasinya pada tabel berikut.
 
-Tabel 5.11. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
+Tabel 5.12. Interpretasi makna statistika berdasarkan selang kepercayaan 95% (95% CI).
 
 | Posisi rentang 95% CI                   | Posisi terhadap angka 1 | Makna epidemiologis                                                                                                                        | Contoh penulisan hasil       |
 | --------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
@@ -564,7 +564,7 @@ Logikanya sederhana: semakin besar perbedaan antara nilai observed dan expected,
 
 Mari kita gunakan kembali data diare pedet dari tabel 2×2 sebelumnya sebagai contoh soal.
 
-Tabel 5.12. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan diare pada pedet.
+Tabel 5.13. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan diare pada pedet.
 
 |       | D+  | D−  | Total |
 | ----- | --- | --- | ----- |
@@ -632,7 +632,7 @@ Apakah kita selalu menggunakan uji Chi-square di atas untuk setiap kajian? Terka
 
 Oleh sebab itu, kita memiliki tiga jenis uji yang saling melengkapi. Pemilihannya sangat bergantung pada jumlah sampel dan nilai harapan. Mari kita lihat panduannya pada tabel berikut.
 
-Tabel 5.13. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
+Tabel 5.14. Panduan pemilihan uji statistika untuk tabel kontingensi 2×2.
 
 | Jenis uji                       | Rumus                                                                    | Kapan digunakan?                                                                                                        | Penjelasan                                                                                                                                                                                                                                                                       |
 | ------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -738,7 +738,7 @@ Suatu kajian mengidentifikasi adanya asosiasi antara jenis pakan (basah dan keri
 
 Mari kita lihat persamaan antara skenario pedet dan skenario anjing senior.
 
-Tabel 5.14. Contoh identifikasi variabel perancu pada dua skenario epidemiologis.
+Tabel 5.15. Contoh identifikasi variabel perancu pada dua skenario epidemiologis.
 
 | Aspek | Skenario 1  | Skenario 2 |
 | --- | --- | --- |
@@ -778,11 +778,11 @@ Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer 
 Mari kita terapkan konsep ini pada data pedet kita.
 * Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor-faktor lain.
 * Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai", "kepadatan kandang", "umur pedet", "jenis pakan", dan faktor lain yang kita teliti secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
-* Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru, yaitu OR yang disesuaikan untuk kebersihan lantai = 1,5.
+* Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru, yaitu OR yang disesuaikan untuk kebersihan lantai = 1,5 (95% CI: 0,8 – 2,5).
 
 Apa makna dari penurunan angka yang sangat drastis ini?
 
-Penurunan dari 6,0 menjadi 1,5 menunjukkan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai
+Penurunan dari 6,0 menjadi 1,5 (dan rentang CI yang kini melewati angka 1) menunjukkan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah dan menjadi tidak bermakna secara statistika. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai.
 
 Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
 
@@ -796,7 +796,7 @@ Setelah kita melakukan analisis multivariat, kita akan mendapatkan angka OR/RR y
 
 Bagaimana cara kita mengambil keputusan?
 
-Jika setelah disesuaikan nilai OR/RR tetap signifikan (selang kepercayaan tidak melewati angka 1), maka kita bisa sangat yakin bahwa faktor tersebut memang memiliki peran penting dalam kejadian penyakit. Namun, jika nilainya turun drastis dan menjadi tidak signifikan, maka faktor tersebut kemungkinan besar hanyalah "pengikut" dari variabel perancu lainnya.
+Jika setelah disesuaikan nilai OR/RR tetap signifikan (selang kepercayaan tidak melewati angka 1), maka kita bisa sangat yakin bahwa faktor tersebut memang benar-benar memiliki peran penting dalam kejadian penyakit. Namun, jika nilainya turun drastis dan menjadi tidak signifikan, maka faktor tersebut kemungkinan besar hanyalah "pengikut" dari variabel perancu lainnya.
 
 Pemahaman tentang nilai yang disesuaikan ini sangat penting saat kita membaca artikel ilmiah. Kita tidak boleh langsung percaya pada angka yang besar sebelum memastikan apakah peneliti tersebut sudah melakukan penyesuaian (adjustment) terhadap variabel-variabel perancu yang mungkin ada.
 
