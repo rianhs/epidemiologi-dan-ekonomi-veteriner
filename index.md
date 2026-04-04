@@ -38,7 +38,7 @@ Klik tautan di bawah ini untuk membuka halaman materi pembelajaran.
 | 2 | Sub-CPMK-2 | Dinamika Penyakit | [Modul 02](modul/modul-02.md) | [Simulasi 02-01](simulasi/simulasi-02-01.html)<br>[Simulasi 02-02](simulasi/simulasi-02-02.html) | - |
 | 3 | Sub-CPMK-3 | Epidemiologi Deskriptif | [Modul 03](modul/modul-03.md) | [Simulasi 03-01](simulasi/simulasi-03-01.html)<br>[Simulasi 03-02](simulasi/simulasi-03-02.html) | - |
 | 4-5 | Sub-CPMK-4 | Uji Diagnostik | [Modul 04](modul/modul-04.md) | [Simulasi 04-01](simulasi/simulasi-04-01.html)<br>[Simulasi 04-02](simulasi/simulasi-04-02.html)<br>[Simulasi 04-03](simulasi/simulasi-04-03.html)<br>[Simulasi 04-04](simulasi/simulasi-04-04.html) | - |
-| 6-7 | Sub-CPMK-5 | Epidemiologi Analitis | [Modul 05](modul/modul-05.md) | - | - |
+| 6-7 | Sub-CPMK-5 | Epidemiologi Analitis | [Modul 05](modul/modul-05.md) | - | [SOP-05-01](https://docs.google.com/document/d/1DhKkoOBCeO210GP1YU9ESYAWepmIXSoy1_AJHqdZbaY/edit?usp=sharing)<br>[SOP-05-02]([https://docs.google.com/document/d/1DhKkoOBCeO210GP1YU9ESYAWepmIXSoy1_AJHqdZbaY/edit?usp=sharing](https://docs.google.com/document/d/199nbyuPtrkp45bjaqJawg4GbAjyEby_x8j0_gEYLyUI/edit?usp=sharing)) |
 | 8 | - | Ujian Tengah Semester | - | - | - |
 | 9-10 | Sub-CPMK-6 | Surveilans | - | - | - |
 | 11 | Sub-CPMK-7 | Investigasi Wabah | - | - | - |
