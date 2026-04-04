@@ -115,6 +115,11 @@
     }
     @media (max-width: 768px) { .scroll-hint { display: inline-flex; } }
 
+    @media (max-width: 768px) {
+      .table-container table th,
+      .table-container table td { padding: 0.75rem 1rem; }
+    }
+
     /* Penting: scroll-margin agar heading tidak tertutup header sticky */
     h2, h3, h4, h5, h6 { scroll-margin-top: 5rem; }
 
@@ -547,7 +552,14 @@
         wrapper.appendChild(hint);
         wrapper.appendChild(container);
 
-        table.classList.add('w-full', 'min-w-[800px]', 'text-left');
+        const colCount = table.querySelectorAll('thead tr th, thead tr td').length
+              || table.querySelectorAll('tbody tr:first-child td').length;
+        const minWidth = colCount <= 2 ? '320px'
+               : colCount <= 3 ? '480px'
+               : colCount <= 4 ? '600px'
+               : '800px';
+        table.style.minWidth = minWidth;
+        table.classList.add('w-full', 'text-left');
 
         const thead = table.querySelector('thead');
         if (thead) thead.classList.add('bg-[#e8e0d0]', 'dark:bg-slate-800/50', 'border-b', 'border-[#d4c9b5]', 'dark:border-slate-800');
