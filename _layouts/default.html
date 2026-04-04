@@ -296,10 +296,10 @@
 
         <!-- Navigasi Antar Modul -->
         <footer class="mt-10 pt-4 border-t border-slate-200 dark:border-slate-800 text-slate-500 text-sm nav-modul">
-          <div class="flex justify-between items-center mb-4">
+          <div class="flex justify-between items-center mb-4 gap-4">
             {% if page.prev_url %}
-            <a href="{{ page.prev_url | relative_url }}" class="flex items-center gap-2 hover:text-brand transition-colors group">
-              <i data-lucide="chevron-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+            <a href="{{ page.prev_url | relative_url }}" class="flex items-center gap-2 hover:text-brand transition-colors group max-w-[45%]">
+              <i data-lucide="chevron-left" class="w-4 h-4 flex-shrink-0 transition-transform group-hover:-translate-x-1"></i>
               <span>{{ page.prev_title | default: "Modul Sebelumnya" }}</span>
             </a>
             {% else %}
@@ -307,9 +307,9 @@
             {% endif %}
 
             {% if page.next_url %}
-            <a href="{{ page.next_url | relative_url }}" class="flex items-center gap-2 hover:text-brand transition-colors group">
+            <a href="{{ page.next_url | relative_url }}" class="flex items-center gap-2 hover:text-brand transition-colors group max-w-[45%] text-right">
               <span>{{ page.next_title | default: "Modul Berikutnya" }}</span>
-              <i data-lucide="chevron-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+              <i data-lucide="chevron-right" class="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-1"></i>
             </a>
             {% else %}
             <span></span>
