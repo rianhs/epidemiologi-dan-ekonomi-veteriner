@@ -375,15 +375,15 @@ Mengapa posisi ini harus kita patuhi? Karena rumus-rumus yang akan kita gunakan 
 
 Mari kita gunakan contoh skenario:
 
-Kita melakukan kajian potong lintang pada 100 ekor pedet. Sebanyak 50 pedet dipelihara di kandang yang kotor (F+), dan 50 pedet lainnya di kandang yang bersih (F−). Pada waktu yang sama, kita juga mendata status diare pada pedet-pedet tersebut. Ternyata, ada 35 pedet yang diare (D+) dan 65 pedet sisanya tidak diare (D−). Kita memasukkan data mentah ke tabel 2×2.
+Kita melakukan kajian potong lintang pada 100 ekor pedet. Sebanyak 40 pedet dipelihara di kandang yang kotor (F+), dan 60 pedet lainnya di kandang yang bersih (F−). Pada waktu yang sama, kita juga mendata status diare pada pedet-pedet tersebut. Ternyata, ada 30 pedet yang diare (D+) dan 70 pedet sisanya tidak diare (D−). Kita memasukkan data mentah ke tabel 2×2.
 
 Tabel 5.8. Contoh pengisian tabel 2×2 untuk kajian observasional mengenai faktor kebersihan kandang dan diare pada pedet.
 
 |                     | Diare (D+) | Tidak diare (D−) | Total |
 | ------------------- | ---------- | ---------------- | ----- |
-| Kandang kotor (F+)  | 30         | 20               | 50    |
-| Kandang bersih (F−) | 5          | 45               | 50    |
-| Total               | 35         | 65               | 100   |
+| Kandang kotor (F+)  | 20         | 20               | 40    |
+| Kandang bersih (F−) | 10         | 50               | 60    |
+| Total               | 30         | 70               | 100   |
 
 
 
@@ -412,7 +412,7 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	RR = risiko sakit pada kelompok terpapar / risiko sakit pada kelompok tidak terpapar <br>= [a / (a + b)] / [c / (c +d)]
 	
-	Cara interpretasi: Apabila kita mendapatkan nilai RR = 6, artinya hewan yang terpapar faktor memiliki risiko 6 kali lipat lebih besar untuk sakit dibandingkan hewan yang tidak terpapar faktor.
+	Cara interpretasi: Apabila kita mendapatkan nilai RR = 3, artinya hewan yang terpapar faktor memiliki risiko 3 kali lipat lebih besar untuk sakit dibandingkan hewan yang tidak terpapar faktor.
 	
 * Rasio peluang relatif (OR) 
 	
@@ -426,20 +426,20 @@ Setelah memahami perbedaan antara risiko dan odds, kita siap menghitung kekuatan
 	
 	OR = odds sakit pada kelompok terpapar / odds sakit pada kelompok tidak terpapar <br>= [a / b] / [c / d] = a×d / b×c
 	
-	Cara interpretasi: Apabila kita mendapatkan nilai OR = 13,5, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 13,5 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
+	Cara interpretasi: Apabila kita mendapatkan nilai OR = 5, artinya hewan yang terpapar faktor memiliki peluang relatif (odds) 5 kali lipat untuk sakit dibandingkan hewan yang tidak terpapar faktor.
 
 
 Tabel 5.9. Ekspansi tabel 2×2 dengan menambahkan kolom untuk risiko dan peluang relatif bagi setiap status paparan.
 
-|       | D+  | D−  | Total | Risiko      | Odds        |
-| ----- | --- | --- | ----- | ----------- | ----------- |
-| F+    | 30  | 20  | 50    | 30/50 = 0,6 | 30/20 = 1,5 |
-| F−    | 5   | 45  | 50    | 5/50 = 0,1  | 5/45 = 0,11 |
-| Total | 35  | 65  | 100   |             |             |
+|       | D+  | D−  | Total | Risiko        | Odds        |
+| ----- | --- | --- | ----- | ------------- | ----------- |
+| F+    | 20  | 20  | 40    | 20/40 = 0,5   | 20/20 = 1   |
+| F−    | 10  | 50  | 60    | 10/60 ≈ 0,167 | 10/50 = 0,2 |
+| Total | 30  | 70  | 100   |               |             |
 
 Pada skenario ini, kita dapat menghitung RR dan OR
-* RR = risiko pada F+ / risiko pada F− = 0,6/0,1 = 6
-* OR = odds pada F+ / odds pada F− = 1,5/0,11 = 13,5
+* RR = risiko pada F+ / risiko pada F− = 0,5/0,167 ≈ 3
+* OR = odds pada F+ / odds pada F− = 1/0,2 = 5
 
 Baik RR maupun OR memiliki interpretasi yang serupa.
 * Nilai = 1: Faktor tidak berhubungan dengan penyakit 
@@ -458,19 +458,19 @@ Tabel 5.10. Contoh pengisian tabel 2×2 dengan baris faktor yang ditukar.
 
 |                     | Diare (D+) | Tidak diare (D−) | Total |
 | ------------------- | ---------- | ---------------- | ----- |
-| Kandang bersih (F+) | 5          | 45               | 50    |
-| Kandang kotor (F−)  | 30         | 20               | 50    |
-| Total               | 35         | 65               | 100   |
+| Kandang bersih (F+) | 10         | 50               | 60    |
+| Kandang kotor (F−)  | 20         | 20               | 40    |
+| Total               | 30         | 70               | 100   |
 
-* Jika semula RR = 6, maka setelah baris F+ dan F− dibalik, RR = 1/6 ≈ 0,167
-* Jika semula OR = 13,5, maka setelah baris F+ dan F− dibalik, OR = 1/13,5 ≈ 0,074
+* Jika semula RR = 3, maka setelah baris F+ dan F− dibalik, RR = 1/3 ≈ 0,33
+* Jika semula OR = 5, maka setelah baris F+ dan F− dibalik, OR = 1/5 = 0,2
 
 Apakah ini salah? Tidak.
 
 Namun, interpretasinya juga harus dibalik.
 
-* Jika RR = 6, maka paparan faktor meningkatkan risiko penyakit
-* Jika RR = 0,167, maka paparan faktor menurunkan risiko penyakit
+* Jika RR = 3, maka paparan faktor meningkatkan risiko penyakit
+* Jika RR = 0,33, maka paparan faktor menurunkan risiko penyakit
 
 Artinya, hal yang berubah bukan hubungan datanya, tetapi sudut pandang kita dalam membandingkan kelompok. Intinya, angka RR atau OR selalu menceritakan: "Berapa kali lipat kelompok di baris pertama dibandingkan dengan kelompok di baris kedua (referensi)?" Namun, biasanya kita memilih kelompok yang paling 'alami', paling sehat, atau kelompok yang tidak mendapatkan perlakuan apa pun sebagai patokan.
 
@@ -511,9 +511,9 @@ Setiap nilai RR atau OR yang kita hitung dari tabel 2×2 hanya berlaku untuk  sa
 
 Nilai RR atau OR dari tabel biasanya tidak berdiri sendiri. Kita mendampinginya dengan rentang yang disebut selang kepercayaan, yang biasanya menggunakan angka 95% (sering ditulis dengan 95% confidence interval atau 95% CI).
 
-Sebagai contoh: RR = 3,0 (95% CI: 1,5 – 6,0)
+Sebagai contoh: RR = 3,0 (95% CI: 1,57 – 5,72)
 
-Artinya, berdasarkan sampel yang kita teliti, nilai RR adalah 3. Selain itu, kita memperkirakan bahwa nilai RR pada populasi berada di antara 1,5 hingga 6,0. 
+Artinya, berdasarkan sampel yang kita teliti, nilai RR adalah 3. Selain itu, kita memperkirakan bahwa nilai RR pada populasi berada di antara 1,57 hingga 5,72. 
 
 Angka batas atas dan batas bawah tersebut berasal dari perhitungan statistika yang kompleks. Pada umumnya, kita menggunakan perangkat lunak untuk mendapatkan angkanya secara otomatis. Pada prinsipnya, semakin banyak individu yang kita teliti, rentang CI akan semakin sempit (presisi). Sebaliknya, jika sampel kita sedikit, rentang CI akan sangat lebar, yang menunjukkan bahwa hasil penelitian kita kurang meyakinkan untuk digeneralisasikan ke populasi.
 
@@ -568,9 +568,9 @@ Tabel 5.13. Data hasil pengamatan kajian mengenai faktor kebersihan kandang dan 
 
 |       | D+  | D−  | Total |
 | ----- | --- | --- | ----- |
-| F+    | 30  | 20  | 50    |
-| F−    | 5   | 45  | 50    |
-| Total | 35  | 65  | 100   |
+| F+    | 20  | 20  | 40    |
+| F−    | 10  | 50  | 60    |
+| Total | 30  | 70  | 100   |
 
 Langkah 1: Tentukan hipotesis
 * Hipotesis nol (H0): Tidak ada hubungan antara kebersihan kandang dan kejadian diare (perbedaan hanya karena kebetulan).
@@ -580,10 +580,10 @@ Langkah 2: Hitung nilai harapan (expected value atau E)
 
 Rumus untuk setiap sel adalah: (total baris × total kolom) / total keseluruhan (N)
 
-* E untuk sel a = (kandang kotor & diare) = (50 × 35) / 100 = 17,5
-* E untuk sel b = (kandang kotor & tidak diare) = (50 × 65) / 100 = 32,5
-* E untuk sel c = (kandang bersih & diare) = (50 × 35) / 100 = 17,5
-* E untuk sel d = (kandang bersih & tidak diare) = (50 × 65) / 100 = 32,5
+* E untuk sel a = (kandang kotor & diare) = (40 × 30) / 100 = 12
+* E untuk sel b = (kandang kotor & tidak diare) = (40 × 70) / 100 = 28
+* E untuk sel c = (kandang bersih & diare) = (60 × 30) / 100 = 18
+* E untuk sel d = (kandang bersih & tidak diare) = (60 × 70) / 100 = 42
 
 Langkah 3: Hitung nilai Chi-square (χ2)
 
@@ -592,11 +592,11 @@ Rumus umumnya adalah:
 χ2 = ∑ [(O − E)^2] / E
  
 Mari kita hitung untuk setiap sel:
-* Sel a: (30−17,5)^2 / 17,5 = 8,93
-* Sel b: (20−32,5)^2 / 32,5 = 4,81
-* Sel c: (5−17,5)^2 / 17,5 = 8,93
-* Sel d: (45−32,5)^2 / 32,5 = 4,81
-* Total χ2 = 8,93 + 4,81 + 8,93 + 4,81 = 27,48
+* Sel a: (20−12)^2 / 12 = 64/12 = 5,33
+* Sel b: (20−28)^2 / 28 = 64/28 = 2,29
+* Sel c: (10−18)^2 / 18 = 64/18 = 3,56
+* Sel d: (50−42)^2 / 42 = 64/42 = 1,52
+* Total χ2 = 5,33 + 2,29 + 3,56 + 1,52 = 12,7
 
 Langkah 4: Tentukan derajat kebebasan (degrees of freedom atau df)
 
@@ -614,7 +614,7 @@ Aturannya adalah:
 * Jika nilai p < 0,05: Kita menolak H0. Kemungkinan terjadinya kebetulan sangat kecil (di bawah 5%). Kesimpulan: Hubungan antara faktor dan penyakit bermakna secara statistika (signifikan).
 * Jika nilai p ≥ 0,05: Kita gagal menolak H0. Kemungkinan terjadinya kebetulan cukup besar (di atas 5%). Kesimpulan: Hubungan antara faktor dan penyakit tidak bermakna secara statistika. Data belum cukup kuat untuk membuktikan adanya hubungan.
 
-Sebagai contoh, nilai χ2 = 27,48 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu jauh di bawah 0,05. Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memiliki asosiasi yang bermakna dengan diare pada pedet.
+Sebagai contoh, nilai χ2 = 12,7 dengan df = 1 ini akan menghasilkan nilai p yang sangat kecil, yaitu 0,0004 (jauh di bawah 0,05). Jadi, kita bisa menyimpulkan bahwa faktor kebersihan kandang kotor memiliki asosiasi yang bermakna dengan diare pada pedet.
 
 Selain menghitung nilai Chi-Square dengan angka-angka observed dan expected, khusus untuk tabel 2×2, ada rumus alternatif untuk mendapatkan nilai Chi-square:
 
@@ -622,7 +622,7 @@ Selain menghitung nilai Chi-Square dengan angka-angka observed dan expected, khu
 
 Mari kita masukkan angka dari skenario diare pedet ke dalam rumus tersebut.
 
-χ2 = [100 × (30×45 − 20×5)^2] / [50×50×35×65] = 156.250.000 / 5.687.500 = 27.48
+χ2 = [100 × (20×50 − 20×10)^2] / [40×60×30×70] = 64.000.000 / 5.040.000 = 12,7
 
 Catatan penting:
 * nilai p tidak menunjukkan besar efek (itu tugasnya RR dan OR),
@@ -661,11 +661,11 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 	RD = risiko penyakit pada kelompok terpapar − risiko penyakit pada kelompok tidak terpapar
 	
 	Mari kita gunakan contoh yang sama.
-	* Risiko diare pada kelompok kandang kotor = 0,6
-	* Risiko diare pada kelompok kandang bersih = 0,1
-	* Perbedaan risiko (RD) = 0,6 − 0,1 = 0,5
+	* Risiko diare pada kelompok kandang kotor = 0,5
+	* Risiko diare pada kelompok kandang bersih = 0,167
+	* Perbedaan risiko (RD) = 0,5 − 0,167 = 0,33
 	
-	Interpretasi: Ada tambahan risiko sebesar 0,5 (atau 50%) pada kelompok pedet yang berada di kandang kotor. Artinya, jika hubungan tersebut bersifat kausal, maka penghilangan faktor (membersihkan seluruh kandang) dapat menurunkan kasus diare hingga 50%.
+	Interpretasi: Ada tambahan risiko sebesar 0,33 pada kelompok pedet yang berada di kandang kotor. Artinya, jika ada tambahan 1 ekor pedet yang terpapar kandang kotor, maka kasus diare akan bertambah sebanyak 0,33.
 	
 	Ukuran ini sangat konkret. Ia langsung memberi gambaran “seberapa banyak kasus tambahan” yang terjadi akibat paparan suatu faktor.
 	
@@ -681,11 +681,11 @@ Untuk menjawab pertanyaan ini, kita menggunakan beberapa ukuran.
 
 	AF = ((RR − 1) / RR) × 100%
 	
-	Contoh: Dengan risiko relatif (RR) = 6
+	Contoh: Dengan risiko relatif (RR) = 3
 	
-	AF = (6 − 1) / 6 = 5/6 ≈ 0,83 = 83%
+	AF = (3 − 1) / 3 = 2/3 ≈ 0,67 = 67%
 	
-	Interpretasi: Sekitar 83% kasus diare pada pedet yang tinggal di kandang kotor dapat dikaitkan dengan kondisi kandang. Sisanya mungkin dipengaruhi oleh faktor lain.
+	Interpretasi: Sekitar 67% kasus diare pada pedet yang tinggal di kandang kotor dapat dikaitkan dengan kondisi kandang. Sisanya mungkin dipengaruhi oleh faktor lain.
 
 Mengapa kedua ukuran ini penting bagi kita?
 
@@ -719,7 +719,7 @@ Variabel perancu adalah faktor ketiga yang berhubungan baik dengan variabel papa
 
 Bagaimana variabel perancu "menipu" kita?
 
-Mari kita kembali ke skenario kebersihan kandang dan diare pedet. Ketika kita melakukan penelitian dan menemukan bahwa pedet di kandang kotor memiliki risiko diare 6 kali lipat lebih tinggi (RR = 6). Kita mungkin langsung menyimpulkan bahwa situasi kandang yang kotor adalah penyebab utamanya. Namun, setelah kita telusuri lebih dalam, ternyata ada variabel lain, yaitu kepadatan kandang.
+Mari kita kembali ke skenario kebersihan kandang dan diare pedet. Ketika kita melakukan penelitian dan menemukan bahwa pedet di kandang kotor memiliki risiko diare 3 kali lipat lebih tinggi (RR = 3). Kita mungkin langsung menyimpulkan bahwa situasi kandang yang kotor adalah penyebab utamanya. Namun, setelah kita telusuri lebih dalam, ternyata ada variabel lain, yaitu kepadatan kandang.
 
 Mari kita lihat logikanya:
 * Kandang yang sangat padat (terlalu banyak hewan dalam satu ruangan) akan lebih cepat menjadi kotor karena feses dan urine terakumulasi dengan cepat. Artinya, kepadatan berhubungan dengan kebersihan.
@@ -776,13 +776,13 @@ Untuk memahami cara kerja uji ini tanpa harus dipusingkan oleh rumus matematika,
 Uji regresi logistik bekerja dengan prinsip yang sama. Perangkat lunak komputer akan "mengunci" atau mengendalikan variabel-variabel perancu menggunakan statistika sehingga kita bisa mengamati efek murni dari paparan utama kita. Hasil akhir dari perhitungan regresi logistik adalah sebuah nilai yang kita sebut OR yang disesuaikan (adjusted OR).
 
 Mari kita terapkan konsep ini pada data pedet kita.
-* Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 6,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor-faktor lain.
+* Saat kita hanya menggunakan analisis bivariat (tabel 2×2) untuk melihat efek kebersihan lantai, kita mendapatkan nilai OR kasar (crude OR) = 5,0. Angka ini masih "kotor" karena diam-diam tercampur oleh efek dari faktor-faktor lain.
 * Sekarang, kita melangkah ke analisis multivariat. Kita memasukkan variabel "kebersihan lantai", "kepadatan kandang", "umur pedet", "jenis pakan", dan faktor lain yang kita teliti secara bersamaan ke dalam perangkat lunak untuk uji regresi logistik.
 * Komputer kemudian mengunci efek kepadatan kandang, umur, dan pakan, lalu mengeluarkan hasil baru, yaitu OR yang disesuaikan untuk kebersihan lantai = 1,5 (95% CI: 0,8 – 2,5).
 
 Apa makna dari penurunan angka yang sangat drastis ini?
 
-Penurunan dari 6,0 menjadi 1,5 (dan rentang CI yang kini melewati angka 1) menunjukkan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah dan menjadi tidak bermakna secara statistika. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai.
+Penurunan dari 5,0 menjadi 1,5 (dan rentang CI yang kini melewati angka 1) menunjukkan bahwa kepadatan kandang (dan mungkin variabel lainnya) bertindak sebagai variabel perancu. Setelah pengaruh variabel-variabel tersebut dikendalikan, hubungan antara kebersihan lantai dan diare menjadi jauh lebih lemah dan menjadi tidak bermakna secara statistika. Hal ini menunjukkan bahwa sebagian hubungan yang terlihat sebelumnya dipengaruhi oleh faktor lain, bukan semata-mata oleh kebersihan lantai.
 
 Regresi logistik dapat digunakan pada berbagai jenis kajian observasional, seperti kajian potong lintang, kasus–kontrol, maupun kohort. Syarat utamanya adalah variabel luaran bersifat dikotomi. Meskipun demikian, ada aturan praktis yang sering digunakan:
 
