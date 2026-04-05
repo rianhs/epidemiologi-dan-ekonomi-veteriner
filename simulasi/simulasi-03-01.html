@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dinamika Penyakit</title>
+    <style>
+        :root {
+            /* Apple-style color palette */
+            --bg-body: #f5f5f7;
+            --bg-surface: #ffffff;
+            --bg-widget: #fbfbfd;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-light: #e5e5ea;
+            --accent-blue: #0071e3;
+            --accent-blue-hover: #0077ed;
+            
+            /* Status Colors */
+            --color-grey: #e5e5ea; /* Di luar pengamatan */
+            --color-green: #34c759; /* Rentan/Berisiko */
+            --color-red: #ff3b30; /* Sakit Aktif */
+            --color-blue: #5ac8fa; /* Sembuh/Kebal */
+            --color-black: #1c1c1e; /* Mati */
+            
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-widget: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 2.5rem 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header { text-align: center; margin-bottom: 2.5rem; }
+        .header h1 { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            letter-spacing: -0.8px; 
+            margin-bottom: 0.5rem;
+        }
+        .header p { 
+            color: var(--text-secondary); 
+            font-size: 1.1rem; 
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            display: flex;
+            gap: 2rem;
+            max-width: 1550px; /* Diperlebar agar ruang bernapas lebih lega */
+            width: 98%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* --- LEFT PANEL: TIMELINE --- */
+        .timeline-section {
+            flex: 1.8; /* Porsi diperbesar dari sebelumnya 1.2 menjadi 1.8 */
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .legend-container {
+            display: flex; gap: 0.8rem; margin-bottom: 2rem; flex-wrap: wrap; 
+        }
+        .legend-pill { 
+            display: flex; align-items: center; gap: 0.5rem; 
+            background: var(--bg-widget);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+        }
+        .legend-color { width: 12px; height: 12px; border-radius: 50%; }
+
+        .controls { display: flex; gap: 0.8rem; margin-bottom: 1.5rem; }
+        button {
+            background-color: var(--bg-surface); 
+            border: 1px solid var(--border-light);
+            padding: 0.6rem 1.2rem; 
+            border-radius: 99px; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        button:hover { 
+            border-color: var(--text-secondary);
+            transform: translateY(-1px);
+        }
+        button.primary {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+        }
+        button.primary:hover {
+            background-color: var(--accent-blue-hover);
+        }
+
+        .grid-wrapper {
+            overflow-x: auto; 
+            padding-bottom: 10px;
+            border-radius: 12px;
+        }
+        
+        .grid-wrapper::-webkit-scrollbar { height: 8px; }
+        .grid-wrapper::-webkit-scrollbar-track { background: transparent; }
+        .grid-wrapper::-webkit-scrollbar-thumb { background: #d2d2d7; border-radius: 4px; }
+
+        .grid-container {
+            display: grid;
+            /* Paksa kolom menyesuaikan sisa lebar, tanpa batas minimum yang kaku */
+            grid-template-columns: 70px repeat(12, minmax(35px, 1fr));
+            gap: 5px;
+            width: 100%; 
+            align-items: center;
+        }
+
+        .grid-header {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-align: center;
+            padding-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .animal-label {
+            font-size: 0.85rem; 
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .cell {
+            height: 36px; width: 100%; 
+            border-radius: 8px;
+            cursor: pointer; 
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .cell:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        /* --- RIGHT PANEL: METRICS (WIDGET STYLE) --- */
+        .metrics-section { 
+            flex: 1; /* Porsi metrik dikurangi agar panel kiri lebih leluasa */
+            display: flex; 
+            flex-direction: column; 
+            gap: 1.5rem; 
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .widget-highlight {
+            background: var(--bg-surface);
+            padding: 1.8rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .slider-wrapper {
+            margin-top: 1.5rem;
+            background: var(--bg-widget);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+        }
+        .slider-header {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.85rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--text-secondary);
+        }
+        input[type=range] { 
+            width: 100%; accent-color: var(--accent-blue); 
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-widget {
+            background: var(--bg-surface);
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-widget);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .metric-title { 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary); 
+            margin-bottom: 0.8rem; 
+        }
+        
+        .metric-value-container {
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            color: var(--text-primary); 
+            letter-spacing: -1px;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+        }
+        
+        .metric-unit {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-left: 4px;
+            letter-spacing: normal;
+        }
+
+        .metric-fraction {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-top: 0.4rem;
+        }
+
+        .metric-desc { 
+            font-size: 0.8rem; 
+            color: var(--text-secondary); 
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1200px) {
+            .container { flex-direction: column; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Dashboard Morbiditas & Mortalitas</h1>
+        <p>Klik kotak untuk menetapkan bulan kejadian. Status akan otomatis berlanjut ke bulan berikutnya sesuai alur riwayat alamiah penyakit.</p>
+    </div>
+
+    <div class="container">
+        <div class="card timeline-section">
+            <div class="legend-container">
+                <div class="legend-pill"><div class="legend-color" style="background-color: var(--color-grey);"></div> Belum/Tidak Diamati</div>
+                <div class="legend-pill"><div class="legend-color" style="background-color: var(--color-green);"></div> Sehat (Rentan)</div>
+                <div class="legend-pill"><div class="legend-color" style="background-color: var(--color-red);"></div> Sakit Aktif</div>
+                <div class="legend-pill"><div class="legend-color" style="background-color: var(--color-blue);"></div> Sembuh/Kebal</div>
+                <div class="legend-pill"><div class="legend-color" style="background-color: var(--color-black);"></div> Mati</div>
+            </div>
+
+            <div class="controls">
+                <button class="primary" onclick="addAnimal()">+ Tambah Hewan</button>
+                <button onclick="removeAnimal()">- Kurangi</button>
+                <button onclick="resetGrid()">Reset Ulang</button>
+            </div>
+
+            <div class="grid-wrapper">
+                <div id="grid" class="grid-container">
+                    </div>
+            </div>
+        </div>
+
+        <div class="metrics-section">
+            
+            <div class="widget-highlight">
+                <div class="metric-title">Prevalensi Titik (Point Prevalence)</div>
+                <div class="metric-value-container">
+                    <span class="metric-value" id="val-point-prev">0%</span>
+                    <span class="metric-fraction" id="frac-point-prev">0 / 0 hewan sakit</span>
+                </div>
+                <div class="metric-desc">Proporsi kasus aktif pada bulan spesifik.</div>
+                
+                <div class="slider-wrapper">
+                    <div class="slider-header">
+                        <span>Pilih Bulan Kalender:</span>
+                        <span style="color: var(--accent-blue); font-size: 1rem;">Bulan <span id="lbl-month">1</span></span>
+                    </div>
+                    <input type="range" id="month-slider" min="1" max="12" value="1" oninput="updateMetrics()">
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                
+                <div class="metric-widget">
+                    <div>
+                        <div class="metric-title">Prevalensi Periode</div>
+                        <div class="metric-value-container">
+                            <span class="metric-value" id="val-period-prev">0%</span>
+                            <span class="metric-fraction" id="frac-period-prev">0 / 0 pernah sakit</span>
+                        </div>
+                    </div>
+                    <div class="metric-desc">Beban penyakit total selama 1 tahun pengamatan.</div>
+                </div>
+
+                <div class="metric-widget">
+                    <div>
+                        <div class="metric-title">Insidensi Kumulatif</div>
+                        <div class="metric-value-container">
+                            <span class="metric-value" id="val-cum-inc">0%</span>
+                            <span class="metric-fraction" id="frac-cum-inc">0 / 0 kasus baru</span>
+                        </div>
+                    </div>
+                    <div class="metric-desc">Risiko penularan. Penyebutnya adalah hewan sehat di bulan ke-1.</div>
+                </div>
+
+                <div class="metric-widget" style="grid-column: 1 / -1; background-color: #f0f7ff; border-color: #cce4ff;">
+                    <div>
+                        <div class="metric-title" style="color: var(--accent-blue);">Laju Insidensi (Incidence Rate)</div>
+                        <div class="metric-value-container">
+                            <span class="metric-value" id="val-inc-rate" style="color: var(--accent-blue);">0.0</span>
+                            <span class="metric-unit" style="color: var(--accent-blue);">kasus / 100 hewan-bulan</span>
+                        </div>
+                    </div>
+                    <div class="metric-desc" id="desc-inc-rate" style="color: #0050a1;">(0 kasus baru) dibagi (0 total bulan berisiko) × 100.</div>
+                </div>
+
+                <div class="metric-widget">
+                    <div>
+                        <div class="metric-title">Mortalitas Kasar</div>
+                        <div class="metric-value-container">
+                            <span class="metric-value" id="val-mortality">0%</span>
+                            <span class="metric-fraction" id="frac-mortality">0 mati / 0 populasi</span>
+                        </div>
+                    </div>
+                    <div class="metric-desc">Tingkat kematian terhadap seluruh populasi di peternakan.</div>
+                </div>
+
+                <div class="metric-widget">
+                    <div>
+                        <div class="metric-title">C F R</div>
+                        <div class="metric-value-container">
+                            <span class="metric-value" id="val-cfr">0%</span>
+                            <span class="metric-fraction" id="frac-cfr">0 mati / 0 pernah sakit</span>
+                        </div>
+                    </div>
+                    <div class="metric-desc">Tingkat keganasan penyakit (Case Fatality Rate).</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const COLORS = ['var(--color-grey)', 'var(--color-green)', 'var(--color-red)', 'var(--color-blue)', 'var(--color-black)'];
+        let numAnimals = 10;
+        const numMonths = 12;
+        let data = [];
+
+        function initData() {
+            data = [];
+            for (let i = 0; i < numAnimals; i++) {
+                data.push(new Array(numMonths).fill(1)); // Default: All Green
+            }
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('grid');
+            let htmlContent = `<div class="grid-header">ID</div>`;
+            
+            for (let m = 1; m <= numMonths; m++) {
+                htmlContent += `<div class="grid-header">Bln ${m}</div>`;
+            }
+
+            for (let i = 0; i < numAnimals; i++) {
+                htmlContent += `<div class="animal-label">Hwn ${i + 1}</div>`;
+                for (let m = 0; m < numMonths; m++) {
+                    const state = data[i][m];
+                    htmlContent += `<div class="cell" style="background-color: ${COLORS[state]};" onclick="updateTimeline(${i}, ${m})"></div>`;
+                }
+            }
+            
+            grid.innerHTML = htmlContent;
+            updateMetrics();
+        }
+
+        function updateTimeline(animalIdx, monthIdx) {
+            let currentState = data[animalIdx][monthIdx];
+            let newState = (currentState + 1) % 5;
+            
+            for (let m = monthIdx; m < numMonths; m++) {
+                data[animalIdx][m] = newState;
+            }
+            renderGrid();
+        }
+
+        function addAnimal() {
+            if (numAnimals < 20) { numAnimals++; data.push(new Array(numMonths).fill(1)); renderGrid(); }
+        }
+
+        function removeAnimal() {
+            if (numAnimals > 1) { numAnimals--; data.pop(); renderGrid(); }
+        }
+
+        function resetGrid() { initData(); renderGrid(); }
+
+        function updateMetrics() {
+            const selectedMonth = parseInt(document.getElementById('month-slider').value) - 1;
+            document.getElementById('lbl-month').innerText = selectedMonth + 1;
+
+            let pointPrevKasus = 0; let pointPrevPop = 0;
+            let everSick = 0; let everObserved = 0; let deadCount = 0;
+            let newCases = 0; let animalMonthsAtRisk = 0;
+            let popAtStart = 0; let newCasesFromStartPop = 0;
+
+            for (let i = 0; i < numAnimals; i++) {
+                const timeline = data[i];
+                
+                if (timeline[selectedMonth] !== 0) pointPrevPop++; 
+                if (timeline[selectedMonth] === 2) pointPrevKasus++; 
+
+                let hasBeenObserved = false; let hasBeenSick = false; let isDead = false;
+                let isGreenAtStart = (timeline[0] === 1);
+                if (isGreenAtStart) popAtStart++;
+
+                let previouslyGreen = false;
+
+                for (let m = 0; m < numMonths; m++) {
+                    const state = timeline[m];
+                    if (state !== 0) hasBeenObserved = true;
+                    if (state === 2) hasBeenSick = true;
+                    if (state === 4) isDead = true;
+
+                    if (state === 1) {
+                        animalMonthsAtRisk++;
+                        previouslyGreen = true;
+                    }
+
+                    if (state === 2 && previouslyGreen) {
+                        newCases++;
+                        if (isGreenAtStart) newCasesFromStartPop++;
+                        previouslyGreen = false; 
+                    }
+                }
+
+                if (hasBeenObserved) everObserved++;
+                if (hasBeenSick) everSick++;
+                if (isDead) deadCount++;
+            }
+
+            const pointPrev = pointPrevPop > 0 ? (pointPrevKasus / pointPrevPop) * 100 : 0;
+            document.getElementById('val-point-prev').innerText = `${pointPrev.toFixed(1)}%`;
+            document.getElementById('frac-point-prev').innerText = `${pointPrevKasus} / ${pointPrevPop} hewan sakit`;
+
+            const periodPrev = everObserved > 0 ? (everSick / everObserved) * 100 : 0;
+            document.getElementById('val-period-prev').innerText = `${periodPrev.toFixed(1)}%`;
+            document.getElementById('frac-period-prev').innerText = `${everSick} / ${everObserved} pernah sakit`;
+
+            const cumInc = popAtStart > 0 ? (newCasesFromStartPop / popAtStart) * 100 : 0;
+            document.getElementById('val-cum-inc').innerText = `${cumInc.toFixed(1)}%`;
+            document.getElementById('frac-cum-inc').innerText = `${newCasesFromStartPop} / ${popAtStart} kasus baru`;
+
+            const incRate = animalMonthsAtRisk > 0 ? (newCases / animalMonthsAtRisk) * 100 : 0;
+            document.getElementById('val-inc-rate').innerText = `${incRate.toFixed(1)}`;
+            document.getElementById('desc-inc-rate').innerText = `Didapat dari (${newCases} kasus baru) dibagi (${animalMonthsAtRisk} total bulan berisiko) × 100.`;
+
+            const mortality = everObserved > 0 ? (deadCount / everObserved) * 100 : 0;
+            document.getElementById('val-mortality').innerText = `${mortality.toFixed(1)}%`;
+            document.getElementById('frac-mortality').innerText = `${deadCount} mati / ${everObserved} populasi`;
+
+            const cfr = everSick > 0 ? (deadCount / everSick) * 100 : 0;
+            document.getElementById('val-cfr').innerText = `${cfr.toFixed(1)}%`;
+            document.getElementById('frac-cfr').innerText = `${deadCount} mati / ${everSick} pernah sakit`;
+        }
+
+        initData();
+        renderGrid();
+    </script>
+</body>
+</html>
