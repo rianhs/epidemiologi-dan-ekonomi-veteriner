@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulasi Epidemiologi: Deskriptif vs Analitis</title>
+  <style>
+    :root{
+      --bg: #0b1220;
+      --stroke: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.52);
+      --red: #ff4d5e;
+      --green: #30d38a;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background-color: #0f172a;
+      color: var(--text);
+    }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 14px 26px;
+    }
+
+    .topbar{
+      display:flex;
+      gap:12px;
+      align-items:stretch;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+
+    .brand{
+      flex: 1 1 380px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      box-shadow: var(--shadow);
+      min-width: 280px;
+    }
+    .brand h1{
+      margin:0 0 6px 0;
+      font-size: 16px;
+      letter-spacing: .2px;
+      font-weight: 720;
+    }
+    .brand p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .controls{
+      flex: 0 0 330px;
+      min-width: 280px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .segmented{
+      display:flex;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--stroke);
+      border-radius: 14px;
+      padding: 3px;
+      gap: 3px;
+      width: 100%;
+    }
+    .segmented button{
+      flex:1;
+      border:0;
+      border-radius: 11px;
+      padding: 10px 10px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 680;
+      font-size: 13px;
+      cursor:pointer;
+      transition: transform .08s ease, background .18s ease, color .18s ease;
+      outline: none;
+    }
+    .segmented button:active{ transform: scale(.99); }
+    .segmented button.active{
+      background: rgba(122,167,255,.22);
+      color: var(--text);
+      box-shadow: inset 0 0 0 1px rgba(122,167,255,.25);
+    }
+
+    .tiny{
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.35;
+    }
+
+    .pillbar{
+      display:flex;
+      align-items:center;
+      justify-content:center; /* center */
+      width: 100%;
+      padding-bottom: 14px;   /* jarak bawah ke bulatan */
+    }
+    .pill{
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display:inline-block;
+      box-shadow: 0 8px 18px rgba(0,0,0,.22);
+    }
+    .dot.red{ background: var(--red); }
+    .dot.green{ background: var(--green); }
+
+    .stage{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+
+    .stageHeader{
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+
+    .stageHeader .title{
+      font-size: 13px;
+      color: var(--muted);
+      margin:0;
+      line-height: 1.4;
+    }
+
+    .stageHeader .hint{
+      font-size: 12px;
+      color: var(--muted2);
+      margin: 0;
+      line-height: 1.35;
+      text-align:right;
+    }
+
+    .box{ padding: 14px; }
+
+    .field{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+      position:relative;
+      min-height: 420px;
+      overflow:hidden;
+      touch-action: manipulation;
+    }
+
+    /* Grid 25 x 4 */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(25, 1fr);
+      grid-auto-rows: 1fr;
+      gap: 12px;
+      align-items:center;
+      justify-items:center;
+      user-select:none;
+    }
+
+    /* Bulatan lebih besar, click target lebih enak */
+    .animal{
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 24px rgba(0,0,0,.26);
+      cursor: default;
+      position: relative;
+      transform: translateZ(0);
+    }
+    .animal.red{ background: var(--red); }
+    .animal.green{ background: var(--green); }
+
+    .tooltip{
+      position:absolute;
+      inset: auto auto 14px 14px;
+      max-width: 440px;
+      background: rgba(12,18,32,.92);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 12px 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display:none;
+      z-index: 50;
+    }
+    .tooltip.show{ display:block; }
+    .ttTitle{
+      margin:0 0 6px 0;
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .ttTitle .badge{
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .ttBody{
+      margin:0;
+      font-size: 12.5px;
+      color: rgba(255,255,255,.84);
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+    .ttFooter{ margin-top: 8px; }
+
+    .smallbtn{
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      padding: 10px 10px;
+      border-radius: 14px;
+      font-weight: 720;
+      cursor:pointer;
+      transition: transform .08s ease, background .18s ease;
+    }
+    .smallbtn:hover{ background: rgba(255,255,255,.09); }
+    .smallbtn:active{ transform: scale(.99); }
+
+    .srOnly{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <h1>Epidemiologi Deskriptif vs Epidemiologi Analitis</h1>
+        <p>
+          Satu bulatan = satu ekor hewan.<br>
+		  - Bulatan merah = hewan sakit.<br>
+		  - Bulatan hijau = hewan tidak sakit.<br>
+		  Arahkan mouse pada setiap bulatan untuk menampilkan informasi pada hewan tersebut.
+        </p>
+      </div>
+
+      <div class="controls">
+        <div style="font-weight:760; font-size:13px;">Mode</div>
+
+        <div class="segmented" role="tablist" aria-label="Mode simulasi">
+          <button id="btnDesc" class="active" role="tab" aria-selected="true">Deskriptif</button>
+          <button id="btnAnal" role="tab" aria-selected="false">Analitis</button>
+        </div>
+
+        <div class="tiny" id="modeText">
+          Data hanya dikumpulkan dari bulatan hewan sakit (bulatan merah).
+          Bulatan hijau tidak menampilkan detail individu.
+        </div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="stageHeader">
+        <p class="title" id="stageTitle">Tujuan: menggambarkan distribusi kasus (siapa/hewan, di mana, kapan).</p>
+      </div>
+
+      <div class="box">
+        <div class="field" id="field" aria-label="Area populasi hewan">
+          <!-- Dipusatkan + ada jarak bawah -->
+          <div class="pillbar">
+            <div class="pill" title="Ringkasan populasi">
+              <span class="dot red"></span><span id="countRed">20</span>
+              <span style="opacity:.55;">/</span>
+              <span class="dot green"></span><span id="countGreen">80</span>
+              <span style="opacity:.55;">(Total <span id="countTotal">100</span>)</span>
+            </div>
+          </div>
+
+          <!-- 25 kolom x 4 baris; urutan kiri-atas ke kanan-bawah -->
+          <div class="grid" id="grid"></div>
+
+          <div class="tooltip" id="tooltip" role="dialog" aria-live="polite">
+            <p class="ttTitle">
+              <span class="dot red" id="ttDot" style="width:12px;height:12px;"></span>
+              <span id="ttName">Hewan</span>
+              <span class="badge" id="ttModeBadge">Deskriptif</span>
+            </p>
+            <p class="ttBody" id="ttBody"></p>
+            <div class="ttFooter">
+              <button class="smallbtn" id="btnCloseTT" style="padding:8px 10px; border-radius:12px;">Tutup</button>
+            </div>
+          </div>
+
+          <span class="srOnly" id="srAnnounce"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  const MODE = { DESC: "deskriptif", ANAL: "analitis" };
+    let currentMode = MODE.DESC;
+
+    const grid = document.getElementById("grid");
+    const field = document.getElementById("field");
+
+    const tooltip = document.getElementById("tooltip");
+    const ttDot = document.getElementById("ttDot");
+    const ttName = document.getElementById("ttName");
+    const ttBody = document.getElementById("ttBody");
+    const ttModeBadge = document.getElementById("ttModeBadge");
+    const btnCloseTT = document.getElementById("btnCloseTT");
+    const srAnnounce = document.getElementById("srAnnounce");
+
+    const btnDesc = document.getElementById("btnDesc");
+    const btnAnal = document.getElementById("btnAnal");
+    const modeText = document.getElementById("modeText");
+    const stageTitle = document.getElementById("stageTitle");
+
+    function shuffle(arr){
+      for(let i = arr.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function pad2(n){ return (n < 10 ? "0" : "") + n; }
+
+    function makeAnimal(id, sick, species, sex, age, village, onset, feed, water){
+      return { id, sick, species, sex, age, village, onset, feed, water };
+    }
+
+    // Dataset: dibuat berurutan id 1..100 (posisi tetap).
+    // Pola jawaban: Sumber air = Sungai dominan pada hewan sakit.
+    function buildDataset(){
+      const animals = [];
+
+      // 20 sakit: ID 1..20
+      const sickIds = Array.from({length:20}, (_,i)=> i+1);
+      const sickWater = shuffle([ ...Array(16).fill("Sungai"), ...Array(4).fill("Sumur") ]);
+      const sickFeed  = shuffle([ ...Array(10).fill("Rumput"), ...Array(10).fill("Pakan pabrikan") ]);
+      const sickVillage = shuffle([ ...Array(12).fill("Desa A"), ...Array(8).fill("Desa B") ]);
+      const sickOnset   = shuffle([ ...Array(4).fill("Januari"), ...Array(7).fill("Februari"), ...Array(9).fill("Maret") ]);
+      const sickSpecies = shuffle([ ...Array(14).fill("Sapi"), ...Array(6).fill("Kerbau") ]);
+      const sickSex     = shuffle([ ...Array(12).fill("Betina"), ...Array(8).fill("Jantan") ]);
+      const sickAge     = shuffle([ ...Array(13).fill("Dewasa"), ...Array(7).fill("Muda") ]);
+
+      for(let i=0;i<20;i++){
+        animals.push(
+          makeAnimal(
+            sickIds[i], true,
+            sickSpecies[i], sickSex[i], sickAge[i],
+            sickVillage[i], sickOnset[i],
+            sickFeed[i], sickWater[i]
+          )
+        );
+      }
+
+      // 80 tidak sakit: ID 21..100
+      const healthyIds = Array.from({length:80}, (_,i)=> i+21);
+      const healthyWater = shuffle([ ...Array(60).fill("Sumur"), ...Array(20).fill("Sungai") ]);
+      const healthyFeed  = shuffle([ ...Array(40).fill("Rumput"), ...Array(40).fill("Pakan pabrikan") ]);
+      const healthyVillage = shuffle([ ...Array(40).fill("Desa A"), ...Array(40).fill("Desa B") ]);
+      const healthySpecies = shuffle([ ...Array(55).fill("Sapi"), ...Array(25).fill("Kerbau") ]);
+      const healthySex     = shuffle([ ...Array(45).fill("Betina"), ...Array(35).fill("Jantan") ]);
+      const healthyAge     = shuffle([ ...Array(52).fill("Dewasa"), ...Array(28).fill("Muda") ]);
+
+      for(let i=0;i<80;i++){
+        animals.push(
+          makeAnimal(
+            healthyIds[i], false,
+            healthySpecies[i], healthySex[i], healthyAge[i],
+            healthyVillage[i], "-",
+            healthyFeed[i], healthyWater[i]
+          )
+        );
+      }
+
+      // Urutkan ketat berdasarkan id agar posisi fixed: #1 kiri-atas ... #100 kanan-bawah
+      animals.sort((a,b) => a.id - b.id);
+      return animals;
+    }
+
+    const DATA = buildDataset();
+
+    function shouldShowTooltip(animal){
+      if(currentMode === MODE.DESC) return animal.sick === true;
+      return true;
+    }
+
+    function labelText(animal){
+      if(currentMode === MODE.DESC){
+        return [
+          `Jenis hewan: ${animal.species}`,
+          `Jenis kelamin: ${animal.sex}`,
+          `Tingkatan umur: ${animal.age}`,
+          `Lokasi: ${animal.village}`,
+          `Waktu mulai sakit: ${animal.onset}`
+        ].join("\n");
+      }
+
+      const status = animal.sick ? "Sakit" : "Tidak sakit";
+      const onsetLine = animal.sick ? `Waktu mulai sakit: ${animal.onset}` : "Waktu mulai sakit: –";
+
+      return [
+        `Status penyakit: ${status}`,
+        `Jenis hewan: ${animal.species}`,
+        `Jenis kelamin: ${animal.sex}`,
+        `Tingkatan umur: ${animal.age}`,
+        `Lokasi: ${animal.village}`,
+        onsetLine,
+        `Jenis pakan: ${animal.feed}`,
+        `Sumber air: ${animal.water}`
+      ].join("\n");
+    }
+
+    let openAnimalId = null;
+let openEl = null;
+
+const canHover = window.matchMedia && window.matchMedia("(hover: hover)").matches;
+
+function positionTooltipNear(el){
+  const rectField = field.getBoundingClientRect();
+  const rectEl = el.getBoundingClientRect();
+  const margin = 12;
+
+  let left = (rectEl.left - rectField.left) + 30;
+  let top  = (rectEl.top  - rectField.top)  + 30;
+
+  tooltip.style.left = left + "px";
+  tooltip.style.top  = top  + "px";
+
+  const rectTT = tooltip.getBoundingClientRect();
+
+  const overflowRight = rectTT.right - rectField.right;
+  if(overflowRight > 0){
+    left = Math.max(margin, left - overflowRight - 10);
+    tooltip.style.left = left + "px";
+  }
+
+  const overflowLeft = rectTT.left - rectField.left;
+  if(overflowLeft < 0){
+    left = Math.max(margin, left - overflowLeft + 10);
+    tooltip.style.left = left + "px";
+  }
+
+  const overflowBottom = rectTT.bottom - rectField.bottom;
+  if(overflowBottom > 0){
+    top = Math.max(margin, top - overflowBottom - 10);
+    tooltip.style.top = top + "px";
+  }
+
+  const overflowTop = rectTT.top - rectField.top;
+  if(overflowTop < 0){
+    top = Math.max(margin, top - overflowTop + 10);
+    tooltip.style.top = top + "px";
+  }
+}
+
+function showTooltipFor(el, animal){
+  openAnimalId = animal.id;
+  openEl = el;
+
+  if(openEl){
+    openEl.setAttribute("aria-expanded", "true");
+  }
+
+  const modeName = (currentMode === MODE.DESC) ? "Deskriptif" : "Analitis";
+  ttModeBadge.textContent = modeName;
+
+  ttDot.className = "dot " + (animal.sick ? "red" : "green");
+  ttName.textContent = `Hewan #${pad2(animal.id)}`;
+  ttBody.textContent = labelText(animal);
+
+  tooltip.classList.add("show");
+  positionTooltipNear(el);
+
+  srAnnounce.textContent = `Menampilkan data hewan ${animal.id}.`;
+}
+
+function hideTooltip(){
+  tooltip.classList.remove("show");
+  openAnimalId = null;
+
+  if(openEl){
+    openEl.setAttribute("aria-expanded", "false");
+    openEl = null;
+  }
+}
+
+
+    function renderGrid(){
+  grid.innerHTML = "";
+  const fragment = document.createDocumentFragment();
+
+  for(const a of DATA){
+    const el = document.createElement("div");
+    el.className = "animal " + (a.sick ? "red" : "green");
+    el._data = a;
+
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "button");
+    el.setAttribute("aria-expanded", "false");
+    el.setAttribute("aria-label", `Hewan #${pad2(a.id)}, ${a.sick ? "sakit" : "tidak sakit"}`);
+
+    el.addEventListener("pointerenter", () => {
+      if(canHover && shouldShowTooltip(a)) showTooltipFor(el, a);
+    });
+
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if(shouldShowTooltip(a)) showTooltipFor(el, a);
+    });
+
+    el.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        e.stopPropagation();
+        if(shouldShowTooltip(a)) showTooltipFor(el, a);
+      }
+    });
+
+    fragment.appendChild(el);
+  }
+
+  grid.appendChild(fragment);
+}
+
+    function setStageTitle(lines){
+  stageTitle.replaceChildren();
+  lines.forEach((line, i) => {
+    if(i > 0) stageTitle.appendChild(document.createElement("br"));
+    stageTitle.appendChild(document.createTextNode(line));
+  });
+}
+
+    function setMode(mode){
+  currentMode = mode;
+
+  const isDesc = (mode === MODE.DESC);
+  btnDesc.classList.toggle("active", isDesc);
+  btnAnal.classList.toggle("active", !isDesc);
+
+  btnDesc.setAttribute("aria-selected", isDesc ? "true" : "false");
+  btnAnal.setAttribute("aria-selected", !isDesc ? "true" : "false");
+
+  if(isDesc){
+    setStageTitle([
+      "Mode deskriptif hanya menampilkan informasi pada hewan berpenyakit (merah).",
+      "Tujuan: menggambarkan distribusi kasus berdasarkan siapa, di mana, kapan.",
+      "Instruksi: Rekapitulasi informasi yang diperoleh dari hewan sakit. Apakah penyakit lebih banyak ditemukan pada spesies, jenis kelamin, desa, atau bulan tertentu?"
+    ]);
+    modeText.textContent = "Kita hanya berfokus pada kasus positif.";
+  } else {
+    setStageTitle([
+      "Mode analitis menampilkan informasi pada semua hewan, baik hewan berpenyakit (merah) maupun tidak (hijau).",
+      "Tujuan: mengeksplorasi faktor yang diduga memengaruhi kejadian penyakit.",
+      "Instruksi: Rekapitulasi semua informasi. Apakah variabel tertentu lebih sering ditemukan pada hewan sakit dibandingkan hewan tidak sakit?"
+    ]);
+    modeText.textContent = "Kita membandingkan kasus positif dan negatif.";
+  }
+
+  if(tooltip.classList.contains("show") && openAnimalId !== null){
+    const animal = DATA.find(a => a.id === openAnimalId);
+    if(animal && shouldShowTooltip(animal)){
+      ttBody.textContent = labelText(animal);
+      ttModeBadge.textContent = isDesc ? "Deskriptif" : "Analitis";
+      if(openEl) positionTooltipNear(openEl);
+    } else {
+      hideTooltip();
+    }
+  } else {
+    hideTooltip();
+  }
+}
+
+    field.addEventListener("click", () => hideTooltip());
+    btnCloseTT.addEventListener("click", (e) => { e.stopPropagation(); hideTooltip(); });
+
+    document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && tooltip.classList.contains("show")){
+    e.stopPropagation();
+    hideTooltip();
+  }
+});
+
+    btnDesc.addEventListener("click", () => setMode(MODE.DESC));
+    btnAnal.addEventListener("click", () => setMode(MODE.ANAL));
+
+    renderGrid();
+
+    const red = DATA.filter(a => a.sick).length;
+    const green = DATA.length - red;
+    document.getElementById("countRed").textContent = String(red);
+    document.getElementById("countGreen").textContent = String(green);
+    document.getElementById("countTotal").textContent = String(DATA.length);
+
+    setMode(MODE.DESC);
+</script>
+</body>
+</html>
