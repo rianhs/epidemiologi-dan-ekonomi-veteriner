@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Bak Mandi: Prevalensi & Insidensi</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-body: #f5f5f7;
+            --bg-surface: #ffffff;
+            --bg-widget: #fbfbfd;
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --border-light: #e5e5ea;
+            --accent-blue: #0071e3;
+            
+            --c-susceptible: #34c759; /* Hijau Tandon */
+            --c-infected: #ff3b30;    /* Merah Bak */
+            --c-recovered: #5ac8fa;   /* Biru Sembuh */
+            --c-dead: #1c1c1e;        /* Hitam Mati */
+            
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+            --shadow-widget: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+        body { background-color: var(--bg-body); color: var(--text-primary); padding: 2rem; line-height: 1.5; }
+
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+        .header p { color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1rem; }
+
+        .container { display: flex; gap: 2rem; max-width: 1400px; margin: 0 auto; height: 80vh; min-height: 700px; }
+
+        .card { background-color: var(--bg-surface); border-radius: 24px; padding: 2rem; box-shadow: var(--shadow-soft); display: flex; flex-direction: column; }
+
+        /* --- KIRI: VISUALISASI BAK --- */
+        .visual-panel { flex: 1.2; position: relative; }
+        .simulation-area { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem 0; gap: 5px; position: relative; }
+
+        .tank-wrapper { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .tank-label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tank { position: relative; border: 3px solid var(--border-light); border-radius: 12px; background: #fafafa; overflow: hidden; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05); }
+        .liquid { position: absolute; bottom: 0; width: 100%; transition: height 0.1s linear; }
+        .liquid-text { position: absolute; width: 100%; text-align: center; bottom: 5px; font-weight: 700; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.4); font-size: 0.9rem; }
+
+        #tank-S { width: 200px; height: 100px; border-color: rgba(52, 199, 89, 0.3); }
+        #liq-S { background-color: var(--c-susceptible); height: 100%; }
+        
+        #tank-I { width: 250px; height: 120px; border-color: rgba(255, 59, 48, 0.3); }
+        #liq-I { background-color: var(--c-infected); height: 0%; }
+
+        .bottom-tanks { display: flex; gap: 40px; justify-content: center; width: 100%; }
+        .tank-small { width: 100px; height: 100px; }
+        #tank-R { border-color: rgba(90, 200, 250, 0.3); }
+        #liq-R { background-color: var(--c-recovered); height: 0%; }
+        #tank-D { border-color: rgba(28, 28, 30, 0.3); }
+        #liq-D { background-color: var(--c-dead); height: 0%; }
+
+        .pipe-vertical { width: 12px; height: 30px; background: linear-gradient(90deg, #d2d2d7, #f5f5f7, #d2d2d7); border: 1px solid #c7c7cc; border-top: none; border-bottom: none; z-index: 2;}
+        .pipe-flow { width: 4px; height: 100%; margin: 0 auto; animation: flowAnim 0.5s linear infinite; display: none; }
+        @keyframes flowAnim { 0% { background-position: 0 0; } 100% { background-position: 0 10px; } }
+        .valve-container { display: flex; flex-direction: column; align-items: center; }
+        .valve-icon { font-size: 1.2rem; margin: -5px 0; z-index: 3; filter: grayscale(100%); }
+
+        /* --- KONTROL SLIDER BARU --- */
+        .controls-area { background: var(--bg-widget); padding: 1.5rem; border-radius: 16px; border: 1px solid var(--border-light); margin-top: 1rem; }
+        .slider-group { margin-bottom: 1rem; }
+        .slider-group:last-child { margin-bottom: 0; }
+        .slider-header { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .slider-val { color: var(--accent-blue); }
+        input[type=range] { width: 100%; accent-color: var(--accent-blue); cursor: pointer; }
+
+        .btn-group { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+        button { padding: 0.8rem 1.5rem; border-radius: 99px; font-weight: 600; font-size: 0.95rem; cursor: pointer; border: none; transition: transform 0.1s; }
+        button:hover:not(:disabled) { transform: scale(1.02); }
+        button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .btn-play { background: var(--text-primary); color: white; }
+        .btn-reset { background: var(--border-light); color: var(--text-primary); }
+
+        /* --- KANAN: METRIK --- */
+        .data-panel { flex: 1; }
+        .metrics-grid { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        .metric-card { background: var(--bg-surface); border: 1px solid var(--border-light); padding: 1.2rem; border-radius: 16px; box-shadow: var(--shadow-widget); }
+        
+        .metric-title { font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .metric-value { font-size: 2rem; font-weight: 700; letter-spacing: -1px; display: inline-block; margin-right: 10px; }
+        .metric-formula { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 500; background: var(--bg-body); padding: 4px 10px; border-radius: 8px; vertical-align: super; }
+        .formula-fraction { display: inline-flex; flex-direction: column; text-align: center; }
+        .formula-num { border-bottom: 1px solid var(--text-secondary); padding: 0 4px; color: var(--c-infected); }
+        .formula-den { padding: 0 4px; color: var(--accent-blue); }
+        .desc-text { font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.5rem; }
+
+        .chart-container { flex: 1; width: 100%; min-height: 250px; background: var(--bg-widget); border-radius: 16px; padding: 1rem; border: 1px solid var(--border-light); }
+
+        @media (max-width: 1024px) { .container { flex-direction: column; height: auto; } }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Model Bak Mandi Epidemiologi</h1>
+        <p>Prevalensi dipengaruhi oleh penambahan kasus baru (Insidensi) dan lamanya individu menderita sakit (Durasi). Konsep dasar: <strong>Prevalensi ≈ Insidensi × Durasi</strong>.</p>
+    </div>
+
+    <div class="container">
+        <div class="card visual-panel">
+            <div class="simulation-area">
+                
+                <div class="tank-wrapper">
+                    <div class="tank-label">Tandon Atas: Populasi Rentan (S)</div>
+                    <div class="tank" id="tank-S">
+                        <div class="liquid" id="liq-S"></div>
+                        <div class="liquid-text" id="txt-S">1000</div>
+                    </div>
+                </div>
+
+                <div class="valve-container">
+                    <div class="pipe-vertical"><div class="pipe-flow" id="flow-I" style="background: repeating-linear-gradient(180deg, transparent, transparent 4px, var(--c-infected) 4px, var(--c-infected) 8px);"></div></div>
+                    <div class="valve-icon" id="valve-I-icon">🚰</div>
+                </div>
+
+                <div class="tank-wrapper">
+                    <div class="tank-label">Bak Mandi: Kasus Aktif/Prevalensi (I)</div>
+                    <div class="tank" id="tank-I">
+                        <div class="liquid" id="liq-I"></div>
+                        <div class="liquid-text" id="txt-I">0</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 80px; justify-content: center; width: 100%;">
+                    <div class="valve-container">
+                        <div class="pipe-vertical"><div class="pipe-flow" id="flow-R" style="background: repeating-linear-gradient(180deg, transparent, transparent 4px, var(--c-recovered) 4px, var(--c-recovered) 8px);"></div></div>
+                    </div>
+                    <div class="valve-container">
+                        <div class="pipe-vertical"><div class="pipe-flow" id="flow-D" style="background: repeating-linear-gradient(180deg, transparent, transparent 4px, var(--c-dead) 4px, var(--c-dead) 8px);"></div></div>
+                    </div>
+                </div>
+
+                <div class="bottom-tanks">
+                    <div class="tank-wrapper">
+                        <div class="tank-label" style="color:var(--c-recovered)">Sembuh (R)</div>
+                        <div class="tank tank-small" id="tank-R">
+                            <div class="liquid" id="liq-R"></div>
+                            <div class="liquid-text" id="txt-R">0</div>
+                        </div>
+                    </div>
+                    <div class="tank-wrapper">
+                        <div class="tank-label" style="color:var(--c-dead)">Mati (D)</div>
+                        <div class="tank tank-small" id="tank-D">
+                            <div class="liquid" id="liq-D"></div>
+                            <div class="liquid-text" id="txt-D">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-area">
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Laju Insidensi (Daya Buka Keran Atas)</span>
+                        <span class="slider-val" id="val-slider-inc">Cepat</span>
+                    </div>
+                    <input type="range" id="slider-inc" min="0" max="100" value="60"> 
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Durasi Penyakit (Waktu Tertahan di Bak)</span>
+                        <span class="slider-val" id="val-slider-dur">10 Hari</span>
+                    </div>
+                    <input type="range" id="slider-dur" min="1" max="30" value="10">
+                </div>
+                <div class="slider-group">
+                    <div class="slider-header">
+                        <span>Nasib Kasus: CFR (Mati) vs Kesembuhan</span>
+                        <span class="slider-val" id="val-slider-cfr">CFR: 5% | Sembuh: 95%</span>
+                    </div>
+                    <input type="range" id="slider-cfr" min="0" max="100" value="5">
+                </div>
+                
+                <div class="btn-group">
+                    <button class="btn-play" id="btn-play" onclick="toggleSim()">Jalankan Simulasi</button>
+                    <button class="btn-reset" onclick="resetSim()">Reset Data</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card data-panel">
+            <div class="metrics-grid">
+                
+                <div class="metric-card" style="border-left: 5px solid var(--c-infected);">
+                    <div class="metric-title">Prevalensi Titik (Saat Ini)</div>
+                    <div>
+                        <span class="metric-value" id="disp-prev">0.0%</span>
+                        <span class="metric-formula">
+                            =
+                            <div class="formula-fraction">
+                                <span class="formula-num">Bak (I) = <span id="f-I">0</span></span>
+                                <span class="formula-den">Total Hidup = <span id="f-alive">1000</span></span>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="desc-text">Prevalensi akan memuncak jika <strong>Durasi Penyakit</strong> panjang, karena penderita lama menetap di dalam bak sebelum sembuh/mati.</div>
+                </div>
+
+                <div class="metric-card" style="border-left: 5px solid var(--c-susceptible);">
+                    <div class="metric-title">Insidensi Harian (Aliran Kasus Baru)</div>
+                    <div>
+                        <span class="metric-value" id="disp-inc">0.0</span>
+                        <span class="metric-formula">
+                            =
+                            <div class="formula-fraction">
+                                <span class="formula-num" style="color: var(--c-susceptible);">Tetes Keran = <span id="f-new">0</span></span>
+                                <span class="formula-den" style="color: var(--c-susceptible);">Tandon (S) = <span id="f-S">1000</span></span>
+                            </div>
+                            × 100
+                        </span>
+                    </div>
+                    <div class="desc-text">Kasus baru per 100 populasi rentan. Aliran akan terhenti otomatis jika Tandon Rentan (S) sudah kosong.</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="sirdChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const N_INITIAL = 1000;
+        let pop = { S: 1000, I: 0, R: 0, D: 0 };
+        
+        let isRunning = false;
+        let simTimer = null;
+        let timeTick = 0;
+        let recentNewCases = 0;
+
+        const ctx = document.getElementById('sirdChart').getContext('2d');
+        const sirdChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [0],
+                datasets: [
+                    { label: 'Rentan (S)', borderColor: '#34c759', backgroundColor: '#34c759', data: [1000], borderWidth: 2, pointRadius: 0, tension: 0.3 },
+                    { label: 'Kasus (I)', borderColor: '#ff3b30', backgroundColor: '#ff3b30', data: [0], borderWidth: 3, pointRadius: 0, tension: 0.3 },
+                    { label: 'Sembuh (R)', borderColor: '#5ac8fa', backgroundColor: '#5ac8fa', data: [0], borderWidth: 2, pointRadius: 0, tension: 0.3 },
+                    { label: 'Mati (D)', borderColor: '#1c1c1e', backgroundColor: '#1c1c1e', data: [0], borderWidth: 2, pointRadius: 0, tension: 0.3 }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: { legend: { position: 'top', labels: { usePointStyle: true, boxWidth: 6 } } },
+                scales: {
+                    y: { beginAtZero: true, max: 1000, grid: { color: '#e5e5ea' } },
+                    x: { title: { display: true, text: 'Waktu (Hari)' }, grid: { display: false } }
+                },
+                animation: false 
+            }
+        });
+
+        function updateUI() {
+            document.getElementById('liq-S').style.height = (pop.S / N_INITIAL * 100) + '%';
+            document.getElementById('liq-I').style.height = (pop.I / N_INITIAL * 100) + '%';
+            document.getElementById('liq-R').style.height = (pop.R / N_INITIAL * 100) + '%';
+            document.getElementById('liq-D').style.height = (pop.D / N_INITIAL * 100) + '%';
+
+            document.getElementById('txt-S').innerText = Math.round(pop.S);
+            document.getElementById('txt-I').innerText = Math.round(pop.I);
+            document.getElementById('txt-R').innerText = Math.round(pop.R);
+            document.getElementById('txt-D').innerText = Math.round(pop.D);
+
+            let totalAlive = pop.S + pop.I + pop.R;
+            document.getElementById('f-I').innerText = Math.round(pop.I);
+            document.getElementById('f-alive').innerText = Math.round(totalAlive);
+            
+            let prevPoint = totalAlive > 0 ? (pop.I / totalAlive) * 100 : 0;
+            document.getElementById('disp-prev').innerText = prevPoint.toFixed(1) + '%';
+
+            document.getElementById('f-new').innerText = recentNewCases.toFixed(1);
+            document.getElementById('f-S').innerText = Math.round(pop.S);
+            
+            let incRate = pop.S > 0 ? (recentNewCases / pop.S) * 100 : 0;
+            document.getElementById('disp-inc').innerText = incRate.toFixed(1);
+        }
+
+        // PERBAIKAN: Logika Matematika sesuai P = I x D
+        function simulateStep() {
+            // 1. Hitung Insidensi (Kasus Baru)
+            let sliderInc = parseInt(document.getElementById('slider-inc').value);
+            let maxFlow = 15; 
+            let newCases = (sliderInc / 100) * maxFlow; 
+            
+            if (newCases > pop.S) newCases = pop.S; 
+            
+            // 2. Hitung Pengeluaran dari Bak (Berdasarkan Durasi)
+            let duration = parseInt(document.getElementById('slider-dur').value);
+            // Semakin lama durasi, semakin lambat air menguras dari bak I
+            let drainRate = 1 / duration; 
+            let totalLeaving = pop.I * drainRate;
+
+            // 3. Distribusi Nasib (Kesembuhan vs Kematian harus berjumlah 100% dari totalLeaving)
+            let cfr = parseInt(document.getElementById('slider-cfr').value) / 100;
+            let deaths = totalLeaving * cfr;
+            let recoveries = totalLeaving * (1 - cfr);
+
+            recentNewCases = newCases;
+
+            // 4. Terapkan perpindahan volume
+            pop.S -= newCases;
+            pop.I += newCases;
+            pop.I -= totalLeaving; // Dikurangi total orang yang sembuh & mati
+            pop.R += recoveries;
+            pop.D += deaths;
+
+            timeTick++;
+
+            // 5. Update UI & Animasi Visual Aliran Air
+            document.getElementById('flow-I').style.display = newCases > 0.1 ? 'block' : 'none';
+            // Proporsi aliran pipa bergantung pada porsi kesembuhan dan kematian
+            document.getElementById('flow-R').style.display = recoveries > 0.1 ? 'block' : 'none';
+            document.getElementById('flow-D').style.display = deaths > 0.1 ? 'block' : 'none';
+
+            if (timeTick % 2 === 0) {
+                sirdChart.data.labels.push(timeTick);
+                sirdChart.data.datasets[0].data.push(pop.S);
+                sirdChart.data.datasets[1].data.push(pop.I);
+                sirdChart.data.datasets[2].data.push(pop.R);
+                sirdChart.data.datasets[3].data.push(pop.D);
+                sirdChart.update();
+            }
+
+            updateUI();
+
+            // Auto-Stop jika Tandon Habis & Bak Kosong
+            if (pop.S < 0.1 && pop.I < 0.1) {
+                toggleSim(); 
+                document.getElementById('btn-play').innerText = "Simulasi Selesai";
+                document.getElementById('btn-play').disabled = true;
+            }
+        }
+
+        function toggleSim() {
+            let btn = document.getElementById('btn-play');
+            if (isRunning) {
+                clearInterval(simTimer);
+                isRunning = false;
+                btn.innerText = "Lanjutkan Simulasi";
+                btn.style.background = "var(--text-primary)";
+                
+                document.getElementById('flow-I').style.display = 'none';
+                document.getElementById('flow-R').style.display = 'none';
+                document.getElementById('flow-D').style.display = 'none';
+            } else {
+                simTimer = setInterval(simulateStep, 100); 
+                isRunning = true;
+                btn.innerText = "⏸ Jeda Simulasi";
+                btn.style.background = "var(--c-infected)";
+            }
+        }
+
+        function resetSim() {
+            if (isRunning) toggleSim(); 
+            
+            pop = { S: 1000, I: 0, R: 0, D: 0 };
+            timeTick = 0;
+            recentNewCases = 0;
+
+            let btn = document.getElementById('btn-play');
+            btn.disabled = false;
+            btn.innerText = "Jalankan Simulasi";
+            btn.style.background = "var(--text-primary)";
+
+            sirdChart.data.labels = [0];
+            sirdChart.data.datasets[0].data = [1000];
+            sirdChart.data.datasets[1].data = [0];
+            sirdChart.data.datasets[2].data = [0];
+            sirdChart.data.datasets[3].data = [0];
+            sirdChart.update();
+
+            updateUI();
+        }
+
+        // Teks interaktif untuk Slider
+        document.getElementById('slider-dur').addEventListener('input', function(e) { 
+            document.getElementById('val-slider-dur').innerText = e.target.value + ' Hari'; 
+        });
+        document.getElementById('slider-cfr').addEventListener('input', function(e) { 
+            let cfrVal = e.target.value;
+            let recVal = 100 - cfrVal;
+            document.getElementById('val-slider-cfr').innerText = `CFR: ${cfrVal}% | Sembuh: ${recVal}%`; 
+        });
+        document.getElementById('slider-inc').addEventListener('input', function(e) {
+            let val = e.target.value;
+            let text = "Sedang";
+            if(val < 20) text = "Sangat Lambat";
+            else if(val < 40) text = "Lambat";
+            else if(val > 80) text = "Sangat Cepat";
+            else if(val >= 40 && val <= 80) text = "Cepat";
+            document.getElementById('val-slider-inc').innerText = text;
+        });
+
+        updateUI();
+    </script>
+</body>
+</html>
