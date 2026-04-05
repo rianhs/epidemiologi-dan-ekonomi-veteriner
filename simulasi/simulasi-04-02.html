@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergeseran Ambang Batas Uji Diagnostik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --accent-hover: #0077ed;
+            --border: #d2d2d7;
+            
+            /* Warna untuk Visualisasi Kurva */
+            --color-healthy: #34c759; /* Hijau */
+            --color-diseased: #ff3b30; /* Merah */
+            --color-cutoff: #0066cc; /* Biru Apple */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            text-align: center;
+            letter-spacing: -0.03em;
+        }
+
+        /* Top Panel (Visualisation) */
+        .visualisation-panel {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            width: 100%;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .instruction-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 80%;
+        }
+
+        /* SVG Chart Styles */
+        .chart-container {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 2rem;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .axis {
+            stroke: #d2d2d7;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+        }
+
+        .axis-label {
+            fill: var(--text-muted);
+            font-size: 11px;
+            text-anchor: middle;
+        }
+
+        /* Shading Areas */
+        .shading {
+            transition: all 0.1s linear;
+        }
+        
+        .area-healthy {
+            fill: var(--color-healthy);
+            fill-opacity: 0.1;
+        }
+        
+        .area-diseased {
+            fill: var(--color-diseased);
+            fill-opacity: 0.1;
+        }
+        
+        /* Shaded area representing tested positive/negative */
+        #tp-shade { fill: var(--color-diseased); fill-opacity: 0.35; }
+        #fp-shade { fill: var(--color-healthy); fill-opacity: 0.35; }
+
+        /* Curves */
+        .curve {
+            stroke-width: 2.5;
+            fill: none;
+            stroke-linecap: round;
+        }
+        .curve-healthy { stroke: var(--color-healthy); }
+        .curve-diseased { stroke: var(--color-diseased); }
+
+        /* Cut-off Line */
+        #cutoff-line {
+            stroke: var(--color-cutoff);
+            stroke-width: 3.5;
+            stroke-linecap: round;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .cutoff-val {
+            font-weight: 700;
+            color: var(--color-cutoff);
+            font-size: 1.1rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--color-cutoff);
+            cursor: pointer;
+            height: 6px;
+            border-radius: 4px;
+        }
+
+        /* Bottom Panel (Dashboard) */
+        .dashboard-panel {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .metric-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+        }
+
+        .result-box {
+            background-color: #f9f9fb;
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .result-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.04em;
+        }
+
+        /* Recommendation Box */
+        .recommendation-card {
+            grid-column: span 2;
+            margin-top: -1rem; 
+        }
+        
+        .recommendation-box {
+            background-color: rgba(0, 102, 204, 0.05);
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 102, 204, 0.15);
+        }
+        
+        #recommendationText {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Info Icon & Expanded Text CSS */
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background-color: #a0c4ff;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: sans-serif;
+            cursor: pointer;
+            transition: background-color 0.2s;
+			text-transform: none;
+        }
+
+        .info-icon:hover { background-color: var(--accent); }
+
+        .info-expanded {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #ffffff;
+            border-radius: 8px;
+            line-height: 1.5;
+            text-transform: none;
+            letter-spacing: normal;
+            
+            /* Kondisi Awal (Disembunyikan) */
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            padding: 0 1rem; 
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .info-expanded strong { color: var(--text-main); }
+        .info-expanded.show {
+            /* Kondisi Terbuka (Ditampilkan) */
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #e5e5ea;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 960px) {
+            .dashboard-panel { grid-template-columns: 1fr; }
+            .recommendation-card { grid-column: span 1; }
+            .instruction-text { max-width: 100%; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .visualisation-panel, .metric-card { padding: 1.5rem; }
+            .main-title { font-size: 1.5rem; }
+            .result-value { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <h1 class="main-title">Pergeseran Ambang Batas Uji Diagnostik</h1>
+
+    <div class="visualisation-panel">
+        <p class="instruction-text">
+            Simulasi ini mendemonstrasikan bagaimana hasil uji laboratorium kuantitatif (skala 0&ndash;100) diubah menjadi keputusan kualitatif (positif atau negatif) melalui penetapan nilai ambang batas.
+			<br><br>
+			Terdapat dua kurva populasi: <strong>Hijau</strong> (tak sakit) dan <strong>Merah</strong> (sakit). Geser <i>slider</i> untuk mengubah posisi nilai <i>cut-off</i> ke kiri atau ke kanan, lalu perhatikan perubahan angka sensitivitas dan spesifisitas. Area arsiran di sebelah kanan garis biru mewakili hewan yang didiagnosis <strong>"Positif"</strong>, sedangkan area di sebelah kiri didiagnosis <strong>"Negatif"</strong>.
+        </p>
+        
+        <div class="chart-container">
+            <svg viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet">
+                <line x1="100" y1="300" x2="700" y2="300" class="axis" />
+                <text x="400" y="335" class="axis-label" style="font-size:12px; font-weight:600;">Skala hasil pengujian (kuantitatif)</text>
+                
+                <clipPath id="clipHealthy"><path d="" id="healthyPathClip"/></clipPath>
+                <clipPath id="clipDiseased"><path d="" id="diseasedPathClip"/></clipPath>
+                
+                <rect x="0" y="0" width="800" height="300" id="tp-shade" clip-path="url(#clipDiseased)" class="shading" />
+                <rect x="0" y="0" width="800" height="300" id="fp-shade" clip-path="url(#clipHealthy)" class="shading" />
+
+                <path d="" class="curve curve-healthy" id="curveHealthy"/>
+                <path d="" class="curve curve-diseased" id="curveDiseased"/>
+
+                <line x1="400" y1="50" x2="400" y2="300" id="cutoff-line" class="shading"/>
+                
+                <text x="250" y="80" class="curve-healthy" style="font-size:12px; font-weight:700;">Populasi Tak Sakit (D-)</text>
+                <text x="550" y="80" class="curve-diseased" style="font-size:12px; font-weight:700;">Populasi Sakit (D+)</text>
+            </svg>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider-header">
+                <label for="slideCutoff">
+                    Ambang batas diagnosis (0–100)
+                    <span class="info-icon" onclick="toggleInfo('infoAsumsi')" title="Klik untuk melihat asumsi statistik">i</span>
+                </label>
+                <span class="cutoff-val" id="valCutoff">50.0</span>
+            </div>
+            
+            <div class="info-expanded" id="infoAsumsi" style="margin-bottom: 1rem; width: 100%;">
+                <strong>Asumsi pemodelan kurva:</strong><br>
+                Simulasi ini menggunakan distribusi normal dengan rentang nilai uji 0&ndash;100.
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                    <li><strong>Populasi tak sakit (hijau):</strong> Nilai rata-rata (μ) = 35, deviasi standar (σ) = 10</li>
+                    <li><strong>Populasi sakit (merah):</strong> Nilai rata-rata (μ) = 65, deviasi standar (σ) = 10</li>
+                </ul>
+                Titik <strong>50,0</strong> persis berada di tengah keduanya (berjarak 1,5 kali standar deviasi dari masing-masing rata-rata). Sesuai kaidah probabilitas kurva normal, luas area yang mencakup 1,5 standar deviasi dari titik tengah ekuilibrium adalah <strong>93,32%</strong>. Itulah mengapa sensitivitas dan spesifisitas berimbang di angka tersebut.
+            </div>
+
+            <input type="range" id="slideCutoff" min="0" max="100" step="0.5" value="50">
+        </div>
+    </div>
+
+    <div class="dashboard-panel">
+        <div class="metric-card">
+            <h2>Kemampuan untuk mendeteksi hewan sakit</h2>
+            <div class="result-box">
+                <div class="result-label">
+                    <span>Sensitivitas</span>
+                    <span class="info-icon" onclick="toggleInfo('infoSe')" title="Klik untuk interpretasi">i</span>
+                </div>
+                <div class="result-value" id="resSe">--%</div>
+                <div class="info-expanded" id="infoSe">--</div>
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <h2>Kemampuan untuk mendeteksi hewan tak sakit</h2>
+            <div class="result-box">
+                <div class="result-label">
+                    <span>Spesifisitas</span>
+                    <span class="info-icon" onclick="toggleInfo('infoSp')" title="Klik untuk interpretasi">i</span>
+                </div>
+                <div class="result-value" id="resSp">--%</div>
+                <div class="info-expanded" id="infoSp">--</div>
+            </div>
+        </div>
+        
+        <div class="metric-card recommendation-card">
+            <h2>Rekomendasi Kebijakan</h2>
+            <div class="recommendation-box">
+                <p id="recommendationText">--</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Elements: Inputs
+    const slideCutoff = document.getElementById('slideCutoff');
+    
+    // Elements: Labels
+    const valCutoff = document.getElementById('valCutoff');
+
+    // Elements: SVG Visuals
+    const curveHealthy = document.getElementById('curveHealthy');
+    const curveDiseased = document.getElementById('curveDiseased');
+    const cutoffLine = document.getElementById('cutoff-line');
+    const tpShade = document.getElementById('tp-shade');
+    const fpShade = document.getElementById('fp-shade');
+    const healthyPathClip = document.getElementById('healthyPathClip');
+    const diseasedPathClip = document.getElementById('diseasedPathClip');
+
+    // Elements: Dashboard
+    const resSe = document.getElementById('resSe'),
+          resSp = document.getElementById('resSp'),
+          recommendationText = document.getElementById('recommendationText');
+          
+    const infoSe = document.getElementById('infoSe'),
+          infoSp = document.getElementById('infoSp');
+
+    // Konfigurasi Kurva (Mean, Standard Deviation)
+    const meanHealthy = 35; 
+    const sdHealthy = 10;
+    const meanDiseased = 65; 
+    const sdDiseased = 10;
+    
+    const svgWidth = 800;
+    const svgHeight = 300; 
+    const scaleFactor = 6; 
+
+    function toggleInfo(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('show');
+    }
+
+    // Fungsi ERF (Error Function) buatan manual untuk probabilitas
+    function erf(x) {
+        const sign = (x >= 0) ? 1 : -1;
+        x = Math.abs(x);
+        
+        const a1 =  0.254829592;
+        const a2 = -0.284496736;
+        const a3 =  1.421413741;
+        const a4 = -1.453152027;
+        const a5 =  1.061405429;
+        const p  =  0.3275911;
+
+        const t = 1.0 / (1.0 + p * x);
+        const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+        return sign * y;
+    }
+
+    // Fungsi Statistik: Cumulative Distribution Function (CDF) Normal
+    function cdfNormal(x, mean, sd) {
+        return (1.0 + erf((x - mean) / (sd * Math.sqrt(2.0)))) / 2.0;
+    }
+
+    function calculateTradeoff() {
+        const cutoff = parseFloat(slideCutoff.value);
+        valCutoff.textContent = cutoff.toFixed(1);
+
+        // Kalkulasi Epidemiologi berdasarkan area kurva
+        const areaLeftDiseased = cdfNormal(cutoff, meanDiseased, sdDiseased);
+        const sensitivity = (1.0 - areaLeftDiseased);
+
+        const specificity = cdfNormal(cutoff, meanHealthy, sdHealthy);
+
+        // Tampilkan Angka di Dashboard
+        resSe.textContent = (sensitivity * 100).toFixed(1) + '%';
+        resSp.textContent = (specificity * 100).toFixed(1) + '%';
+        
+        // Suntikkan Teks Interpretasi Dinamis
+        infoSe.innerHTML = `Ambang batas ini berhasil mendeteksi <strong>${(sensitivity * 100).toFixed(1)}%</strong> hewan yang sakit (positif sejati). Namun, masih ada risiko <strong>${((1 - sensitivity) * 100).toFixed(1)}%</strong> hewan sakit yang lolos karena hasil tesnya negatif (negatif palsu).`;
+        
+        infoSp.innerHTML = `Ambang batas ini berhasil mengenali <strong>${(specificity * 100).toFixed(1)}%</strong> hewan yang tidak sakit dengan tepat (negatif sejati). Namun, ada peluang sebesar <strong>${((1 - specificity) * 100).toFixed(1)}%</strong> hewan tak sakit yang keliru dituduh sakit (positif palsu).`;
+
+        // Update Rekomendasi berdasarkan posisi cutoff
+        let reco = "";
+        if (sensitivity > 0.95 && specificity < 0.60) {
+            reco = "Ambang batas telah diturunkan. Keputusan ini sesuai untuk uji penapisan penyakit menular yang sangat berbahaya, ketika satu kasus yang terlewat (negatif palsu) bisa memicu wabah yang luas.";
+        } else if (specificity > 0.95 && sensitivity < 0.60) {
+            reco = "Ambang batas telah dinaikkan. Keputusan ini sesuai jika kita akan mengambil tindakan medis yang berisiko atau berdampak ekonomi yang tinggi (seperti pemusnahan hewan), untuk memastikan hewan yang didiagnosis positif memang benar-benar sakit (minim positif palsu).";
+        } else {
+            reco = "Ambang batas berada pada area ekuilibrium (seimbang). Kondisi ini paling ideal jika kerugian akibat hewan yang tak terdeteksi dianggap setara dengan kerugian akibat hewan yang salah tuduh.";
+        }
+        recommendationText.innerHTML = reco;
+
+        // --- Perbarui Visualisasi SVG (Dinamis) ---
+        const svgX = 100 + (cutoff * scaleFactor);
+        cutoffLine.setAttribute('x1', svgX);
+        cutoffLine.setAttribute('x2', svgX);
+        
+        tpShade.setAttribute('x', svgX);
+        tpShade.setAttribute('width', (700 - svgX));
+        fpShade.setAttribute('x', svgX);
+        fpShade.setAttribute('width', (700 - svgX));
+    }
+
+    // Fungsi untuk menggambar kurva
+    function generateCurvePath(mean, sd) {
+        let points = "M"; 
+        for (let x_val = 0; x_val <= 100; x_val += 0.5) {
+            const x_svg = 100 + (x_val * scaleFactor);
+            const y_val = (1.0 / (sd * Math.sqrt(2.0 * Math.PI))) * Math.exp(-0.5 * Math.pow((x_val - mean) / sd, 2.0));
+            const y_svg = 300 - (y_val * 6000); 
+            points += `${x_svg},${y_svg} `;
+        }
+        return points;
+    }
+
+    function generateFullShapePath(mean, sd) {
+        let points = generateCurvePath(mean, sd);
+        points += `L700,300 L100,300 Z`; 
+        return points;
+    }
+
+    // Inisialisasi Visual 
+    curveHealthy.setAttribute('d', generateCurvePath(meanHealthy, sdHealthy));
+    curveDiseased.setAttribute('d', generateCurvePath(meanDiseased, sdDiseased));
+    healthyPathClip.setAttribute('d', generateFullShapePath(meanHealthy, sdHealthy));
+    diseasedPathClip.setAttribute('d', generateFullShapePath(meanDiseased, sdDiseased));
+
+    // Listeners
+    slideCutoff.addEventListener('input', calculateTradeoff);
+
+    // Inisialisasi awal kalkulasi
+    calculateTradeoff();
+</script>
+</body>
+</html>
