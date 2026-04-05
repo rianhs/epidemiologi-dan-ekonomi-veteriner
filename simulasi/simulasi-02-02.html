@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Penularan dalam Populasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+
+        /* Apple-style Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #D1D5DB;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
+        }
+        input[type=range]::-webkit-slider-thumb:active {
+            transform: scale(1.1);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        /* Marker Animasi untuk HIT */
+        .hit-marker-line {
+            transition: left 0.4s ease;
+        }
+        .hit-fill-bar {
+            transition: width 0.4s ease, background-color 0.4s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <header class="bg-white border-b border-gray-100 px-6 py-4 sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h1 class="text-xl font-semibold tracking-tight">Simulasi Penularan dalam Populasi</h1>
+                <p class="text-sm text-gray-500 mt-1">Interaksi antara angka reproduksi (R₀ & Rₑ) dan kekebalan kelompok</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="resetSim()" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full">
+                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reset
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full p-6 flex flex-col lg:flex-row gap-8">
+        
+        <div class="w-full lg:w-[40%] flex flex-col gap-6 h-[calc(100vh-120px)] overflow-y-auto pr-2 pb-10">
+            
+            <div class="glass-panel rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                        <i data-lucide="activity" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-semibold">Angka Reproduksi Dasar (R₀)</h2>
+                </div>
+                <p class="text-xs text-gray-500 mb-6 ml-11">R₀ terbentuk dari interaksi antara inang, agen, dan lingkungan pada populasi yang rentan. Di bawah ini adalah tiga komponen yang menentukan R₀. Atur setiap slider untuk mengubah R₀.</p>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center text-sm mb-2">
+                            <span class="font-medium text-gray-700">Jumlah kontak harian per individu</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 font-semibold rounded-md text-xs" id="val-kontak">10 ekor</span>
+                        </div>
+                        <input type="range" id="input-kontak" min="1" max="100" value="10" step="1" oninput="updateSim()">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center text-sm mb-2">
+                            <span class="font-medium text-gray-700">Peluang penularan per kontak</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 font-semibold rounded-md text-xs" id="val-peluang">15%</span>
+                        </div>
+                        <input type="range" id="input-peluang" min="1" max="100" value="15" step="1" oninput="updateSim()">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center text-sm mb-2">
+                            <span class="font-medium text-gray-700">Durasi masa infeksius</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 font-semibold rounded-md text-xs" id="val-durasi">3 hari</span>
+                        </div>
+                        <input type="range" id="input-durasi" min="1" max="30" value="3" step="1" oninput="updateSim()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-semibold">Status Kekebalan Populasi</h2>
+                </div>
+                <p class="text-xs text-gray-500 mb-6 ml-11">Penularan aktual pada populasi dipengaruhi oleh seberapa banyak individu yang kebal (baik akibat kekebalan alami maupun kekebalan buatan seperti vaksinasi) dan seberapa banyak individu yang masih rentan. Atur proporsi populasi yang kebal (S) dengan slider di bawah ini. Pengaturan ini menentukan angka reproduksi efektif (Rₑ).</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center text-sm mb-2">
+                            <span class="font-medium text-gray-700">Proporsi populasi yang sudah kebal</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 font-semibold rounded-md text-xs" id="val-kebal">20%</span>
+                        </div>
+                        <input type="range" id="input-kebal" min="0" max="100" value="20" step="1" oninput="updateSim()">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="w-full lg:w-[60%] flex flex-col gap-6">
+            
+            <div class="glass-panel rounded-3xl p-6 lg:p-8 flex flex-col flex-1">
+                <div class="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4">
+                    <div class="p-2 bg-purple-50 text-purple-600 rounded-lg">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">Hasil Analisis Dinamika Penyakit</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div id="metric-r0" class="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100 transition-colors duration-300">
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">Potensi Penularan (R₀)</h3>
+                        <div class="text-4xl font-bold text-gray-800 mb-1" id="display-r0">0.0</div>
+                        <div class="text-xs text-gray-400">Tanpa intervensi</div>
+                    </div>
+                    <div id="metric-re" class="bg-gray-50 rounded-2xl p-5 text-center border border-gray-100 transition-colors duration-300">
+                        <h3 class="text-sm font-medium text-gray-500 mb-1">Penularan Aktual (Rₑ)</h3>
+                        <div class="text-4xl font-bold mb-1" id="display-re">0.0</div>
+                        <div class="text-xs font-medium" id="status-re">Evaluasi...</div>
+                    </div>
+                </div>
+
+                <div class="relative w-full h-[250px] mb-8">
+                    <canvas id="reproductionChart"></canvas>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 mt-auto">
+                    <h3 class="text-sm font-semibold text-gray-800 mb-3">Status Kekebalan Kelompok (Herd Immunity)</h3>
+                    
+                    <div class="flex justify-between text-xs text-gray-500 font-medium mb-1">
+                        <span>0%</span>
+                        <span id="hit-target-text" class="text-red-500">Ambang: 0%</span>
+                        <span>100%</span>
+                    </div>
+                    
+                    <div class="relative h-3 bg-gray-200 rounded-full my-2 overflow-hidden">
+                        <div id="hit-fill" class="hit-fill-bar absolute top-0 left-0 h-full bg-emerald-500 rounded-full w-0"></div>
+                        <div id="hit-marker" class="hit-marker-line absolute top-0 bottom-0 w-1 bg-red-500 z-10" style="left: 0%;"></div>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <span id="hit-status" class="text-sm font-medium">Kalkulasi status...</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+
+        let myChart;
+
+        function initChart() {
+            const ctx = document.getElementById('reproductionChart').getContext('2d');
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Angka Reproduksi Dasar (R₀)', 'Angka Reproduksi Efektif (Rₑ)'],
+                    datasets: [{
+                        label: 'Nilai Reproduksi',
+                        data: [0, 0],
+                        backgroundColor: ['#3B82F6', '#EF4444'], // Blue 500, Red 500
+                        borderRadius: 8,
+                        barPercentage: 0.5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: (context) => {
+                                    if (context.tick.value === 1) {
+                                        return 'rgba(239, 68, 68, 0.5)'; // Garis merah batas aman
+                                    }
+                                    return 'rgba(229, 231, 235, 1)'; // Gray 200
+                                },
+                                lineWidth: (context) => {
+                                    return context.tick.value === 1 ? 2 : 1;
+                                }
+                            },
+                            ticks: {
+                                font: {
+                                    family: "'Inter', sans-serif"
+                                }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                font: {
+                                    family: "'Inter', sans-serif",
+                                    weight: '500'
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateSim() {
+            // 1. Ambil nilai dari slider
+            const kontak = parseFloat(document.getElementById('input-kontak').value);
+            const peluang = parseFloat(document.getElementById('input-peluang').value);
+            const durasi = parseFloat(document.getElementById('input-durasi').value);
+            const kebal = parseFloat(document.getElementById('input-kebal').value);
+
+            // 2. Perbarui label teks slider
+            document.getElementById('val-kontak').innerText = kontak + " ekor";
+            document.getElementById('val-peluang').innerText = peluang + "%";
+            document.getElementById('val-durasi').innerText = durasi + " hari";
+            document.getElementById('val-kebal').innerText = kebal + "%";
+
+            // 3. Kalkulasi Matematis
+            const r0 = kontak * (peluang / 100) * durasi;
+            const proporsiRentan = 1 - (kebal / 100);
+            const re = r0 * proporsiRentan;
+
+            let hit = 0;
+            if (r0 > 1) {
+                hit = (1 - (1 / r0)) * 100;
+            }
+
+            // 4. Perbarui Tampilan Angka
+            document.getElementById('display-r0').innerText = r0.toFixed(2);
+            document.getElementById('display-re').innerText = re.toFixed(2);
+
+            // Styling kotak metrik Re
+            const metricRe = document.getElementById('metric-re');
+            const statusRe = document.getElementById('status-re');
+            const displayRe = document.getElementById('display-re');
+
+            if (re >= 1) {
+                metricRe.className = 'bg-red-50 rounded-2xl p-5 text-center border border-red-100 transition-colors duration-300';
+                displayRe.className = 'text-4xl font-bold text-red-600 mb-1';
+                statusRe.className = 'text-xs font-medium text-red-500';
+                statusRe.innerText = 'Penyakit akan terus menyebar';
+                myChart.data.datasets[0].backgroundColor[1] = '#EF4444'; // Red 500
+            } else {
+                metricRe.className = 'bg-emerald-50 rounded-2xl p-5 text-center border border-emerald-100 transition-colors duration-300';
+                displayRe.className = 'text-4xl font-bold text-emerald-600 mb-1';
+                statusRe.className = 'text-xs font-medium text-emerald-500';
+                statusRe.innerText = 'Penularan mereda (terkendali)';
+                myChart.data.datasets[0].backgroundColor[1] = '#10B981'; // Emerald 500
+            }
+
+            // 5. Perbarui Grafik Bar Chart
+            myChart.data.datasets[0].data = [r0.toFixed(2), re.toFixed(2)];
+            myChart.update();
+
+            // 6. Perbarui Visualisasi Herd Immunity
+            document.getElementById('hit-target-text').innerText = 'Ambang (HIT): ' + hit.toFixed(1) + '%';
+            
+            const hitMarker = document.getElementById('hit-marker');
+            const hitFill = document.getElementById('hit-fill');
+            const hitStatus = document.getElementById('hit-status');
+
+            hitMarker.style.left = hit + '%';
+            hitFill.style.width = kebal + '%';
+
+            if (r0 <= 1) {
+                hitStatus.innerText = "R₀ ≤ 1. Penyakit tidak memicu wabah secara mandiri.";
+                hitStatus.className = "text-sm font-semibold text-emerald-600";
+                hitMarker.style.display = 'none';
+                hitFill.className = "hit-fill-bar absolute top-0 left-0 h-full bg-emerald-500 rounded-full";
+            } else {
+                hitMarker.style.display = 'block';
+                if (kebal >= hit) {
+                    hitStatus.innerText = "Aman: Kekebalan kelompok telah terbentuk karena ambangnya (HIT) terlampaui.";
+                    hitStatus.className = "text-sm font-semibold text-emerald-600";
+                    hitFill.className = "hit-fill-bar absolute top-0 left-0 h-full bg-emerald-500 rounded-full";
+                } else {
+                    hitStatus.innerText = "Bahaya: Untuk membentuk kekebalan kelompok, kita perlu mengebalkan " + (hit - kebal).toFixed(1) + "% populasi lagi.";
+                    hitStatus.className = "text-sm font-semibold text-red-600";
+                    hitFill.className = "hit-fill-bar absolute top-0 left-0 h-full bg-yellow-400 rounded-full";
+                }
+            }
+        }
+
+        function resetSim() {
+            document.getElementById('input-kontak').value = 10;
+            document.getElementById('input-peluang').value = 15;
+            document.getElementById('input-durasi').value = 3;
+            document.getElementById('input-kebal').value = 20;
+            updateSim();
+        }
+
+        // Inisialisasi grafik dan nilai awal saat halaman dimuat
+        window.onload = function() {
+            initChart();
+            updateSim();
+        };
+    </script>
+</body>
+</html>
