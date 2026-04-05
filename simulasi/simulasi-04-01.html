@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Validitas Uji Diagnostik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --accent-hover: #0077ed;
+            --border: #d2d2d7;
+            --cell-readonly: #f0f0f2;
+            --positive: rgba(52, 199, 89, 0.15);
+            --negative: rgba(255, 59, 48, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            text-align: center;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+
+        /* Controls / Sliders */
+        .control-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .control-val {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent);
+            cursor: pointer;
+            height: 6px;
+            border-radius: 4px;
+        }
+
+        /* Table 2x2 with Totals */
+        .table-grid {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .th, .td, .td-readonly {
+            padding: 0.8rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .th {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .td input {
+            width: 100%;
+            height: 100%;
+            border: 1.5px solid transparent;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            padding: 0.6rem;
+            outline: none;
+            background-color: rgba(255,255,255,0.7);
+            transition: all 0.2s ease;
+            color: var(--text-main);
+        }
+
+        .td input:focus {
+            border-color: var(--accent);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+        }
+
+        .cell-a { background-color: var(--positive); }
+        .cell-b { background-color: var(--negative); }
+        .cell-c { background-color: var(--negative); }
+        .cell-d { background-color: var(--positive); }
+
+        .td-readonly {
+            background-color: var(--cell-readonly);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .total-n {
+            background-color: #e5e5ea;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        /* Keterangan / Legend */
+        .legend {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #f9f9fb;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #ececec;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .legend span {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Results */
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        .result-box {
+            background-color: #f9f9fb;
+            padding: 1.2rem;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+        }
+
+        /* Info Icon & Expanded Text CSS */
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background-color: #a0c4ff;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: sans-serif;
+            cursor: pointer;
+            margin-left: 6px;
+            transition: background-color 0.2s;
+			text-transform: none;
+        }
+
+        .info-icon:hover {
+            background-color: var(--accent);
+        }
+
+        .info-expanded {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #ffffff;
+            border-radius: 8px;
+            line-height: 1.5;
+            text-align: left;
+            text-transform: none;
+            letter-spacing: normal;
+
+            /* Kondisi Awal (Disembunyikan) */
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            padding: 0 0.8rem; /* Horizontal 0.8rem, Vertikal 0 */
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .info-expanded strong {
+            color: var(--text-main);
+        }
+
+        .info-expanded.show {
+            /* Kondisi Terbuka (Ditampilkan) */
+            max-height: 300px; /* Cukup tinggi untuk menampung teks */
+            opacity: 1;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border: 1px solid #e5e5ea;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .card { padding: 1.5rem; border-radius: 16px; }
+            .main-title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+            .table-grid { gap: 4px; }
+            .th, .td, .td-readonly { padding: 0.4rem; border-radius: 6px; }
+            .th { font-size: 0.8rem; }
+            .td input { font-size: 1.1rem; padding: 0.3rem; }
+            .td-readonly { font-size: 1rem; }
+            .legend { grid-template-columns: 1fr; padding: 0.8rem; }
+            .result-value { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <h1 class="main-title">Perhitungan Validitas Uji Diagnostik</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Parameter Uji & Populasi</h2>
+            
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideN">Total populasi (N)</label>
+                    <span class="control-val" id="valN">1000</span>
+                </div>
+                <input type="range" id="slideN" min="10" max="10000" step="10" value="1000">
+            </div>
+
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slidePrev">Prevalensi penyakit</label>
+                    <span class="control-val" id="valPrev">20%</span>
+                </div>
+                <input type="range" id="slidePrev" min="0" max="100" step="1" value="20">
+            </div>
+
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSe">Sensitivitas (Se)</label>
+                    <span class="control-val" id="valSe">95%</span>
+                </div>
+                <input type="range" id="slideSe" min="0" max="100" step="1" value="95">
+            </div>
+
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSp">Spesifisitas (Sp)</label>
+                    <span class="control-val" id="valSp">95%</span>
+                </div>
+                <input type="range" id="slideSp" min="0" max="100" step="1" value="95">
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Tabel Kontingensi 2×2</h2>
+            
+            <div class="table-grid">
+                <div></div>
+                <div class="th" title="Berpenyakit">D+</div>
+                <div class="th" title="Tak Berpenyakit">D-</div>
+                <div class="th">Total</div>
+
+                <div class="th" title="Uji Positif">T+</div>
+                <div class="td cell-a">
+                    <input type="number" id="cellA" min="0" title="Positif Sejati (a)">
+                </div>
+                <div class="td cell-b">
+                    <input type="number" id="cellB" min="0" title="Positif Palsu (b)">
+                </div>
+                <div class="td-readonly" id="totTPlus">0</div>
+
+                <div class="th" title="Uji Negatif">T-</div>
+                <div class="td cell-c">
+                    <input type="number" id="cellC" min="0" title="Negatif Palsu (c)">
+                </div>
+                <div class="td cell-d">
+                    <input type="number" id="cellD" min="0" title="Negatif Sejati (d)">
+                </div>
+                <div class="td-readonly" id="totTMinus">0</div>
+
+                <div class="th">Total</div>
+                <div class="td-readonly" id="totDPlus">0</div>
+                <div class="td-readonly" id="totDMinus">0</div>
+                <div class="td-readonly total-n" id="totN">0</div>
+            </div>
+
+            <div class="legend">
+                <div><span>D+</span> = jumlah hewan berpenyakit</div>
+                <div><span>D-</span> = jumlah hewan tanpa penyakit</div>
+                <div><span>T+</span> = jumlah hasil uji positif</div>
+                <div><span>T-</span> = jumlah hasil uji negatif</div>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-box">
+                    <div class="result-label">
+                        Sensitivitas
+                        <span class="info-icon" onclick="toggleInfo('infoSe')" title="Klik untuk interpretasi">i</span>
+                    </div>
+                    <div class="result-value" id="resSe">--%</div>
+                    <div class="info-expanded" id="infoSe">--</div>
+                </div>
+                
+                <div class="result-box">
+                    <div class="result-label">
+                        Spesifisitas
+                        <span class="info-icon" onclick="toggleInfo('infoSp')" title="Klik untuk interpretasi">i</span>
+                    </div>
+                    <div class="result-value" id="resSp">--%</div>
+                    <div class="info-expanded" id="infoSp">--</div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">
+                        Nilai Prediktif Positif
+                        <span class="info-icon" onclick="toggleInfo('infoNPP')" title="Klik untuk interpretasi">i</span>
+                    </div>
+                    <div class="result-value" id="resNPP">--%</div>
+                    <div class="info-expanded" id="infoNPP">--</div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">
+                        Nilai Prediktif Negatif
+                        <span class="info-icon" onclick="toggleInfo('infoNPN')" title="Klik untuk interpretasi">i</span>
+                    </div>
+                    <div class="result-value" id="resNPN">--%</div>
+                    <div class="info-expanded" id="infoNPN">--</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Slider
+    const slideN = document.getElementById('slideN'),
+          slidePrev = document.getElementById('slidePrev'),
+          slideSe = document.getElementById('slideSe'),
+          slideSp = document.getElementById('slideSp');
+    
+    // Label Slider
+    const valN = document.getElementById('valN'),
+          valPrev = document.getElementById('valPrev'),
+          valSe = document.getElementById('valSe'),
+          valSp = document.getElementById('valSp');
+
+    // Input Tabel
+    const cellA = document.getElementById('cellA'),
+          cellB = document.getElementById('cellB'),
+          cellC = document.getElementById('cellC'),
+          cellD = document.getElementById('cellD');
+
+    // Total Read-only
+    const totTPlus = document.getElementById('totTPlus'),
+          totTMinus = document.getElementById('totTMinus'),
+          totDPlus = document.getElementById('totDPlus'),
+          totDMinus = document.getElementById('totDMinus'),
+          totN = document.getElementById('totN');
+
+    // Hasil Output
+    const resSe = document.getElementById('resSe'),
+          resSp = document.getElementById('resSp'),
+          resNPP = document.getElementById('resNPP'),
+          resNPN = document.getElementById('resNPN');
+
+    // Panel Info Expanded
+    const infoSe = document.getElementById('infoSe'),
+          infoSp = document.getElementById('infoSp'),
+          infoNPP = document.getElementById('infoNPP'),
+          infoNPN = document.getElementById('infoNPN');
+
+    let isUpdating = false;
+
+    // Fungsi Toggle Info
+    function toggleInfo(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('show');
+    }
+
+    // Perbarui tabel saat slider digeser
+    function updateFromSliders() {
+        if (isUpdating) return;
+        isUpdating = true;
+
+        const N = parseInt(slideN.value);
+        const prev = parseInt(slidePrev.value) / 100;
+        const se = parseInt(slideSe.value) / 100;
+        const sp = parseInt(slideSp.value) / 100;
+
+        valN.textContent = N.toLocaleString('id-ID');
+        valPrev.textContent = slidePrev.value + '%';
+        valSe.textContent = slideSe.value + '%';
+        valSp.textContent = slideSp.value + '%';
+
+        const D_plus = N * prev;
+        const D_minus = N - D_plus;
+
+        const a = Math.round(D_plus * se);
+        const c = Math.round(D_plus - a);
+        const d = Math.round(D_minus * sp);
+        const b = Math.round(D_minus - d);
+
+        cellA.value = a;
+        cellB.value = b;
+        cellC.value = c;
+        cellD.value = d;
+
+        updateCalculations(a, b, c, d);
+        isUpdating = false;
+    }
+
+    // Perbarui slider saat tabel diketik
+    function updateFromTable() {
+        if (isUpdating) return;
+        isUpdating = true;
+
+        const a = parseInt(cellA.value) || 0;
+        const b = parseInt(cellB.value) || 0;
+        const c = parseInt(cellC.value) || 0;
+        const d = parseInt(cellD.value) || 0;
+
+        const N = a + b + c + d;
+        const D_plus = a + c;
+        const D_minus = b + d;
+
+        const prev = N > 0 ? (D_plus / N) * 100 : 0;
+        const se = D_plus > 0 ? (a / D_plus) * 100 : 0;
+        const sp = D_minus > 0 ? (d / D_minus) * 100 : 0;
+
+        slideN.value = N;
+        slidePrev.value = Math.round(prev);
+        slideSe.value = Math.round(se);
+        slideSp.value = Math.round(sp);
+
+        valN.textContent = N.toLocaleString('id-ID');
+        valPrev.textContent = Math.round(prev) + '%';
+        valSe.textContent = Math.round(se) + '%';
+        valSp.textContent = Math.round(sp) + '%';
+
+        updateCalculations(a, b, c, d);
+        isUpdating = false;
+    }
+
+    // Kalkulasi total, persentase & injeksi teks dinamis
+    function updateCalculations(a, b, c, d) {
+        const T_plus = a + b;
+        const T_minus = c + d;
+        const D_plus = a + c;
+        const D_minus = b + d;
+        const N = T_plus + T_minus;
+
+        // Tampilkan Total di tabel
+        totTPlus.textContent = T_plus.toLocaleString('id-ID');
+        totTMinus.textContent = T_minus.toLocaleString('id-ID');
+        totDPlus.textContent = D_plus.toLocaleString('id-ID');
+        totDMinus.textContent = D_minus.toLocaleString('id-ID');
+        totN.textContent = N.toLocaleString('id-ID');
+
+        // Kalkulasi Persentase Aktual
+        const actSe = D_plus > 0 ? (a / D_plus) * 100 : 0;
+        const actSp = D_minus > 0 ? (d / D_minus) * 100 : 0;
+        const npp = T_plus > 0 ? (a / T_plus) * 100 : 0;
+        const npn = T_minus > 0 ? (d / T_minus) * 100 : 0;
+
+        // Tampilkan Angka Besar
+        resSe.textContent = D_plus > 0 ? actSe.toFixed(1) + '%' : '--%';
+        resSp.textContent = D_minus > 0 ? actSp.toFixed(1) + '%' : '--%';
+        resNPP.textContent = T_plus > 0 ? npp.toFixed(1) + '%' : '--%';
+        resNPN.textContent = T_minus > 0 ? npn.toFixed(1) + '%' : '--%';
+
+        // Suntikkan Teks Interpretasi Dinamis
+        infoSe.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar sakit</strong>, uji ini berhasil mendeteksi sebanyak <strong>${actSe.toFixed(1)}%</strong> di antaranya. Sisanya terlewat dari deteksi (sebagai negatif palsu).`;
+        
+        infoSp.innerHTML = `Artinya, dari seluruh kelompok hewan yang <strong>benar-benar tidak sakit</strong>, uji ini berhasil mengenali sebanyak <strong>${actSp.toFixed(1)}%</strong> di antaranya. Sisanya keliru dituduh sakit (sebagai positif palsu).`;
+        
+        infoNPP.innerHTML = `Artinya, jika hasil ujinya <strong>positif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar sakit</strong> adalah <strong>${npp.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npp).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya tidak sakit).`;
+        
+        infoNPN.innerHTML = `Artinya, jika hasil ujinya <strong>negatif</strong>, tingkat keyakinan bahwa hewan tersebut <strong>benar-benar tidak sakit</strong> adalah <strong>${npn.toFixed(1)}%</strong>. (Masih ada peluang sebesar <strong>${(100 - npn).toFixed(1)}%</strong> bahwa hewan tersebut sebenarnya sakit).`;
+    }
+
+    // Listeners
+    [slideN, slidePrev, slideSe, slideSp].forEach(el => el.addEventListener('input', updateFromSliders));
+    [cellA, cellB, cellC, cellD].forEach(el => el.addEventListener('input', updateFromTable));
+
+    // Inisialisasi
+    updateFromSliders();
+</script>
+</body>
+</html>
