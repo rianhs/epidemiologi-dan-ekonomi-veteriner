@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategi Pengujian Ganda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --accent-hover: #0077ed;
+            --border: #d2d2d7;
+            --seri-color: #ff9500; /* Oranye untuk Seri */
+            --paralel-color: #34c759; /* Hijau untuk Paralel */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            text-align: center;
+            letter-spacing: -0.03em;
+        }
+
+        /* Top Panel (Inputs) */
+        .top-panel {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            width: 100%;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+            color: #1d1d1f;
+            border-bottom: 2px solid #f0f0f2;
+            padding-bottom: 0.8rem;
+        }
+
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .control-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .control-val {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--accent);
+            cursor: pointer;
+            height: 6px;
+            border-radius: 4px;
+        }
+
+        /* Bottom Panel (Comparison) */
+        .comparison-panel {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .strategy-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .strategy-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        .result-box {
+            background-color: #f9f9fb;
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .val-seri { color: var(--seri-color); }
+        .val-paralel { color: var(--paralel-color); }
+
+        /* Info Icon & Expanded Text CSS */
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background-color: #a0c4ff;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: sans-serif;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-transform: none;
+        }
+
+        .info-icon:hover { background-color: var(--accent); }
+
+        .info-expanded {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #ffffff;
+            border-radius: 8px;
+            line-height: 1.5;
+            
+            /* Kondisi Awal (Disembunyikan) */
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            padding: 0 1rem; /* Padding vertikal 0 agar rata */
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out; /* Durasi dan gaya animasi */
+        }
+
+        .info-expanded strong { color: var(--text-main); }
+        .info-expanded .math { font-family: monospace; background: #f0f0f2; padding: 2px 6px; border-radius: 4px; color: #1d1d1f; }
+        
+        .info-expanded.show {
+            /* Kondisi Terbuka (Ditampilkan) */
+            max-height: 200px; /* Batas tinggi maksimal saat terbuka */
+            opacity: 1;
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #e5e5ea;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 960px) {
+            .top-panel { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+            .comparison-panel { grid-template-columns: 1fr; }
+            h2 { margin-bottom: 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem 0.5rem; }
+            .strategy-card { padding: 1.5rem; }
+            .main-title { font-size: 1.5rem; }
+            .result-value { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <h1 class="main-title">Strategi Pengujian Ganda</h1>
+
+    <div class="top-panel">
+
+        <div>
+            <h2>Kualitas Uji 1</h2>
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSe1">Sensitivitas (Se 1)</label>
+                    <span class="control-val" id="valSe1">80%</span>
+                </div>
+                <input type="range" id="slideSe1" min="0" max="100" step="1" value="80">
+            </div>
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSp1">Spesifisitas (Sp 1)</label>
+                    <span class="control-val" id="valSp1">70%</span>
+                </div>
+                <input type="range" id="slideSp1" min="0" max="100" step="1" value="70">
+            </div>
+        </div>
+
+        <div>
+            <h2>Kualitas Uji 2</h2>
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSe2">Sensitivitas (Se 2)</label>
+                    <span class="control-val" id="valSe2">90%</span>
+                </div>
+                <input type="range" id="slideSe2" min="0" max="100" step="1" value="90">
+            </div>
+            <div class="control-group">
+                <div class="control-header">
+                    <label for="slideSp2">Spesifisitas (Sp 2)</label>
+                    <span class="control-val" id="valSp2">95%</span>
+                </div>
+                <input type="range" id="slideSp2" min="0" max="100" step="1" value="95">
+            </div>
+        </div>
+    </div>
+
+    <div class="comparison-panel">
+        <div class="strategy-card card-seri">
+            <div class="strategy-title">Pengujian Seri</div>
+            
+            <div class="results-grid">
+                <div class="result-box">
+                    <div class="result-label">
+                        <span>Sensitivitas Gabungan</span>
+                        <span class="info-icon" onclick="toggleInfo('infoSeSeri')" title="Klik untuk detail">i</span>
+                    </div>
+                    <div class="result-value val-seri" id="resSeSeri">--%</div>
+                    <div class="info-expanded" id="infoSeSeri">
+                        Sensitivitas menurun. Hewan dianggap positif hanya jika <strong>uji 1 positif dan uji 2 positif</strong>.<br><br>
+                        <span class="math">Se gabungan = Se1 &times; Se2</span>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">
+                        <span>Spesifisitas Gabungan</span>
+                        <span class="info-icon" onclick="toggleInfo('infoSpSeri')" title="Klik untuk detail">i</span>
+                    </div>
+                    <div class="result-value val-seri" id="resSpSeri">--%</div>
+                    <div class="info-expanded" id="infoSpSeri">
+                        Spesifisitas meningkat. Hewan langsung dianggap negatif jika <strong>salah satu uji negatif</strong> (sangat kuat mencegah salah tuduh).<br><br>
+                        <span class="math">Sp gabungan = Sp1 + Sp2 - (Sp1 &times; Sp2)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="strategy-card card-paralel">
+            <div class="strategy-title">Pengujian Paralel</div>
+            
+            <div class="results-grid">
+                <div class="result-box">
+                    <div class="result-label">
+                        <span>Sensitivitas Gabungan</span>
+                        <span class="info-icon" onclick="toggleInfo('infoSeParalel')" title="Klik untuk detail">i</span>
+                    </div>
+                    <div class="result-value val-paralel" id="resSeParalel">--%</div>
+                    <div class="info-expanded" id="infoSeParalel">
+                        Sensitivitas meningkat. Hewan langsung dianggap positif jika <strong>salah satu uji positif</strong> (sangat kuat mendeteksi hewan sakit).<br><br>
+                        <span class="math">Se gabungan = Se1 + Se2 - (Se1 &times; Se2)</span>
+                    </div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">
+                        <span>Spesifisitas Gabungan</span>
+                        <span class="info-icon" onclick="toggleInfo('infoSpParalel')" title="Klik untuk detail">i</span>
+                    </div>
+                    <div class="result-value val-paralel" id="resSpParalel">--%</div>
+                    <div class="info-expanded" id="infoSpParalel">
+                        Spesifisitas menurun. Hewan dianggap negatif hanya jika <strong>uji 1 negatif dan uji 2 negatif</strong> (risiko positif palsu bertambah).<br><br>
+                        <span class="math">Sp gabungan = Sp1 &times; Sp2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Elements: Inputs
+    const slideSe1 = document.getElementById('slideSe1'),
+          slideSp1 = document.getElementById('slideSp1'),
+          slideSe2 = document.getElementById('slideSe2'),
+          slideSp2 = document.getElementById('slideSp2');
+    
+    // Elements: Labels
+    const valSe1 = document.getElementById('valSe1'),
+          valSp1 = document.getElementById('valSp1'),
+          valSe2 = document.getElementById('valSe2'),
+          valSp2 = document.getElementById('valSp2');
+
+    // Elements: Outputs Seri
+    const resSeSeri = document.getElementById('resSeSeri'),
+          resSpSeri = document.getElementById('resSpSeri');
+
+    // Elements: Outputs Paralel
+    const resSeParalel = document.getElementById('resSeParalel'),
+          resSpParalel = document.getElementById('resSpParalel');
+
+    function toggleInfo(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('show');
+    }
+
+    function calculateMultipleTests() {
+        // Ambil nilai dari slider
+        const se1 = parseInt(slideSe1.value) / 100;
+        const sp1 = parseInt(slideSp1.value) / 100;
+        const se2 = parseInt(slideSe2.value) / 100;
+        const sp2 = parseInt(slideSp2.value) / 100;
+
+        // Update Label
+        valSe1.textContent = slideSe1.value + '%';
+        valSp1.textContent = slideSp1.value + '%';
+        valSe2.textContent = slideSe2.value + '%';
+        valSp2.textContent = slideSp2.value + '%';
+
+        // Kalkulasi Strategi Seri (Logika AND untuk Positif)
+        const netSeSeri = se1 * se2;
+        const netSpSeri = sp1 + sp2 - (sp1 * sp2);
+
+        // Kalkulasi Strategi Paralel (Logika OR untuk Positif)
+        const netSeParalel = se1 + se2 - (se1 * se2);
+        const netSpParalel = sp1 * sp2;
+
+        // Tampilkan Hasil
+        resSeSeri.textContent = (netSeSeri * 100).toFixed(1) + '%';
+        resSpSeri.textContent = (netSpSeri * 100).toFixed(1) + '%';
+        
+        resSeParalel.textContent = (netSeParalel * 100).toFixed(1) + '%';
+        resSpParalel.textContent = (netSpParalel * 100).toFixed(1) + '%';
+    }
+
+    // Event Listeners
+    [slideSe1, slideSp1, slideSe2, slideSp2].forEach(el => {
+        el.addEventListener('input', calculateMultipleTests);
+    });
+
+    // Inisialisasi awal
+    calculateMultipleTests();
+</script>
+</body>
+</html>
