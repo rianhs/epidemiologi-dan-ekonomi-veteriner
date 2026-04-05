@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulasi Pola Kejadian Penyakit: Endemi–Pandemi</title>
+  <style>
+    :root{
+      --bg: #0f172a;          /* solid, gelap */
+      --stroke: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.52);
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+
+      --accent: #7aa7ff;
+      --warn: #ffb020;        /* oranye */
+      --hot:  #ff4d5e;        /* merah */
+      --ok:   #30d38a;        /* hijau (hanya untuk UI kecil) */
+      --gridOff: rgba(255,255,255,.06);
+      --gridLine: rgba(255,255,255,.10);
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap{
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 14px 26px;
+    }
+
+    .topbar{
+      display:flex;
+      gap:12px;
+      align-items:stretch;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+
+    .brand{
+      flex: 1 1 520px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 14px 14px;
+      box-shadow: var(--shadow);
+      min-width: 280px;
+    }
+    .brand h1{
+      margin:0 0 6px 0;
+      font-size: 16px;
+      letter-spacing: .2px;
+      font-weight: 760;
+    }
+    .brand p{
+      margin:0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .status{
+      flex: 0 0 360px;
+      min-width: 280px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .pill{
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      font-size: 12px;
+      color: var(--muted);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      user-select:none;
+      white-space: nowrap;
+    }
+
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display:inline-block;
+      box-shadow: 0 8px 18px rgba(0,0,0,.22);
+      background: var(--accent);
+    }
+
+    .tiny{
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.35;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 980px){
+      .layout{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position: relative;
+    }
+    .panelHeader{
+      padding: 12px 14px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .panelHeader .title{
+      margin:0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .panelHeader .meta{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.35;
+      text-align:right;
+      white-space: nowrap;
+    }
+
+    .panelBody{
+      padding: 14px;
+    }
+
+    .card{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      padding: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Left: chart */
+    .chartWrap{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    canvas{
+      width: 100%;
+      height: 320px;
+      display:block;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+    }
+
+    .legendRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+    }
+    .legend{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .legendItem{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .swatch{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+    }
+    .swatch.warn{ background: var(--warn); }
+    .swatch.hot{ background: var(--hot); }
+
+    /* Right: grid map */
+    .mapWrap{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    .map{
+      display:grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.14);
+      position: relative;
+    }
+    .cell{
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: var(--gridOff);
+      transition: background-color .18s ease, border-color .18s ease, transform .08s ease;
+    }
+    .cell.on1{ background: rgba(255,176,32,.35); border-color: rgba(255,176,32,.35); }
+    .cell.on2{ background: rgba(255,77,94,.35); border-color: rgba(255,77,94,.35); }
+    .cell:active{ transform: scale(.99); }
+	
+	.qLabel{
+		position: absolute;
+		z-index: 5;
+		font-size: 11px;
+		color: rgba(255,255,255,.55);
+		background: rgba(0,0,0,.22);
+		border: 1px solid rgba(255,255,255,.10);
+		border-radius: 999px;
+		padding: 4px 8px;
+		line-height: 1;
+		user-select: none;
+	}
+
+	/* Posisi label: masing-masing di pojok kuadran */
+	.qA{ top: 14px; left: 14px; }
+	.qB{ top: 14px; left: calc(50% + 10px); }
+	.qC{ top: calc(50% + 10px); left: 14px; }
+	.qD{ top: calc(50% + 10px); left: calc(50% + 10px); }
+
+    /* Country borders overlay (2x2 countries, each 3x3 cells) */
+    .countryBorder{
+      position:absolute;
+      pointer-events:none;
+      inset: 10px;
+      border-radius: 12px;
+    }
+    .countryLine{
+      position:absolute;
+      background: rgba(255,255,255,.12);
+    }
+    /* vertical line after col 3 */
+    .vline{
+      top:0; bottom:0;
+      width:2px;
+      left: calc(50% - 1px);
+      border-radius: 999px;
+    }
+    /* horizontal line after row 3 */
+    .hline{
+      left:0; right:0;
+      height:2px;
+      top: calc(50% - 1px);
+      border-radius: 999px;
+    }
+
+    .countryLabels{
+      display:flex;
+      justify-content:space-between;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--muted2);
+      padding: 0 2px;
+    }
+
+    /* Bottom buttons */
+    .bottom{
+      margin-top: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .btnRow{
+      display:grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+    @media (max-width: 980px){
+      .btnRow{ grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 520px){
+      .btnRow{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .modeBtn{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      padding: 11px 10px;
+      border-radius: 14px;
+      font-weight: 760;
+      font-size: 12.5px;
+      cursor:pointer;
+      transition: transform .08s ease, background .18s ease, border-color .18s ease;
+      user-select:none;
+      outline:none;
+    }
+    .modeBtn:hover{ background: rgba(255,255,255,.09); }
+    .modeBtn:active{ transform: scale(.99); }
+    .modeBtn.active{
+      background: rgba(122,167,255,.22);
+      border-color: rgba(122,167,255,.35);
+    }
+
+    .descBox{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      padding: 12px 12px;
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .controlsRow{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .smallBtn{
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.86);
+      padding: 9px 10px;
+      border-radius: 12px;
+      font-weight: 740;
+      font-size: 12px;
+      cursor:pointer;
+      transition: transform .08s ease, background .18s ease;
+      user-select:none;
+      outline:none;
+    }
+    .smallBtn:hover{ background: rgba(255,255,255,.09); }
+    .smallBtn:active{ transform: scale(.99); }
+
+    .progress{
+      color: var(--muted2);
+      font-size: 12px;
+      display:flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .bar{
+      width: 140px;
+      height: 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      overflow:hidden;
+    }
+    .bar > div{
+      height: 100%;
+      width: 0%;
+      background: rgba(122,167,255,.55);
+      transition: width .12s linear;
+    }
+
+    .srOnly{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <h1>Simulasi Pola Kejadian Penyakit</h1>
+        <p>
+          Panel kiri menunjukkan perubahan jumlah kasus terhadap waktu. Panel kanan menunjukkan penyebaran menurut tempat.
+          Pilih salah satu istilah di bawah untuk memulai animasi. Anda dapat mengulang animasi kapan saja.
+        </p>
+      </div>
+
+      <div class="status">
+        <div class="row">
+          <div style="font-weight:760; font-size:13px;">Status</div>
+        </div>
+        <div class="controlsRow">
+          <button class="smallBtn" id="btnReplay">Ulangi animasi</button>
+          <button class="smallBtn" id="btnPause">Jeda</button>
+          <div class="progress">
+            <span id="weekLabel">Minggu 0/52</span>
+            <div class="bar" aria-hidden="true"><div id="barFill"></div></div>
+          </div>
+        </div>
+        <div class="tiny" id="statusHint">
+          Kurva dan grid diperbarui per minggu. Untuk pandemi, perluasan antar “negara” adalah ciri utama.
+        </div>
+      </div>
+    </div>
+
+    <div class="layout">
+      <div class="panel">
+        <div class="panelHeader">
+          <p class="title" id="leftTitle">Persebaran menurut waktu (kurva epidemi)</p>
+          <p class="meta">Sumbu X: Pekan (1–52) &nbsp;|&nbsp; Sumbu Y: Jumlah kasus (0–100)</p>
+        </div>
+        <div class="panelBody">
+          <div class="card chartWrap">
+            <canvas id="chart" width="900" height="420" aria-label="Kurva epidemi"></canvas>
+            <div class="legendRow">
+              <div class="legend">
+                <div class="legendItem"><span class="swatch"></span><span>Kasus per minggu</span></div>
+                <div class="legendItem"><span class="swatch warn"></span><span>Kasus sedang</span></div>
+                <div class="legendItem"><span class="swatch hot"></span><span>Kasus tinggi</span></div>
+              </div>
+              <div class="tiny" id="chartNote">Animasi berjalan saat istilah dipilih.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panelHeader">
+          <p class="title" id="rightTitle">Persebaran menurut tempat</p>
+          <p class="meta">Grid = area dan negara</p>
+        </div>
+        <div class="panelBody">
+          <div class="card mapWrap">
+            <div class="map" id="map" aria-label="Peta grid wilayah">
+              <div class="countryBorder" aria-hidden="true">
+                <div class="countryLine vline"></div>
+                <div class="countryLine hline"></div>
+              </div>
+              <div class="qLabel qA" aria-hidden="true">Negara A</div>
+              <div class="qLabel qB" aria-hidden="true">Negara B</div>
+              <div class="qLabel qC" aria-hidden="true">Negara C</div>
+              <div class="qLabel qD" aria-hidden="true">Negara D</div>
+              <!-- cells injected by JS -->
+            </div>
+            <div class="tiny" id="mapNote">
+              - Kotak abu-abu: tidak ada kasus.<br>- Kotak cokelat: ada kasus.<br>- Kotak merah: ada kasus dengan intensitas tinggi.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="btnRow" role="tablist" aria-label="Pilih istilah">
+        <button class="modeBtn active" id="btnSpor" role="tab" aria-selected="true">Sporadis</button>
+        <button class="modeBtn" id="btnEnd" role="tab" aria-selected="false">Endemi</button>
+        <button class="modeBtn" id="btnHip" role="tab" aria-selected="false">Hiperendemi</button>
+        <button class="modeBtn" id="btnWab" role="tab" aria-selected="false">Wabah</button>
+        <button class="modeBtn" id="btnEpi" role="tab" aria-selected="false">Epidemi</button>
+        <button class="modeBtn" id="btnPan" role="tab" aria-selected="false">Pandemi</button>
+      </div>
+
+      <div class="descBox" id="descBox">
+Sporadis: kasus muncul jarang dan tidak teratur. Biasanya tidak membentuk pola peningkatan yang jelas dan tidak menyebar luas.
+Instruksi: amati kurva yang “putus-putus” dan grid yang hanya sesekali menyala.
+      </div>
+
+      <span class="srOnly" id="srAnnounce"></span>
+    </div>
+  </div>
+
+  <script>
+    // ==========================
+    // Core config
+    // ==========================
+    const WEEKS = 52;
+    const Y_MAX = 100; // konsisten untuk semua istilah
+    const MAP_N = 6;   // 6x6
+    const TOTAL_CELLS = MAP_N * MAP_N;
+
+    const MODES = {
+      SPORADIC: "sporadis",
+      ENDEMIC: "endemi",
+      HYPERENDEMIC: "hiperendemi",
+      OUTBREAK: "wabah",
+      EPIDEMIC: "epidemi",
+      PANDEMIC: "pandemi"
+    };
+
+    const modeDescriptions = {
+      [MODES.SPORADIC]:
+`Sporadis: kasus muncul jarang dan tidak teratur. Biasanya tidak membentuk pola peningkatan yang jelas dan tidak menyebar luas.
+Instruksi: amati kurva yang “putus-putus” dan grid yang hanya sesekali menyala.`,
+      [MODES.ENDEMIC]:
+`Endemi: kejadian penyakit relatif stabil dari waktu ke waktu pada wilayah tertentu.
+Instruksi: amati baseline yang konsisten dan penyebaran yang menetap pada satu “negara”.`,
+      [MODES.HYPERENDEMIC]:
+`Hiperendemi: seperti endemi, namun tingkat kejadian tinggi dan menetap.
+Instruksi: bandingkan dengan endemi: kurva stabil tetapi lebih tinggi, dan wilayah aktif tetap pada satu “negara”.`,
+      [MODES.OUTBREAK]:
+`Wabah: peningkatan kasus mendadak pada wilayah yang terbatas, kemudian menurun kembali.
+Instruksi: cari lonjakan tajam pada kurva dan fokus lokasi yang sangat lokal.`,
+      [MODES.EPIDEMIC]:
+`Epidemi: peningkatan kasus di atas kondisi normal pada populasi yang lebih luas (misalnya skala satu negara/region).
+Instruksi: amati kenaikan yang lebih luas dan wilayah aktif yang mencakup sebagian besar satu “negara”.`,
+      [MODES.PANDEMIC]:
+`Pandemi: epidemi yang meluas lintas negara atau benua.
+Instruksi: perhatikan penyebaran antar “negara” pada panel lokasi. Kurva bisa mirip epidemi, tetapi cakupan tempat jauh lebih luas.`
+    };
+
+    // ==========================
+    // UI elements
+    // ==========================
+    const descBox = document.getElementById("descBox");
+    const srAnnounce = document.getElementById("srAnnounce");
+
+    const btnReplay = document.getElementById("btnReplay");
+    const btnPause = document.getElementById("btnPause");
+
+    const weekLabel = document.getElementById("weekLabel");
+    const barFill = document.getElementById("barFill");
+
+    const chartCanvas = document.getElementById("chart");
+    const ctx = chartCanvas.getContext("2d");
+
+    const mapEl = document.getElementById("map");
+    const modeButtons = {
+      [MODES.SPORADIC]: document.getElementById("btnSpor"),
+      [MODES.ENDEMIC]: document.getElementById("btnEnd"),
+      [MODES.HYPERENDEMIC]: document.getElementById("btnHip"),
+      [MODES.OUTBREAK]: document.getElementById("btnWab"),
+      [MODES.EPIDEMIC]: document.getElementById("btnEpi"),
+      [MODES.PANDEMIC]: document.getElementById("btnPan")
+    };
+
+    // ==========================
+    // Map creation (static DOM)
+    // ==========================
+    const cells = [];
+    function buildMap(){
+      const frag = document.createDocumentFragment();
+      for(let i=0;i<TOTAL_CELLS;i++){
+        const d = document.createElement("div");
+        d.className = "cell";
+        d.setAttribute("data-i", String(i));
+        frag.appendChild(d);
+        cells.push(d);
+      }
+      mapEl.appendChild(frag);
+    }
+    buildMap();
+
+    // Helper: country index (0..3), each is 3x3 block
+    function cellCountry(idx){
+      const r = Math.floor(idx / MAP_N);
+      const c = idx % MAP_N;
+      const top = (r < 3) ? 0 : 1;
+      const left = (c < 3) ? 0 : 1;
+      // 0:A (top-left), 1:B (top-right), 2:C (bottom-left), 3:D (bottom-right)
+      return top * 2 + left;
+    }
+
+    function setAllCellsOff(){
+      for(const el of cells){
+        el.classList.remove("on1","on2");
+      }
+    }
+
+    function setCellLevel(idx, level){
+      const el = cells[idx];
+      el.classList.remove("on1","on2");
+      if(level === 1) el.classList.add("on1");
+      if(level === 2) el.classList.add("on2");
+    }
+
+    // ==========================
+    // Scenario generators
+    // Returns:
+    //   series: Array[WEEKS] of cases (0..100)
+    //   mapState(t): Array[TOTAL_CELLS] levels (0..2) at week t (1-indexed)
+    // ==========================
+    function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+    function makeSeries(mode){
+      const s = new Array(WEEKS).fill(0);
+
+      if(mode === MODES.SPORADIC){
+        // Rare, irregular spikes
+        const spikes = [3, 9, 17, 26, 31, 44, 50];
+        for(let i=0;i<WEEKS;i++){
+          if(spikes.includes(i+1)){
+            s[i] = [6, 10, 7, 12, 8, 9, 11][spikes.indexOf(i+1)];
+          } else {
+            s[i] = 0;
+          }
+        }
+      }
+
+      if(mode === MODES.ENDEMIC){
+        for(let i=0;i<WEEKS;i++){
+          // stable baseline <10 with small drift
+          const wave = Math.sin((i/6)) * 1.5;
+          s[i] = clamp(Math.round(6 + wave), 3, 9);
+        }
+      }
+
+      if(mode === MODES.HYPERENDEMIC){
+        for(let i=0;i<WEEKS;i++){
+          const wave = Math.sin((i/7)) * 3;
+          s[i] = clamp(Math.round(28 + wave), 22, 34);
+        }
+      }
+
+      if(mode === MODES.OUTBREAK){
+        // low baseline then sharp peak then back
+        for(let i=0;i<WEEKS;i++){
+          const t = i + 1;
+		  const baseline = 2;
+          const peak = 73 * Math.exp(-Math.pow((t - 22) / 2.0, 2));
+          const v = baseline + peak;
+          s[i] = clamp(Math.round(v), 0, 100);
+        }
+      }
+
+      if(mode === MODES.EPIDEMIC){
+        // gradual rise, plateau, decline
+        for(let i=0;i<WEEKS;i++){
+          const t = i+1;
+          let v;
+          if(t <= 14){
+			v = 5 + t * 5;
+		  } else if(t <= 30){
+			v = 93 + 2 * Math.sin((t - 14) / 3);
+		  } else {
+			v = 93 - (t - 30) * 3.3;
+		  }
+
+          s[i] = clamp(Math.round(v), 0, 100);
+        }
+      }
+
+      if(mode === MODES.PANDEMIC){
+        // Similar magnitude to epidemic, not necessarily higher
+        for(let i=0;i<WEEKS;i++){
+          const t = i + 1;
+          let v;
+		  
+		  if(t <= 16){
+			v = 4 + t * 5.5;
+		  } else if(t <= 38){
+			v = 100;
+		  } else {
+		    v = 100 - (t - 38) * 2.8;
+		  }
+
+          s[i] = clamp(Math.round(v), 0, 100);
+        }
+      }
+
+      return s;
+    }
+
+    // Choose deterministic sets of cells per country for "local focus"
+    function countryCells(countryIdx){
+      const out = [];
+      for(let i=0;i<TOTAL_CELLS;i++){
+        if(cellCountry(i) === countryIdx) out.push(i);
+      }
+      return out;
+    }
+    const CELLS_A = countryCells(0);
+    const CELLS_B = countryCells(1);
+    const CELLS_C = countryCells(2);
+    const CELLS_D = countryCells(3);
+
+    // Some local hotspots (fixed indices)
+    const HOTSPOT_A = [0,1,6,7];                 // top-left corner-ish
+    const HOTSPOT_B = [3,4,9,10];                // near top middle/right
+    const HOTSPOT_C = [24,25,30,31];             // bottom-left-ish
+    const HOTSPOT_D = [27,28,33,34];             // bottom-right-ish
+
+    function mapStateFactory(mode, series){
+      // t is 1..WEEKS (weeks already simulated)
+      return function(t){
+        const levels = new Array(TOTAL_CELLS).fill(0);
+        const cases = series[t-1] ?? 0;
+
+        // helper to activate a set with given density
+        function activateSet(cellSet, density, level){
+          // deterministic "pseudo-random" selection based on t
+          const pickCount = clamp(Math.round(cellSet.length * density), 0, cellSet.length);
+          for(let k=0;k<pickCount;k++){
+            const idx = cellSet[(k*7 + t*3) % cellSet.length];
+            levels[idx] = Math.max(levels[idx], level);
+          }
+        }
+
+        if(mode === MODES.SPORADIC){
+          // occasional small clusters; mostly off
+          if(cases > 0){
+            // pick one country based on t
+            const bucket = (t % 4);
+            const hotspot = bucket === 0 ? HOTSPOT_A : bucket === 1 ? HOTSPOT_B : bucket === 2 ? HOTSPOT_C : HOTSPOT_D;
+            for(const i of hotspot) levels[i] = 1;
+            // a couple of single cells
+            levels[(t*5) % TOTAL_CELLS] = 1;
+            levels[(t*11) % TOTAL_CELLS] = 1;
+          }
+        }
+
+        if(mode === MODES.ENDEMIC){
+          // one country persistent, low-moderate intensity
+          // choose country A as endemic area
+          const density = 0.55; // about half of the country cells lit
+          activateSet(CELLS_A, density, 1);
+          // small seasonal fluctuation -> occasionally a couple more
+          if(t % 8 === 0){
+            activateSet(CELLS_A, 0.75, 1);
+          }
+        }
+
+        if(mode === MODES.HYPERENDEMIC){
+          // one country persistent, higher intensity
+          activateSet(CELLS_A, 0.75, 1);
+        }
+
+        if(mode === MODES.OUTBREAK){
+          // very local, short-lived, high intensity peak around week 22
+          const peakWindow = (t >= 18 && t <= 28);
+          if(peakWindow){
+            // intensity scales with cases
+            const high = cases >= 60;
+            levels[HOTSPOT_A[0]] = high ? 2 : 1;
+            levels[HOTSPOT_A[1]] = 1;
+          }
+        }
+
+        if(mode === MODES.EPIDEMIC){
+          // proporsi aktivasi berdasarkan tinggi kurva
+          const density = clamp(cases / 100, 0.1, 1);
+          // sel oranye (level 1) meningkat seiring kasus
+          activateSet(CELLS_B, density, 1);
+          // sel merah (level 2) hanya muncul jika kasus cukup tinggi
+          if(cases >= 70){
+			activateSet(CELLS_B, density * 0.5, 2);
+			for(const i of HOTSPOT_B) levels[i] = 2;
+			}
+          }
+
+        if(mode === MODES.PANDEMIC){
+          // starts in one country, then spreads to others
+          const phase1 = t <= 10;   // country C emerging
+          const phase2 = t > 10 && t <= 22; // expands within C, seeds others
+          const phase3 = t > 22 && t <= 36; // multi-country widespread
+          const phase4 = t > 36;   // declines
+
+          function fadeFactor(){
+            if(phase4){
+              return clamp(1 - ((t-36)/16), 0.2, 1);
+            }
+            return 1;
+          }
+          const f = fadeFactor();
+
+          if(phase1){
+            activateSet(CELLS_C, 0.25 + (t/10)*0.35, 1);
+            for(const i of HOTSPOT_C) levels[i] = 1;
+          } else if(phase2){
+            activateSet(CELLS_C, 0.75, 1);
+            activateSet(CELLS_C, 0.25, 2);
+            for(const i of HOTSPOT_C) levels[i] = 2;
+            // seed B and D lightly
+            if(t >= 14){
+              activateSet(CELLS_B, 0.20, 1);
+              activateSet(CELLS_D, 0.18, 1);
+            }
+          } else if(phase3){
+            // widespread across multiple countries
+            activateSet(CELLS_C, 0.95, 1);
+            activateSet(CELLS_C, 0.35, 2);
+
+            activateSet(CELLS_B, 0.85, 1);
+            activateSet(CELLS_B, 0.28, 2);
+
+            activateSet(CELLS_D, 0.80, 1);
+            activateSet(CELLS_D, 0.22, 2);
+
+            // A gets involved too (later)
+            if(t >= 28){
+              activateSet(CELLS_A, 0.55, 1);
+              activateSet(CELLS_A, 0.15, 2);
+            }
+
+            // hotspots
+            for(const i of HOTSPOT_C) levels[i] = 2;
+            for(const i of HOTSPOT_B) levels[i] = 2;
+          } else if(phase4){
+            // fade everywhere proportionally
+            activateSet(CELLS_C, 0.95*f, 1);
+            activateSet(CELLS_C, 0.35*f, 2);
+
+            activateSet(CELLS_B, 0.85*f, 1);
+            activateSet(CELLS_B, 0.28*f, 2);
+
+            activateSet(CELLS_D, 0.80*f, 1);
+            activateSet(CELLS_D, 0.22*f, 2);
+
+            activateSet(CELLS_A, 0.55*f, 1);
+            activateSet(CELLS_A, 0.15*f, 2);
+
+            // keep some residual endemic-like low signal in C
+            if(f <= 0.45){
+              for(const i of HOTSPOT_C) levels[i] = 1;
+            }
+          }
+        }
+
+        return levels;
+      };
+    }
+
+    // ==========================
+    // Chart drawing
+    // ==========================
+    function clearCanvas(){
+      ctx.clearRect(0,0,chartCanvas.width, chartCanvas.height);
+    }
+
+    function drawAxes(){
+      const w = chartCanvas.width;
+      const h = chartCanvas.height;
+
+      // padding
+      const padL = 54, padR = 18, padT = 18, padB = 40;
+
+      // grid lines
+      ctx.save();
+      ctx.strokeStyle = "rgba(255,255,255,.08)";
+      ctx.lineWidth = 1;
+
+      // horizontal grid (0, 25, 50, 75, 100)
+      for(let i=0;i<=4;i++){
+        const y = padT + (h - padT - padB) * (i/4);
+        ctx.beginPath();
+        ctx.moveTo(padL, y);
+        ctx.lineTo(w - padR, y);
+        ctx.stroke();
+      }
+
+      // vertical grid (every 13 weeks)
+      for(let i=0;i<=4;i++){
+        const x = padL + (w - padL - padR) * (i/4);
+        ctx.beginPath();
+        ctx.moveTo(x, padT);
+        ctx.lineTo(x, h - padB);
+        ctx.stroke();
+      }
+
+      // axes
+      ctx.strokeStyle = "rgba(255,255,255,.18)";
+      ctx.lineWidth = 1.2;
+
+      // y axis
+      ctx.beginPath();
+      ctx.moveTo(padL, padT);
+      ctx.lineTo(padL, h - padB);
+      ctx.stroke();
+
+      // x axis
+      ctx.beginPath();
+      ctx.moveTo(padL, h - padB);
+      ctx.lineTo(w - padR, h - padB);
+      ctx.stroke();
+
+      // labels
+      ctx.fillStyle = "rgba(255,255,255,.62)";
+      ctx.font = "12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+
+      const yTicks = [100,75,50,25,0];
+      for(let i=0;i<yTicks.length;i++){
+        const y = padT + (h - padT - padB) * (i/4);
+        ctx.fillText(String(yTicks[i]), padL - 8, y);
+      }
+
+      // x ticks
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      const xTicks = [1,13,26,39,52];
+      for(let i=0;i<xTicks.length;i++){
+        const x = padL + (w - padL - padR) * (i/4);
+        ctx.fillText(String(xTicks[i]), x, h - padB + 8);
+      }
+
+      // axis titles
+      ctx.save();
+      ctx.fillStyle = "rgba(255,255,255,.55)";
+      ctx.font = "12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+
+      // X title
+      ctx.textAlign = "center";
+      ctx.textBaseline = "bottom";
+      ctx.fillText("Minggu", (padL + (w - padR))/2, h - 6);
+
+      // Y title (rotated)
+      ctx.translate(16, (padT + (h - padB))/2);
+      ctx.rotate(-Math.PI/2);
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      ctx.fillText("Kasus per minggu", 0, 0);
+      ctx.restore();
+
+      ctx.restore();
+
+      return { padL, padR, padT, padB };
+    }
+
+    function drawLine(series, uptoWeek){
+      const w = chartCanvas.width;
+      const h = chartCanvas.height;
+      const { padL, padR, padT, padB } = drawAxes();
+
+      const plotW = (w - padL - padR);
+      const plotH = (h - padT - padB);
+
+      function xForWeek(week){
+        return padL + plotW * ((week-1)/(WEEKS-1));
+      }
+      function yForValue(v){
+        return padT + plotH * (1 - (v / Y_MAX));
+      }
+
+      // line
+      ctx.save();
+      ctx.lineWidth = 3;
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+      ctx.strokeStyle = "rgba(122,167,255,.92)";
+      ctx.beginPath();
+
+      for(let i=0;i<uptoWeek;i++){
+        const week = i+1;
+        const v = series[i];
+        const x = xForWeek(week);
+        const y = yForValue(v);
+        if(i === 0) ctx.moveTo(x,y);
+        else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+
+      // draw current point
+      const cw = uptoWeek;
+      const cx = xForWeek(cw);
+      const cv = series[cw-1] ?? 0;
+      const cy = yForValue(cv);
+
+      // point color depends on magnitude (legend semantics)
+      let pColor = "rgba(122,167,255,.95)";
+      if(cv >= 70) pColor = "rgba(255,77,94,.95)";
+      else if(cv >= 35) pColor = "rgba(255,176,32,.95)";
+
+      ctx.fillStyle = pColor;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 6.5, 0, Math.PI*2);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(0,0,0,.35)";
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // value label
+      ctx.fillStyle = "rgba(255,255,255,.78)";
+      ctx.font = "12px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "bottom";
+      ctx.fillText(`${cv} kasus`, cx + 10, cy - 8);
+
+      ctx.restore();
+    }
+
+    // ==========================
+    // Animation engine
+    // ==========================
+    let currentMode = MODES.SPORADIC;
+    let series = makeSeries(currentMode);
+    let mapState = mapStateFactory(currentMode, series);
+
+    let t = 0; // 0..WEEKS
+    let timer = null;
+    let paused = false;
+
+    function updateProgress(){
+      weekLabel.textContent = `Minggu ${t}/${WEEKS}`;
+      barFill.style.width = `${Math.round((t/WEEKS)*100)}%`;
+    }
+
+    function render(){
+      clearCanvas();
+      if(t === 0){
+        drawAxes();
+      } else {
+        drawLine(series, t);
+      }
+
+      // map
+      setAllCellsOff();
+      if(t > 0){
+        const levels = mapState(t);
+        for(let i=0;i<levels.length;i++){
+          const lv = levels[i];
+          if(lv === 1) setCellLevel(i, 1);
+          if(lv === 2) setCellLevel(i, 2);
+        }
+      }
+      updateProgress();
+    }
+
+    function step(){
+      if(paused) return;
+      t += 1;
+      if(t > WEEKS){
+        stop();
+        return;
+      }
+      render();
+    }
+
+    function stop(){
+      if(timer){
+        clearInterval(timer);
+        timer = null;
+      }
+      paused = false;
+      btnPause.textContent = "Jeda";
+      srAnnounce.textContent = "Animasi selesai.";
+    }
+
+    function start(){
+      stop();
+      t = 0;
+      paused = false;
+      btnPause.textContent = "Jeda";
+      render();
+      // tick
+      timer = setInterval(step, 110); // ~5.7s total
+      srAnnounce.textContent = `Memulai animasi: ${labelForMode(currentMode)}.`;
+    }
+
+    function labelForMode(mode){
+      switch(mode){
+        case MODES.SPORADIC: return "Sporadis";
+        case MODES.ENDEMIC: return "Endemi";
+        case MODES.HYPERENDEMIC: return "Hiperendemi";
+        case MODES.OUTBREAK: return "Wabah";
+        case MODES.EPIDEMIC: return "Epidemi";
+        case MODES.PANDEMIC: return "Pandemi";
+        default: return mode;
+      }
+    }
+
+    function setActiveButton(mode){
+      for(const [m, btn] of Object.entries(modeButtons)){
+        const active = (m === mode);
+        btn.classList.toggle("active", active);
+        btn.setAttribute("aria-selected", active ? "true" : "false");
+      }
+    }
+
+    function setMode(mode){
+      currentMode = mode;
+      series = makeSeries(currentMode);
+      mapState = mapStateFactory(currentMode, series);
+      descBox.textContent = modeDescriptions[currentMode] || "";
+      setActiveButton(mode);
+      start();
+    }
+
+    // Pause / replay controls
+    btnReplay.addEventListener("click", () => start());
+
+    btnPause.addEventListener("click", () => {
+      if(!timer) return; // not running
+      paused = !paused;
+      btnPause.textContent = paused ? "Lanjutkan" : "Jeda";
+      srAnnounce.textContent = paused ? "Animasi dijeda." : "Animasi dilanjutkan.";
+    });
+
+    // Button bindings
+    modeButtons[MODES.SPORADIC].addEventListener("click", () => setMode(MODES.SPORADIC));
+    modeButtons[MODES.ENDEMIC].addEventListener("click", () => setMode(MODES.ENDEMIC));
+    modeButtons[MODES.HYPERENDEMIC].addEventListener("click", () => setMode(MODES.HYPERENDEMIC));
+    modeButtons[MODES.OUTBREAK].addEventListener("click", () => setMode(MODES.OUTBREAK));
+    modeButtons[MODES.EPIDEMIC].addEventListener("click", () => setMode(MODES.EPIDEMIC));
+    modeButtons[MODES.PANDEMIC].addEventListener("click", () => setMode(MODES.PANDEMIC));
+
+    // Initial render + start sporadic by default
+    setAllCellsOff();
+    render();
+    start();
+  </script>
+</body>
+</html>
