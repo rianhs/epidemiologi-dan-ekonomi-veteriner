@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Reliabilitas Uji Diagnostik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --border: #d2d2d7;
+            --cell-readonly: #f0f0f2;
+            --agree-color: rgba(52, 199, 89, 0.15);
+            --disagree-color: rgba(255, 59, 48, 0.1);
+            --kappa-color: #5e5ce6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 2.5rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-main);
+            text-align: center;
+            letter-spacing: -0.03em;
+        }
+
+        .container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+
+        /* Table 2x2 */
+        .table-grid {
+            display: grid;
+            grid-template-columns: auto 1fr 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .th, .td, .td-readonly {
+            padding: 0.8rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .th {
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .td input {
+            width: 100%;
+            height: 100%;
+            border: 1.5px solid transparent;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            padding: 0.6rem;
+            outline: none;
+            background-color: rgba(255,255,255,0.7);
+            transition: all 0.2s ease;
+            color: var(--text-main);
+        }
+
+        .td input:focus {
+            border-color: var(--accent);
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+        }
+
+        /* Warna sel berdasarkan kesepakatan (Agreement) */
+        .cell-agree { background-color: var(--agree-color); }
+        .cell-disagree { background-color: var(--disagree-color); }
+
+        .td-readonly {
+            background-color: var(--cell-readonly);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .total-n {
+            background-color: #e5e5ea;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        /* Keterangan / Legend */
+        .legend {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: #f9f9fb;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #ececec;
+            margin-top: auto;
+            line-height: 1.6;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.4rem;
+        }
+
+        .legend span {
+            font-weight: 600;
+            color: var(--text-main);
+            display: inline-block;
+            width: 35px;
+        }
+
+        /* Results / Dashboard */
+        .results-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .result-box {
+            background-color: #f9f9fb;
+            padding: 1.5rem;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #ececec;
+        }
+
+        .result-box.highlight {
+            background-color: rgba(94, 92, 230, 0.05);
+            border-color: rgba(94, 92, 230, 0.2);
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .result-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+        }
+
+        .result-box.highlight .result-value {
+            color: var(--kappa-color);
+        }
+
+        .formula-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            font-family: monospace;
+            background-color: rgba(0,0,0,0.04);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .interpretation-badge {
+            display: inline-block;
+            margin-top: 0.8rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: var(--text-muted);
+        }
+		
+		/* Gaya untuk ikon 'i' dan panel rumus */
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background-color: #a0c4ff;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: sans-serif;
+            cursor: pointer;
+            margin-left: 6px;
+            vertical-align: middle;
+            transition: background-color 0.2s;
+			text-transform: none;
+        }
+
+        .info-icon:hover {
+            background-color: var(--accent);
+        }
+
+        .formula-expanded {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: monospace;
+            background-color: #ffffff;
+            border-radius: 8px;
+            line-height: 1.6;
+            text-align: left;
+
+            /* Kondisi Awal (Disembunyikan) */
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            padding: 0 0.8rem; 
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .formula-expanded.show {
+            /* Kondisi Terbuka (Ditampilkan) */
+            max-height: 350px; 
+            opacity: 1;
+            margin-top: 0.8rem;
+            padding: 0.8rem;
+            border: 1px solid #e5e5ea;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .card {
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+            .main-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .table-grid {
+                gap: 4px;
+            }
+            .th, .td, .td-readonly {
+                padding: 0.4rem;
+                border-radius: 6px;
+            }
+            .th { font-size: 0.8rem; }
+            .td input { font-size: 1.1rem; padding: 0.3rem; }
+            .td-readonly { font-size: 1rem; }
+            .result-value { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <h1 class="main-title">Perhitungan Reliabilitas Uji Diagnostik</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Tabel Kontingensi 2×2</h2>
+            
+            <div class="table-grid">
+                <div></div>
+                <div class="th" title="Pengujian 1 Positif">T1+</div>
+                <div class="th" title="Pengujian 1 Negatif">T1-</div>
+                <div class="th">Total</div>
+
+                <div class="th" title="Pengujian 2 Positif">T2+</div>
+                <div class="td cell-agree">
+                    <input type="number" id="cellA" min="0" value="35" title="Keduanya sepakat Positif (a)">
+                </div>
+                <div class="td cell-disagree">
+                    <input type="number" id="cellB" min="0" value="10" title="Tidak sepakat (b)">
+                </div>
+                <div class="td-readonly" id="totT2Plus">0</div>
+
+                <div class="th" title="Pengujian 2 Negatif">T2-</div>
+                <div class="td cell-disagree">
+                    <input type="number" id="cellC" min="0" value="5" title="Tidak sepakat (c)">
+                </div>
+                <div class="td cell-agree">
+                    <input type="number" id="cellD" min="0" value="50" title="Keduanya sepakat Negatif (d)">
+                </div>
+                <div class="td-readonly" id="totT2Minus">0</div>
+
+                <div class="th">Total</div>
+                <div class="td-readonly" id="totT1Plus">0</div>
+                <div class="td-readonly" id="totT1Minus">0</div>
+                <div class="td-readonly total-n" id="totN">0</div>
+            </div>
+
+            <div class="legend">
+                <div><span>T1+</span> = hasil positif pada pengujian 1</div>
+                <div><span>T1-</span> = hasil negatif pada pengujian 1</div>
+                <div><span>T2+</span> = hasil positif pada pengujian 2</div>
+                <div><span>T2-</span> = hasil negatif pada pengujian 2</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Analisis Kesesuaian</h2>
+            
+            <div class="results-container">
+                <div class="result-box">
+                    <div class="result-label">Kesesuaian yang Diamati (P<sub>o</sub>)</div>
+                    <div class="result-value" id="resPo">--%</div>
+                    <div class="formula-text">Rumus: (a + d) / Total Populasi</div>
+                </div>
+
+                <div class="result-box">
+                    <div class="result-label">Kesesuaian Kebetulan (P<sub>e</sub>)</div>
+                    <div class="result-value" id="resPe">--%</div>
+                    <div class="formula-text">
+                        Rumus: P(kebetulan+) + P(kebetulan-) 
+                        <span class="info-icon" onclick="toggleFormula()" title="Klik untuk lihat detail">i</span>
+                    </div>
+                    <div class="formula-expanded" id="formulaPe">
+                        P(kebetulan+) = ((a+c) / N) &times; ((a+b) / N)<br>
+                        P(kebetulan-) = ((b+d) / N) &times; ((c+d) / N)
+                    </div>
+                </div>
+
+                <div class="result-box highlight">
+                    <div class="result-label">
+                        Cohen's Kappa (k)
+                        <span class="info-icon" onclick="toggleKappaInfo()" title="Klik untuk pedoman interpretasi">i</span>
+                    </div>
+                    <div class="result-value" id="resKappa">--</div>
+                    <div class="formula-text">Rumus: (P<sub>o</sub> - P<sub>e</sub>) / (1 - P<sub>e</sub>)</div>
+                    <div>
+                        <span class="interpretation-badge" id="kappaInterpretation">Menunggu Data...</span>
+                    </div>
+                    <div class="formula-expanded" id="infoKappa">
+                        Cohen's Kappa mengukur kesepakatan murni dengan menyingkirkan unsur kebetulan.<br><strong>Pedoman Landis & Koch:</strong>
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.75rem;">
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 4px 0; font-weight: 600;">&lt; 0</td>
+                                <td style="padding: 4px 0;">Tidak ada kesepakatan</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 4px 0; font-weight: 600;">0,00 &ndash; 0,20</td>
+                                <td style="padding: 4px 0;">Kesepakatan sangat lemah</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 4px 0; font-weight: 600;">0,21 &ndash; 0,40</td>
+                                <td style="padding: 4px 0;">Kesepakatan lemah</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 4px 0; font-weight: 600;">0,41 &ndash; 0,60</td>
+                                <td style="padding: 4px 0;">Kesepakatan sedang</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 4px 0; font-weight: 600;">0,61 &ndash; 0,80</td>
+                                <td style="padding: 4px 0;">Kesepakatan kuat</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 4px 0; font-weight: 600;">0,81 &ndash; 1,00</td>
+                                <td style="padding: 4px 0;">Kesepakatan sangat kuat</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Input Tabel
+    const cellA = document.getElementById('cellA'),
+          cellB = document.getElementById('cellB'),
+          cellC = document.getElementById('cellC'),
+          cellD = document.getElementById('cellD');
+
+    // Total Read-only
+    const totT1Plus = document.getElementById('totT1Plus'),
+          totT1Minus = document.getElementById('totT1Minus'),
+          totT2Plus = document.getElementById('totT2Plus'),
+          totT2Minus = document.getElementById('totT2Minus'),
+          totN = document.getElementById('totN');
+
+    // Hasil Output Dashboard
+    const resPo = document.getElementById('resPo'),
+          resPe = document.getElementById('resPe'),
+          resKappa = document.getElementById('resKappa'),
+          kappaInterpretation = document.getElementById('kappaInterpretation');
+
+    function calculateKappa() {
+        // Ambil nilai input
+        const a = parseInt(cellA.value) || 0;
+        const b = parseInt(cellB.value) || 0;
+        const c = parseInt(cellC.value) || 0;
+        const d = parseInt(cellD.value) || 0;
+
+        // Hitung total baris dan kolom
+        const t2_plus = a + b;
+        const t2_minus = c + d;
+        const t1_plus = a + c;
+        const t1_minus = b + d;
+        const N = a + b + c + d;
+
+        // Tampilkan Total di tabel
+        totT2Plus.textContent = t2_plus.toLocaleString('id-ID');
+        totT2Minus.textContent = t2_minus.toLocaleString('id-ID');
+        totT1Plus.textContent = t1_plus.toLocaleString('id-ID');
+        totT1Minus.textContent = t1_minus.toLocaleString('id-ID');
+        totN.textContent = N.toLocaleString('id-ID');
+
+        if (N === 0) {
+            resetDashboard();
+            return;
+        }
+
+        // 1. Kesesuaian yang diamati (Po)
+        const Po = (a + d) / N;
+        
+        // 2. Kesesuaian kebetulan (Pe)
+        const Pe_plus = (t1_plus / N) * (t2_plus / N);
+        const Pe_minus = (t1_minus / N) * (t2_minus / N);
+        const Pe = Pe_plus + Pe_minus;
+
+        // 3. Cohen's Kappa (k)
+        let kappa = 0;
+        if (Pe === 1 && Po === 1) {
+            kappa = 1; // Sempurna murni
+        } else if (Pe !== 1) {
+            kappa = (Po - Pe) / (1 - Pe);
+        }
+
+        // Tampilkan Hasil
+        resPo.textContent = (Po * 100).toFixed(1) + '%';
+        resPe.textContent = (Pe * 100).toFixed(1) + '%';
+        resKappa.textContent = kappa.toFixed(2);
+
+        // Update Interpretasi Visual (Landis & Koch)
+        updateInterpretation(kappa);
+    }
+
+    function updateInterpretation(k) {
+        let text = "";
+        let color = "";
+
+        if (k < 0) {
+            text = "Tidak Ada Kesepakatan";
+            color = "#ff3b30"; // Merah
+        } else if (k <= 0.20) {
+            text = "Kesepakatan Sangat Lemah";
+            color = "#ff9f0a"; // Oranye gelap
+        } else if (k <= 0.40) {
+            text = "Kesepakatan Lemah";
+            color = "#ffd60a"; // Kuning
+        } else if (k <= 0.60) {
+            text = "Kesepakatan Sedang";
+            color = "#34c759"; // Hijau muda
+        } else if (k <= 0.80) {
+            text = "Kesepakatan Kuat";
+            color = "#30b0c7"; // Cyan/Biru muda
+        } else {
+            text = "Kesepakatan Sangat Kuat";
+            color = "#0066cc"; // Biru Apple
+        }
+
+        kappaInterpretation.textContent = text;
+        kappaInterpretation.style.backgroundColor = color;
+        kappaInterpretation.style.color = (k <= 0.40 && k >= 0) ? "#1d1d1f" : "#ffffff"; // Penyesuaian kontras teks
+    }
+
+    function resetDashboard() {
+        resPo.textContent = '--%';
+        resPe.textContent = '--%';
+        resKappa.textContent = '--';
+        kappaInterpretation.textContent = "Menunggu Data...";
+        kappaInterpretation.style.backgroundColor = "var(--text-muted)";
+        kappaInterpretation.style.color = "#ffffff";
+    }
+
+    // Event Listeners
+    [cellA, cellB, cellC, cellD].forEach(el => el.addEventListener('input', calculateKappa));
+
+    // Inisialisasi awal
+    calculateKappa();
+	
+	// Fungsi untuk membuka/menutup detail rumus (toggle)
+    function toggleFormula() {
+        const el = document.getElementById('formulaPe');
+        el.classList.toggle('show');
+    }
+	
+	// Fungsi untuk membuka/menutup info interpretasi Kappa
+    function toggleKappaInfo() {
+        const el = document.getElementById('infoKappa');
+        el.classList.toggle('show');
+    }
+	
+</script>
+</body>
+</html>
