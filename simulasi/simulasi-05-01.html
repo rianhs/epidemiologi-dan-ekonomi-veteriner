@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Bivariat untuk Kajian Observasional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f5f5f7;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-muted: #86868b;
+            --accent: #0066cc;
+            --border: #d2d2d7;
+            --cell-readonly: #f0f0f2;
+            --positive-bg: rgba(52, 199, 89, 0.12);
+            --negative-bg: rgba(255, 59, 48, 0.08);
+            --info-blue: #007aff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 3rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            letter-spacing: -0.04em;
+        }
+
+        /* Tata Letak: 60% Input - 40% Hasil */
+        .container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.02);
+            height: fit-content;
+        }
+
+        h2 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-bottom: 1px solid #f2f2f7;
+            padding-bottom: 10px;
+        }
+
+        /* Table 2x2 - Lebih Lebar */
+        .table-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .th, .td, .td-readonly {
+            padding: 1rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .th { color: var(--text-muted); }
+
+        .td input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            outline: none;
+            color: var(--text-main);
+        }
+
+        .cell-f-plus { background-color: var(--positive-bg); }
+        .cell-f-minus { background-color: var(--negative-bg); }
+        
+        .td-readonly {
+            background-color: var(--cell-readonly);
+            color: var(--text-muted);
+            font-size: 1.4rem;
+        }
+
+        .total-n {
+            background-color: #1d1d1f;
+            color: #fff;
+        }
+
+        /* Result Group Styling */
+        .result-section {
+            background: #f9f9fb;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #efeff4;
+            margin-bottom: 1.2rem;
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+
+        .label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 15px;
+            height: 15px;
+            background-color: var(--info-blue);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 10px;
+            font-weight: 800;
+            margin-left: 6px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .info-icon:hover { opacity: 0.8; }
+
+        .value-main {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+        }
+
+        .value-ci {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 2px;
+            display: block;
+        }
+
+        /* Penjelasan / Tooltip */
+        .explanation {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            background: #fff;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-radius: 10px;
+        }
+
+        .explanation.show {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 10px;
+            padding: 12px;
+            border: 1px solid #e5e5ea;
+        }
+
+        .explanation strong { color: var(--text-main); }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+
+        /* Signifikansi */
+        .sig-badge {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-top: 0.8rem;
+        }
+
+        .sig-yes { background-color: #34c759; color: white; }
+        .sig-no { background-color: #ff3b30; color: white; }
+
+        .warning-fisher {
+            background-color: #fff9e6;
+            border: 1px solid #ffcc00;
+            padding: 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            color: #856404;
+            display: none;
+        }
+
+        @media (max-width: 1000px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <h1 class="main-title">Analisis Bivariat untuk Kajian Observasional</h1>
+
+    <div class="container">
+        <!-- Input (60%) -->
+        <div class="card">
+            <h2>Data Pengamatan (Tabel 2×2)</h2>
+            <div class="table-grid">
+                <div></div>
+                <div class="th">Sakit (D+)</div>
+                <div class="th">Tidak sakit (D-)</div>
+                <div class="th">Total</div>
+
+                <div class="th">Terpapar faktor (F+)</div>
+                <div class="td cell-f-plus"><input type="number" id="cellA" value="30" oninput="calculate()"></div>
+                <div class="td cell-f-plus"><input type="number" id="cellB" value="20" oninput="calculate()"></div>
+                <div class="td-readonly" id="totFpos">50</div>
+
+                <div class="th">Tidak terpapar faktor (F-)</div>
+                <div class="td cell-f-minus"><input type="number" id="cellC" value="5" oninput="calculate()"></div>
+                <div class="td cell-f-minus"><input type="number" id="cellD" value="45" oninput="calculate()"></div>
+                <div class="td-readonly" id="totFneg">50</div>
+
+                <div class="th" style="font-weight:800;">Total</div>
+                <div class="td-readonly" id="totDpos">35</div>
+                <div class="td-readonly" id="totDneg">65</div>
+                <div class="td-readonly total-n" id="totN">100</div>
+            </div>
+            
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; background: #fdfdfd; padding: 15px; border-radius: 15px; border: 1px dashed #d2d2d7;">
+                <strong>Panduan Pengisian:</strong> Pada tabel di atas, isi sel a, b, c, dan d<br>
+                <b>a</b> : Hewan terpapar faktor dan sakit &nbsp; | &nbsp; <b>b</b> : Hewan terpapar faktor tapi tidak sakit<br>
+                <b>c</b> : Hewan tidak terpapar faktor tapi sakit &nbsp; | &nbsp; <b>d</b> : Hewan tidak terpapar faktor dan tidak sakit
+            </div>
+        </div>
+
+        <!-- Output (40%) -->
+        <div class="card">
+            <h2>Hasil Analisis</h2>
+            
+            <!-- Rasio Asosiasi -->
+            <div class="result-section" style="background-color: #f2f7ff; border-color: #d0e3ff;">
+                <div class="grid-2">
+                    <div>
+                        <div class="metric-header">
+                            <span class="label">Risk Ratio (RR)</span>
+                            <span class="info-icon" onclick="toggleExp('expRR')">i</span>
+                        </div>
+                        <span class="value-main" id="resRR">0.0</span>
+                        <span class="value-ci" id="resRR_CI"></span>
+                        <div id="expRR" class="explanation">
+                            <strong>RR</strong>: risiko sakit pada kelompok terpapar dibandingkan kelompok tidak terpapar.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metric-header">
+                            <span class="label">Odds Ratio (OR)</span>
+                            <span class="info-icon" onclick="toggleExp('expOR')">i</span>
+                        </div>
+                        <span class="value-main" id="resOR">0.0</span>
+                        <span class="value-ci" id="resOR_CI"></span>
+                        <div id="expOR" class="explanation">
+                            <strong>OR</strong>: peluang relatif (odds) sakit pada kelompok terpapar dibandingkan kelompok tidak terpapar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ukuran Dampak -->
+            <div class="result-section" style="background-color: #f2f7ff; border-color: #d0e3ff;">
+                <div class="grid-2">
+                    <div>
+                        <div class="metric-header">
+                            <span class="label">Risk Difference</span>
+                            <span class="info-icon" onclick="toggleExp('expRD')">i</span>
+                        </div>
+                        <span class="value-main" style="color: #0056b3; font-size: 1.8rem;" id="resRD">0.0</span>
+                        <div id="expRD" class="explanation">
+                            <strong>RD:</strong> Jumlah kasus tambahan per 1 unit populasi akibat paparan.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metric-header">
+                            <span class="label">Attrib. Fraction</span>
+                            <span class="info-icon" onclick="toggleExp('expAF')">i</span>
+                        </div>
+                        <span class="value-main" style="color: #0056b3; font-size: 1.8rem;" id="resAF">0%</span>
+                        <div id="expAF" class="explanation">
+                            <strong>AF:</strong> Proporsi kasus pada kelompok terpapar yang dapat dicegah jika paparan dihilangkan sepenuhnya.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signifikansi -->
+            <div class="result-section" style="background-color: #f2f7ff; border-color: #d0e3ff;">
+                <div id="fisherWarning" class="warning-fisher">
+                    ⚠️ Ada sel dengan nilai harapan < 5. Uji Chi-Square tidak valid. Gunakan nilai p dari uji eksak Fisher.
+                </div>
+                
+                <div class="grid-2">
+                    <div id="chiArea">
+                        <div class="metric-header">
+                            <span class="label">Chi-Square (χ²)</span>
+                            <span class="info-icon" onclick="toggleExp('expChi')">i</span>
+                        </div>
+                        <span class="value-main" style="font-size: 1.5rem; color: var(--text-main);" id="resChi">0.00</span>
+                        <div class="label" style="margin-top:2px; opacity:0.6;">Nilai p: <span id="resPChi">0.0</span></div>
+                        <div id="expChi" class="explanation">
+                            Batas kritis untuk tabel 2x2 (df=1) adalah <strong>3,84</strong>.<br>Jika nilai χ² ≥ 3,84 maka terdapat asosiasi yang bermakna antara faktor dan penyakit.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="metric-header">
+                            <span class="label">Uji eksak Fisher</span>
+                            <span class="info-icon" onclick="toggleExp('expFisher')">i</span>
+                        </div>
+                        <div class="label" style="margin-top:2px; opacity:0.6;">Nilai p:<br><span class="value-main" style="font-size: 1.5rem; color: #3c3aec;" id="resPFisher">0.00</span></div>
+                        <div id="expFisher" class="explanation">
+                            Gunakan uji ini jika ada sel dengan nilai harapan < 5 atau ada sel dengan nilai 0.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; border-top: 1px solid #e5e5ea; padding-top: 1rem; text-align: center;">
+                    <span class="label" style="font-size: 0.6rem;">Kesimpulan asosiasi menurut statistika</span><br>
+                    <div id="resSigBadge" class="sig-badge">MENGHITUNG...</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleExp(id) {
+        document.getElementById(id).classList.toggle('show');
+    }
+
+    function logFact(n) {
+        let res = 0;
+        for (let i = 1; i <= n; i++) res += Math.log(i);
+        return res;
+    }
+
+    function fisherExact(a, b, c, d) {
+        const n = a + b + c + d;
+        function p(a, b, c, d) {
+            return Math.exp(logFact(a+b) + logFact(c+d) + logFact(a+c) + logFact(b+d) - logFact(a) - logFact(b) - logFact(c) - logFact(d) - logFact(n));
+        }
+        const pObs = p(a,b,c,d);
+        let pTotal = 0;
+        for (let i = 0; i <= n; i++) {
+            let ia = i, ib = (a+b)-ia, ic = (a+c)-ia, id = (c+d)-ic;
+            if (ia >=0 && ib >=0 && ic >=0 && id >=0) {
+                let pTemp = p(ia, ib, ic, id);
+                if (pTemp <= pObs + 1e-10) pTotal += pTemp;
+            }
+        }
+        return pTotal > 1 ? 1 : pTotal;
+    }
+
+    function erf(x) {
+        const a1 = 0.254829592, a2 = -0.284496736, a3 = 1.421413741, a4 = -1.453152027, a5 = 1.061405429, p = 0.3275911;
+        const sign = (x < 0) ? -1 : 1;
+        x = Math.abs(x);
+        const t = 1.0 / (1.0 + p * x);
+        const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+        return sign * y;
+    }
+
+    function calculate() {
+        const a = parseFloat(document.getElementById('cellA').value) || 0;
+        const b = parseFloat(document.getElementById('cellB').value) || 0;
+        const c = parseFloat(document.getElementById('cellC').value) || 0;
+        const d = parseFloat(document.getElementById('cellD').value) || 0;
+
+        const nFpos = a + b, nFneg = c + d, nDpos = a + c, nDneg = b + d, n = a + b + c + d;
+        
+        document.getElementById('totFpos').innerText = nFpos;
+        document.getElementById('totFneg').innerText = nFneg;
+        document.getElementById('totDpos').innerText = nDpos;
+        document.getElementById('totDneg').innerText = nDneg;
+        document.getElementById('totN').innerText = n;
+
+        if (n === 0 || nFpos === 0 || nFneg === 0 || nDpos === 0 || nDneg === 0) return;
+
+        // 1. Rasio Asosiasi
+        const or = (a * d) / (b * c);
+        const seOR = Math.sqrt(1/a + 1/b + 1/c + 1/d);
+        document.getElementById('resOR').innerText = isFinite(or) ? or.toFixed(2) : "∞";
+        if(isFinite(seOR)) {
+            document.getElementById('resOR_CI').innerText = `95% CI: ${Math.exp(Math.log(or) - 1.96*seOR).toFixed(2)} - ${Math.exp(Math.log(or) + 1.96*seOR).toFixed(2)}`;
+        }
+
+        const riskExp = a / nFpos;
+        const riskUnexp = c / nFneg;
+        const rr = riskExp / riskUnexp;
+        const seRR = Math.sqrt((1/a) - (1/nFpos) + (1/c) - (1/nFneg));
+        document.getElementById('resRR').innerText = isFinite(rr) ? rr.toFixed(2) : "∞";
+        if(isFinite(seRR)) {
+            document.getElementById('resRR_CI').innerText = `95% CI: ${Math.exp(Math.log(rr) - 1.96*seRR).toFixed(2)} - ${Math.exp(Math.log(rr) + 1.96*seRR).toFixed(2)}`;
+        }
+
+        // 2. Ukuran Dampak
+        const rd = riskExp - riskUnexp;
+        document.getElementById('resRD').innerText = rd.toFixed(2);
+        
+        const af = (rr > 1) ? ((rr - 1) / rr) * 100 : 0;
+        document.getElementById('resAF').innerText = rr >= 1 ? Math.round(af) + "%" : "0%";
+
+        // 3. Statistik & Signifikansi
+        const expA = (nFpos * nDpos) / n;
+        const expB = (nFpos * nDneg) / n;
+        const expC = (nFneg * nDpos) / n;
+        const expD = (nFneg * nDneg) / n;
+        const minExp = Math.min(expA, expB, expC, expD);
+
+        const chi = (n * Math.pow((a * d - b * c), 2)) / (nFpos * nFneg * nDpos * nDneg);
+        const pChi = 1 - erf(Math.sqrt(chi / 2));
+        const pFisher = fisherExact(a, b, c, d);
+
+        document.getElementById('resChi').innerText = chi.toFixed(2);
+        document.getElementById('resPChi').innerText = pChi.toFixed(4);
+        document.getElementById('resPFisher').innerText = pFisher.toFixed(4);
+
+        const useFisher = minExp < 5;
+        document.getElementById('fisherWarning').style.display = useFisher ? 'block' : 'none';
+        document.getElementById('chiArea').style.opacity = useFisher ? '0.4' : '1';
+
+        const finalP = useFisher ? pFisher : pChi;
+        const badge = document.getElementById('resSigBadge');
+        if (finalP <= 0.05) {
+            badge.innerText = "SIGNIFIKAN";
+            badge.className = "sig-badge sig-yes";
+        } else {
+            badge.innerText = "TIDAK SIGNIFIKAN";
+            badge.className = "sig-badge sig-no";
+        }
+    }
+
+    calculate();
+</script>
+
+</body>
+</html>
