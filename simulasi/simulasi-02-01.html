@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Segitiga Epidemiologi Veteriner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+
+        /* Apple-style Switch Toggle */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #10B981;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #10B981;
+        }
+        .toggle-checkbox {
+            right: 0;
+            z-index: 1;
+            border-color: #E5E7EB;
+            transition: all 0.3s;
+        }
+        .toggle-label {
+            background-color: #E5E7EB;
+            border-radius: 9999px;
+            transition: all 0.3s;
+        }
+
+        /* Apple-style Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #D1D5DB;
+            cursor: pointer;
+            margin-top: -8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.1s;
+        }
+        input[type=range]::-webkit-slider-thumb:active {
+            transform: scale(1.1);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        /* Smooth SVG Transitions */
+        .svg-transition {
+            transition: fill 0.6s ease, stroke 0.6s ease, filter 0.6s ease, r 0.6s ease;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-100 px-6 py-4 sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <h1 class="text-xl font-semibold tracking-tight">Segitiga Epidemiologi Veteriner</h1>
+                <p class="text-sm text-gray-500 mt-1">Interaksi antara inang, agen, dan lingkungan</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="resetSimulasi()" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors flex items-center gap-2 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-full">
+                    <i data-lucide="rotate-ccw" class="w-4 h-4"></i> Reset
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 max-w-7xl mx-auto w-full p-6 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Panel Kontrol (Kiri) -->
+        <div class="w-full lg:w-[40%] flex flex-col gap-6 h-[calc(100vh-120px)] overflow-y-auto pr-2 pb-10">
+            
+            <!-- Agen Panel -->
+            <div class="glass-panel rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-red-50 text-red-600 rounded-lg">
+                        <i data-lucide="bug" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-semibold">Agen (Patogen)</h2>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="font-medium text-gray-700">Dosis & virulensi patogen</span>
+                        </div>
+                        <input type="range" id="agen-slider" min="0" max="100" value="50" class="w-full" oninput="updateSimulasi()">
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>Sedikit/lemah</span>
+                            <span>Sedang</span>
+                            <span>Banyak/ganas</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-gray-100">
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Lakukan disinfeksi</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="agen-intervensi1" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="agen-intervensi1" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Terapi antimikroba/depopulasi sumber infeksi</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="agen-intervensi2" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="agen-intervensi2" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inang Panel -->
+            <div class="glass-panel rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                        <i data-lucide="dog" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-semibold">Inang (Hewan)</h2>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="font-medium text-gray-700">Kerentanan inang</span>
+                        </div>
+                        <input type="range" id="inang-slider" min="0" max="100" value="50" class="w-full" oninput="updateSimulasi()">
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>Kebal</span>
+                            <span>Normal</span>
+                            <span>Rentan</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-gray-100">
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Lakukan vaksinasi massal</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="inang-intervensi1" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="inang-intervensi1" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Perbaiki kualitas nutrisi</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="inang-intervensi2" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="inang-intervensi2" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lingkungan Panel -->
+            <div class="glass-panel rounded-2xl p-5">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                        <i data-lucide="trees" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-semibold">Lingkungan</h2>
+                </div>
+                <div class="space-y-5">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="font-medium text-gray-700">Stresor lingkungan</span>
+                        </div>
+                        <input type="range" id="lingkungan-slider" min="0" max="100" value="50" class="w-full" oninput="updateSimulasi()">
+                        <div class="flex justify-between text-xs text-gray-400 mt-1">
+                            <span>Rendah</span>
+                            <span>Sedang</span>
+                            <span>Tinggi</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3 pt-2 border-t border-gray-100">
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Lakukan sanitasi lingkungan</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="lingkungan-intervensi1" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="lingkungan-intervensi1" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <span class="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">Kurangi kontak antara hewan rentan dan reservoir</span>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="lingkungan-intervensi2" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer" onchange="updateSimulasi()"/>
+                                <label for="lingkungan-intervensi2" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-300 cursor-pointer"></label>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Visualisasi (Kanan) -->
+        <div class="w-full lg:w-[60%] flex flex-col gap-6">
+            
+            <!-- Area SVG Segitiga -->
+            <div class="glass-panel rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden flex-1">
+                
+
+                <div class="text-center w-full z-10">
+                    <h3 class="text-2xl font-semibold tracking-tight" id="status-title">Kondisi Endemis</h3>
+                    <p class="text-gray-500 mt-1" id="status-desc">Keseimbangan normal penyakit dalam populasi.</p>
+                </div>
+
+                <!-- SVG Segitiga Epidemiologi -->
+                <svg viewBox="0 0 600 500" class="w-full max-w-lg mt-8 overflow-visible z-0">
+                    <!-- Drop shadow definitions -->
+                    <defs>
+                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="15" result="blur" />
+                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                        </filter>
+                        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+                            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.1"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Latar Belakang Area Segitiga -->
+                    <polygon id="triangle-area" points="300,80 100,400 500,400" 
+                             class="svg-transition" 
+                             fill="rgba(156, 163, 175, 0.1)" 
+                             stroke="#9CA3AF" stroke-width="4" stroke-dasharray="8 8" />
+
+                    <!-- Pusat Segitiga (Penyakit) -->
+                    <circle id="center-disease" cx="300" cy="280" r="40" 
+                            class="svg-transition"
+                            fill="#9CA3AF" filter="url(#glow)"/>
+                    
+                    <text x="300" y="285" text-anchor="middle" dominant-baseline="middle" 
+                          fill="white" font-weight="600" font-size="14" class="pointer-events-none">
+                        Penyakit
+                    </text>
+
+                    <!-- Garis Penghubung -->
+                    <line id="line-agen-center" x1="300" y1="80" x2="300" y2="240" stroke="#9CA3AF" stroke-width="2" class="svg-transition"/>
+                    <line id="line-inang-center" x1="100" y1="400" x2="265" y2="300" stroke="#9CA3AF" stroke-width="2" class="svg-transition"/>
+                    <line id="line-ling-center" x1="500" y1="400" x2="335" y2="300" stroke="#9CA3AF" stroke-width="2" class="svg-transition"/>
+
+                    <!-- Node Agen (Atas) -->
+                    <circle id="node-agen" cx="300" cy="80" r="45" class="svg-transition" fill="#9CA3AF" filter="url(#shadow)"/>
+                    <circle cx="300" cy="80" r="35" fill="rgba(255,255,255,0.2)" class="pointer-events-none"/>
+                    <text x="300" y="85" text-anchor="middle" dominant-baseline="middle" fill="white" font-weight="600" font-size="16" class="pointer-events-none">AGEN</text>
+
+                    <!-- Node Inang (Kiri Bawah) -->
+                    <circle id="node-inang" cx="100" cy="400" r="45" class="svg-transition" fill="#9CA3AF" filter="url(#shadow)"/>
+                    <circle cx="100" cy="400" r="35" fill="rgba(255,255,255,0.2)" class="pointer-events-none"/>
+                    <text x="100" y="405" text-anchor="middle" dominant-baseline="middle" fill="white" font-weight="600" font-size="16" class="pointer-events-none">INANG</text>
+
+                    <!-- Node Lingkungan (Kanan Bawah) -->
+                    <circle id="node-lingkungan" cx="500" cy="400" r="45" class="svg-transition" fill="#9CA3AF" filter="url(#shadow)"/>
+                    <circle cx="500" cy="400" r="35" fill="rgba(255,255,255,0.2)" class="pointer-events-none"/>
+                    <text x="500" y="405" text-anchor="middle" dominant-baseline="middle" fill="white" font-weight="600" font-size="14" class="pointer-events-none">LINGKUNGAN</text>
+                </svg>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+        
+        // Konstanta Warna
+        const COLOR_GREEN = { r: 16, g: 185, b: 129 }; // Emerald 500 (Aman)
+        const COLOR_GRAY = { r: 156, g: 163, b: 175 }; // Gray 400 (Netral)
+        const COLOR_RED = { r: 239, g: 68, b: 68 };   // Red 500 (Bahaya)
+
+        // Variabel global state
+        let currentTotalScore = 50;
+
+        // Fungsi Interpolasi Warna
+        function getColorForScore(score) {
+            let r, g, b;
+            if (score <= 50) {
+                let pct = score / 50;
+                r = Math.round(COLOR_GREEN.r + pct * (COLOR_GRAY.r - COLOR_GREEN.r));
+                g = Math.round(COLOR_GREEN.g + pct * (COLOR_GRAY.g - COLOR_GREEN.g));
+                b = Math.round(COLOR_GREEN.b + pct * (COLOR_GRAY.b - COLOR_GREEN.b));
+            } else {
+                let pct = (score - 50) / 50;
+                r = Math.round(COLOR_GRAY.r + pct * (COLOR_RED.r - COLOR_GRAY.r));
+                g = Math.round(COLOR_GRAY.g + pct * (COLOR_RED.g - COLOR_GRAY.g));
+                b = Math.round(COLOR_GRAY.b + pct * (COLOR_RED.b - COLOR_GRAY.b));
+            }
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        // Kalkulasi Simulasi
+        function updateSimulasi() {
+            let agenBase = parseInt(document.getElementById('agen-slider').value);
+            let agenInt1 = document.getElementById('agen-intervensi1').checked ? 25 : 0;
+            let agenInt2 = document.getElementById('agen-intervensi2').checked ? 25 : 0;
+            let agenScore = Math.max(0, Math.min(100, agenBase - agenInt1 - agenInt2));
+
+            let inangBase = parseInt(document.getElementById('inang-slider').value);
+            let inangInt1 = document.getElementById('inang-intervensi1').checked ? 30 : 0;
+            let inangInt2 = document.getElementById('inang-intervensi2').checked ? 20 : 0;
+            let inangScore = Math.max(0, Math.min(100, inangBase - inangInt1 - inangInt2));
+
+            let lingBase = parseInt(document.getElementById('lingkungan-slider').value);
+            let lingInt1 = document.getElementById('lingkungan-intervensi1').checked ? 25 : 0;
+            let lingInt2 = document.getElementById('lingkungan-intervensi2').checked ? 25 : 0;
+            let lingScore = Math.max(0, Math.min(100, lingBase - lingInt1 - lingInt2));
+
+            let totalScore = Math.round((agenScore + inangScore + lingScore) / 3);
+            currentTotalScore = totalScore;
+
+            // Visual Updates
+            document.getElementById('node-agen').setAttribute('fill', getColorForScore(agenScore));
+            document.getElementById('node-inang').setAttribute('fill', getColorForScore(inangScore));
+            document.getElementById('node-lingkungan').setAttribute('fill', getColorForScore(lingScore));
+
+            let totalColor = getColorForScore(totalScore);
+            document.getElementById('triangle-area').setAttribute('stroke', totalColor);
+            document.getElementById('triangle-area').setAttribute('fill', totalColor.replace('rgb', 'rgba').replace(')', ', 0.1)'));
+            
+            document.getElementById('line-agen-center').setAttribute('stroke', getColorForScore(agenScore));
+            document.getElementById('line-inang-center').setAttribute('stroke', getColorForScore(inangScore));
+            document.getElementById('line-ling-center').setAttribute('stroke', getColorForScore(lingScore));
+
+            let centerNode = document.getElementById('center-disease');
+            centerNode.setAttribute('fill', totalColor);
+            let radius = 20 + (totalScore / 100) * 40; 
+            centerNode.setAttribute('r', radius);
+
+            const statusTitle = document.getElementById('status-title');
+            const statusDesc = document.getElementById('status-desc');
+            
+            if (totalScore >= 75) {
+                statusTitle.innerText = "Berpotensi Menjadi Wabah";
+                statusTitle.style.color = "#EF4444";
+                statusDesc.innerText = "Interaksi komponen sangat mendukung laju penularan penyakit.";
+            } else if (totalScore <= 25) {
+                statusTitle.innerText = "Penyakit Terkendali";
+                statusTitle.style.color = "#10B981";
+                statusDesc.innerText = "Risiko transmisi sangat rendah. Program pencegahan berfungsi dengan baik.";
+            } else {
+                statusTitle.innerText = "Kondisi Endemis";
+                statusTitle.style.color = "#4B5563";
+                statusDesc.innerText = "Kejadian penyakit relatif stabil dan diprediksi tetap ada dalam populasi.";
+            }
+            
+        }
+
+        // Reset
+        function resetSimulasi() {
+            document.getElementById('agen-slider').value = 50;
+            document.getElementById('inang-slider').value = 50;
+            document.getElementById('lingkungan-slider').value = 50;
+            document.querySelectorAll('.toggle-checkbox').forEach(cb => cb.checked = false);
+            updateSimulasi();
+        }
+
+        // Inisialisasi
+        document.addEventListener('DOMContentLoaded', updateSimulasi);
+    </script>
+</body>
+</html>
