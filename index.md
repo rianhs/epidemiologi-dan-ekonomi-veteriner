@@ -64,8 +64,9 @@ Mahasiswa mampu menilai kualitas kajian observasional berdasarkan ketepatan pemi
 | Topik | Epidemiologi analitis |
 | Pekan | 6 dan 7 |
 | Modul | [Modul 05](modul/modul-05.md) |
+| Slide | - |
 | Simulasi | [Simulasi 05-01](simulasi/simulasi-05-01.html) |
-| Prosedur | [SOP-05-01](https://docs.google.com/document/d/1DhKkoOBCeO210GP1YU9ESYAWepmIXSoy1_AJHqdZbaY/edit?usp=sharing) <br>[SOP-05-02]([https://docs.google.com/document/d/1DhKkoOBCeO210GP1YU9ESYAWepmIXSoy1_AJHqdZbaY/edit?usp=sharing](https://docs.google.com/document/d/199nbyuPtrkp45bjaqJawg4GbAjyEby_x8j0_gEYLyUI/edit?usp=sharing)) |
+| Prosedur | [SOP-05-01](https://docs.google.com/document/d/1DhKkoOBCeO210GP1YU9ESYAWepmIXSoy1_AJHqdZbaY/edit?usp=sharing) <br>[SOP-05-02](https://docs.google.com/document/d/199nbyuPtrkp45bjaqJawg4GbAjyEby_x8j0_gEYLyUI/edit?usp=sharing)) |
 
 ### CPMK-2
 Mahasiswa mampu merancang program pengendalian dan penanggulangan penyakit hewan yang berbasis bukti dan layak secara ekonomi pada populasi hewan produksi, hewan kesayangan, dan/atau satwa liar.
