@@ -806,4 +806,489 @@ Melalui kegiatan belajar ini, kita telah membekali diri dengan kemampuan untuk m
 
 ### Kegiatan Belajar 5.2: Perancangan kajian epidemiologi analitis
 
-> Bagian ini sedang dalam proses penyusunan 
+#### I. Pengantar
+
+Setelah kita mampu membaca dan menafsirkan hasil kajian orang lain, sekarang saatnya kita belajar menjadi "arsitek" di balik kajian tersebut. 
+
+Pertanyaannya, dari mana kita mulai?
+
+Apakah langsung memilih desain kajian? Atau langsung menghitung jumlah sampel?
+
+Jawabannya: tidak. Langkah pertama selalu dimulai dari memetakan masalah secara sistematis. Tanpa pemetaan yang jelas, kajian yang kita rancang bisa menjadi tidak terarah.
+
+#### II. Uraian materi
+
+##### A. Penentuan jenis kajian dan desain penarikan sampel
+
+###### 1. Dasar pemilihan kajian analitis
+
+Pertama-tama, kita perlu mengidentifikasi apa yang menjadi akibat (luaran) dan apa yang kira-kira memengaruhinya (determinan). 
+
+Luaran adalah kondisi yang ingin kita jelaskan atau cari penyebabnya. Pada kajian observasional, luaran dikategorikan menjadi dua kategori (dikotomi), misalnya "positif vs negatif" atau "ya vs tidak". 
+
+Dalam epidemiologi veteriner, luaran tidak selalu berupa penyakit. Kita bisa meneliti hal lain yang berdampak pada kesehatan atau ekonomi. Mari kita lihat pengelompokan luaran pada tabel berikut.
+
+Tabel 5.16. Kategori variabel luaran dalam kajian epidemiologi veteriner.
+
+| Kategori                        | Deskripsi                                                                       | Contoh dan dikotominya                                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Luaran biologis                 | Status keberadaan agen atau respons biologis hewan terhadap paparan agen        | Infeksi Brucella (positif vs negatif); titer antibodi (seropositif vs seronegatif)                               |
+| Luaran klinis dan patologis     | Kondisi penyakit dengan tanda klinis atau perubahan patofisiologis tertentu     | Diare (ya vs tidak); mastitis (ya vs tidak); FLUTD (ya vs tidak)                                                 |
+| Luaran kesejahteraan hewan      | Kondisi fisik dan mental hewan yang mencerminkan kesejahteraan.                 | Status kepincangan (pincang vs normal); perilaku abnormal (ada vs tidak ada); kesejahteraan umum (buruk vs baik) |
+| Luaran performa dan produksi    | Pencapaian target dari fungsi biologis yang diharapkan manusia.                 | Produksi susu (rendah vs tinggi); laju pertumbuhan (lambat vs cepat)                                             |
+| Luaran yang memengaruhi manusia | Dampak kesehatan, ekonomi, atau psikologis bagi pemilik hewan atau manusia lain | Margin keuntungan (rugi vs untung); residu antibiotik (ada vs tidak ada); distres pada pemilik (ya vs tidak)     |
+
+Beberapa kategori luaran di atas dapat digambarkan dalam model pemetaan masalah. Satu luaran dapat berujung pada luaran lainnya.
+
+```
+
+Luaran biologis
+    ↓
+Luaran klinis dan patologis
+    ↓
+Luaran kesejahteraan hewan ---------→ Luaran performa dan produksi
+    ↓                                         |
+Luaran yang memengaruhi manusia ←-------------┚
+
+```
+Gambar 5.2. Alur keterkaitan berbagai kategori luaran dalam kesehatan hewan dan dampaknya bagi manusia.
+
+Sebagai contoh, luaran kita adalah kejadian gangguan pernapasan pada ayam broiler (ya vs tidak).
+
+Setelah menentukan luaran, kita perlu mencari tahu hal-hal apa saja yang berpotensi memengaruhinya. Hal-hal ini kita sebut sebagai determinan atau faktor. Kita bisa mencarinya dari berbagai sudut pandang, mulai dari faktor manusianya, manajemennya, hingga lingkungan tempat hewan berada.
+
+Tabel berikut ini dapat digunakan untuk mengeksplorasi variabel yang relevan. Semua kategori ini dapat berkontribusi terhadap status kesehatan dan kesejahteraan hewan.
+
+  
+Tabel 5.17. Klasifikasi variabel determinan (paparan) berdasarkan sumbernya dalam epidemiologi veteriner.
+
+| No  | Kategori                  | Deskripsi                                                                                                                                                                | Contoh                                                                                                                                                                      |
+| :-: | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | Faktor manusia            | Faktor yang mendasari perilaku manusia dalam mengelola hewan dan lingkungannya                                                                                           | –                                                                                                                                                                           |
+|     | a. Faktor predisposisi    | Faktor internal manusia yang yang mendasari niat dan membentuk kecenderungan berperilaku                                                                                 | Pengetahuan, sikap, nilai, persepsi risiko                                                                                                                                  |
+|     | b. Faktor pemungkin       | Faktor eksternal yang memfasilitasi atau mencegah perwujudan niat menjadi perilaku yang nyata                                                                            | Ketersediaan sumber daya, modal, akses untuk mendapatkan layanan                                                                                                            |
+|     | c. Faktor pemicu          | Faktor (peristiwa) yang memicu perubahan perilaku secara tiba-tiba                                                                                                       | Wabah penyakit, lonjakan harga                                                                                                                                              |
+|     | d. Faktor penguat         | Faktor yang memperkuat atau melemahkan perilaku yang sudah berjalan                                                                                                      | Insentif ekonomi, sanksi hukum, dukungan orang lain, tekanan sosial                                                                                                         |
+|  2  | Faktor manajemen          | Tindakan manusia yang secara langsung mengatur kehidupan hewan                                                                                                           | –                                                                                                                                                                           |
+|     | a. Manajemen biologis     | Pengaturan terkait kesehatan yang diterapkan manusia pada hewan                                                                                                          | Jenis, akses, dan mutu pakan dan air minum, vaksinasi dan pengobatan, perkawinan dan inseminasi                                                                             |
+|     | b. Manajemen fisik        | Pengaturan ruang dan alur operasional di tempat hewan berada                                                                                                             | Kandang, kepadatan hewan, biosekuriti, sanitasi, transportasi                                                                                                               |
+|  3  | Faktor hewan              | Karakteristik individu hewan (juga dikenal sebagai faktor predisposisi hewan)                                                                                            | –                                                                                                                                                                           |
+|     | a. Karakter hewan statis  | Status biologis dasar yang melekat atau ditentukan secara genetik                                                                                                        | Jenis kelamin, genetika, breed, spesies                                                                                                                                     |
+|     | b. Karakter hewan dinamis | Status biologis hasil perjalanan hidup hewan atau hasil intervensi manusia pada masa lampau                                                                              | Umur, paritas, status nutrisi, riwayat penyakit, status imun                                                                                                                |
+|  4  | Faktor agen               | Karakteristik entitas biologis (mikroorganisme patogenik atau parasit) dan nonbiologis (kimia, fisik) yang dapat merusak integritas tubuh dan mengganggu kesehatan hewan | Keberadaan, jumlah, dan kemampuan bakteri, virus, atau parasit untuk mengganggu kesehatan; residu pestisida, mikotoksin, trauma mekanis (luka), kebisingan ekstrem, radiasi |
+|  5  | Faktor lingkungan         | Kondisi fisik, ekologis, dan biologis di luar individu hewan                                                                                                             | –                                                                                                                                                                           |
+|     | a. Lingkungan makro       | Kondisi lingkungan berskala besar yang sulit diubah oleh manusia                                                                                                         | Iklim, musim, lokasi geografis, topografi                                                                                                                                   |
+|     | b. Lingkungan mikro       | Kondisi lingkungan lokal yang dapat dimodifikasi oleh manusia                                                                                                            | Suhu, kelembapan, ventilasi, kualitas udara, kepadatan vektor                                                                                                               |
+
+Mengapa faktor manusia diletakkan di posisi paling atas? Karena dalam sistem peternakan, keputusan manusialah yang menentukan bagaimana hewan diberi makan, bagaimana kandang dibersihkan, dan kapan vaksin diberikan. Mari kita perhatikan alurnya pada gambar berikut.
+
+
+```
+
+                        Faktor manusia
+           (predisposisi, pemungkin, pemicu, penguat)
+                               ↓
+                        Faktor manajemen
+                        (biologis, fisik)
+                               |
+                ┌--------------╀--------------┐
+                ↓              |              ↓
+Karakter    Karakter           |          Lingkungan    Lingkungan
+hewan       hewan              |          mikro         makro 
+statis      dinamis            |              |            |
+  ↓             ↓              ↓              ↓            ↓ 
+    Faktor hewan          Faktor agen        Faktor lingkungan
+         ↓                     ↓                     ↓
+        Luaran status kesehatan dan kesejahteraan hewan
+
+```
+Gambar 5.3. Model hierarki pengaruh faktor manusia dan manajemen terhadap determinan kesehatan hewan (hewan, agen, dan lingkungan).
+
+Pilih satu atau beberapa variabel paparan yang akan dikaji dan dimasukkan dalam rumusan masalah. Pada pada kajian observasional, biasanya variabel paparan adalah hal-hal yang bisa diubah, misalnya manajemen kandang dan perlakuan terhadap hewan. Namun, ada kalanya kajian observasional menempatkan hal-hal yang tak bisa dimodifikasi, misalnya umur dan jenis kelamin hewan, sebagai variabel yang dikaji sebagai paparan.
+
+Mari kita gunakan contoh sederhana.
+* Luaran: gangguan pernapasan pada ayam.
+* Beberapa faktor yang mungkin berpengaruh:
+	* Kualitas ventilasi kandang (manajemen fisik)
+	* Kepadatan ayam (manajemen fisik)
+	* Kualitas biosekuriti (manajemen fisik)
+	* Strain ayam (karakter hewan statis)
+	* Status vaksinasi (karakter hewan dinamis)
+
+Setelah memilih variabel, langkah berikutnya adalah menyusunnya menjadi pertanyaan penelitian yang spesifik. Di sinilah kita menggunakan kerangka PECO.
+
+Setelah memilih variabel luaran dan paparan, langkah selanjutnya adalah menajamkan ide tersebut menjadi sebuah pertanyaan penelitian. Agar pertanyaan tersebut terukur dan tidak ambigu, kita menggunakan kerangka PECO.
+* P (Population): Populasi hewan yang menjadi sasaran kajian.
+* E (Exposure):  Paparan, yaitu faktor atau determinan yang diduga berasosiasi dengan luaran.
+* C (Comparator): Pembanding, yaitu kondisi paparan alternatif yang digunakan sebagai dasar perbandingan. Pembanding umumnya berupa ketiadaan paparan atau tingkat paparan yang berbeda.
+* O (Outcome): Luaran, yaitu kondisi kesehatan dan kesejahteraan hewan yang dinilai penting dan berdampak bagi hewan dan/atau manusia.
+
+Mengapa kita perlu menggunakan kerangka PECO? Karena kerangka ini membantu kita untuk menyusun pertanyaan penelitian yang lebih tajam. Mari kita bandingkan dua contoh pertanyaan berikut:
+
+* Pertanyaan lemah: "Apa faktor yang memengaruhi diare pada ayam?" (Terlalu luas).
+* Pertanyaan tajam (PECO): "Apakah ventilasi kandang yang buruk (E) berhubungan dengan kejadian gangguan pernapasan (O) pada ayam broiler yang dipelihara di kandang sistem open house (P) jika dibandingkan dengan kualitas ventilasi kandang yang baik (C)?"
+
+Pada beberapa kajian analitis, peneliti tidak hanya menguji satu paparan faktor, tetapi mengeksplorasi beberapa faktor sekaligus. Dalam keadaan ini, pertanyaan penelitian dapat dirumuskan secara umum, misalnya: ‘Faktor-faktor apa saja yang berasosiasi dengan kejadian gangguan pernapasan pada ayam broiler di kandang sistem open house?’ Meskipun demikian, peneliti tetap harus menetapkan luaran utama, paparan utama, dan paparan tambahan. Kajian dengan banyak paparan dikenal sebagai kajian eksploratori, sedangkan kajian yang menguji satu atau beberapa paparan spesifik dikenal sebagai kajian konfirmatori.
+
+Setelah menyusun pertanyaan penelitian, kita perlu menjawab pertanyaan berikutnya:
+
+Data akan dikumpulkan pada tingkat apa?
+
+Berbeda dengan manusia, hewan sering kali berada dalam kelompok (kandang, peternakan). Hal ini membuat struktur data menjadi bertingkat (hierarkis).
+
+Berbeda dengan manusia, hewan sering kali hidup berkelompok. Contoh: ayam broiler berada dalam kandang (flok), dan kandang-kandang berada dalam peternakan. Hal ini membuat struktur data menjadi bertingkat (hierarkis). 
+
+Oleh karena itu, kita harus menentukan unit analisis, yaitu pada level apa suatu variabel akan diukur.
+
+
+Tabel 5.18. Contoh pemetaan unit analisis dan level organisasi data pada variabel luaran dan paparan.
+
+| Peran variabel | Variabel                   | Level individu ayam | Level kandang | Level peternakan |
+| -------------- | -------------------------- | :-----------------: | :-----------: | :--------------: |
+| Luaran         | Gangguan pernapasan        | Ya                  | –             | –                |
+| Paparan        | Kualitas ventilasi kandang | –                   | Ya            | –                |
+| Paparan        | Kepadatan ayam             | –                   | Ya            | –                |
+| Paparan        | Kualitas biosekuriti       | –                   | –             | Ya               |
+| Paparan        | Strain ayam                | Ya                  | –             | –                |
+| Paparan        | Status vaksinasi           | Ya                  | –             | –                |
+
+Jika hewan berada dalam satu kelompok (klaster) yang sama, data mereka cenderung homogen, misalnya karena mereka menghirup udara yang sama dan memakan pakan yang sama. Penentuan unit analisis ini akan sangat memengaruhi cara kita menarik sampel dan menghitung jumlah sampel minimum nantinya.
+
+Setelah semua komponen di atas jelas, barulah kita memilih "cara" yang tepat untuk mencapai tujuan tersebut. Kita kembali pada tiga pilihan utama yang telah kita bahas di Kegiatan Belajar 5.1:
+
+1. Kajian potong lintang: Pilih cara ini jika kita ingin jawaban cepat mengenai prevalensi dan hubungan awal antarfaktor pada satu titik waktu. Cocok untuk kajian eksploratori (mencari banyak faktor sekaligus).
+2. Kajian kasus–kontrol: Pilih cara ini jika penyakit yang kita teliti langka atau butuh waktu lama untuk muncul. Kita mulai dari hewan yang sudah sakit.    
+3. Kajian kohort: Pilih cara ini jika kita ingin bukti ter kuat mengenai urutan waktu (paparan terjadi sebelum penyakit) dan ingin mengukur risiko secara langsung.
+
+Setelah kita memetakan masalah, menyusun pertanyaan PECO, dan menentukan desain kajian, pertanyaan berikutnya adalah, "Siapa saja hewan yang harus kita ambil sebagai sampel dan bagaimana cara memilihnya?" 
+
+Kita akan membahasnya pada bagian selanjutnya.
+
+
+###### 2. Penentuan metode penarikan sampel
+
+Kita tidak mungkin memeriksa seluruh populasi hewan di suatu wilayah karena keterbatasan waktu dan biaya. Oleh karena itu, kita harus memilih sampel dengan metode yang tepat. Kesalahan pada tahap ini dapat membuat hasil kajian menjadi bias, meskipun analisis statistiknya sudah benar.
+
+Sebelum memilih sampel, kita harus memeriksa ketersediaan kerangka sampel. Kerangka sampel adalah daftar lengkap dari seluruh unit dalam populasi yang akan kita teliti. Contohnya adalah daftar seluruh individu sapi di sebuah desa, daftar pemilik ternak, atau daftar klinik hewan di sebuah kota. Jika daftar ini tidak tersedia, kita akan kesulitan melakukan pengacakan.
+
+Ketersediaan kerangka sampel akan menentukan metode yang kita gunakan.
+* Jika kerangka sampel lengkap dan jelas, kita bisa menggunakan metode acak (probability sampling).
+* Jika kerangka sampel tidak tersedia atau tidak lengkap, kita sering terpaksa menggunakan metode nonacak (non-probability sampling). 
+
+Contoh: Kita ingin meneliti diare pada sapi di suatu kabupaten.
+- Jika kita memiliki daftar semua individu sapi di kabupaten tersebut, kita bisa sampling langsung pada level individu.
+- Jika hanya ada daftar peternakan, kita mulai dari memilih peternakan, lalu memilih kandang, lalu memilih individu sapi. Pendekatan bertahap seperti ini disebut multistage sampling.
+
+Jika kita memiliki kerangka sampel, kita sebaiknya menggunakan probability sampling. Pada metode ini, setiap unit dalam populasi memiliki peluang yang setara (dan diketahui) untuk terpilih menjadi sampel. Kelebihannya, hasil kajian dari sampel bisa kita generalisasikan ke populasi.
+
+Ada beberapa metode dalam pendekatan probability sampling:
+
+1. Simple random sampling (acak sederhana), dengan memilih unit secara acak dari seluruh kerangka sampel sehingga setiap unit memiliki peluang yang sama untuk terpilih.
+	
+2. Systematic random sampling (acak sistematis), dengan memilih unit berdasarkan interval tertentu (misalnya mengambil setiap urutan  ke-5) dari daftar yang telah disusun setelah menetapkan titik awal secara acak. 
+	
+3. Stratified random sampling (acak berstrata), dengan membagi populasi ke dalam beberapa strata, lalu memilih unit secara acak dari setiap strata. Hasilnya, setiap strata terwakili dalam sampel.
+	
+4. Cluster sampling (klaster), dengan memilih klaster (unit kelompok) secara acak, lalu mengambil seluruh individu di dalam klaster yang terpilih.
+	
+5. Multistage random sampling (acak tahapan ganda), dengan melakukan pemilihan sampel secara bertahap pada beberapa level organisasi, misalnya pilih wilayah secara acak (tahap 1), kemudian pilih peternakan dalam setiap wilayah secara acak (tahap 2), kemudian pilih kandang dalam setiap peternakan secara acak (tahap 3), kemudian pilih individu hewan dalam setiap kandang secara acak (tahap 4).
+
+Namun, dalam praktiknya, kita sering menghadapi keterbatasan. Contoh: Tidak ada kerangka sampel, biaya terbatas, waktu terbatas, atau akses terbatas. Pada situasi ini, kita terpaksa menggunakan non-probability sampling. Metode ini lebih mudah dikerjakan, tetapi potensi biasnya tinggi, terutama bias seleksi. Oleh karena itu, hasil kajian tidak bisa digeneralisasikan ke seluruh populasi.
+
+Ada beberapa metode dalam pendekatan non-probability sampling:
+
+1. Convenience sampling (sampling dengan kemudahan), dengan memilih unit yang paling mudah dijangkau oleh peneliti.
+	
+2. Consecutive sampling, dengan memilih seluruh unit yang memenuhi kriteria secara berurutan sampai jumlah sampel yang dibutuhkan terpenuhi. 
+	
+3. Purposive/judgmental sampling, dengan memilih unit berdasarkan pertimbangan peneliti karena dianggap memiliki karakteristik yang relevan dengan tujuan kajian.
+
+Setelah kita memahami cara memilih hewan yang akan dijadikan sampel, muncul pertanyaan berikutnya: "Berapa banyak hewan yang harus kita periksa?" Apakah cukup 10 ekor, atau harus 100 ekor? Kita akan membahas perhitungan jumlah sampel pada bagian selanjutnya.
+
+
+###### 3. Penentuan jumlah sampel
+
+Masalah yang umum dijumpai oleh peneliti adalah menentukan jumlah sampel. Jika sampel terlalu sedikit, kajian kita mungkin gagal mendeteksi adanya hubungan antarvariabel, padahal hubungan tersebut sebenarnya ada. Sebaliknya, jika jumlah sampel terlalu banyak, kita membuang sumber daya tanpa tambahan manfaat yang berarti.
+
+Pada dasarnya, penentuan jumlah sampel bertujuan untuk memastikan bahwa kajian kita memiliki kekuatan statistika (power) yang memadai. 
+
+Apa maksudnya?
+
+Power adalah kemampuan kajian untuk mendeteksi perbedaan atau asosiasi yang memang benar-benar ada di populasi.
+
+Jika power rendah, maka hubungan yang sebenarnya ada bisa terlihat “tidak signifikan”. Hal ini membuat kita keliru menyimpulkan bahwa tidak ada asosiasi.
+
+Jumlah sampel dihitung dengan rumus. Namun, sebelum itu, kita perlu menentukan beberapa angka yang biasanya kita peroleh dari literatur, data sekunder, atau kajian pendahuluan.
+
+1. Tingkat kepercayaan, yaitu probabilitas keyakinan bahwa hasil penelitian yang diperoleh tidak terjadi karena unsur kebetulan semata. Angka ini disimbolkan dengan α/2 yang biasanya bernilai 90%, 95%, atau 99%. Dalam rumus, angka ini direpresentasikan dengan nilai Z dan biasanya bernilai 1,645 (untuk tingkat kepercayaan 0,9) atau 1,96 (untuk tingkat kepercayaan 0,95) atau 2,58 (untuk tingkat kepercayaan 0,99).
+	
+2. Perkiraan prevalensi, yaitu proporsi kejadian luaran dalam populasi pada kajian potong lintang.
+	
+3. Batas kesalahan, yaitu tingkat ketelitian yang menunjukkan seberapa jauh hasil kajian dapat menyimpang dari nilai sebenarnya. Angka ini disimbolkan dengan d dan biasanya bernilai 0,05 atau 0,1.
+	
+4. Kekuatan statistika, yaitu kemampuan kajian untuk mendeteksi perbedaan atau asosiasi yang benar-benar ada. Angka ini disimbolkan dengan 1−β dan biasanya bernilai 80% atau 85%. Dalam rumus, angka ini direpresentasikan dengan nilai Z dan biasanya bernilai 0,84 (untuk kekuatan statistika 0,8) atau 1,04 (untuk kekuatan statistika 0,85).
+	
+5. Besar efek yang ingin dideteksi (misalnya OR atau RR). Semakin kecil perbedaan yang ingin kita deteksi, semakin banyak sampel yang kita butuhkan.
+
+Gunakan rumus berikut ini untuk menghitung jumlah sampel awal. Sebagai alternatif, gunakan perangkat lunak yang sesuai, misalnya Epi Info, OpenEpi, atau G Power.
+
+Kajian potong lintang: n = (Z^2 x p x (1-p)) / d^2
+dengan 
+* Z = nilai Z pada tingkat kepercayaan tertentu; 
+* p = perkiraan prevalensi; 
+* d = batas kesalahan.
+
+b.	Kajian kasus kontrol: n per kelompok = [(Zα/2 + Zβ)^2 × {p1(1−p1) + p0(1−p0)}] / (p1−p0)^2
+dengan 
+* Zα/2 = nilai Z pada tingkat kepercayaan tertentu; 
+* Zβ = nilai Z pada kekuatan statistika tertentu; 
+* p1 = proporsi paparan pada kelompok kasus, 
+* p0 = proporsi paparan pada kelompok kontrol.
+* Catatan: Pada kajian kasus–kontrol, rasio jumlah sampel pada kelompok kasus dan kelompok kontrol dapat berkisar dari 1:1 hingga 1:4.
+
+c.	Kajian kohort: n per kelompok = [(Zα/2 + Zβ)^2 × {p1(1−p1) + p0(1−p0)}] / (p1−p0)^2
+dengan 
+* Zα/2 = nilai Z pada tingkat kepercayaan tertentu; 
+* Zβ = nilai Z pada kekuatan statistika tertentu; 
+* p1 = risiko luaran pada kelompok terpapar; 
+* p0 = risiko luaran pada kelompok tidak terpapar.
+
+
+Angka yang dihasilkan dari rumus di atas adalah jumlah sampel awal. Namun, populasi hewan sering kali memiliki karakteristik khusus yang mengharuskan kita melakukan penyesuaian.
+
+Penyesuaian 1: Hewan yang hidup dalam kelompok (klaster)
+
+Hewan sering kali hidup berkelompok dalam kandang atau peternakan. Hewan dalam satu kelompok cenderung memiliki karakteristik yang mirip (homogen). Karena kemiripan ini, informasi yang kita dapatkan dari 10 ekor sapi dalam satu kandang tidaklah sekuat informasi dari 10 ekor sapi yang diambil dari 10 kandang berbeda. Oleh karena itu, jika kita mengambil sampel berbasis kelompok (klaster), kita harus memperbesar jumlah sampel kita (biasanya dikalikan dengan faktor koreksi yang disebut DEFF).
+
+Jumlah sampel yang disesuaikan (n adjusted atau nadj) adalah hasil perkalian dari jumlah sampel awal (n) dengan faktor koreksi berupa efek desain (design effect, disimbolkan DEFF) sehingga nadj = n x DEFF.
+
+Rumus DEFF = 1 + (m–1)ρ, dengan 
+* m = ukuran rata-rata klaster (rata-rata jumlah unit yang disampel dalam satu klaster)
+* ρ = korelasi intraklaster (ICC), yaitu ukuran tingkat kemiripan antarunit dalam satu klaster
+
+Nilai ρ berada pada rentang 0–1. Nilai yang mendekati 0 menunjukkan bahwa unit dalam satu klaster relatif tidak mirip (variasi dalam klaster tinggi), sedangkan nilai yang mendekati 1 menunjukkan bahwa unit dalam satu klaster sangat mirip (variasi dalam klaster rendah). Tentukan nilai ρ berdasarkan salah satu pendekatan berikut:
+* Gunakan nilai dari literatur atau kajian sebelumnya dengan konteks yang serupa (jenis hewan, penyakit, dan sistem pemeliharaan yang sama atau mendekati).
+* Gunakan hasil kajian pendahuluan untuk menghitung perkiraan ICC dari data awal.
+* Jika tidak tersedia data, gunakan asumsi konservatif berdasarkan tingkat penularan atau homogenitas paparan dalam klaster.
+	* Gunakan nilai kecil (misalnya 0,01–0,05) jika variasi antarindividu dalam satu klaster diperkirakan tinggi
+	* Gunakan nilai sedang (sekitar 0,05–0,2) jika terdapat kesamaan paparan dalam klaster, misalnya manajemen pakan atau lingkungan kandang yang sama.
+	* Gunakan nilai lebih tinggi (>0,2) jika unit dalam klaster sangat homogen
+
+
+Penyesuaian 2: Populasi terbatas
+
+Jika jumlah populasi (N) terbatas sehingga ia tidak berbeda jauh dari jumlah sampel (n), gunakan rumus koreksi untuk menurunkan jumlah sampel. Hal ini disebut dengan koreksi populasi terbatas (finite population correction atau FPC).
+
+Jumlah sampel yang disesuaikan (n adjusted atau nadj) = n / [1 + (n−1)/N] atau n adjusted = (n × N) / (n + N − 1). 
+
+
+Penyesuaian 3: Sampel cadangan
+
+Kita perlu menambahkan 10–20% dari total sampel akhir sebagai cadangan. Langkah ini bertujuan untuk mengantisipasi adanya hewan yang mati, dijual, atau hilang selama periode kajian.
+
+Catatan khusus untuk kajian eksploratori
+
+* Jika kita merancang kajian yang ingin mengeksplorasi banyak faktor sekaligus, perhitungan sampel di atas terkadang tidak mencukupi. Aturan yang umum digunakan adalah menyediakan minimum 10 kejadian luaran (hewan yang sakit) untuk setiap satu variabel independen (faktor paparan) yang kita masukkan ke dalam model.
+	
+* Contoh: Jika kita ingin meneliti 5 faktor paparan, maka kita membutuhkan minimum 50 ekor hewan yang sakit. Jika prevalensi penyakit tersebut hanya 10%, maka total sampel yang harus kita ambil adalah 500 ekor.
+
+Setelah menentukan jumlah sampel, langkah terakhir sebelum benar-benar turun ke lapangan adalah memastikan bahwa instrumen pengumpulan data kita sudah siap dan valid. Bagaimana cara menyusun kuesioner atau lembar observasi yang berkualitas? Kita akan membahasnya pada bagian selanjutnya.
+
+
+##### B. Penentuan instrumen pengumpulan data
+
+###### 1. Penentuan metode dan instrumen pengukuran
+
+Langkah pertama adalah mengubah konsep yang masih abstrak menjadi sesuatu yang konkret dan terukur. Proses ini disebut penyusunan definisi operasional.
+
+Dalam kajian observasional, setiap variabel harus dikategorikan. Bayangkan jika kita sedang meneliti hubungan antara "kebersihan kandang" dan "diare". 
+
+Kebersihan kandang dikategorikan menjadi "kandang kotor" dan "kandang bersih". Bagaimana kita memastikan bahwa kriteria "kandang kotor" menurut saya sama dengan kriteria "kandang kotor" menurut orang lain?
+
+Jika definisinya tidak jelas, maka setiap pengamat bisa memiliki standar penilaian yang berbeda. Akibatnya, data menjadi tidak konsisten.
+
+Selain itu, ada masalah lain. Banyak variabel awalnya berbentuk numeris, misalnya umur, suhu, dan volume susu. Semuanya berupa angka. Kita harus mengubahnya menjadi kategori.
+
+Hal yang sangat krusial adalah menetapkan angka ambang batas (cut-off points). Sebagai contoh, pada variabel umur, kita membuat kategori "muda" dan "tua". 
+
+Di mana kita akan mementukan batasan muda dan tua? 
+
+Apakah pada umur 5 tahun:
+* Hewan berumur di bawah 5 tahun dikategorikan muda
+* Hewan berumur di atas 5 tahun dikategorikan tua
+
+Apakah pada umur 7 tahun:
+* Hewan berumur di bawah 7 tahun dikategorikan muda
+* Hewan berumur di atas 7 tahun dikategorikan tua
+
+Penentuan batas ini harus dilakukan sejak tahap perancangan, bukan setelah data terkumpul. Dasarnya bisa berasal dari literatur ilmiah, standar industri atau kebijakan, atau pertimbangan biologis. Meskipun demikian, saat mengambil data di lapangan nanti, kita tetap merekam data mentahnya dalam bentuk angka.
+
+Lalu, berapa banyak kategori yang sebaiknya kita buat?
+
+* Untuk variabel luaran, gunakan dua kategori (dikotomi)
+* Untuk variabel paparan:
+	* Gunakan dua kategori untuk memudahkan analisis. Cara ini disarankan jika terdapat batas atau standar yang jelas atau jika jumlah sampel terbatas.
+	* Gunakan tiga kategori atau lebih jika kita ingin melihat tingkatan atau gradasi (contoh: kepadatan rendah, sedang, tinggi). Jangan membuat terlalu banyak kategori jika sampelnya sedikit. Prinsipnya, setiap kategori sebaiknya memiliki ≥10 unit. 
+
+Setelah variabel didefinisikan dengan jelas, kita perlu menentukan cara kita mendapatkan data. Secara umum, ada tiga aktivitas yang bisa kita lakukan, sebagaimana diuraikan dalam tabel berikut ini.
+
+Tabel 5.19. Pilihan metode dan instrumen pengumpulan data berdasarkan karakteristik variabel.
+
+| Metode                            | Penjelasan                                                               | Contoh variabel                               | Contoh instrumen                                  |
+| --------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------------- |
+| Observasi dan pengukuran langsung | Digunakan untuk variabel yang dapat diamati atau diukur secara objektif. | Suhu tubuh, status penyakit, skor kepincangan | Alat ukur fisik, uji diagnostik, rubrik penilaian |
+| Wawancara dan pengisian kuesioner | Digunakan untuk menggali informasi yang tidak dapat diamati langsung.    | Praktik manajemen, riwayat penyakit           | Kuesioner terstruktur                             |
+| Pengambilan data sekunder         | Digunakan jika sudah ada data yang dikumpulkan pihak lain                | Catatan produksi, <br>rekam medis hewan       | –                                                 |
+
+Agar data yang dikumpulkan konsisten, kita perlu menggunakan instrumen yang terstandar. Selain itu, kita juga perlu membuat panduan kerja bagi petugas di lapangan.
+
+* Alat ukur fisik, misalnya termometer, timbangan, dan meteran. Pastikan alatnya sudah dikalibrasi dan memiliki panduan penggunaan yang jelas.
+* Uji diagnostik, misalnya rapid test, ELISA, dan PCR. Pastikan ujinya memiliki validitas dan reliabilitas yang tinggi.
+* Rubrik penilaian, misalnya rubrik penilaian BCS, kepincangan hewan, dan kebersihan kandang. Pastikan rubriknya valid, reliabel, dan sudah diuji pada studi pendahuluan.
+* Kuesioner terstruktur. Pastikan item pertanyaannya valid, reliabel, sudah diuji, dan tidak menggiring jawaban responden.
+
+Setelah kita menetapkan cara mengukur variabel, langkah berikutnya adalah mengantisipasi berbagai kesalahan sistematis yang mungkin muncul saat kita mengambil data tersebut.
+
+
+###### 2. Validasi instrumen dan pencegahan bias
+
+Dalam epidemiologi, ada musuh tersembunyi yang bisa merusak hasil kajian kita, yaitu bias. Bias adalah kesalahan sistematis yang mengakibatkan hasil kajian menyimpang dari kebenaran.
+
+Berbeda dengan kesalahan acak yang biasanya hilang jika kita menambah jumlah sampel, bias tidak akan hilang meskipun kita memeriksa ribuan hewan. Jika instrumen atau cara kita mengambil sampel sudah salah sejak awal, maka hasil akhirnya akan tetap meleset.
+
+Secara garis besar, kita akan berhadapan dengan dua jenis bias utama:
+
+* Bias seleksi. Bias tipe ini terjadi ketika unit yang kita pilih sebagai sampel tidak mewakili populasi yang sebenarnya. Misalnya, kita hanya mengambil sampel dari peternakan yang lokasinya di pinggir jalan raya karena mudah dijangkau. Padahal, peternakan di pelosok mungkin memiliki pola manajemen dan pola penyakit yang berbeda.
+	
+* Bias informasi. Bias tipe ini terjadi karena adanya ketidakakuratan dalam proses pengukuran atau pengumpulan data. Beberapa bentuknya antara lain:
+	* Bias ingatan: Contoh: Pemilik hewan lupa kapan tepatnya hewan mulai sakit atau apa saja pakan yang diberikan bulan yang lalu.
+	* Bias pewawancara. Contoh: Cara petugas bertanya berbeda-beda sehingga jawaban yang didapat juga berbeda, misalnya satu petugas lebih rinci, sedangkan petugas  lain lebih singkat.
+	* Bias pengukuran. Contoh: Hewan yang sebenarnya sakit ringan dicatat sebagai hewan sehat karena alat uji kita kurang sensitif.
+
+Selain bias, kita juga harus mengendalikan variabel perancu agar hubungan antara paparan dan luaran benar-benar murni. Selain dikendalikan pada analisis statistika nanti, kita bisa mencegah perancu sejak merancang kajian. Ada beberapa strategi.
+
+* Pembatasan. Artinya, kita membatasi populasi hanya pada kelompok tertentu agar variasi perancu berkurang. Misalnya kita menduga bahwa umur adalah perancu, maka kita membatasi populasi hanya pada umur tertentu. Contoh: Kita hanya mengkaji hewan yang berumur di bawah 2 tahun karena.
+	
+* Penyepadanan. Artinya, kita memastikan kelompok terpapar dan kelompok tidak terpapar memiliki karakteristik perancu yang serupa. Contoh: Jika kita mendapatkan satu sapi sakit berumur 5 tahun, maka kita harus mencari satu sapi sehat yang juga berumur 5 tahun sebagai pembandingnya.
+	
+* Stratifikasi. Artinya, kita membagi sampel ke dalam kelompok berdasarkan variabel perancu. Contoh: analisis dipisahkan berdasarkan kelompok umur atau berdasarkan tingkat kepadatan kandang.
+
+Sebelum benar-benar terjun ke lapangan untuk mengambil data utama, kita sangat disarankan melakukan "uji coba" atau kajian pendahuluan (pilot study). Ibarat seorang penyanyi yang melakukan geladi resik sebelum konser, kita perlu memastikan semua instrumen kita berfungsi dengan baik.
+
+Dalam kajian pendahuluan ini, kita menilai dua hal utama:
+* Validitas: Apakah instrumen kita benar-benar mengukur apa yang seharusnya diukur? Sebagai contoh, untuk kuesioner, kita mengecek validitas isi (apakah semua pertanyaan sudah relevan?) dan validitas muka (apakah bahasa kuesioner kita mudah dipahami oleh peternak?).
+* Reliabilitas: Apakah hasil pengukuran kita konsisten? Kita mengecek konsistensi antara satu petugas penginput data dengan petugas lain. Jika ada dua petugas yang menilai kondisi tubuh sapi yang sama, apakah skor yang mereka berikan sama atau berbeda jauh?
+
+Setelah kita memastikan data yang diambil valid dan minim bias, sekarang kita akan masuk ke bagian yang paling filosofis dalam epidemiologi: "Bagaimana kita membuktikan bahwa suatu faktor benar-benar menjadi penyebab penyakit?" Kita akan membahas konsep ini  pada bagian selanjutnya.
+
+##### C. Konsep faktor dan kausalitas
+
+###### 1. Jenis-jenis faktor kontributor
+
+Pada bagian sebelumnya, kita sudah membahas berbagai determinan yang dapat memengaruhi kejadian penyakit, yang mencakup faktor manusia, manajemen, hewan, agen, dan lingkungan. Sekarang kita akan memperdalam satu kelompok yang sering luput diperhatikan, yaitu faktor manusia.
+
+Perilaku manusia dipengaruhi oleh beberapa jenis faktor yang bekerja secara bersamaan. Dalam epidemiologi perilaku, faktor-faktor ini dapat dibagi menjadi empat kelompok: predisposisi, pemungkin, pemicu, dan penguat.
+
+* Faktor predisposisi (predisposing factors) adalah kondisi internal yang membentuk kecenderungan seseorang untuk berperilaku tertentu. Dengan kata lain, apa yang membuat seseorang “cenderung” melakukan suatu tindakan?
+	Contoh: Pengetahuan tentang penyakit, sikap terhadap kebersihan kandang, serta keyakinan atau budaya dalam memelihara ternak. Peternak yang tidak percaya bahwa vaksin efektif untuk mencegah penyakit memiliki predisposisi untuk membiarkan ternaknya tidak divaksin.
+	
+* Faktor pemungkin (enabling factors) adalah kondisi eksternal yang memungkinkan atau menghambat seseorang untuk melakukan suatu tindakan. Dengan kata lain, apakah orang tersebut mampu melakukan tindakan tertentu?
+	Contoh: Meskipun peternak ingin melakukan vaksinasi (predisposisi baik), mereka tidak bisa melakukannya jika tidak ada akses ke dokter hewan atau jika harga vaksin tidak terjangkau. Sebaliknya, kemudahan akses untuk membeli obat secara bebas tanpa resep dapat menjadi faktor pemungkin bagi terjadinya resistensi antimikroba di peternakan.
+	
+* Faktor pemicu (precipitating factors) adalah peristiwa yang mendorong terjadinya perubahan perilaku secara tiba-tiba atau menjadi titik awal munculnya masalah.
+	Contoh: Keputusan untuk memasukkan hewan baru ke dalam kandang tanpa proses karantina. Tindakan ini menjadi "percikan" yang memicu masuknya agen penyakit ke dalam populasi yang sebelumnya sehat.
+	
+* Faktor penguat (reinforcing factors) adalah kondisi yang mempertahankan atau memperkuat perilaku yang sudah terjadi.
+	Contoh: Jika seorang peternak melihat ternaknya tumbuh lebih cepat setelah memperbaiki sanitasi, keberhasilan ini menjadi penguat baginya untuk terus menjaga kebersihan. Sebaliknya, cibiran tetangga terhadap peternak yang melakukan karantina bisa menjadi penguat negatif yang menghentikan perilaku baik tersebut.
+
+Mengapa kita perlu membedah faktor-faktor ini?
+
+Karena sebagai dokter hewan, saran medis kita sering kali gagal bukan karena obatnya yang salah, melainkan karena kita tidak menyentuh faktor kontributor yang tepat. Kita mungkin sibuk memberikan penyuluhan (predisposisi), padahal masalah utamanya adalah peternak tidak punya uang untuk membeli sabun (pemungkin).
+
+Sebagaimana yang diilustrasikan dalam Gambar 5.3, faktor manusia merupakan faktor mendasar yang memengaruhi hampir semua faktor lainnya. 
+
+Selanjutnya, bagaimana faktor-faktor ini berinteraksi satu sama lain hingga menimbulkan penyakit? Apakah mereka bekerja sendiri-sendiri? Kita akan melihat gambaran besarnya pada bagian selanjutnya.
+
+###### 2. Model multifaktor
+
+Kita perlu menyadari bahwa penyakit jarang sekali muncul karena faktor tunggal. Penyakit merupakan hasil interaksi yang kompleks dari berbagai determinan. Untuk memudahkan kita memahami kerumitan ini, para ahli epidemiologi mengembangkan beberapa model berpikir.
+
+
+* Segitiga epidemiologi. 
+	
+	Model ini telah kita bahas pada Sub-CPMK-2. Ia menggambarkan bahwa keadaan sehat atau sakit pada populasi hewan ditentukan oleh interaksi antara beragam faktor yang dapat dibagi menjadi tiga komponen, yaitu agen, inang, dan lingkungan.
+	
+	Penyakit akan muncul jika keseimbangan ini terganggu. Misalnya, jika cuaca menjadi sangat ekstrem (lingkungan berubah), daya tahan tubuh sapi (inang) bisa menurun, sehingga bakteri yang tadinya tidak berbahaya (agen) mulai menimbulkan gangguan pernapasan.
+	
+* Pai penyebab 
+	
+	Model yang diperkenalkan oleh Kenneth Rothman ini menggambarkan faktor-faktor penyebab penyakit sebagai sebuah "kue pai". Satu lingkaran pai yang utuh disebut sebagai penyebab cukup (sufficient cause). Artinya, jika semua potongan pai sudah terkumpul, maka penyakit pasti terjadi.
+	
+	Di dalam pai tersebut, ada potongan-potongan kecil. Salah satu potongan yang paling istimewa adalah penyebab perlu (necessary cause). Ini adalah faktor yang wajib ada di setiap pai. Tanpa potongan ini, penyakit tidak akan pernah terjadi.
+	
+	Contoh: Dalam kasus penyakit antraks, keberadaan bakteri Bacillus anthracis adalah penyebab perlu. Namun, bakteri saja tidak cukup. Harus ada potongan lain seperti luka pada kulit atau daya tahan tubuh yang lemah agar pai menjadi utuh dan penyakit muncul.
+	
+* Jejaring penyebab
+	
+	Model ini menggambarkan bahwa faktor-faktor penyebab saling terkait satu sama lain seperti jaring laba-laba. Satu faktor bisa memengaruhi faktor lainnya. Contoh: rendahnya pendidikan peternak memengaruhi keputusan mereka untuk tidak melakukan biosekuriti. Ketiadaan biosekuriti memudahkan virus masuk. Masuknya virus ditambah dengan pakan yang kurang bergizi menyebabkan hewan sakit. Model ini mengingatkan kita bahwa untuk memutus rantai penyakit, kita bisa melakukan intervensi di berbagai titik dalam jejaring tersebut
+	
+* Lingkaran determinan
+	
+	Model ini menempatkan hewan (inang) sebagai pusat yang dikelilingi oleh lapisan-lapisan determinan. Lapisan terdalam biasanya adalah faktor genetik dan biologis individu, sementara lapisan luarnya adalah lingkungan fisik, sosial, dan ekonomi. Model ini sangat berguna dalam ekonomi veteriner karena kita bisa melihat bagaimana kebijakan pemerintah atau harga pasar (lapisan paling luar) secara tidak langsung memengaruhi kesehatan individu hewan di kandang.
+
+Apa gunanya kita mempelajari semua model ini?
+
+Dengan memahami model multifaktor, kita tidak akan terjebak pada pemikiran sempit bahwa "obat" adalah satu-satunya solusi. Kita akan mulai melihat bahwa memperbaiki ventilasi (lingkungan) atau memberikan pakan yang lebih baik (inang) bisa jadi jauh lebih efektif daripada sekadar membunuh kuman (agen).
+
+Setelah kita memahami bagaimana berbagai faktor ini berinteraksi, sekarang kita sampai pada pertanyaan terakhir: "Bagaimana kita bisa benar-benar yakin bahwa hubungan yang kita temukan adalah hubungan sebab-akibat?" Kita akan membahasnya pada bagian selanjutnya.
+
+###### 3. Penyimpulan kausalitas
+
+Pada kegiatan belajar 5.1, kita sudah mempelajari bahwa suatu faktor memiliki tiga tingkatan, yaitu faktor yang berasosiasi, faktor risiko, dan faktor penyebab. Sekarang, bagaimana cara kita menaikkan status sebuah faktor dari sekadar "berhubungan" menjadi "penyebab"?
+
+* Apakah hasil uji statistika yang menunjukkan nilai p < 0,05 sudah cukup untuk membuktikan penyebab? 
+* Apakah nilai RR atau OR yang tinggi sudah cukup untuk membuktikan penyebab?
+
+Belum tentu. Kita harus sangat berhati-hati. Hasil perhitungan statistika hanyalah menunjukkan  hubungan matematis, sedangkan hubungan kausal (sebab-akibat) adalah kenyataan biologis. Untuk menjawab keraguan ini, kita membutuhkan kerangka kerja logika yang disebut kriteria kausalitas.
+
+**a. Kriteria Bradford-Hill**
+
+Sir Austin Bradford Hill menyusun sembilan kriteria untuk membantu kita menilai apakah suatu asosiasi kemungkinan besar bersifat kausal. Kita tidak wajib memenuhi kesembilan kriteria tersebut, tetapi semakin banyak yang terpenuhi, semakin kuat keyakinan kita.
+Berikut adalah beberapa kriteria utama yang paling sering digunakan dalam epidemiologi veteriner.
+
+1. Temporalitas: Apakah paparan terbukti mendahului luaran? Ini adalah kriteria yang wajib ada. Contoh: Sapi harus mengonsumsi pakan berjamur dulu sebelum menunjukkan tanda-tanda keracunan aflatoksin. Catatan: temporalitas hanya dapat dinilai dengan baik pada kajian kohort; pada kajian potong lintang dan kasus-kontrol retrospektif, temporalitas tidak dapat dikonfirmasi.
+	
+2. Kekuatan asosiasi: Apakah besar OR atau RR cukup bermakna untuk menunjukkan hubungan yang lebih dari sekadar kebetulan? Semakin besar nilai RR atau OR, semakin kecil kemungkinan hubungan itu hanya kebetulan. Contoh: Nilai OR = 10 memberikan bukti penyebab yang jauh lebih kuat daripada OR = 1,5.
+	
+3. Gradien biologis (hubungan dosis-respons): Apakah terdapat hubungan bertingkat antara kuantitas paparan dengan keparahan luaran? Contoh: Semakin banyak jumlah kuman yang masuk ke tubuh pedet, semakin parah diare yang dialami.
+	
+4. Konsistensi: Apakah temuan konsisten dengan kajian lain pada konteks yang berbeda? Contoh: Berbagai penelitian di seluruh dunia selalu menemukan bahwa kurangnya kolostrum meningkatkan risiko kematian pedet.
+	
+5. Plausibilitas biologis: Apakah terdapat mekanisme biologis yang masuk akal untuk menjelaskan hubungan yang ditemukan? Contoh: Secara biologis, masuk akal jika virus yang merusak dinding usus menyebabkan diare.
+	
+6. Spesifisitas: Apakah satu paparan berhubungan secara khusus dengan satu luaran penyakit yang spesifik? Contoh: Infeksi virus Rabies secara spesifik menyebabkan gangguan neurologis yang khas, bukan gangguan kulit atau pencernaan.
+
+
+**b. Kriteria/Postulat Evans**
+
+Selain Bradford-Hill, kita juga mengenal kriteria Evans. Kriteria ini berfokus pada perbandingan angka kejadian penyakit di lapangan. Berbeda dengan postulat Koch yang fokus pada isolasi agen di laboratorium, kriteria Evans lebih bersifat epidemiologis karena melihat pola pada tingkat populasi.
+
+Beberapa poin utama dalam kriteria Evans meliputi:
+
+* Prevalensi penyakit harus jauh lebih tinggi pada hewan yang terpapar dibandingkan yang tidak terpapar.
+* Paparan terhadap faktor tersebut harus lebih sering ditemukan pada hewan yang sakit dibandingkan hewan yang sehat.
+* Insidensi penyakit (kasus baru) harus jauh lebih tinggi pada kelompok terpapar.
+* Hubungan antara paparan dan penyakit harus menunjukkan distribusi kurva normal atau gradien biologis.
+
+Mengapa kita harus repot-repot membedakan asosiasi dan kausalitas? Jawabannya adalah demi efisiensi kebijakan.
+
+Dalam dunia kesehatan hewan, sumber daya kita (baik itu uang, waktu, maupun tenaga) sangat terbatas. Kita tidak ingin membuang-buang anggaran untuk melakukan intervensi pada faktor yang hanya "berasosiasi" tetapi bukan "penyebab" yang sebenarnya.
+
+Contoh: Jika kita menemukan bahwa kepemilikan kucing berasosiasi dengan kejadian penyakit pada sapi, kita tidak bisa langsung menyarankan peternak untuk membuang kucingnya. Kita harus memastikan dulu apakah kucing tersebut memang membawa agen penyakit (kausal) ataukah keberadaan kucing hanya penanda bahwa sanitasi peternakan tersebut secara umum buruk.
+
+Dengan menerapkan prinsip kausalitas, kebijakan pengendalian penyakit yang kita ambil akan bersifat berbasis bukti (evidence-based). Keputusan yang berbasis bukti akan lebih tepat sasaran, efektif dalam menurunkan angka penyakit, dan dapat dipertanggungjawabkan secara ilmiah.
+
+
+#### III. Ringkasan
+
+Pada kegiatan belajar ini, kita telah menuntaskan pemahaman tentang bagaimana merancang sebuah kajian epidemiologi analitis yang berkualitas. Kita belajar bahwa rancangan yang baik dimulai dari pemetaan variabel yang jelas. Kita juga memahami pentingnya memilih metode penarikan sampel yang tepat dan menghitung jumlah sampel minimum agar kajian kita memiliki kekuatan statistika yang memadai. Selain itu, kita telah melihat bagaimana instrumen yang valid dan prosedur yang terstandar menjadi kunci untuk menghindari bias. Terakhir, kita menyadari bahwa membuktikan "penyebab" harus melalui uji logika kausalitas yang mendalam. Dengan bekal ini, sekarang kita mampu merancang solusi kesehatan hewan yang berbasis bukti ilmiah yang kokoh.
