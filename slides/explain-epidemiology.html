@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explain epidemiology</title>
+
+<!--
+  SLIDE SHELL TEMPLATE
+  Veterinary Epidemiology and Economics
+
+  How to make a new deck:
+  1. Copy this file to slides/<slug>.html.
+  2. Edit the deck-meta block below.
+  3. Replace the example slides, details, and controls in the CONTENT area.
+  4. Do not edit the SHELL STYLES or the SHELL SCRIPT. Put deck-specific styles in
+     <style id="deck-styles"> and deck-specific code in <script id="deck-script">.
+     The shell version 3.2 offers: layout patterns (intro, after, lay-split, lay-cards,
+     lay-compare), one box design (box), one table design (tbl), the card sorter (data-sorter),
+     SVG figure classes (.fig), and a Reset button that also resets inputs made later.
+     The example slides show each slide family and each layout pattern (05, sections 3.5 to 3.10).
+     Reveal steps (data-step) remain for old decks only. New decks do not use them (05, section 2.3).
+  5. Register the deck in slides/decks.yml.
+  Rules: 05-slide-deck-guide.md.
+-->
+
+<script type="application/json" id="deck-meta">
+{
+  "title": "Explain epidemiology",
+  "domain": "D0",
+  "competency": "C1",
+  "skills": {
+    "primary": "S1.1",
+    "secondary": []
+  },
+  "minutes": 15,
+  "articles": [
+    "epidemiology"
+  ],
+  "guides": [],
+  "status": "draft",
+  "updated": "2026-11-13"
+}
+</script>
+
+<!-- ===================== SHELL STYLES (do not edit) ===================== -->
+<style id="shell-styles">
+@font-face { font-family: "Source Sans 3"; src: url("../assets/fonts/source-sans-3-latin-wght-normal.woff2") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../assets/fonts/source-serif-4-latin-wght-normal.woff2") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+:root {
+  --bg: #FFFFFF; --surface: #F5F6F7; --surface-2: #ECEEF0; --line: #DFE2E6;
+  --ink: #16191D; --muted: #5B626B; --accent: #16191D; --accent-ink: #FFFFFF;
+  --ok: #17794B; --bad: #B4441C;
+  --d0: #6B7480; --d1: #0072B2; --d2: #D55E00; --d3: #CC79A7; --d4: #009E73; --d5: #E69F00; --dint: #16191D;
+  --font-text: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --panel-w: 23.5rem; --bar-h: 3.3rem; --radius: 0.7rem;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #000000; --surface: #111111; --surface-2: #1C1C1C; --line: #2E2E2E;
+  --ink: #EDEDED; --muted: #A3A3A3; --accent: #EDEDED; --accent-ink: #000000;
+  --ok: #4CC38A; --bad: #F08A5D;
+  --d0: #A3A3A3; --d1: #56B4E9; --d2: #E0711A; --d3: #CC79A7; --d4: #1DB088; --d5: #E69F00; --dint: #EDEDED;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+/* The type size follows the screen. A 1280 by 720 screen gives 17.5px, and a 1920 by 1080 screen gives 26.25px. */
+/* The student can change the size with the A- and A+ buttons (--zoom). */
+html { font-size: calc(clamp(16px, min(1.367vw, 2.431vh), 36px) * var(--zoom, 1)); }
+:root.is-zoomed .slide { overflow-y: auto; }
+body {
+  margin: 0; height: 100vh; height: 100dvh; overflow: hidden;
+  font-family: var(--font-text); line-height: 1.42;
+  background: var(--bg); color: var(--ink);
+  display: grid; grid-template-rows: var(--bar-h) 1fr var(--bar-h);
+}
+button { font: inherit; color: inherit; }
+a { color: var(--ink); text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.18em; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.code { font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.num { font-variant-numeric: tabular-nums; }
+.dot { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--dc, var(--d0)); display: inline-block; flex: none; }
+
+/* Top bar */
+.topbar { display: flex; align-items: center; gap: 0.75rem; padding: 0 1rem; border-bottom: 1px solid var(--line); min-width: 0; }
+.deck-id { display: flex; align-items: center; gap: 0.55rem; min-width: 0; flex: 1; }
+.deck-id .code { font-size: 0.85rem; white-space: nowrap; }
+.deck-title { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tools { display: flex; gap: 0.25rem; }
+.icon-btn { min-width: 2.25rem; height: 2.25rem; padding: 0 0.55rem; border: 1px solid transparent; background: transparent; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; cursor: pointer; color: var(--muted); font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+.icon-btn:hover { background: var(--surface); color: var(--ink); }
+.icon-btn[aria-pressed="true"] { color: var(--ink); background: var(--surface-2); }
+.icon-btn svg { width: 1.15rem; height: 1.15rem; flex: none; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.icon-btn[hidden] { display: none; }
+.icon-btn.txt-btn { font-size: 0.95rem; font-weight: 700; min-width: 2.25rem; letter-spacing: 0.01em; }
+.icon-btn:disabled { opacity: 0.35; cursor: default; background: transparent; }
+
+/* Stage */
+.stage { display: grid; grid-template-columns: minmax(0, 1fr); min-height: 0; }
+.stage.has-panel { grid-template-columns: minmax(0, 1fr) var(--panel-w); }
+.card { position: relative; min-height: 0; overflow: hidden; }
+.slide { position: absolute; inset: 0; padding: 1.6rem clamp(1.2rem, 4vw, 3rem) 1.25rem; display: none; flex-direction: column; gap: 0.9rem; overflow: hidden; }
+.slide.is-active { display: flex; }
+.slide h1 { font-family: var(--font-display); font-size: 3.1rem; line-height: 1.08; letter-spacing: -0.02em; margin: 0; font-weight: 600; }
+.slide h2 { font-size: 1.75rem; line-height: 1.18; letter-spacing: -0.012em; margin: 0; font-weight: 650; }
+.slide p { margin: 0; }
+.slide .lead { font-size: 1.25rem; color: var(--muted); }
+.slide ul { margin: 0; padding-left: 1.2rem; }
+.slide li + li { margin-top: 0.35rem; }
+/* The sentence of a definition uses the display face. New decks use the class "definition". */
+.slide .definition, .slide .big-def, .slide .def-full { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.008em; }
+.notes { display: none; }
+
+/* Slide types */
+.slide[data-type="title"] { justify-content: center; }
+.slide[data-type="title"] .meta-list { display: grid; gap: 0.4rem; margin-top: 1rem; padding: 0; list-style: none; }
+.slide[data-type="title"] .meta-list li { display: flex; gap: 0.6rem; align-items: baseline; }
+.slide[data-type="question"] { justify-content: center; }
+/* Centred slides sit a little above the middle: the space above is 2 parts and the space below is 3 parts.
+   The two spacers shrink to nothing when the slide is full. */
+.slide[data-type="title"]::before, .slide[data-type="question"]::before, .slide[data-type="check"]::before, .slide.vcenter::before { content: ""; flex: 2 0 0px; margin-bottom: -0.9rem; }
+.slide[data-type="title"]::after, .slide[data-type="question"]::after, .slide[data-type="check"]::after, .slide.vcenter::after { content: ""; flex: 3 0 0px; margin-top: -0.9rem; }
+.slide[data-type="summary"] .links { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: auto; }
+.btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 0.95rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-weight: 500; text-decoration: none; color: var(--ink); }
+.btn:hover { border-color: var(--muted); }
+.btn-main { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn-main:hover { border-color: var(--accent); opacity: 0.88; }
+
+/* Interactive markers */
+.term { border-bottom: 1px dotted var(--muted); cursor: help; }
+[data-detail] { position: relative; cursor: pointer; border-radius: var(--radius); outline: 1px solid transparent; transition: outline-color 0.15s; }
+[data-detail]:hover, [data-detail]:focus-visible { outline: 1px solid var(--muted); outline-offset: 4px; }
+[data-detail]::after { content: "i"; position: absolute; top: -0.55rem; right: -0.55rem; width: 1.2rem; height: 1.2rem; border-radius: 50%; border: 1px solid var(--muted); background: var(--bg); color: var(--muted); font: italic 600 0.75rem/1.1rem var(--font-display); text-align: center; }
+[data-detail].is-open { outline: 2px solid var(--accent); outline-offset: 4px; }
+.tooltip { position: fixed; z-index: 50; max-width: 19rem; padding: 0.55rem 0.75rem; border-radius: 8px; background: var(--ink); color: var(--bg); font-size: 0.88rem; line-height: 1.4; pointer-events: none; opacity: 0; transition: opacity 0.12s; }
+.tooltip.is-on { opacity: 1; }
+
+/* Choice and check components */
+.choices { display: grid; gap: 0.5rem; padding: 0; margin: 0.4rem 0 0; list-style: none; }
+.choice { text-align: left; width: 100%; padding: 0.7rem 1rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); cursor: pointer; display: flex; gap: 0.7rem; align-items: baseline; }
+.choice:hover { border-color: var(--muted); }
+.choice .key { font-weight: 700; color: var(--muted); }
+/* Selected: a dark frame. Correct and wrong: a coloured frame, a mark, and a word. */
+.choice[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); background: var(--surface-2); }
+.choice.is-correct { border-color: var(--ok); box-shadow: inset 0 0 0 1px var(--ok); background: color-mix(in srgb, var(--ok) 9%, var(--bg)); }
+.choice.is-wrong { border-color: var(--bad); box-shadow: inset 0 0 0 1px var(--bad); background: color-mix(in srgb, var(--bad) 8%, var(--bg)); }
+.choice.is-correct::after, .choice.is-wrong::after { margin-left: auto; padding-left: 1rem; font-weight: 700; font-size: 0.92em; white-space: nowrap; }
+.choice.is-correct::after { content: "\2713\00a0 Correct"; color: var(--ok); }
+.choice.is-wrong::after { content: "\2717\00a0 Not correct"; color: var(--bad); }
+.verdict { min-height: 1.5rem; font-weight: 600; }
+.slide[data-type="check"] { justify-content: center; }
+.slide[data-type="check"] > div { display: grid; gap: 1.3rem; align-content: start; }
+.slide[data-type="check"] .choice { font-size: 1.1rem; }
+.slide .choices { padding-left: 0; }
+.verdict.ok { color: var(--ok); }
+.verdict.bad { color: var(--bad); }
+
+/* Select elements inside a sentence */
+.slide select:not([multiple]) { appearance: none; -webkit-appearance: none; padding-right: 1.9rem; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 0.95rem) 55%, calc(100% - 0.6rem) 55%; background-size: 0.36rem 0.36rem; background-repeat: no-repeat; }
+
+/* Reveal steps */
+.step-hidden { visibility: hidden; opacity: 0; }
+.slide [data-step] { transition: opacity 0.2s; }
+.step-btn { margin-top: auto; align-self: flex-start; }
+.step-btn[hidden] { display: none; }
+
+/* Card sorter */
+.sorter { display: grid; gap: 0.7rem; min-height: 0; }
+.sorter-pool, .sort-drop { display: flex; flex-wrap: wrap; gap: 0.5rem; align-content: flex-start; }
+.sorter-pool { min-height: 2.8rem; padding: 0.4rem; border: 1px dashed var(--line); border-radius: 10px; }
+.sorter-bins { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.7rem; }
+.sort-bin { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); padding: 0.55rem 0.7rem 0.7rem; display: grid; gap: 0.4rem; align-content: start; cursor: pointer; }
+.sort-bin h3 { margin: 0; font-size: 0.95rem; font-weight: 600; }
+.sort-drop { min-height: 2.6rem; padding: 0.4rem; border: 1px dashed var(--muted); border-radius: 8px; background: var(--bg); }
+.sort-drop:empty::before { content: "Place cards here"; color: var(--muted); font-size: 0.82rem; align-self: center; padding-left: 0.2rem; }
+.sort-bin.is-over, .sorter-pool.is-over { border-color: var(--ink); }
+.sort-card { padding: 0.45rem 0.75rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); cursor: grab; text-align: left; font-size: 0.95rem; line-height: 1.35; }
+.sort-card:hover { border-color: var(--muted); }
+.sort-card.is-selected { border-color: var(--ink); outline: 2px solid var(--ink); outline-offset: 1px; }
+.sort-card.is-correct { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 9%, var(--bg)); }
+.sort-card.is-correct::after { content: " \2713"; color: var(--ok); font-weight: 700; }
+.sort-card.is-wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 8%, var(--bg)); }
+.sort-card.is-wrong::after { content: " \2717"; color: var(--bad); font-weight: 700; }
+.sorter-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+
+/* SVG figures */
+.fig { display: block; width: 100%; height: auto; max-height: 100%; }
+.fig text { fill: var(--ink); font-family: inherit; font-size: 15px; }
+.fig .t-muted { fill: var(--muted); }
+.fig .t-strong { font-weight: 600; }
+.fig .f-box { fill: var(--surface); stroke: var(--muted); stroke-width: 1.5; }
+.fig .f-soft { fill: var(--surface-2); stroke: var(--line); stroke-width: 1.5; }
+.fig .f-line { fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.fig .f-arrow { fill: none; stroke: var(--muted); stroke-width: 2; marker-end: url(#arrow); }
+.fig .f-accent { fill: var(--accent); }
+.fig .f-d1 { fill: var(--d1); } .fig .f-d2 { fill: var(--d2); } .fig .f-d3 { fill: var(--d3); } .fig .f-d4 { fill: var(--d4); } .fig .f-d5 { fill: var(--d5); }
+.fig .s-d1 { stroke: var(--d1); fill: none; stroke-width: 2; } .fig .s-d5 { stroke: var(--d5); fill: none; stroke-width: 2; }
+
+
+/* Layout patterns and components (shell 3.2). Rules: 05-slide-deck-guide.md, sections 3.5 to 3.10.
+   Type scale of a slide (the sizes of shell 3.1 decks): title 1.75rem, definition 1.4rem (2.5rem alone, 1.95rem for a long one), body 1.15rem, component 1.05rem, small 0.95rem.
+   A deck does not set --fs-comp. Every table uses 1.05rem, and 0.9rem while the Details panel is open (rule below). */
+.slide { --fs-body: 1.15rem; --fs-comp: 1.05rem; --fs-small: 0.95rem; --fs-def: 1.4rem; --fs-def-alone: 2.5rem; --fs-def-long: 1.95rem; --gap-after: 0.4rem; }
+.slide .intro, .slide .after, .slide .txt { font-size: var(--fs-body); }
+.slide .after { margin-top: var(--gap-after); }
+.slide .intro + .intro, .slide .after + .after { margin-top: -0.35rem; }
+.slide .definition { font-size: var(--fs-def); line-height: 1.4; }
+.slide.vcenter { justify-content: center; }
+.slide.vcenter .definition { font-size: var(--fs-def-alone); line-height: 1.3; }
+.slide.vcenter .definition.long { font-size: var(--fs-def-long); line-height: 1.5; }
+.slide .small { font-size: var(--fs-small); color: var(--muted); }
+
+/* Split: two columns. The first element in the markup is the left column. */
+.lay-split { display: grid; grid-template-columns: var(--split, minmax(0, 1fr) minmax(0, 1fr)); gap: 2.2rem; align-items: start; min-height: 0; }
+.lay-split.mid { align-items: center; }
+.txt { display: grid; gap: 0.8rem; align-content: start; min-width: 0; }
+.txt ul, .txt ol { margin: 0; padding-left: 1.2rem; }
+.vis { display: flex; justify-content: center; align-items: flex-start; min-width: 0; min-height: 0; }
+.vis > .fig { width: 100%; max-width: var(--fig-w, 34rem); }
+.vis[data-detail] { width: fit-content; max-width: 100%; justify-self: center; }
+
+/* Boxes: one design for every box. Cards: two to four parallel boxes. Compare: two boxes, one for each side. */
+.box { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 0.8rem 1rem 0.9rem; display: grid; gap: 0.45rem; align-content: start; font-size: var(--fs-comp); min-width: 0; }
+.box h3 { margin: 0; font-size: 1.15rem; font-weight: 600; line-height: 1.3; display: flex; gap: 0.5rem; align-items: center; }
+.box p { margin: 0; }
+.box ul { margin: 0; padding-left: 1.1rem; }
+.lay-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.9rem; align-items: stretch; }
+.lay-compare { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.2rem; align-items: stretch; }
+
+/* Tables: a frame, a filled header row, horizontal lines between rows, no vertical lines. */
+.tbl { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); font-size: var(--fs-comp); line-height: 1.4; }
+.tbl.fit { width: auto; max-width: 100%; align-self: flex-start; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 0.5rem 0.85rem; border-bottom: 1px solid var(--line); }
+.tbl thead th { background: var(--surface); font-weight: 600; vertical-align: middle; }
+.tbl thead th:first-child { border-top-left-radius: calc(var(--radius) - 1px); }
+.tbl thead th:last-child { border-top-right-radius: calc(var(--radius) - 1px); }
+.tbl tbody tr:last-child > * { border-bottom: none; }
+.tbl tbody th { font-weight: 600; }
+.tbl .n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tbl tr.total > * { border-top: 1px solid var(--muted); font-weight: 600; }
+.tbl-note { font-size: var(--fs-small); color: var(--muted); margin-top: -0.45rem; }
+/* Details panel open: the card is narrower, so every table gets smaller type and tighter cells. */
+.stage.has-panel .tbl { --fs-comp: 0.9rem; }
+.stage.has-panel .tbl th, .stage.has-panel .tbl td { padding: 0.3rem 0.55rem; }
+.box .tbl { border: none; border-radius: 0; background: transparent; }
+.box .tbl thead th { background: transparent; border-bottom-color: var(--muted); padding-left: 0; }
+.box .tbl td, .box .tbl tbody th { padding-left: 0; }
+
+@media (max-width: 700px) and (orientation: portrait) {
+  .lay-split, .lay-compare { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; }
+}
+@media print { .tbl, .box { break-inside: avoid; } }
+
+/* Panel */
+.panel { border-left: 1px solid var(--line); background: var(--surface); display: none; flex-direction: column; min-height: 0; }
+.stage.has-panel .panel { display: flex; }
+.panel-head { display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 0.6rem 0 0.8rem; border-bottom: 1px solid var(--line); }
+.tabs { display: flex; gap: 0.25rem; flex: 1; }
+.tab { border: none; background: none; padding: 0.55rem 0.7rem; cursor: pointer; color: var(--muted); font-weight: 600; font-size: 0.92rem; border-bottom: 2px solid transparent; }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.tab[hidden] { display: none; }
+.panel-body { overflow: auto; padding: 1.1rem 1.2rem 1.5rem; flex: 1; font-size: 0.95rem; }
+.panel-body h3 { font-size: 1.05rem; margin: 0 0 0.5rem; }
+.panel-body p { margin: 0 0 0.75rem; }
+.panel-section[hidden] { display: none; }
+.empty-note { color: var(--muted); }
+.control { display: grid; gap: 0.35rem; margin-bottom: 1.1rem; }
+.control label { font-weight: 600; font-size: 0.9rem; display: flex; justify-content: space-between; gap: 1rem; }
+.control output { font-variant-numeric: tabular-nums; color: var(--muted); font-weight: 500; }
+.control input[type="range"] { width: 100%; accent-color: var(--accent); }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); width: 1.05rem; height: 1.05rem; }
+details.acc { border: 1px solid var(--line); border-radius: 10px; background: var(--bg); margin: 0 0 0.75rem; }
+details.acc > summary { list-style: none; cursor: pointer; padding: 0.6rem 0.8rem; font-weight: 600; display: flex; gap: 0.5rem; }
+details.acc > summary::-webkit-details-marker { display: none; }
+details.acc > summary::before { content: "▶"; font-size: 0.7rem; color: var(--muted); line-height: 1.6rem; }
+details.acc[open] > summary::before { content: "▼"; }
+details.acc > div { padding: 0 0.8rem 0.7rem; }
+
+/* Bottom bar: one group of marks for each part of the lesson */
+.bottombar { position: relative; z-index: 35; background: var(--bg); display: flex; align-items: center; justify-content: center; gap: 0.9rem; border-top: 1px solid var(--line); padding: 0 1rem; }
+.nav-btn { width: 2.3rem; height: 2.3rem; flex: none; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 1.25rem; line-height: 1; display: grid; place-items: center; }
+.nav-btn:hover:not(:disabled) { border-color: var(--muted); }
+.nav-btn:disabled { opacity: 0.4; cursor: default; }
+.phases { display: flex; gap: 0.85rem; align-items: flex-end; min-width: 0; }
+.phase { display: grid; gap: 0.2rem; justify-items: start; }
+.phase-name { font-size: 0.72rem; font-weight: 600; line-height: 1; color: var(--muted); white-space: nowrap; }
+.phase.is-current .phase-name { color: var(--ink); }
+.phase-marks { display: flex; gap: 0.2rem; }
+.phase-marks button { width: 1.5rem; height: 1.1rem; padding: 0; border: none; background: transparent; cursor: pointer; display: grid; align-items: center; }
+.phase-marks button::before { content: ""; display: block; height: 0.3rem; border-radius: 2px; background: var(--line); }
+.phase-marks button.is-done::before { background: var(--muted); }
+.phase-marks button:hover::before { background: var(--ink); }
+.phase-marks button[aria-current="step"]::before { background: var(--ink); height: 0.5rem; }
+.counter { border: none; background: none; cursor: pointer; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 0.9rem; padding: 0.3rem 0.5rem; border-radius: 6px; white-space: nowrap; flex: none; }
+.counter:hover { background: var(--surface); color: var(--ink); }
+.bottombar.no-phases .phases { display: none; }
+#btn-phases { position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); }
+
+/* Summary slide: what the student did in this deck */
+.recall { display: grid; gap: 0.3rem; padding: 0.75rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); font-size: 0.95rem; }
+.recall p { margin: 0; }
+.recall strong { font-weight: 650; }
+.recall button { font: inherit; color: var(--ink); background: none; border: none; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.18em; }
+.recall .r-ok { color: var(--ok); font-weight: 700; }
+.recall .r-bad { color: var(--bad); font-weight: 700; }
+
+/* Overlays */
+.overlay { position: fixed; inset: var(--bar-h) 0 var(--bar-h); background: var(--bg); z-index: 40; overflow: auto; padding: 2rem clamp(1rem, 4vw, 3rem); display: none; }
+.overlay.is-on { display: block; }
+.overlay h2 { margin: 0 0 1rem; font-size: 1.4rem; }
+.ov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 0.75rem; }
+.ov-grid button { text-align: left; padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); cursor: pointer; display: grid; gap: 0.2rem; }
+.ov-grid button:hover { border-color: var(--muted); }
+.ov-grid button[aria-current="step"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.ov-grid .ov-type { font-size: 0.82rem; color: var(--muted); }
+.help-list { display: grid; grid-template-columns: max-content 1fr; gap: 0.5rem 1.2rem; max-width: 40rem; margin: 0 0 1.5rem; }
+.help-list dt { font-weight: 600; }
+.help-list dd { margin: 0; color: var(--muted); }
+.kbd { display: inline-block; border: 1px solid var(--line); border-radius: 5px; padding: 0 0.35rem; font-size: 0.85rem; background: var(--surface); }
+.demo-term { border-bottom: 1px dotted var(--muted); }
+.demo-detail { display: inline-block; position: relative; padding: 0.1rem 0.5rem; border: 1px solid var(--line); border-radius: 8px; }
+.demo-detail::after { content: "i"; position: absolute; top: -0.5rem; right: -0.5rem; width: 1.1rem; height: 1.1rem; border-radius: 50%; border: 1px solid var(--muted); background: var(--bg); color: var(--muted); font: italic 600 0.7rem/1rem var(--font-display); text-align: center; }
+
+/* Narrow screens: panel becomes a bottom sheet */
+@media (max-width: 1099px) {
+  .stage.has-panel { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: fixed; left: 0; right: 0; bottom: var(--bar-h); height: 62vh; z-index: 30; border-left: none; border-top: 1px solid var(--line); border-radius: 16px 16px 0 0; transform: translateY(105%); transition: transform 0.2s ease; display: flex; }
+  .panel { visibility: hidden; }
+  .stage.has-panel.sheet-open .panel { transform: translateY(0); visibility: visible; }
+  .stage:not(.has-panel) .panel { display: none; }
+  .icon-btn .lbl { display: none; }
+  #btn-phases { right: 0.4rem; }
+  .phase-name { display: none; }
+  .phases { gap: 0.4rem; align-items: center; }
+  .phase-marks button { width: 0.9rem; }
+}
+@media (max-width: 700px) and (orientation: portrait) {
+  html { font-size: 16px; }
+  .slide { overflow-y: auto; padding: 1.4rem 1.1rem 2rem; }
+  .slide h1 { font-size: 2.1rem; }
+  .slide h2 { font-size: 1.4rem; }
+  .slide[data-type="check"] { justify-content: flex-start; }
+  .phases { display: none; }
+  #btn-phases { display: none; }
+  .slide::before, .slide::after { display: none; }
+}
+@media (max-height: 520px) and (orientation: landscape) { html { font-size: 14px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  html { font-size: 15px; }
+  body { display: block; height: auto; overflow: visible; }
+  .topbar, .bottombar, .panel, .overlay, .tooltip { display: none !important; }
+  .slide::before, .slide::after { display: none; }
+  .card { overflow: visible; }
+  .slide { position: relative; display: flex !important; inset: auto; min-height: 100vh; page-break-after: always; }
+  [data-detail]::after { display: none; }
+  .step-hidden { visibility: visible; opacity: 1; }
+  .step-btn { display: none; }
+}
+</style>
+
+<!-- ===================== DECK STYLES (edit for each deck) ===================== -->
+<style id="deck-styles">
+/* Slide 2: deaths by pen */
+.penfig { margin: 0; padding: 0.4rem; display: grid; gap: 0.6rem; width: 100%; }
+.penfig figcaption { color: var(--muted); font-size: var(--fs-small); }
+.penmap { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: stretch; }
+.inlet { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; padding: 0.5rem 0.4rem; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); font-weight: 600; font-size: 0.85rem; }
+.pens { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.5rem; }
+.pen { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 0.5rem 0.6rem; display: grid; gap: 0.1rem; }
+.pen.hot { border: 2px solid var(--d2); background: var(--surface-2); }
+.pen-id { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+.pen-n { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; }
+
+/* Slide 5: the hen and the bar chart inside the two boxes */
+.hp-fig { margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; }
+.hp-fig figcaption { color: var(--muted); font-size: var(--fs-small); }
+.hp-fig .fig { flex: none; }
+.hp-hen { width: auto; height: max(9rem, 21vh); }
+.hp-bars { width: min(100%, max(19rem, 44vh)); height: auto; }
+.fig .bar-hot { fill: var(--d2); }
+.fig .bar-n { fill: var(--muted); }
+.fig .hen-out { fill: var(--muted); stroke: var(--muted); stroke-width: 6; stroke-linejoin: round; }
+.fig .hen-fill { fill: var(--surface); stroke: none; }
+.fig .hen-wing { fill: var(--surface-2); stroke: var(--muted); stroke-width: 2.5; stroke-linejoin: round; }
+.fig .hen-wing-line { fill: none; stroke: var(--muted); stroke-width: 2.5; stroke-linecap: round; }
+.fig .hen-leg { fill: none; stroke: var(--d5); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.fig .hen-beak { fill: var(--d5); stroke: var(--muted); stroke-width: 2.5; stroke-linejoin: round; }
+.fig .hen-comb { fill: var(--d2); stroke: var(--muted); stroke-width: 2; }
+.fig .hen-eye { fill: var(--ink); }
+
+/* Slide 9: build the definition */
+.build { font-size: 1.5rem; line-height: 2.3; margin-top: 0.4rem; }
+.build select { font: inherit; font-size: 1.15rem; padding: 0.3rem 0.5rem; border: 1.5px solid var(--muted); border-radius: 8px; background: var(--surface); color: var(--ink); max-width: 100%; }
+.build select.is-correct { border-color: var(--ok); }
+.build select.is-wrong { border-color: var(--bad); }
+.build select#b1 { width: 18.5rem; } .build select#b2 { width: 15rem; } .build select#b3 { width: 10.5rem; }
+.build-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.build-why { display: grid; gap: 0.35rem; color: var(--muted); }
+
+/* Slide 10: one statement at a time */
+.qsort { display: grid; gap: 0.9rem; align-content: start; }
+.qsort [hidden] { display: none !important; }
+.qs-top { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.9rem; }
+.qs-q { font-size: 1.5rem; font-weight: 600; line-height: 1.3; min-height: 4.2rem; }
+.qs-hint { color: var(--muted); }
+.qs-btns { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.qs-btn { padding: 0.75rem 1.2rem; font-size: 1.05rem; }
+.qs-btn:disabled { cursor: default; }
+.qs-btn.is-correct { border: 2px solid var(--ok); }
+.qs-btn.is-wrong { border: 2px solid var(--bad); }
+.qs-why { color: var(--muted); min-height: 3rem; }
+
+/* Slide 11: feedback after the sorting */
+.map-why { font-size: var(--fs-comp); color: var(--muted); }
+.map-why[hidden] { display: none; }
+
+/* Sizes of the shell 3.1 version of this deck */
+.box ul { font-size: 1.1rem; }
+
+/* Slides 12 and 15: quoted note and question line */
+.q-label { font-weight: 600; font-size: 1.15rem; }
+.quote { font-size: 1.3rem; line-height: 1.45; }
+</style>
+</head>
+<body>
+
+<!-- ===================== SHELL MARKUP (do not edit) ===================== -->
+<header class="topbar">
+  <div class="deck-id"><span class="dot" id="deck-dot"></span><span class="code" id="deck-code"></span><span class="deck-title" id="deck-title"></span></div>
+  <div class="tools">
+    <button class="icon-btn" id="btn-panel" aria-label="Show or hide the panel" title="Show or hide the panel" aria-pressed="false" hidden><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/></svg><span class="lbl">Details</span></button>
+    <button class="icon-btn" id="btn-help" aria-label="Help" title="Help (?)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.7"/><path d="M12 17h.01"/></svg><span class="lbl">Help</span></button>
+    <button class="icon-btn txt-btn" id="btn-smaller" aria-label="Smaller text" title="Smaller text (-)">A−</button>
+    <button class="icon-btn txt-btn" id="btn-larger" aria-label="Larger text" title="Larger text (+)">A+</button>
+    <button class="icon-btn" id="btn-theme" aria-label="Switch light or dark mode" title="Switch light or dark mode"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg><span class="lbl">Dark mode</span></button>
+    <button class="icon-btn" id="btn-full" aria-label="Full screen" title="Full screen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span class="lbl">Full screen</span></button>
+  </div>
+</header>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--muted)"/></marker></defs></svg>
+
+<main class="stage" id="stage">
+  <div class="card" id="card">
+
+<!-- ===================== CONTENT (edit for each deck) ===================== -->
+
+<!-- Slide 1: Title -->
+<section class="slide" data-type="title" data-title="Explain epidemiology">
+  <p class="code">C1 Epidemiological and economic thinking</p>
+  <h1>Explain epidemiology</h1>
+  <p class="lead">Why does a veterinarian examine the entire <span class="term" data-tip="A group of birds, such as hens, kept together.">flock</span> when a single <span class="term" data-tip="An adult female chicken.">hen</span> is sick?</p>
+  <ul class="meta-list">
+    <li><span class="code">S1.1</span><span>Explain epidemiology and its population perspective</span></li>
+    <li><span class="code">Time</span><span>About 15 minutes</span></li>
+  </ul>
+  <div class="notes">Read the guiding question aloud. Ask the class for a first answer in one sentence. Students will return to this answer at the end of the deck.</div>
+</section>
+<!-- Slide 2: Scenario. Layout P3, text | figure -->
+<section class="slide" data-type="scenario" data-title="The scenario">
+  <h2>The scenario: Salmonella on a layer farm</h2>
+  <div class="lay-split" style="--split: minmax(0, 1fr) minmax(0, 1.1fr)">
+    <div class="txt">
+      <p>In one week, 120 of the 8,000 hens on a <span class="term" data-tip="A farm that keeps hens to produce eggs.">layer farm</span> die. Most of the dead hens come from the two <span class="term" data-tip="A small fenced area or house section where a group of animals is kept.">pens</span>, which are located near the <span class="term" data-tip="The place where water enters the building, for example from a pipe or a tank.">water inlet</span>.</p>
+      <p>The laboratory later finds <span class="term" data-tip="A group of bacteria. They cause disease in animals and can reach people through eggs and meat.">Salmonella</span> in the dead hens. Eggs from these pens have already reached buyers.</p>
+      <p>You are the <span class="term" data-tip="One of the graduate profiles of this study program. This veterinarian protects the health and production of farm animals, for example on poultry or dairy farms.">production animal veterinarian</span> of this farm.</p>
+    </div>
+    <div class="vis">
+    <figure class="penfig" data-detail="d-pens" tabindex="0" aria-label="Deaths in one week by pen. Pens A1 and B1, next to the water inlet, had 90 of the 120 deaths. Select for details.">
+      <div class="penmap">
+        <div class="inlet">Water inlet</div>
+        <div class="pens">
+          <div class="pen hot"><span class="pen-id">Pen A1</span><span class="pen-n">50</span></div>
+          <div class="pen"><span class="pen-id">Pen A2</span><span class="pen-n">5</span></div>
+          <div class="pen"><span class="pen-id">Pen A3</span><span class="pen-n">5</span></div>
+          <div class="pen"><span class="pen-id">Pen A4</span><span class="pen-n">5</span></div>
+          <div class="pen hot"><span class="pen-id">Pen B1</span><span class="pen-n">40</span></div>
+          <div class="pen"><span class="pen-id">Pen B2</span><span class="pen-n">5</span></div>
+          <div class="pen"><span class="pen-id">Pen B3</span><span class="pen-n">5</span></div>
+          <div class="pen"><span class="pen-id">Pen B4</span><span class="pen-n">5</span></div>
+        </div>
+      </div>
+      <figcaption>Deaths in one week, by pen</figcaption>
+    </figure>
+    </div>
+  </div>
+  <div class="notes">Ask the class what they would do first. Most students name the necropsy. Use that answer on the next slide.</div>
+</section>
+<!-- Slide 3: Question, predict -->
+<section class="slide" data-type="question" data-title="Predict first">
+  <h2>You do a <span class="term" data-tip="An examination of a dead animal to find the cause of death.">necropsy</span> on five hens. Does the result of necropsy inform the farm owner what to do?</h2>
+  <p>Choose your prediction.</p>
+  <ul class="choices" data-choice="predict">
+    <li><button class="choice" data-value="a"><span class="key">A</span>Yes. The necropsy results from the five hens explain the problem in the whole flock.</button></li>
+    <li><button class="choice" data-value="b"><span class="key">B</span>Partly. It indicates the cause of death of five hens, but it does not show which pens have the most deaths.</button></li>
+    <li><button class="choice" data-value="c"><span class="key">C</span>No. The necropsies do not provide the farm owner with any information about the problem in the flock.</button></li>
+  </ul>
+  <p class="verdict" id="predict-note" aria-live="polite"></p>
+</section>
+<!-- Slide 4: Concept, the simple definition. Layout P1 -->
+<section class="slide vcenter" data-type="concept" data-title="The simple definition">
+  <h2>The simple definition of epidemiology</h2>
+  <p class="definition">Epidemiology is the study of <span class="term" data-tip="Anything that happens to the health of animals: a disease, a death, an injury, an accident, or a pregnancy.">health-related events</span> in <span class="term" data-tip="Groups of animals that share a place or a system, such as all hens on one farm or all dogs in one village.">populations</span>.</p>
+  <div class="notes">Hover over the two dotted terms. Ask: which other health-related events could the veterinarian count on this farm? Accept answers such as a fall in egg production.</div>
+</section>
+<!-- Slide 5: Concept, one hen and a flock. Layout P6, compare -->
+<section class="slide" data-type="concept" data-title="One hen and a flock">
+  <h2>Clinical question and population question</h2>
+  <p class="intro">The same disease on the farm raises two kinds of question. A <span class="term" data-tip="A question about the diagnosis and treatment of one sick animal.">clinical question</span> concerns one animal. A <span class="term" data-tip="A question about a group of animals, for example how many hens died in each pen.">population question</span> concerns a group of animals.</p>
+  <div class="lay-compare">
+    <div class="box">
+      <h3>Clinical question: one animal</h3>
+      <figure class="hp-fig">
+      <svg class="fig hp-hen" viewBox="0 0 280 230" role="img" aria-label="A hen seen from the side, standing on the ground.">
+        <defs>
+          <g id="hen-shape">
+            <ellipse cx="130" cy="130" rx="66" ry="46" transform="rotate(-8 130 130)"/>
+            <path d="M156 112 C168 94 172 78 174 64 L204 68 C200 88 198 106 190 128 Z"/>
+            <ellipse cx="190" cy="58" rx="20" ry="18"/>
+            <path d="M80 112 C56 108 42 88 38 58 C56 64 74 74 92 92 Z"/>
+            <path d="M74 124 C48 128 30 114 22 92 C42 94 60 102 82 112 Z"/>
+            <path d="M76 138 C52 146 32 138 20 120 C40 118 60 122 84 128 Z"/>
+          </g>
+        </defs>
+        <line class="f-line" x1="10" y1="206" x2="270" y2="206"/>
+        <path class="hen-leg" d="M120 172 L118 204 M118 204 L100 204 M118 204 L110 196 M118 204 L134 204"/>
+        <path class="hen-leg" d="M148 172 L150 204 M150 204 L132 204 M150 204 L142 196 M150 204 L166 204"/>
+        <use href="#hen-shape" class="hen-out"/>
+        <use href="#hen-shape" class="hen-fill"/>
+        <path class="hen-wing" d="M96 128 C110 108 152 106 168 130 C152 154 110 154 96 128 Z"/>
+        <path class="hen-wing-line" d="M112 132 C126 126 142 126 154 132 M116 142 C128 138 142 138 150 142"/>
+        <path class="hen-beak" d="M207 52 L228 59 L207 66 Z"/>
+        <circle class="hen-comb" cx="181" cy="38" r="7"/>
+        <circle class="hen-comb" cx="191" cy="34" r="8"/>
+        <circle class="hen-comb" cx="201" cy="39" r="6.5"/>
+        <ellipse class="hen-comb" cx="204" cy="74" rx="5" ry="9"/>
+        <circle class="hen-eye" cx="196" cy="54" r="3"/>
+      </svg>
+        <figcaption>One hen</figcaption>
+      </figure>
+      <ul>
+        <li>What is wrong with this hen?</li>
+        <li>Which treatment does this hen need?</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Population question: a group</h3>
+      <figure class="hp-fig">
+        <svg class="fig hp-bars" viewBox="0 0 364 200" role="img" aria-label="Bar chart of deaths in one week, by pen. Pens A1 and B1 have 50 and 40 deaths. The other six pens have 5 each.">
+          <line class="f-line" x1="4" y1="168" x2="360" y2="168"/>
+          <rect class="bar-hot" x="12" y="38.0" width="34" height="130.0" rx="3"/><text x="29.0" y="31.0" text-anchor="middle">50</text><text x="29.0" y="192" text-anchor="middle" class="t-muted">A1</text><rect class="bar-n" x="54" y="155.0" width="34" height="13.0" rx="3"/><text x="71.0" y="148.0" text-anchor="middle">5</text><text x="71.0" y="192" text-anchor="middle" class="t-muted">A2</text><rect class="bar-n" x="96" y="155.0" width="34" height="13.0" rx="3"/><text x="113.0" y="148.0" text-anchor="middle">5</text><text x="113.0" y="192" text-anchor="middle" class="t-muted">A3</text><rect class="bar-n" x="138" y="155.0" width="34" height="13.0" rx="3"/><text x="155.0" y="148.0" text-anchor="middle">5</text><text x="155.0" y="192" text-anchor="middle" class="t-muted">A4</text><rect class="bar-hot" x="192" y="64.0" width="34" height="104.0" rx="3"/><text x="209.0" y="57.0" text-anchor="middle">40</text><text x="209.0" y="192" text-anchor="middle" class="t-muted">B1</text><rect class="bar-n" x="234" y="155.0" width="34" height="13.0" rx="3"/><text x="251.0" y="148.0" text-anchor="middle">5</text><text x="251.0" y="192" text-anchor="middle" class="t-muted">B2</text><rect class="bar-n" x="276" y="155.0" width="34" height="13.0" rx="3"/><text x="293.0" y="148.0" text-anchor="middle">5</text><text x="293.0" y="192" text-anchor="middle" class="t-muted">B3</text><rect class="bar-n" x="318" y="155.0" width="34" height="13.0" rx="3"/><text x="335.0" y="148.0" text-anchor="middle">5</text><text x="335.0" y="192" text-anchor="middle" class="t-muted">B4</text>
+        </svg>
+        <figcaption>Deaths in one week, by pen</figcaption>
+      </figure>
+      <ul>
+        <li>How many hens died, and where?</li>
+        <li>What do the sick hens share?</li>
+      </ul>
+    </div>
+  </div>
+  <p class="after">The veterinarian of the farm needs the answers to both kinds of question.</p>
+  <div class="notes">Point to the left panel, then to the right panel. Ask which panel the necropsy belongs to. Then ask which panel tells the farm where to act first.</div>
+</section>
+<!-- Slide 6: Concept, the full definition. Layout P1 -->
+<section class="slide vcenter" data-type="concept" data-title="The full definition">
+  <h2>The full definition of epidemiology</h2>
+  <p class="definition long">
+    <span>Epidemiology is the <span class="term" data-tip="Careful work with a clear method that uses data.">study</span> of the <span class="term" data-tip="How often a health event occurs, and where, when, and in which animals it occurs.">distribution</span> and <span class="term" data-tip="Factors that change how often a health event occurs, such as the feed, the environment, or the management.">determinants</span> of <span class="term" data-tip="A state is a condition that lasts, such as being pregnant or being protected by a vaccine. An event happens at one time, such as a death or an injury.">health-related states or events</span></span>
+    <span>in <span class="term" data-tip="Groups of animals that the investigator defines clearly: which animals, in which place, and in which period.">specified populations</span>,</span>
+    <span>and the <span class="term" data-tip="Using the results of the study to prevent and control health problems.">application</span> of this study to the control of health problems.</span>
+  </p>
+  <p class="small">Source of the definition: <span class="term" data-tip="Last, J. M. (Ed.). (2001). A dictionary of epidemiology (4th ed.). Oxford University Press.">Last (2001)</span>.</p>
+  <div class="notes">Read the definition in three parts. After each part, ask a student to explain it in simple words. Point out that the simple definition on the last slide is a short form of this sentence.</div>
+</section>
+<!-- Slide 7: Example, the six elements in the scenario. Layout P2, table -->
+<section class="slide" data-type="example" data-title="The six elements">
+  <h2>The six elements of epidemiology in the layer farm</h2>
+  <p class="intro">The full definition of epidemiology has six elements. Each row of the table takes one element and shows what it is on the layer farm.</p>
+  <table class="tbl">
+    <thead><tr><th scope="col">Element</th><th scope="col">In the layer farm</th></tr></thead>
+    <tbody>
+      <tr><th scope="row"><span class="term" data-tip="Careful work with a clear method that uses data.">Study</span></th><td>The veterinarian works from records and counts.</td></tr>
+      <tr><th scope="row"><span class="term" data-tip="A state is a condition that lasts, such as being pregnant or being protected by a vaccine. An event happens at one time, such as a death or an injury.">Health-related states or events</span></th><td>Deaths of hens and a fall in egg production.</td></tr>
+      <tr><th scope="row"><span class="term" data-tip="Groups of animals that the investigator defines clearly: which animals, in which place, and in which period.">Specified populations</span></th><td>The 8,000 hens in 8 pens.</td></tr>
+      <tr><th scope="row"><span class="term" data-tip="How often a health event occurs, and where, when, and in which animals it occurs.">Distribution</span></th><td>90 of the 120 deaths were in pens A1 and B1, in one week.</td></tr>
+      <tr><th scope="row"><span class="term" data-tip="Factors that change how often a health event occurs, such as the feed, the environment, or the management.">Determinants</span></th><td>Pens A1 and B1 are located near the water inlet, making water a factor that required testing. The laboratory finds <span class="term" data-tip="A group of bacteria. They cause disease in animals and can reach people through eggs and meat.">Salmonella</span> from dead hens.</td></tr>
+      <tr><th scope="row"><span class="term" data-tip="Using the results of the study to prevent and control health problems.">Application</span></th><td>The veterinarian separates the two pens, treats the hens, cleans the water supply, and finds the buyers of the eggs.</td></tr>
+    </tbody>
+  </table>
+  <div class="notes">For each row, ask the class where they saw this fact on the Scenario slide. Ask which element the manager had already used before the veterinarian arrived. A good answer is distribution, because the manager had counted the deaths.</div>
+</section>
+<!-- Slide 8: Concept, clinician and epidemiologist. Layout P2, table -->
+<section class="slide" data-type="concept" data-title="Clinician vs epidemiologist">
+  <h2>Clinician vs epidemiologist</h2>
+  <p class="intro">A <span class="term" data-tip="A veterinarian who examines and treats sick animals.">clinician</span> and an <span class="term" data-tip="A scientist who studies health events in groups of animals.">epidemiologist</span> can work on the same disease, such as Salmonella on the layer farm. The table compares their work in four parts.</p>
+  <table class="tbl">
+    <thead><tr><th scope="col">Part of the work</th><th scope="col">Clinician</th><th scope="col">Epidemiologist</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Focus</th><td>Individuals</td><td>Populations</td></tr>
+      <tr><th scope="row">Objective</th><td>Curing the sick individual</td><td>Preventing and controlling disease in populations</td></tr>
+      <tr><th scope="row">Diagnosis</th><td>Based on <span class="term" data-tip="The history of the sick animal, told by the owner or keeper.">anamnesis</span>, physical examination, and <span class="term" data-tip="Tests that help find the cause of a disease, such as blood tests or X-rays.">diagnostic tests</span></td><td>Based on <span class="term" data-tip="Using numbers and calculations to find patterns in data.">statistical analysis</span> and <span class="term" data-tip="Planned investigations that count health events in groups of animals and compare the groups.">epidemiological studies</span></td></tr>
+      <tr><th scope="row">Treatment</th><td>Giving medical or surgical treatment and care</td><td>Implementing <span class="term" data-tip="Actions that aim to prevent or control a disease, such as vaccination or separating sick animals.">interventions</span> and <span class="term" data-tip="Rules or plans made by an authority, such as a rule that sick animals must not be sold.">policies</span> that affect the population</td></tr>
+    </tbody>
+  </table>
+  <div class="notes">Ask which row describes the necropsy and which row describes the count by pen.</div>
+</section>
+<!-- Slide 9: Practice with support, build the definition -->
+<section class="slide" data-type="practice" data-title="Build the definition">
+  <h2>Build the definition</h2>
+  <p class="intro">Choose one phrase for each gap. Think about the layer farm: what did the veterinarian describe, explain, and do?</p>
+  <p class="build">Epidemiology is the study of the <select id="b1" aria-label="Part 1 of the definition"><option value="">Choose</option><option value="x">history and examination</option><option value="c">distribution and determinants</option><option value="y">diagnosis and treatment</option></select> of <span class="term" data-tip="A state is a condition that lasts, such as being pregnant or being protected by a vaccine. An event happens at one time, such as a death or an injury.">health-related states or events</span> in <select id="b2" aria-label="Part 2 of the definition"><option value="">Choose</option><option value="x">individual patients</option><option value="y">sick animals</option><option value="c">specified populations</option></select>, and the <select id="b3" aria-label="Part 3 of the definition"><option value="">Choose</option><option value="c">application</option><option value="x">publication</option><option value="y">calculation</option></select> of this study to the control of health problems.</p>
+  <div class="build-actions">
+    <button class="btn btn-main" id="b-check">Check the sentence</button>
+    <button class="btn" id="b-reset">Start again</button>
+    <span class="verdict" id="b-verdict" aria-live="polite"></span>
+  </div>
+  <div class="build-why" id="b-why"></div>
+  <div class="notes">Let students choose alone first, then compare with a neighbour. Ask them to say the correct sentence aloud.</div>
+</section>
+<!-- Slide 10: Practice with support, clinical or population question -->
+<section class="slide" data-type="practice" data-title="Clinical or population?" data-panel="controls">
+  <h2>Decide whether each statement is a clinical question or a population question</h2>
+  <div class="qsort">
+    <div class="qs-top"><span class="num" id="qs-pos"></span><span class="num" id="qs-score"></span></div>
+    <p class="qs-q" id="qs-q"></p>
+    <p class="qs-hint" id="qs-hint" hidden>Ask: does the question concern one animal or a group of animals?</p>
+    <div class="qs-btns" id="qs-btns">
+      <button class="btn qs-btn" data-answer="C">Clinical question</button>
+      <button class="btn qs-btn" data-answer="P">Population question</button>
+    </div>
+    <p class="verdict" id="qs-verdict" aria-live="polite"></p>
+    <p class="qs-why" id="qs-why"></p>
+    <div><button class="btn btn-main" id="qs-next" hidden>Show the next statement</button></div>
+  </div>
+  <div class="notes">Read each statement aloud and ask the class to vote before you reveal the answer. Statement 5 about the buyers of eggs is the one that students often place wrongly. Ask why eggs belong to the population.</div>
+</section>
+<!-- Slide 11: Practice without support, match the facts of the scenario to the elements -->
+<section class="slide" data-type="practice" data-title="Match facts to elements">
+  <h2>Put each fact from the scenario under the right element</h2>
+  <div class="sorter" data-sorter id="map-sorter">
+    <div class="sorter-pool" aria-label="Cards to sort">
+      <button class="sort-card" data-target="events">Hens die and egg production falls</button>
+      <button class="sort-card" data-target="populations">The 8,000 hens in 8 pens</button>
+      <button class="sort-card" data-target="distribution">90 of 120 deaths in pens A1 and B1</button>
+      <button class="sort-card" data-target="determinants">The water may be a factor</button>
+      <button class="sort-card" data-target="application">The two pens are separated</button>
+      <button class="sort-card" data-target="study">Records and counts, with a clear method</button>
+    </div>
+    <div class="sorter-bins">
+      <div class="sort-bin" data-bin="study" data-capacity="1"><h3>Study</h3><div class="sort-drop"></div></div>
+      <div class="sort-bin" data-bin="events" data-capacity="1"><h3>Health-related states or events</h3><div class="sort-drop"></div></div>
+      <div class="sort-bin" data-bin="populations" data-capacity="1"><h3>Specified populations</h3><div class="sort-drop"></div></div>
+      <div class="sort-bin" data-bin="distribution" data-capacity="1"><h3>Distribution</h3><div class="sort-drop"></div></div>
+      <div class="sort-bin" data-bin="determinants" data-capacity="1"><h3>Determinants</h3><div class="sort-drop"></div></div>
+      <div class="sort-bin" data-bin="application" data-capacity="1"><h3>Application</h3><div class="sort-drop"></div></div>
+    </div>
+    <div class="sorter-actions">
+      <button class="btn btn-main" data-sorter-check>Check the sorting</button>
+      <button class="btn" data-sorter-reset>Start again</button>
+      <span class="verdict" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+  <p class="map-why" id="map-why" hidden>Each fact matches one element. The elements follow the steps of an investigation: define the population, describe the distribution, look for determinants, and apply the findings.</p>
+  <p class="small">Drag a card into a box. On a phone or with the keyboard, select a card and then select a box.</p>
+  <div class="notes">Students work in pairs. If a pair places a card wrongly, ask them to read the definition of the element on slide 6 and decide again.</div>
+</section>
+<!-- Slide 12: Practice, find the error -->
+<section class="slide" data-type="practice" data-title="Find the error">
+  <h2>Find the error</h2>
+  <p>A student summarises the scenario of the layer farm in one note.</p>
+  <p class="quote">"A veterinarian did a <span class="term" data-tip="An examination of a dead animal to find the cause of death.">necropsy</span> on five hens. The laboratory result showed Salmonella. These findings show the epidemiology of the problem."</p>
+  <p class="q-label">What information is missing from the note?</p>
+  <div>
+    <ul class="choices" data-check="q0" data-answer="c" data-explain="d-q0">
+      <li><button class="choice" data-value="a"><span class="key">A</span>A second necropsy of the same five hens</button></li>
+      <li><button class="choice" data-value="b"><span class="key">B</span>A dose of medicine for every hen in the flock</button></li>
+      <li><button class="choice" data-value="c"><span class="key">C</span>The deaths by pen, and action based on the findings</button></li>
+    </ul>
+    <p class="verdict" aria-live="polite"></p>
+  </div>
+  <div class="notes">The note describes the cause in five hens. It has no distribution, no determinants, and no application.</div>
+</section>
+<!-- Slide 13: Check, element of the definition -->
+<section class="slide" data-type="check" data-title="Check: the element">
+  <h2>The veterinarian separates the two pens with many deaths from the other pens. Which element of the definition is this?</h2>
+  <div>
+    <ul class="choices" data-check="q1" data-answer="b" data-explain="d-q1">
+      <li><button class="choice" data-value="a"><span class="key">A</span>Distribution</button></li>
+      <li><button class="choice" data-value="b"><span class="key">B</span>Application</button></li>
+      <li><button class="choice" data-value="c"><span class="key">C</span>Determinants</button></li>
+    </ul>
+    <p class="verdict" aria-live="polite"></p>
+  </div>
+</section>
+<!-- Slide 14: Check, health-related event -->
+<section class="slide" data-type="check" data-title="Check: the event">
+  <h2>Which of these is a <span class="term" data-tip="Anything that happens to the health of animals: a disease, a death, an injury, an accident, or a pregnancy.">health-related event</span> in a layer <span class="term" data-tip="A group of birds, such as hens, kept together.">flock</span>?</h2>
+  <div>
+    <ul class="choices" data-check="q2" data-answer="a" data-explain="d-q2">
+      <li><button class="choice" data-value="a"><span class="key">A</span>A fall in egg production</button></li>
+      <li><button class="choice" data-value="b"><span class="key">B</span>A rise in the price of eggs</button></li>
+      <li><button class="choice" data-value="c"><span class="key">C</span>A change in the number of pens</button></li>
+    </ul>
+    <p class="verdict" aria-live="polite"></p>
+  </div>
+</section>
+<!-- Slide 15: Check, transfer to a new scenario -->
+<section class="slide" data-type="check" data-title="Check: a new scenario">
+  <h2>A new scenario: sick dogs in one neighbourhood</h2>
+  <p>Several dogs in one <span class="term" data-tip="A part of a town where people live close to each other.">neighbourhood</span> of Makassar have vomiting and bloody <span class="term" data-tip="Frequent loose and watery stool.">diarrhoea</span> in one week. A <span class="term" data-tip="One of the graduate profiles of this study program. This veterinarian gives medical care and surgery to pets such as dogs and cats, for example in a clinic or an animal hospital.">companion animal veterinarian</span> in a clinic treats each dog.</p>
+  <p class="q-label">Which question is a population question?</p>
+  <div>
+    <ul class="choices" data-check="q3" data-answer="c" data-explain="d-q3">
+      <li><button class="choice" data-value="a"><span class="key">A</span>Which diagnosis fits the vomiting and bloody diarrhoea of the first dog?</button></li>
+      <li><button class="choice" data-value="b"><span class="key">B</span>Which medicine and dose should the clinic give to the first dog?</button></li>
+      <li><button class="choice" data-value="c"><span class="key">C</span>How many dogs are sick, and in which streets do they live?</button></li>
+    </ul>
+    <p class="verdict" aria-live="polite"></p>
+  </div>
+</section>
+<!-- Slide 16: Summary -->
+<section class="slide" data-type="summary" data-title="Summary">
+  <h2>Key points</h2>
+  <ul>
+    <li>Epidemiology is the study of health-related events in populations.</li>
+    <li>The full definition of epidemiology adds distribution and determinants, as well as the application of this study.</li>
+    <li>A clinical question concerns one animal. A population question concerns a group of animals or the animal products that come from it.</li>
+    <li>The same disease raises both kinds of question, and the veterinarian needs both.</li>
+  </ul>
+  <div class="links">
+    <a class="btn" href="../encyclopedia/epidemiology.html">Read the article: Epidemiology</a>
+    <a class="btn btn-main" href="./set-objective-from-disease-status.html">Open the next deck: Set an objective from the disease status of a population</a>
+  </div>
+</section>
+
+<!-- Details: one template per element with data-detail or data-explain -->
+<template id="d-pens">
+  <h3>About these data</h3>
+  <p>The flock has 8,000 hens in 8 pens. In a flock of this size, about 10 hens normally die in one week.</p>
+  <p>Pens A1 and B1 are next to the water inlet. They had 90 of the 120 deaths. The other six pens had 5 deaths each.</p>
+  <p>The necropsy of five hens tells the veterinarian what killed those hens. The count of deaths by pen tells her where the problem is.</p>
+</template>
+<template id="d-q0">
+  <h3>Answer: C</h3>
+  <p>The necropsy gives a cause of death for five hens. The note has no count of deaths by pen, so it does not describe the distribution in the flock.</p>
+  <p>The note also has no action. The veterinarian must use the findings, for example by separating the pens.</p>
+</template>
+<template id="d-q1">
+  <h3>Answer: B, Application</h3>
+  <p>Application means using the results to prevent and control a health problem. Separating the pens protects the other hens.</p>
+  <p>Counting the deaths by pen describes the distribution. Testing the water looks for a determinant.</p>
+</template>
+<template id="d-q2">
+  <h3>Answer: A</h3>
+  <p>A fall in egg production is a production problem in the hens. It is a health-related event.</p>
+  <p>The price of eggs and the number of pens are not events in the health of the hens.</p>
+</template>
+<template id="d-q3">
+  <h3>Answer: C</h3>
+  <p>Question C concerns the group of dogs. It asks for the number of sick dogs and the places where they live.</p>
+  <p>Questions A and B concern one dog. The veterinarian still treats each dog, so both kinds of question are needed.</p>
+</template>
+
+  </div><!-- /card -->
+
+  <aside class="panel" id="panel" aria-label="Panel">
+    <div class="panel-head">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" id="tab-controls" aria-selected="true" data-tab="controls">Controls</button>
+        <button class="tab" role="tab" id="tab-details" aria-selected="false" data-tab="details">Details</button>
+        <button class="tab" role="tab" id="tab-notes" aria-selected="false" data-tab="notes" hidden>Notes</button>
+      </div>
+      <button class="icon-btn" id="btn-close" aria-label="Close the panel" title="Close (Esc)"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="panel-body">
+      <div class="panel-section" id="sec-controls"></div>
+      <div class="panel-section" id="sec-details" hidden><p class="empty-note">Select an element marked with "i" on the slide to see details here.</p></div>
+      <div class="panel-section" id="sec-notes" hidden></div>
+    </div>
+  </aside>
+
+<!-- Controls: one block per slide with data-panel="controls". data-for-slide is the slide number. -->
+<div class="controls" data-for-slide="10" hidden>
+  <div class="control"><label for="in-hint">Show a hint <input type="checkbox" id="in-hint"></label></div>
+  <button class="btn" id="qs-reset" data-reset>Reset the sorting</button>
+</div>
+
+<!-- ===================== END OF CONTENT ===================== -->
+</main>
+
+<footer class="bottombar">
+  <button class="nav-btn" id="btn-prev" aria-label="Previous slide">‹</button>
+  <div class="phases" id="phases" role="navigation" aria-label="Slides, grouped by part of the lesson"></div>
+  <button class="counter" id="counter" aria-label="Open the overview"></button>
+  <button class="nav-btn" id="btn-next" aria-label="Next slide">›</button>
+  <button class="icon-btn" id="btn-phases" aria-label="Show or hide the progress marks" title="Show or hide the progress marks (P)" aria-expanded="true"><svg viewBox="0 0 24 24"><path d="M3 12h4M10 12h4M17 12h4"/></svg><span class="lbl">Hide progress</span></button>
+</footer>
+
+<div class="overlay" id="overview" role="dialog" aria-label="Overview"><h2>All slides</h2><div class="ov-grid" id="ov-grid"></div></div>
+<div class="overlay" id="help" role="dialog" aria-label="Help">
+  <h2>How to use these slides</h2>
+  <dl class="help-list">
+    <dt><span class="demo-term">Dotted text</span></dt><dd>A term with a short definition. Hover or tap it.</dd>
+    <dt><span class="demo-detail">Box</span></dt><dd>An element with an "i" opens details in the panel. Click it or press Enter.</dd>
+    <dt>Marks at the bottom</dt><dd>One mark for each slide. The marks are grouped by the part of the lesson. Select a mark to open its slide.</dd>
+    <dt><span class="kbd">→</span> <span class="kbd">Space</span> <span class="kbd">Page Down</span></dt><dd>Next slide</dd>
+    <dt><span class="kbd">←</span> <span class="kbd">Page Up</span></dt><dd>Previous slide</dd>
+    <dt><span class="kbd">Home</span> <span class="kbd">End</span></dt><dd>First or last slide</dd>
+    <dt><span class="kbd">+</span> <span class="kbd">-</span> <span class="kbd">0</span></dt><dd>Larger text, smaller text, normal text. The buttons A+ and A− do the same.</dd>
+    <dt><span class="kbd">P</span></dt><dd>Show or hide the progress marks</dd>
+    <dt><span class="kbd">F</span></dt><dd>Full screen</dd>
+    <dt><span class="kbd">O</span></dt><dd>Overview of all slides</dd>
+    <dt><span class="kbd">N</span></dt><dd>Lecturer notes</dd>
+    <dt><span class="kbd">Esc</span></dt><dd>Close the panel or this screen</dd>
+  </dl>
+  <button class="btn" id="btn-help-close">Close</button>
+</div>
+<div class="tooltip" id="tooltip" role="tooltip"></div>
+
+<!-- ===================== SHELL SCRIPT (do not edit) ===================== -->
+<script id="shell-script">
+(function () {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const root = document.documentElement;
+  const meta = JSON.parse($('#deck-meta').textContent);
+  const domVar = { D0: '--d0', D1: '--d1', D2: '--d2', D3: '--d3', D4: '--d4', D5: '--d5', Integration: '--dint' };
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+  // Theme
+  const saved = store.get('eev-theme');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+  function themeLabel() { const l = $('#btn-theme .lbl'); if (l) l.textContent = root.dataset.theme === 'dark' ? 'Light mode' : 'Dark mode'; }
+  themeLabel();
+
+  // Text size: the type follows the screen, so the zoom of the browser changes little. These steps replace it.
+  const zooms = [0.8, 0.9, 1, 1.1, 1.2, 1.35, 1.5];
+  let zi = zooms.indexOf(Number(store.get('eev-zoom'))); if (zi < 0) zi = 2;
+  function setZoom(i) {
+    zi = Math.max(0, Math.min(zooms.length - 1, i)); const z = zooms[zi];
+    root.style.setProperty('--zoom', z); root.classList.toggle('is-zoomed', z > 1); store.set('eev-zoom', String(z));
+    $('#btn-smaller').disabled = zi === 0; $('#btn-larger').disabled = zi === zooms.length - 1;
+    $('#btn-smaller').title = 'Smaller text (-). Now ' + Math.round(z * 100) + '%'; $('#btn-larger').title = 'Larger text (+). Now ' + Math.round(z * 100) + '%';
+  }
+  setZoom(zi);
+  $('#btn-smaller').addEventListener('click', () => setZoom(zi - 1));
+  $('#btn-larger').addEventListener('click', () => setZoom(zi + 1));
+
+  // Progress marks: show or hide
+  function setPhases(on) {
+    $('.bottombar').classList.toggle('no-phases', !on); store.set('eev-phases', on ? 'on' : 'off');
+    const b = $('#btn-phases'); b.setAttribute('aria-expanded', String(on)); b.querySelector('.lbl').textContent = on ? 'Hide progress' : 'Show progress';
+  }
+  setPhases(store.get('eev-phases') !== 'off');
+  $('#btn-phases').addEventListener('click', () => setPhases($('.bottombar').classList.contains('no-phases')));
+  $('#btn-theme').addEventListener('click', () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; store.set('eev-theme', root.dataset.theme); themeLabel(); });
+
+  // Top bar
+  $('#deck-title').textContent = meta.title;
+  $('#deck-code').textContent = meta.domain === 'Integration' ? meta.competency : meta.domain + ' ' + meta.competency;
+  $('#deck-dot').style.background = 'var(' + (domVar[meta.domain] || '--d0') + ')';
+
+  // Slides and navigation
+  const slides = $$('.slide');
+  const stage = $('#stage');
+  let current = 0, notesMode = false, panelClosed = false;
+  const phases = $('#phases'), ovGrid = $('#ov-grid');
+  // One group of marks for each run of slides of the same type
+  const phaseName = { title: 'Start', scenario: 'Scenario', recap: 'Scenario', question: 'Question', concept: 'Concept', example: 'Example', explore: 'Explore', practice: 'Practice', check: 'Check', summary: 'Summary' };
+  const marks = []; let group = null, lastType = null;
+  slides.forEach((s, i) => {
+    const t = s.dataset.title || ('Slide ' + (i + 1));
+    const type = s.dataset.type || '';
+    if (type !== lastType || !group) {
+      group = document.createElement('div'); group.className = 'phase';
+      group.innerHTML = '<span class="phase-name"></span><div class="phase-marks"></div>';
+      group.querySelector('.phase-name').textContent = phaseName[type] || 'Slide';
+      phases.appendChild(group); lastType = type;
+    }
+    const d = document.createElement('button'); d.type = 'button'; d.title = (i + 1) + '. ' + t; d.setAttribute('aria-label', 'Slide ' + (i + 1) + ': ' + t);
+    d.addEventListener('click', () => go(i)); group.querySelector('.phase-marks').appendChild(d); marks.push(d);
+    const o = document.createElement('button'); o.innerHTML = '<span class="ov-type"></span><strong></strong>';
+    o.querySelector('.ov-type').textContent = (i + 1) + '. ' + (s.dataset.type || '');
+    o.querySelector('strong').textContent = t;
+    o.addEventListener('click', () => { closeOverlays(); go(i); }); ovGrid.appendChild(o);
+  });
+  const controlsByslide = {};
+  const store2 = document.createElement('div'); store2.hidden = true; document.body.appendChild(store2);
+  $$('.controls').forEach(c => { controlsByslide[c.dataset.forSlide] = c; c.hidden = false; store2.appendChild(c); c._defaults = $$('input, select', c).map(el => [el, el.type === 'checkbox' ? el.checked : el.value]); });
+  const secControls = $('#sec-controls'), secDetails = $('#sec-details'), secNotes = $('#sec-notes');
+  const detailEmpty = secDetails.innerHTML;
+
+  function setTab(name) {
+    ['controls', 'details', 'notes'].forEach(n => { $('#tab-' + n).setAttribute('aria-selected', String(n === name)); $('#sec-' + n).hidden = n !== name; });
+  }
+  function hasPanelContent(s) { return s.dataset.panel === 'controls' || s.querySelector('[data-detail]') || s.querySelector('[data-explain]') || (notesMode && s.querySelector('.notes')); }
+  function updatePanel() {
+    const s = slides[current];
+    const ctl = controlsByslide[String(current + 1)];
+    Array.from(secControls.children).forEach(ch => store2.appendChild(ch)); if (ctl) secControls.appendChild(ctl);
+    $('#tab-controls').hidden = !ctl;
+    const note = s.querySelector('.notes');
+    $('#tab-notes').hidden = !(notesMode && note);
+    secNotes.innerHTML = note ? '<h3>Lecturer notes</h3><p></p>' : ''; if (note) secNotes.querySelector('p').textContent = note.textContent.trim();
+    secDetails.innerHTML = detailEmpty;
+    $$('[data-detail].is-open').forEach(el => el.classList.remove('is-open'));
+    const show = hasPanelContent(s);
+    $('#btn-panel').hidden = !show;
+    const pl = $('#btn-panel .lbl'); if (pl) pl.textContent = ctl ? 'Controls' : (notesMode && note ? 'Notes' : 'Details');
+    const auto = !!ctl || !!(notesMode && note);
+    stage.classList.toggle('has-panel', auto && !panelClosed);
+    $('#btn-panel').setAttribute('aria-pressed', String(auto && !panelClosed));
+    stage.classList.remove('sheet-open');
+    setTab(ctl ? 'controls' : (notesMode && note ? 'notes' : 'details'));
+  }
+  function go(i, fromHash) {
+    current = Math.max(0, Math.min(slides.length - 1, i));
+    panelClosed = false;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === current));
+    marks.forEach((d, k) => { if (k === current) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); d.classList.toggle('is-done', k < current); });
+    $$('.phase', phases).forEach(g => g.classList.toggle('is-current', !!g.querySelector('[aria-current]')));
+    if (slides[current].dataset.type === 'summary') renderRecall();
+    $$('#ov-grid button').forEach((d, k) => { if (k === current) d.setAttribute('aria-current', 'step'); else d.removeAttribute('aria-current'); });
+    $('#counter').textContent = (current + 1) + ' / ' + slides.length;
+    $('#btn-prev').disabled = current === 0; updateNav();
+    if (!fromHash) history.replaceState(null, '', location.pathname + location.search + '#' + (current + 1));
+    hideTip(); updatePanel();
+    document.dispatchEvent(new CustomEvent('slidechange', { detail: { index: current, slide: slides[current] } }));
+  }
+  $('#btn-prev').addEventListener('click', () => go(current - 1));
+  $('#btn-next').addEventListener('click', () => next());
+
+  // Reveal steps: elements with data-step="n" appear one number at a time
+  const showAll = new URLSearchParams(location.search).get('steps') === 'all';
+  slides.forEach(s => {
+    const els = $$('[data-step]', s);
+    if (!els.length) return;
+    s._steps = Array.from(new Set(els.map(e => Number(e.dataset.step)))).sort((a, b) => a - b);
+    s._shown = showAll ? s._steps.length : 0;
+    els.forEach(e => { if (!showAll) e.classList.add('step-hidden'); });
+    const b = document.createElement('button'); b.className = 'btn step-btn'; b.type = 'button';
+    b.addEventListener('click', () => revealNext(s)); s.appendChild(b); s._btn = b;
+    refreshStep(s);
+  });
+  function refreshStep(s) {
+    if (!s._steps) return;
+    const left = s._steps.length - s._shown;
+    s._btn.hidden = left <= 0;
+    s._btn.textContent = 'Show the next step (' + (s._shown + 1) + ' of ' + s._steps.length + ')';
+  }
+  function revealNext(s) {
+    if (!s._steps || s._shown >= s._steps.length) return false;
+    const n = s._steps[s._shown]; s._shown++;
+    $$('[data-step="' + n + '"]', s).forEach(e => e.classList.remove('step-hidden'));
+    refreshStep(s); updateNav(); return true;
+  }
+  function next() { if (!revealNext(slides[current])) go(current + 1); }
+  function updateNav() {
+    const s = slides[current];
+    $('#btn-next').disabled = current === slides.length - 1 && !(s._steps && s._shown < s._steps.length);
+  }
+
+  // Panel
+  $$('.tab').forEach(t => t.addEventListener('click', () => setTab(t.dataset.tab)));
+  $('#btn-close').addEventListener('click', () => { panelClosed = true; updatePanel(); });
+  $('#btn-panel').addEventListener('click', () => {
+    if (window.innerWidth < 1100) { panelClosed = false; stage.classList.add('has-panel'); stage.classList.toggle('sheet-open'); return; }
+    if (stage.classList.contains('has-panel')) { panelClosed = true; updatePanel(); }
+    else { panelClosed = false; stage.classList.add('has-panel'); $('#btn-panel').setAttribute('aria-pressed', 'true'); }
+  });
+  function openDetail(el) {
+    const tpl = document.getElementById(el.dataset.detail || el.dataset.explain); if (!tpl) return;
+    secDetails.innerHTML = ''; secDetails.appendChild(tpl.content.cloneNode(true));
+    $$('[data-detail].is-open').forEach(x => x.classList.remove('is-open'));
+    if (el.dataset.detail) el.classList.add('is-open');
+    panelClosed = false; stage.classList.add('has-panel'); $('#btn-panel').hidden = false;
+    if (window.innerWidth < 1100) stage.classList.add('sheet-open');
+    setTab('details');
+  }
+  $$('[data-detail]').forEach(el => {
+    if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
+    el.addEventListener('click', () => openDetail(el));
+    el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); openDetail(el); } });
+  });
+
+  // Reset buttons
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-reset]'); if (!b) return;
+    const c = b.closest('.controls'); if (!c) return;
+    c._defaults.forEach(([el, v]) => { if (el.type === 'checkbox') el.checked = v; else el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); });
+    // Inputs made after load: use the attribute defaults
+    $$('input, select', c).forEach(el => {
+      if (c._defaults.some(d => d[0] === el)) return;
+      if (el.type === 'checkbox' || el.type === 'radio') el.checked = el.defaultChecked;
+      else if (el.tagName === 'SELECT') { const o = Array.from(el.options).findIndex(x => x.defaultSelected); el.selectedIndex = o < 0 ? 0 : o; }
+      else el.value = el.defaultValue;
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+    });
+    c.dispatchEvent(new CustomEvent('deckreset', { bubbles: true }));
+  });
+
+  // Choices (predictions) and checks
+  $$('[data-choice], [data-check]').forEach(list => {
+    $$('.choice', list).forEach(btn => btn.addEventListener('click', () => {
+      $$('.choice', list).forEach(b => { b.setAttribute('aria-pressed', 'false'); b.classList.remove('is-correct', 'is-wrong'); });
+      btn.setAttribute('aria-pressed', 'true');
+      list._picked = btn;
+      if (list.dataset.check) {
+        const ok = btn.dataset.value === list.dataset.answer;
+        if (list._first === undefined) list._first = ok;
+        const right = $('.choice[data-value="' + list.dataset.answer + '"]', list);
+        btn.classList.add(ok ? 'is-correct' : 'is-wrong'); right.classList.add('is-correct');
+        const v = list.parentElement.querySelector('.verdict');
+        if (v) { v.textContent = ok ? 'Correct.' : 'Not correct. The answer is ' + right.querySelector('.key').textContent + '.'; v.className = 'verdict ' + (ok ? 'ok' : 'bad'); }
+        if (list.dataset.explain) openDetail(list);
+      }
+    }));
+  });
+
+  // Summary slide: show the prediction of the student and the result of the check questions
+  function slideNo(el) { return slides.indexOf(el.closest('.slide')) + 1; }
+  function jump(n) { const b = document.createElement('button'); b.type = 'button'; b.textContent = 'slide ' + n; b.addEventListener('click', () => go(n - 1)); return b; }
+  function renderRecall() {
+    const sum = slides[current];
+    const preds = $$('[data-choice]').filter(l => !l.dataset.check), checks = $$('[data-check]');
+    if (!preds.length && !checks.length) return;
+    let box = $('.recall', sum);
+    if (!box) { box = document.createElement('div'); box.className = 'recall'; box.setAttribute('aria-label', 'Your work in this deck'); const links = $('.links', sum); if (links) sum.insertBefore(box, links); else sum.appendChild(box); }
+    box.innerHTML = '';
+    preds.forEach(l => {
+      const p = document.createElement('p'), n = slideNo(l);
+      if (l._picked) {
+        const st = document.createElement('strong'); st.textContent = 'Your prediction: '; p.appendChild(st);
+        const c = l._picked.cloneNode(true), key = c.querySelector('.key'); const letter = key ? key.textContent.trim() + '. ' : ''; if (key) key.remove();
+        p.appendChild(document.createTextNode(letter + c.textContent.trim() + ' Do you still agree? Go back to '));
+      } else { p.appendChild(document.createTextNode('You did not choose a prediction. Go back to ')); }
+      p.appendChild(jump(n)); p.appendChild(document.createTextNode('.')); box.appendChild(p);
+    });
+    if (checks.length) {
+      const p = document.createElement('p'), st = document.createElement('strong');
+      const right = checks.filter(l => l._first === true), again = checks.filter(l => l._first !== true);
+      st.textContent = 'Check questions: '; p.appendChild(st);
+      const sc = document.createElement('span'); if (!again.length) sc.className = 'r-ok';
+      sc.textContent = right.length + ' of ' + checks.length + ' correct on the first try.'; p.appendChild(sc);
+      if (again.length) {
+        p.appendChild(document.createTextNode(' Open again: '));
+        Array.from(new Set(again.map(slideNo))).forEach((n, k) => { if (k) p.appendChild(document.createTextNode(', ')); p.appendChild(jump(n)); });
+        p.appendChild(document.createTextNode('.'));
+      }
+      box.appendChild(p);
+    }
+  }
+
+  // Card sorter: drag a card into a box, or select a card and then select a box
+  $$('[data-sorter]').forEach(sr => {
+    const pool = $('.sorter-pool', sr), bins = $$('.sort-bin', sr), cardsAll = $$('.sort-card', sr);
+    const verdict = $('.verdict', sr); let sel = null, dragged = null;
+    const zoneOf = el => el.classList.contains('sorter-pool') ? el : $('.sort-drop', el);
+    const cap = el => Number(el.dataset.capacity || 0);
+    function clearMarks() { cardsAll.forEach(c => c.classList.remove('is-correct', 'is-wrong')); verdict.textContent = ''; verdict.className = 'verdict'; }
+    function unselect() { if (sel) { sel.classList.remove('is-selected'); sel.setAttribute('aria-pressed', 'false'); } sel = null; }
+    function place(card, box) {
+      const z = zoneOf(box);
+      if (cap(box) && z.children.length >= cap(box) && card.parentElement !== z) { const old = z.children[0]; pool.appendChild(old); }
+      z.appendChild(card); clearMarks(); unselect();
+    }
+    cardsAll.forEach(c => {
+      c.type = 'button'; c.draggable = true; c.setAttribute('aria-pressed', 'false');
+      c.addEventListener('dragstart', e => { dragged = c; try { e.dataTransfer.setData('text/plain', c.textContent); e.dataTransfer.effectAllowed = 'move'; } catch (x) {} });
+      c.addEventListener('dragend', () => { dragged = null; $$('.is-over', sr).forEach(x => x.classList.remove('is-over')); });
+      c.addEventListener('click', e => {
+        e.stopPropagation();
+        if (sel && sel !== c) { place(sel, c.closest('.sort-bin') || pool); return; }
+        if (sel === c) { unselect(); return; }
+        sel = c; c.classList.add('is-selected'); c.setAttribute('aria-pressed', 'true');
+      });
+    });
+    [pool].concat(bins).forEach(box => {
+      box.addEventListener('click', () => { if (sel) place(sel, box); });
+      box.addEventListener('dragover', e => { e.preventDefault(); box.classList.add('is-over'); });
+      box.addEventListener('dragleave', () => box.classList.remove('is-over'));
+      box.addEventListener('drop', e => { e.preventDefault(); box.classList.remove('is-over'); if (dragged) place(dragged, box); });
+    });
+    $('[data-sorter-check]', sr).addEventListener('click', () => {
+      if (cardsAll.some(c => c.parentElement === pool)) { verdict.textContent = 'Place every card in a box first.'; verdict.className = 'verdict bad'; return; }
+      let ok = 0;
+      cardsAll.forEach(c => {
+        const bin = c.closest('.sort-bin').dataset.bin;
+        const right = (c.dataset.target || '').split(' ').includes(bin);
+        c.classList.toggle('is-correct', right); c.classList.toggle('is-wrong', !right); if (right) ok++;
+      });
+      const all = ok === cardsAll.length;
+      verdict.textContent = all ? 'All ' + ok + ' cards are in the right box.' : ok + ' of ' + cardsAll.length + ' cards are in the right box. Move the cards marked ✗ and check again.';
+      verdict.className = 'verdict ' + (all ? 'ok' : 'bad');
+      if (sr.dataset.explain && (all || sr.dataset.explainAlways)) openDetail(sr);
+    });
+    $('[data-sorter-reset]', sr).addEventListener('click', () => { unselect(); cardsAll.forEach(c => pool.appendChild(c)); clearMarks(); });
+  });
+
+  // Tooltips
+  const tip = $('#tooltip'); let tipFor = null;
+  function showTip(el) {
+    tip.textContent = el.dataset.tip; tip.classList.add('is-on'); tipFor = el;
+    const r = el.getBoundingClientRect(), t = tip.getBoundingClientRect();
+    let x = Math.min(Math.max(8, r.left + r.width / 2 - t.width / 2), window.innerWidth - t.width - 8);
+    let y = r.top - t.height - 8; if (y < 8) y = r.bottom + 8;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  function hideTip() { tip.classList.remove('is-on'); tipFor = null; }
+  $$('.term[data-tip]').forEach(el => {
+    el.tabIndex = 0;
+    el.addEventListener('mouseenter', () => showTip(el)); el.addEventListener('mouseleave', hideTip);
+    el.addEventListener('focus', () => showTip(el)); el.addEventListener('blur', hideTip);
+    el.addEventListener('click', e => { e.stopPropagation(); tipFor === el ? hideTip() : showTip(el); });
+  });
+  document.addEventListener('click', e => { if (tipFor && !e.target.closest('.term')) hideTip(); });
+
+  // Overlays
+  function closeOverlays() { $$('.overlay').forEach(o => o.classList.remove('is-on')); }
+  function toggleOverlay(id) { const o = $('#' + id); const on = !o.classList.contains('is-on'); closeOverlays(); o.classList.toggle('is-on', on); }
+  $('#counter').addEventListener('click', () => toggleOverlay('overview'));
+  $('#btn-help').addEventListener('click', () => toggleOverlay('help'));
+  $('#btn-help-close').addEventListener('click', closeOverlays);
+
+  // Full screen
+  function toggleFull() {
+    const el = document.documentElement;
+    if (document.fullscreenElement || document.webkitFullscreenElement) { (document.exitFullscreen || document.webkitExitFullscreen).call(document); }
+    else if (el.requestFullscreen || el.webkitRequestFullscreen) { (el.requestFullscreen || el.webkitRequestFullscreen).call(el); }
+    else { root.classList.toggle('is-full'); }
+  }
+  $('#btn-full').addEventListener('click', toggleFull);
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (['input', 'select', 'textarea'].includes(tag) || e.target.isContentEditable) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    const k = e.key;
+    if (['ArrowRight', 'PageDown', ' '].includes(k)) { e.preventDefault(); next(); }
+    else if (['ArrowLeft', 'PageUp'].includes(k)) { e.preventDefault(); go(current - 1); }
+    else if (k === 'Home') go(0);
+    else if (k === 'End') go(slides.length - 1);
+    else if (k === 'f' || k === 'F') toggleFull();
+    else if (k === 'o' || k === 'O') toggleOverlay('overview');
+    else if (k === '+' || k === '=') setZoom(zi + 1);
+    else if (k === '-' || k === '_') setZoom(zi - 1);
+    else if (k === '0') setZoom(2);
+    else if (k === 'p' || k === 'P') setPhases($('.bottombar').classList.contains('no-phases'));
+    else if (k === '?') toggleOverlay('help');
+    else if (k === 'n' || k === 'N') { notesMode = !notesMode; panelClosed = false; updatePanel(); if (notesMode && slides[current].querySelector('.notes')) setTab('notes'); }
+    else if (k === 'Escape') { if ($('.overlay.is-on')) closeOverlays(); else if (tipFor) hideTip(); else if (stage.classList.contains('has-panel')) { panelClosed = true; updatePanel(); } }
+  });
+
+  // Swipe on the main card
+  let sx = null, sy = null;
+  const card = $('#card');
+  card.addEventListener('touchstart', e => {
+    if (e.target.closest('input, select, textarea, button, svg, canvas, [data-noswipe]')) { sx = null; return; }
+    sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+  }, { passive: true });
+  card.addEventListener('touchend', e => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(current + (dx < 0 ? 1 : -1));
+    sx = null;
+  });
+
+  // Seeded random numbers and URL parameters for deck scripts
+  function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  const params = new URLSearchParams(location.search);
+  window.Deck = {
+    meta, params,
+    rng: seed => mulberry32(Number(seed) || 1),
+    newSeed: () => Math.floor(Math.random() * 1e6),
+    seed: () => params.has('seed') ? Number(params.get('seed')) : Math.floor(Math.random() * 1e6),
+    current: () => current, go, next,
+    onSlide: fn => document.addEventListener('slidechange', e => fn(e.detail))
+  };
+
+  window.addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1), 10); if (n) go(n - 1, true); });
+  const start = parseInt(location.hash.slice(1), 10);
+  go(start ? start - 1 : 0, true);
+})();
+</script>
+
+<!-- ===================== DECK SCRIPT (edit for each deck) ===================== -->
+<script id="deck-script">
+(function () {
+  const $ = id => document.getElementById(id);
+
+  // Slide 3: reveal the best answer after a prediction
+  const note = $('predict-note');
+  document.querySelectorAll('[data-choice="predict"] .choice').forEach(b => b.addEventListener('click', () => {
+    note.className = 'verdict';
+    note.textContent = 'Option B is the best answer. A necropsy answers a clinical question about five hens. It does not show how many hens died in each pen, so the farm owner still does not know where to act.';
+  }));
+
+  // Slide 9: build the definition
+  const sels = [$('b1'), $('b2'), $('b3')];
+  const bWhy = {
+    1: 'Part 1: epidemiology describes how often health events occur (distribution) and what changes it (determinants). Diagnosis and treatment belong to the clinician.',
+    2: 'Part 2: epidemiology studies groups of animals that the investigator defines clearly. These are specified populations.',
+    3: 'Part 3: the study is used in practice to prevent and control problems. This use is the application.'
+  };
+  function bClear() {
+    sels.forEach(s => s.classList.remove('is-correct', 'is-wrong'));
+    $('b-verdict').textContent = ''; $('b-verdict').className = 'verdict'; $('b-why').innerHTML = '';
+  }
+  sels.forEach(s => s.addEventListener('change', bClear));
+  $('b-check').addEventListener('click', () => {
+    if (sels.some(s => !s.value)) { $('b-verdict').textContent = 'Choose a phrase for every gap first.'; $('b-verdict').className = 'verdict bad'; return; }
+    let ok = 0; const why = $('b-why'); why.innerHTML = '';
+    sels.forEach((s, i) => {
+      const right = s.value === 'c';
+      s.classList.toggle('is-correct', right); s.classList.toggle('is-wrong', !right);
+      if (right) ok++; else { const p = document.createElement('p'); p.textContent = bWhy[i + 1]; why.appendChild(p); }
+    });
+    const all = ok === 3;
+    $('b-verdict').textContent = all ? 'All 3 parts are correct.' : ok + ' of 3 parts are correct. Change the parts marked in red and check again.';
+    $('b-verdict').className = 'verdict ' + (all ? 'ok' : 'bad');
+  });
+  $('b-reset').addEventListener('click', () => { sels.forEach(s => { s.value = ''; }); bClear(); });
+
+  // Slide 11: show the summary after a correct sorting
+  const ms = $('map-sorter'), mw = $('map-why');
+  ms.querySelector('[data-sorter-check]').addEventListener('click', () => {
+    mw.hidden = !ms.querySelector('.verdict').classList.contains('ok');
+  });
+  ms.querySelector('[data-sorter-reset]').addEventListener('click', () => { mw.hidden = true; });
+
+  // Slide 10: sort six statements
+  const items = [
+    { q: 'Hen number 14 breathes with difficulty and her head is swollen. What is wrong with her?', a: 'C', why: 'The question concerns one hen. The answer comes from her examination and tests.' },
+    { q: 'How many hens died in each pen this week?', a: 'P', why: 'The question counts events in a group of animals, pen by pen. This describes the distribution of deaths.' },
+    { q: 'Do more hens die in the pens located next to the water inlet compared to hens in the other pens?', a: 'P', why: 'The question compares groups of pens. It looks for a determinant of the deaths.' },
+    { q: 'Which medicine should the veterinarian give to this sick hen?', a: 'C', why: 'The decision concerns the treatment of one animal.' },
+    { q: 'Which buyers received eggs from the pens with many deaths?', a: 'P', why: 'Eggs are animal products of the specified population. The question concerns the egg chain, which reaches beyond one hen.' },
+    { q: 'Does the damage in the liver explain why this hen died?', a: 'C', why: 'The question concerns the cause of death of one animal.' }
+  ];
+  const label = { C: 'clinical question', P: 'population question' };
+  const qEl = $('qs-q'), posEl = $('qs-pos'), scoreEl = $('qs-score'), verdict = $('qs-verdict'),
+        why = $('qs-why'), next = $('qs-next'), btns = $('qs-btns'), hint = $('qs-hint'), hintBox = $('in-hint');
+  const buttons = Array.from(btns.querySelectorAll('.qs-btn'));
+  let idx = 0, score = 0, answered = false, finished = false;
+
+  function render() {
+    finished = false; answered = false;
+    qEl.textContent = items[idx].q;
+    posEl.textContent = 'Statement ' + (idx + 1) + ' of ' + items.length;
+    scoreEl.textContent = 'Correct so far: ' + score;
+    verdict.textContent = ''; verdict.className = 'verdict'; why.textContent = '';
+    next.hidden = true; btns.hidden = false;
+    buttons.forEach(b => { b.disabled = false; b.classList.remove('is-correct', 'is-wrong'); });
+  }
+  function reset() { idx = 0; score = 0; render(); }
+  function showResult() {
+    finished = true;
+    posEl.textContent = 'Result';
+    scoreEl.textContent = '';
+    qEl.textContent = 'You sorted ' + score + ' of ' + items.length + ' statements correctly.';
+    verdict.textContent = ''; verdict.className = 'verdict';
+    why.textContent = 'A question about one animal is a clinical question. A question about a group, a comparison between groups, or the animal products of a group is a population question.';
+    btns.hidden = true;
+    next.textContent = 'Reset the sorting'; next.hidden = false;
+  }
+  buttons.forEach(b => b.addEventListener('click', () => {
+    if (answered) return;
+    answered = true;
+    const item = items[idx], ok = b.dataset.answer === item.a;
+    if (ok) score++;
+    buttons.forEach(x => { x.disabled = true; });
+    b.classList.add(ok ? 'is-correct' : 'is-wrong');
+    if (!ok) buttons.find(x => x.dataset.answer === item.a).classList.add('is-correct');
+    verdict.textContent = ok ? 'Correct.' : 'Not correct. This is a ' + label[item.a] + '.';
+    verdict.className = 'verdict ' + (ok ? 'ok' : 'bad');
+    why.textContent = item.why;
+    scoreEl.textContent = 'Correct so far: ' + score;
+    next.textContent = idx === items.length - 1 ? 'Show the result' : 'Show the next statement';
+    next.hidden = false;
+  }));
+  next.addEventListener('click', () => {
+    if (finished) { reset(); return; }
+    if (idx === items.length - 1) { showResult(); return; }
+    idx++; render();
+  });
+  $('qs-reset').addEventListener('click', reset);
+  function syncHint() { hint.hidden = !hintBox.checked; }
+  hintBox.addEventListener('input', syncHint); hintBox.addEventListener('change', syncHint);
+  render(); syncHint();
+})();
+</script>
+</body>
+</html>
