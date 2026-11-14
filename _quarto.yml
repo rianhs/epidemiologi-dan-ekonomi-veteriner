@@ -6,25 +6,25 @@ project:
     - "assets/fonts/*"
 
 website:
-  title: "Veterinary Epidemiology and Economics"
-  site-url: https://rianhs.github.io/veterinary-epidemiology-and-economics/
-  repo-url: https://github.com/rianhs/veterinary-epidemiology-and-economics
+  title: "Epidemiologi dan Ekonomi Veteriner"
+  site-url: https://rianhs.github.io/epidemiologi-dan-ekonomi-veteriner/
+  repo-url: https://github.com/rianhs/epidemiologi-dan-ekonomi-veteriner
   search: true
   navbar:
     left:
-      - text: Learning materials
+      - text: Materi belajar
         menu:
           - href: slides/index.md
-            text: Slides
+            text: Bahan tayang
           - href: encyclopedia/index.md
-            text: Encyclopedia
+            text: Ensiklopedia
           - href: guides/index.md
-            text: Guides
+            text: Panduan
       - href: skills.md
-        text: Skill map
+        text: Peta sub-kompetensi
   page-footer:
-    left: "Veterinary Epidemiology and Economics, Universitas Hasanuddin"
-    right: "Coordinator: drh. Rian Hari Suharto, M.Sc."
+    left: "Epidemiologi dan Ekonomi Veteriner, Universitas Hasanuddin"
+    right: "Situs web ini dibuat dengan ♡️ oleh RianHS."
 
 format:
   html:
@@ -32,10 +32,10 @@ format:
       light: [default, theme-light.scss, theme.scss]
       dark: [default, theme-dark.scss, theme.scss]
     respect-user-color-scheme: true
-    lang: en
+    lang: id
     toc: true
     toc-location: left
     toc-depth: 3
-    toc-title: Contents
+    toc-title: Daftar isi
     smooth-scroll: true
     include-after-body: toc-toggle.html
