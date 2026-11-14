@@ -12,7 +12,7 @@ website:
   search: true
   navbar:
     left:
-      - text: Materi belajar
+      - text: Bahan ajar
         menu:
           - href: slides/index.md
             text: Bahan tayang
@@ -21,7 +21,7 @@ website:
           - href: guides/index.md
             text: Panduan
       - href: skills.md
-        text: Peta sub-kompetensi
+        text: Peta subkompetensi
   page-footer:
     left: "Epidemiologi dan Ekonomi Veteriner, Universitas Hasanuddin"
     right: "Situs web ini dibuat dengan ♡️ oleh RianHS."
