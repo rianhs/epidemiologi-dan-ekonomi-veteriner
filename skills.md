@@ -8,9 +8,9 @@ toc-title: Tahap
 ```{=html}
 <div class="readme">
 <h2 class="readme-title" id="cara-membaca">Cara membaca halaman ini</h2>
-<p>Halaman ini memuat semua 138 subkompetensi dalam mata kuliah. Subkompetensi dikelompokkan menurut kompetensi, dan kompetensi dikelompokkan menurut tahap.</p>
-<p>Setiap kompetensi dan subkompetensi punya nama dan capaian. Nama berupa frasa nomina yang menyebut topiknya. Capaian berupa kalimat berkata kerja yang menyatakan apa yang dilakukan mahasiswa. Daftar di bawah menampilkan nama. Capaian subkompetensi muncul saat penunjuk diarahkan ke nama, atau dapat ditampilkan sekaligus dengan tombol di bawah.</p>
-<p>Pilih sebuah kompetensi atau subkompetensi untuk membuka halamannya. Halaman itu memuat cakupan, prasyarat, dan bahan ajar.</p>
+<p>Halaman ini memuat keseluruhan subkompetensi pada mata kuliah ini. Terdapat enam tahap yang dibagi menjadi 19 kompetensi dan 138 subkompetensi.</p>
+<p>Setiap kompetensi dan subkompetensi punya nama dan capaian pembelajaran. Nama berupa frasa yang menyebut topiknya. Capaian menyatakan apa yang akan mampu dilakukan oleh mahasiswa. Daftar di bawah ini hanya menampilkan nama. Capaian subkompetensi muncul saat penunjuk diarahkan ke nama atau dapat ditampilkan sekaligus dengan tombol di bawah.</p>
+<p>Pilih sebuah kompetensi atau subkompetensi untuk membuka halaman baru yang memberikan uraian secara mendetail.</p>
 <button type="button" class="btn-toggle" id="toggle-capaian" aria-pressed="false">Tampilkan capaian subkompetensi</button>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -108,11 +108,11 @@ Gabungkan bukti menjadi satu strategi dan pertahankan strategi itu.
 </div>
 ```
 
-## Kemampuan dari mata kuliah sebelumnya {#x-skills}
+## Kompetensi dari mata kuliah sebelumnya {#x-skills}
 
-Kemampuan ini berasal dari Biostatistika dan mata kuliah sebelumnya. Mata kuliah ini memakainya tanpa mengajarkannya lagi.
+Kompetensi ini berasal dari Biostatistika dan mata kuliah sebelumnya. Mata kuliah ini memakainya tanpa mengajarkannya lagi.
 
-| Kode | Kemampuan |
+| Kode | Kompetensi |
 |-|-|
 | X1 | Menghitung proporsi, rasio, dan laju |
 | X2 | Menafsirkan interval kepercayaan untuk proporsi atau rerata |
