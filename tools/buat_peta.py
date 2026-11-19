@@ -33,14 +33,14 @@ SLUG_LAMA = {
 }
 
 # ---------------- baca 02 ----------------
-comps = re.findall(r'^\| (C\d+) \| (T\d|Integrasi) \| (.+?) \| (.+?) \| (.+?) \| (\d+) \| ([a-z0-9-]+) \|$', s, re.M)
-skills = re.findall(r'^\| (S(\d+)\.\d+) \| (.+?) \| (.+?) \| (.+?) \| (.+?) \| (Inti|Terapan|Pengenalan) \|$', s, re.M)
+comps = re.findall(r'^\| (C\d+) \| (T\d|Integrasi) \| (.+?) \| (.+?) \| (\d+) \| ([a-z0-9-]+) \|$', s, re.M)
+skills = re.findall(r'^\| (S(\d+)\.\d+) \| (.+?) \| (.+?) \| (.+?) \| (.+?) \|$', s, re.M)
 xs = re.findall(r'^\| (X\d) \| (.+?) \|$', s, re.M)
-C = {c[0]: dict(code=c[0], tahap=c[1], nama=c[2], capaian=c[3], depth=c[4], n=int(c[5]), slug=c[6]) for c in comps}
+C = {c[0]: dict(code=c[0], tahap=c[1], nama=c[2], capaian=c[3], n=int(c[4]), slug=c[5]) for c in comps}
 S = {}
-for code, cn, nama, capaian, cakupan, pre, dep in skills:
+for code, cn, nama, capaian, cakupan, pre in skills:
     S[code] = dict(code=code, comp='C' + cn, nama=nama, capaian=capaian, cakupan=cakupan,
-                   pre=[] if pre == 'Tidak ada' else [p.strip() for p in pre.split(',')], depth=dep)
+                   pre=[] if pre == 'Tidak ada' else [p.strip() for p in pre.split(',')])
 X = dict(xs)
 
 # ---------------- periksa 02 ----------------
@@ -90,7 +90,6 @@ TAHAP = [
  ("Integrasi", "integration", "Integrasi", "Semua pertanyaan bersama", "Gabungkan bukti menjadi satu strategi dan pertahankan strategi itu."),
 ]
 VAR = {"T0": "--d0", "T1": "--d1", "T2": "--d2", "T3": "--d3", "T4": "--d4", "T5": "--d5", "Integrasi": "--dint"}
-KELAS = {"Inti": "core", "Terapan": "applied", "Pengenalan": "introduced"}
 def e(t): return html.escape(t, quote=True)
 def anc(code): return code.lower().replace('.', '-')
 def comp_slug(c): return SLUG_LAMA[c] if PAKAI_SLUG_LAMA else C[c]['slug']
@@ -107,7 +106,6 @@ out = ['---', 'title: Peta subkompetensi', 'toc: true', 'toc-depth: 2', 'toc-tit
 f'<p>Halaman ini memuat semua {nS} subkompetensi dalam mata kuliah. Subkompetensi dikelompokkan menurut kompetensi, dan kompetensi dikelompokkan menurut tahap.</p>',
 '<p>Setiap kompetensi dan subkompetensi punya nama dan capaian. Nama berupa frasa nomina yang menyebut topiknya. Capaian berupa kalimat berkata kerja yang menyatakan apa yang dilakukan mahasiswa. Daftar di bawah menampilkan nama. Capaian subkompetensi muncul saat penunjuk diarahkan ke nama, atau dapat ditampilkan sekaligus dengan tombol di bawah.</p>',
 '<p>Pilih sebuah kompetensi atau subkompetensi untuk membuka halamannya. Halaman itu memuat cakupan, prasyarat, dan bahan ajar.</p>',
-'<dl class="depth-legend"><div><dt>Inti</dt><dd>Setiap mahasiswa melakukannya sendiri.</dd></div><div><dt>Terapan</dt><dd>Mahasiswa melakukannya dengan templat, alat, atau bimbingan.</dd></div><div><dt>Pengenalan</dt><dd>Mahasiswa mengenali dan menafsirkannya.</dd></div></dl>',
 '<button type="button" class="btn-toggle" id="toggle-capaian" aria-pressed="false">Tampilkan capaian subkompetensi</button>',
 '<script>',
 "document.addEventListener('DOMContentLoaded', function () {",
@@ -130,12 +128,13 @@ for t, did, tn, q, desc in TAHAP:
         lis = ''.join(
             f'<li><a href="{skill_url(k)}" title="Capaian: {e(v["capaian"])}"><span class="code">{k}</span>'
             f'<span class="s-text"><span class="s-name">{e(v["nama"])}</span><span class="s-outcome">{e(v["capaian"])}</span></span>'
-            f'<span class="depth depth-{KELAS[v["depth"]]}">{v["depth"]}</span></a></li>'
+            f'</a></li>'
             for k, v in S.items() if v['comp'] == c['code'])
         out.append(
-            f'<article class="comp-card" style="--dc:var({VAR[t]})"><header><p class="card-meta"><span class="dot"></span><span class="code">{c["code"]}</span><span>{n} subkompetensi</span></p>'
+            f'<article class="comp-card" style="--dc:var({VAR[t]})"><header><p class="card-meta"><span class="dot"></span><span class="code">{c["code"]}</span></p>'
             f'<h3><a href="{comp_url(c["code"])}">{e(c["nama"])}</a></h3>'
-            f'<p class="card-stmt"><span class="stmt-label">Capaian</span> {e(c["capaian"])}</p></header>'
+            f'<p class="card-stmt">Capaian: {e(c["capaian"])}</p></header>'
+            f'<p class="skill-count">{n} subkompetensi</p>'
             f'<ol class="skill-list">{lis}</ol></article>')
     out += ['</div>', '```', '']
 out += ['## Kemampuan dari mata kuliah sebelumnya {#x-skills}', '',
