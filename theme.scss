@@ -139,9 +139,6 @@ a:hover { text-decoration: underline; text-underline-offset: 0.18em; }
 .readme { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; }
 .readme-title { margin-top: 0 !important; font-size: 1.15rem; }
 .readme p { color: var(--ink); }
-.depth-legend { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0.8rem 0 0; }
-.depth-legend dt { font-weight: 600; }
-.depth-legend dd { color: var(--muted); margin: 0; font-size: 0.93rem; }
 h2.domain-title { display: flex; align-items: center; gap: 0.6rem; }
 h2.domain-title::before { content: ""; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--dc); flex: none; }
 .card-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
@@ -152,9 +149,10 @@ h2.domain-title::before { content: ""; width: 0.8rem; height: 0.8rem; border-rad
 .comp-card h3 a { font-weight: 650; }
 .comp-card h3 a { color: var(--ink); }
 .card-stmt { color: var(--muted); font-size: 0.93rem; margin: 0; }
+.skill-count { margin: 0; padding: 0.5rem 1.2rem; font-size: 0.88rem; font-weight: 600; color: var(--muted); border-bottom: 1px solid var(--line); }
 .skill-list { list-style: none; margin: 0; padding: 0; }
 .skill-list li + li { border-top: 1px solid var(--line); }
-.skill-list a { display: grid; grid-template-columns: 3.4rem 1fr auto; gap: 0.75rem; align-items: baseline; padding: 0.55rem 1.2rem; color: var(--ink); max-width: none; }
+.skill-list a { display: grid; grid-template-columns: 3.4rem 1fr; gap: 0.75rem; align-items: baseline; padding: 0.55rem 1.2rem; color: var(--ink); max-width: none; }
 .skill-list a:hover { background: var(--surface-2); text-decoration: none; }
 .skill-list a:hover .s-text { text-decoration: underline; text-underline-offset: 0.18em; }
 #quarto-document-content .skill-list li, #quarto-document-content .comp-list li { max-width: none; }
@@ -194,12 +192,11 @@ h2.domain-title::before { content: ""; width: 0.8rem; height: 0.8rem; border-rad
   .loop-mobile li + li { border-top: 1px solid var(--line); }
   .loop-mobile a { display: grid; grid-template-columns: 0.7rem 4.6rem 1fr; align-items: center; gap: 0.6rem; padding: 0.65rem 1rem; color: var(--ink); font-weight: 600; }
   .ml-code { color: var(--muted); font-size: 0.9rem; }
-  .chain, .materials, .org-notes, .depth-legend, .comp-links, .comp-pager { grid-template-columns: 1fr; }
+  .chain, .materials, .org-notes, .comp-links, .comp-pager { grid-template-columns: 1fr; }
   .chain-step + .chain-step::before { left: 2rem; top: -1rem; width: 1px; height: 1rem; }
   .domain { grid-template-columns: 1fr; gap: 1rem; }
   .skill-grid { grid-template-columns: 1fr; gap: 0.8rem; }
   .skill-list a { grid-template-columns: 3.2rem 1fr; }
-  .skill-list .depth { grid-column: 2; justify-self: start; }
 }
 
 /* Peta subkompetensi: nama (nomina) dan capaian (verba) */
@@ -209,7 +206,6 @@ h2.domain-title::before { content: ""; width: 0.8rem; height: 0.8rem; border-rad
 body.show-capaian .s-outcome { display: block; }
 .skill-list a:hover .s-text { text-decoration: none; }
 .skill-list a:hover .s-name { text-decoration: underline; text-underline-offset: 0.18em; }
-.stmt-label { display: inline-block; margin-right: 0.35rem; font-size: 0.78rem; font-weight: 600; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 0.05rem 0.5rem; }
 .btn-toggle { margin-top: 1rem; padding: 0.45rem 0.95rem; border-radius: 8px; border: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; font-weight: 600; font-size: 0.93rem; cursor: pointer; }
 .btn-toggle:hover { background: var(--surface-2); }
 .btn-toggle[aria-pressed="true"] { border-color: var(--accent); }
