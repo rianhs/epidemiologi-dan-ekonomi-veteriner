@@ -81,7 +81,7 @@ for k, t in [(k, v['nama'] + ' ' + v['capaian']) for k, v in {**S, **C}.items()]
 
 # ---------------- bantuan ----------------
 TAHAP = [
- ("T0", "d0", "Tahap 0", "Mengapa epidemiologi?", "Apa itu epidemiologi dan ekonomi veteriner, serta bagaimana cara mengubah kasus individual menjadi pertanyaan berskala populasi."),
+ ("T0", "d0", "Tahap 0", "Mengapa epidemiologi?", "Apa itu epidemiologi dan ekonomi veteriner, serta cara melihat masalah kesehatan hewan sebagai masalah populasi."),
  ("T1", "d1", "Tahap 1", "Apa yang terjadi?", "Tentukan populasi dan kasus, kumpulkan data, nilai uji diagnostik, dan deskripsikan pola penyakit."),
  ("T2", "d2", "Tahap 2", "Mengapa ia terjadi?", "Bandingkan kelompok, analisis beberapa faktor secara bersamaan, telaah laporan, rancang kajian, dan selidiki wabah."),
  ("T3", "d3", "Tahap 3", "Apa yang dapat terjadi?", "Proyeksikan penyebaran penyakit dalam populasi dan nilai risiko masuknya penyakit."),
